@@ -1,1 +1,2 @@
-# basecamp
+# Project5
+The aim of the project is for students and individuals from all over Sweden to have access to free course material on our site. Teachers from all over Sweden will upload videos, articles and information that are available for students and individuals to read. Initially, only technical topics will be included, programming, web development and web server programming. As the project grows, more courses will be available. 

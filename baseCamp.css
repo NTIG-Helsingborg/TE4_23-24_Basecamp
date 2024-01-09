@@ -1,0 +1,420 @@
+@charset "utf-8";
+
+/*Css to backgroundcolor for the index page*/
+#indexBackground {
+    overflow-x: hidden;
+    color: #fff;
+    background-color: #181515;
+}
+
+/*Css to the backgroundvideo on index page*/
+.video-background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -2;
+}
+
+/*Css to the header on index page*/
+header{
+    position:relative;
+    z-index: 0;
+}
+
+/*Css to different heading tags*/
+h1, h6, h4 {
+    color: #FED979;
+    text-shadow: 2px 2px black;
+}
+
+/*Css to the links on index page*/
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    color: inherit;
+    text-decoration: none;
+}
+
+/*Css to the navbar on index page*/
+.navbarBG {
+    background: #181515 !important;
+}
+
+.navbar a {
+    color: #FED979 !important;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid #FED979;
+}
+
+.navbar-toggler {
+	color: #FED979;
+}
+
+.navbar .dropdown-menu {
+    margin: 0px;
+    box-shadow: 0px 2px 10px black; /* Remove if it looks better.*/
+    background-color: #181515;
+    width: 1000px !important;
+    height: 500px;
+    border: none;
+    animation-duration: 1s;
+    animation-name: slide;
+    z-index: -1;
+}
+
+/*
+FIX THIS, no position
+.dropdown {
+    position:  !important;
+}*/
+
+.navbar .dropdown-menu a:hover {
+    color: #000 !important;
+    background-color: #FED979;
+}
+
+/*Bootstrap Mobile Gutter Fix*/
+.row, .container-fluid {
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+    }
+    
+    /*Fixed Video Background iOS/Mobile Style*/
+    .video-wrap {
+        clip: rect(0, auto, auto, 0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index:-2;
+    }
+    #video {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+        will-change: transform;
+        z-index: -3;
+    }
+    video { 
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -2;
+        transform: translateX(-50%) translateY(-50%);
+        background: url('') no-repeat;
+        background-size: cover;
+        transition: 1s opacity;
+    }
+
+/*Is this in use?
+.transparent-btn {
+    background-color: transparent;
+    border: none;
+    color: #FED979;
+}
+*/
+
+/*Css to the text in front of the videobackground*/
+.caption {
+	position: absolute;
+	top: 38%;
+	width: 100%;
+	color: white;
+}
+
+/*Css that fixes site when max width is 768px*/
+@media (max-width: 768px) {
+	.card {
+		margin-top: 20px;
+	}
+	
+	img {
+		margin-bottom: 20px;
+	}
+	.page-footer ul li, .text {
+		text-align: center;
+	}
+}
+
+/*Css to backgroundimage and color for the logIn and SignIn page*/
+#logInRegBackground{
+    background-image: url("./Images/moon.PNG");  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #1c1b3a;
+}
+
+/*Css to the cards with recommended and popular courses*/
+.card {
+	width: 300px;
+	background-color: #181515;
+	border-color: #fff;
+	border-radius: 4px;
+	border-width: 4px;
+	box-shadow: 0 6px 10px black;
+	
+	/* this makes the card transition smoother */
+	transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  	cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.05); /* makes the card pop out when hovering */
+  	box-shadow: 0 10px 20px black;
+}
+
+/*Css to the background of the cardsection*/
+.secbackground {
+	background-color: #201c1c;
+}
+
+/*No idea what this does*/
+.social-menu ul {
+    position: absolute;
+    
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.social-menu ul li {
+    list-style: none;
+    margin: 0 10px;
+}
+.social-menu ul li .fa {
+    color: #000000;
+    font-size: 25px;
+    line-height: 50px;
+    transition: .5s;
+}
+.social-menu ul li .fa:hover {
+    color: #ffffff;
+}
+.social-menu ul li a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;
+    transition: 0.5s;
+    transform: translate(0,0px);
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+}
+.social-menu ul li a:hover {
+    transform: rotate(0deg) skew(0deg) translate(0, -10px);
+}
+.social-menu ul li:nth-child(1) a:hover {
+    background-color: #3b5999;
+}
+.social-menu ul li:nth-child(2) a:hover {
+    background-color: #55acee;
+}
+.social-menu ul li:nth-child(3) a:hover {
+    background-color: #e4405f;
+}
+.social-menu ul li:nth-child(4) a:hover {
+    background-color: #cd201f;
+}
+.social-menu ul li:nth-child(5) a:hover {
+    background-color: #0077B5;
+}
+
+/*Some Css for the footer*/
+.page-footer {
+    background-color: #181515;
+    color: white;
+}
+    .page-footer a:hover {
+        border-bottom: 2px solid #FED979;
+    }
+    .page-footer ul li, .text {
+        
+        line-height: 20px;
+    }
+    .page-footer .footerCenteredText {
+        margin: 0px auto;
+        width: 50%;
+    }
+
+/*Don't know why we have this
+.showFadeIn {
+        display: relative;
+        animation-duration: 5s;
+        animation-name: fadeIn;
+}*/
+
+.video-text {
+    margin-left: 40%;
+    width: 25%;
+}
+
+    .video-text h3 {
+        text-shadow: 2px 2px black;
+        opacity: 0.80; /*Test around if this looks good, otherwise just remove it*/
+    }
+
+.justify_text{
+    text-align:justify;
+}
+
+/*
+.overview_text {
+    opacity:0.80;
+}
+*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+} 
+
+@media (max-width: 1024px) {
+    .caption h1 {
+		font-size: 1.4rem;
+		letter-spacing: .15rem;
+	}
+	.caption h3 {
+		font-size: 1.1em;
+	}
+	
+	.col-sm-6 {
+		text-align: center!important;
+	}
+}
+
+/*Does not work, could be because "Display: ? ;"*/
+@keyframes slideLeft {
+    from {
+        left: -1000px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes slide {
+    from { 
+        top: -500px; 
+            /* This should be based on the height of navbar dropdown*/
+    }
+
+    to {
+        top: 100%;
+    }
+}
+
+/*Css to backgroundimage and color*/
+#logInSignInBackground{
+    background-image: url("./Images/moon.PNG");  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #1c1b3a;
+}
+
+/*Css to all paragraphs*/
+#text{
+
+  color:#f0d397;
+  font-size: 4em;
+
+}
+
+/*Css to the lable over email inputbox*/
+#labelForEmail{
+   margin-top: 10%;
+   margin-right: 210px;
+   color:#f0d397;
+}
+
+/*Css to the email inputbox*/
+#email{
+   
+    border: solid 2px #f0d397;
+    border-radius: 2px;
+    width: 250px;
+}
+
+/*Css to the lable over password inputbox*/
+#labelForPassword{
+    color: #f0d397;
+    margin-top: 5%;
+    margin-right: 180px;
+}
+
+/*Css to the password inputbox*/
+#password{
+    width:250px;
+    border: solid 2px #f0d397;
+    border-radius: 2px;
+}
+
+/*Css to the form including lables and inputboxes for both email and password*/
+form{
+    width:450px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    height:350px;
+  
+}
+
+/*Css to the "Logga in" and "Registrera" button*/
+#submit{
+    
+    border:none;
+    border-radius: 5px;
+    height:35px;
+    width: 250px;
+    background-color:#f0d397;
+    font-size: 18px;
+    color: black;
+}
+
+/*Css to the link "Glömt lösenord"*/
+#forgotPassword{
+    
+    color: #f0d397;
+    text-decoration: none;
+    font-size:15px;
+    text-align: center;
+}
+
+/*Css to the "<" button*/
+#goBack{
+    margin-top: 1%;
+    margin-left: 1%;
+    height: 60px;
+    width: 60px;
+    border:none;
+    border-radius: 5px;
+    color: #f0d397;
+    font-size: 30px;
+    background-color:rgba(0, 0, 0, 0.7);
+    
+}
