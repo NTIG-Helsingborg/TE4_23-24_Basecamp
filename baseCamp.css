@@ -152,6 +152,12 @@ FIX THIS, no position
 	.page-footer ul li, .text {
 		text-align: center;
 	}
+
+    .video-text{
+        width: 50% !important;
+        margin-left: 25% !important;
+        margin-right: 25% !important;
+    }
 }
 
 /*Css to backgroundimage and color for the logIn and SignIn page*/
