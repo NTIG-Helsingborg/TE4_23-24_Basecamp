@@ -67,6 +67,10 @@ a:hover{
     z-index: -1;
 }
 
+.dropdown-menu{
+    padding-top: 1rem;
+}
+
 /*
 FIX THIS, no position
 .dropdown {
