@@ -69,6 +69,18 @@ a:hover{
 
 .dropdown-menu{
     padding-top: 1rem;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.dropdown-menu ul{
+    list-style: none;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.dropdown-item{
+    padding-left: 1rem !important;
 }
 
 /*
