@@ -1,7 +1,7 @@
 <!doctype html>
 
 <?php 
-    include ('DBConnect.php'); //Create connection to databse.
+    //include ('DBConnect.php'); //Create connection to databse.
     session_Start();
 ?>
 
@@ -173,7 +173,7 @@
 <div class="row">
 	<!-- RECOMMENDED COURSE 1 -->
 
-	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
 	<div class="card mx-auto text-center">
     <img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
     <div class="card-body">
@@ -184,7 +184,7 @@
 	</div>
 	</div>
 	<!-- RECOMMENDED COURSE 2 -->
-	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
 	<div class="card mx-auto text-center">
     <img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
     <div class="card-body">
@@ -195,7 +195,7 @@
 	</div>
 	</div>
 	<!-- RECOMMENDED COURSE 3 -->
-	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
 		<div class="card mx-auto text-center">
 		<img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
 		<div class="card-body">
