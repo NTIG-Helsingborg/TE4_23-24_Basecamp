@@ -1,98 +1,96 @@
 <!doctype html>
 
-<?php 
-    session_Start();
+<?php
+session_Start();
 ?>
 
 <html>
-    
-    <head>
 
-        <meta charset="utf-8">
-        <title>Log in</title>
+<head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Log in</title>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <style>
-         <?php include 'baseCamp.css'; 
-         ?>
-         
-        </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    </head>
+    <style>
+        <?php include 'baseCamp.css';
+        ?>
+    </style>
 
-    <body id="logInSignInBackground">
-    
-        <div class="content">
-        
-  <a href="index.php">
+</head>
 
-            
-                <button id="goBack">
-                
-                    < 
-            
+<body id="logInSignInBackground">
+
+    <div class="content">
+
+        <a href="index.php">
+
+
+            <button id="goBack">
+
+                < </button>
+
+        </a>
+
+        <br><br><br><br><br><br>
+
+        <center>
+
+            <p id="text">Logga in</p>
+
+        </center>
+
+        <center>
+
+            <form action="getLoginInfo.php" method="post">
+
+                <label for="email" id="labelForEmail">Email:</label>
+
+                <br>
+
+                <input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
+                    title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required>
+
+
+                <br>
+
+                <?php
+                echo $_SESSION["login_VALID"] ?? "";
+                ?>
+
+                <label for="password" id="labelForPassword">Lösenord:</label>
+
+                <br>
+
+                <input type="password" id="password" name="password" title="Invalid">
+
+                <br><br><br>
+
+                <button id="submit" type="submit">
+
+                    Logga in
+
                 </button>
 
-            </a>
+                <br><br>
 
-            <br><br><br><br><br><br>
+                <a href="#" id="forgotPassword">
 
-            <center>
-            
-                <p id="text">Logga in</p>
-        
-            </center>
+                    Glömt lösenord
 
-            <center>
-            
-                <form action="getLoginInfo.php" method="post">
-                
-                    <label for="email" id="labelForEmail">Email:</label>
-                
-                    <br>
-                
-                    <input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$" title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required>
+                </a>
 
-                
-                    <br>
+            </form>
 
-                    <?php
-			            echo $_SESSION["login_VALID"] ?? "";
-	                ?>
-    
-                    <label for="password" id="labelForPassword">Lösenord:</label>
-            
-                    <br>
-    
-                    <input type="password" id="password" name="password" title="Invalid">
-   
-                    <br><br><br>
-                
-                    <button id="submit" type="submit">
-                    
-                        Logga in
-                
-                    </button>
-                
-                    <br><br>
-                
-                    <a href="#" id="forgotPassword">
-                    
-                        Glömt lösenord
-                
-                    </a>
-            
-                </form>
-        
-            </center>
-    
-        </div>
+        </center>
 
-    </body>
+    </div>
+
+</body>
 
 </html>
