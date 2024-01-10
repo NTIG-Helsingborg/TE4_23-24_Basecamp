@@ -7,6 +7,11 @@
     // define("db_PASS", "Wassim_?321");
     // define("db_NAME", "te4ntihbg_se");
 
+    class QueryArgsStruct {
+        public $name;
+        public $value;
+        public $type;
+    }
 
      class DBClass extends SQLite3
      {
@@ -36,10 +41,15 @@
             ");
         }
 
-        function run_query(string $query)
+        function run_query(string $query, QueryArgsStruct ...$args)
         {
             $stmt = $this->prepare($query);
-            $stmt->bindValue();
+
+            foreach($args as $arg)
+            {
+                $stmt->bindValue($arg->name, $arg->value, $arg->type);
+            }
+            $stmt->execute();
         }
      }
 
