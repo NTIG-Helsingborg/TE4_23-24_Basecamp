@@ -134,14 +134,16 @@ FIX THIS, no position
 
 /*Css to the text in front of the videobackground*/
 .caption {
-	position: absolute;
-	top: 38%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 	width: 100%;
 	color: white;
 }
 
 /*Css that fixes site when max width is 768px*/
-@media (max-width: 768px) {
+@media (max-width: 991px) {
 	.card {
 		margin-top: 20px;
 	}
@@ -152,6 +154,10 @@ FIX THIS, no position
 	.page-footer ul li, .text {
 		text-align: center;
 	}
+
+    .video-text{
+        width: 50% !important;
+    }
 }
 
 /*Css to backgroundimage and color for the logIn and SignIn page*/
@@ -265,7 +271,6 @@ FIX THIS, no position
 }*/
 
 .video-text {
-    margin-left: 40%;
     width: 25%;
 }
 
