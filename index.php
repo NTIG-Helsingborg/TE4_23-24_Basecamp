@@ -1,7 +1,7 @@
 <!doctype html>
 
 <?php 
-    include ('DBConnect.php'); //Create connection to databse.
+    // include ('DBConnect.php'); //Create connection to databse.
     session_Start();
 ?>
 
