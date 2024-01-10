@@ -2,10 +2,10 @@
     if(!class_exists("SQLite3"))
         exit("This PHP environment does not have SQLite3 support builtn in.");
     // DB properties.
-     define("db_HOST", "localhost");
-     define("db_USER", "admin2@t301006");
-     define("db_PASS", "Wassim_?321");
-     define("db_NAME", "te4ntihbg_se");
+    // define("db_HOST", "localhost");
+    // define("db_USER", "admin2@t301006");
+    // define("db_PASS", "Wassim_?321");
+    // define("db_NAME", "te4ntihbg_se");
 
 
      class DBClass extends SQLite3
