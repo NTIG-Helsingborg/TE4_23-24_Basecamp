@@ -63,8 +63,7 @@ a:hover{
     width: 1000px !important;
     height: 500px;
     border: none;
-    animation-duration: 1s;
-    animation-name: slide;
+    user-select: none;
     z-index: -1;
 }
 
