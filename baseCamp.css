@@ -141,7 +141,7 @@ FIX THIS, no position
 }
 
 /*Css that fixes site when max width is 768px*/
-@media (max-width: 768px) {
+@media (max-width: 991px) {
 	.card {
 		margin-top: 20px;
 	}
