@@ -134,8 +134,10 @@ FIX THIS, no position
 
 /*Css to the text in front of the videobackground*/
 .caption {
-	position: absolute;
-	top: 38%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 	width: 100%;
 	color: white;
 }
@@ -155,8 +157,6 @@ FIX THIS, no position
 
     .video-text{
         width: 50% !important;
-        margin-left: 25% !important;
-        margin-right: 25% !important;
     }
 }
 
@@ -271,7 +271,6 @@ FIX THIS, no position
 }*/
 
 .video-text {
-    margin-left: 40%;
     width: 25%;
 }
 
