@@ -73,11 +73,11 @@ a:hover{
 }
 
 .navbarmiddle{
-    padding-left: 20rem;
+    padding-left: 20vw;
 }
 
 .navbarright{
-    padding-right: 3rem;
+    padding-right: 3vw;
 }
 
 .signUp{
@@ -179,6 +179,11 @@ FIX THIS, no position
     .navbarright{
         width: 100%;
         text-align: center !important;
+        padding-right: 0;
+    }
+    .navbarmiddle{
+        padding-left: 0;
+        text-align: center;
     }
 }
 
