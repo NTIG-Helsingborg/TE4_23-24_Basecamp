@@ -34,9 +34,20 @@
                 CREATE TABLE IF NOT EXISTS `classes` (
                     `id` TEXT PRIMARY KEY NOT NULL,
                     `owner` TEXT NOT NULL,
-                    `class_data` TEXT,
+                    `name` TEXT NOT NULL,
+                    `data` TEXT,
                     `school` TEXT NOT NULL,
                     FOREIGN KEY(`owner`) REFERENCES `users`(`id`)
+                )
+            ");
+
+            $this->exec("
+                CREATE TABLE IF NOT EXISTS `chapters` (
+                    `id` TEXT PRIMARY KEY NOT NULL,
+                    `class` TEXT NOT NULL,
+                    `data` TEXT,
+                    `name` TEXT NOT NULL,
+                    FOREIGN KEY(`class`) REFERENCES `classes`(`id`)
                 )
             ");
         }
