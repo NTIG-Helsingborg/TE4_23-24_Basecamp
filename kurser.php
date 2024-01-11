@@ -37,22 +37,24 @@
 				<ul class="navbar-nav">
 
 					<!-- Navbar Dropdown -->
-					<li class="nav-item dropdown navbarmiddle">
-						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+
+					<div class="dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							id="navbardrop" aria-expanded="false">
 							Kurser
 						</a>
-						<div class="dropdown-menu">
-							<ul>
-								<li><a class="dropdown-item" href="#">Programmering 1</a></li>
-								<li><a class="dropdown-item" href="#">Programmering 2</a></li>
 
-								<li><a class="dropdown-item" href="#">Webbutveckling 1</a></li>
-								<li><a class="dropdown-item" href="#">Webbutveckling 2</a></li>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Programmering 1</a></li>
+							<li><a class="dropdown-item" href="#">Programmering 2</a></li>
 
-								<li><a class="dropdown-item" href="#">Webbserver utveckling 1</a></li>
-								<li><a class="dropdown-item" href="#">Programmering 1</a></li>
-							</ul>
-						</div>
+							<li><a class="dropdown-item" href="#">Webbutveckling 1</a></li>
+							<li><a class="dropdown-item" href="#">Webbutveckling 2</a></li>
+
+							<li><a class="dropdown-item" href="#">Webbserver utveckling 1</a></li>
+							<li><a class="dropdown-item" href="#">Programmering 1</a></li>
+						</ul>
+					</div>
 
 					<li class="nav-item dropdown navbarright">
 						<a class="nav-link signUp" href="SignIn.php"><span class="fas fa-user"></span> Sign Up</a>
