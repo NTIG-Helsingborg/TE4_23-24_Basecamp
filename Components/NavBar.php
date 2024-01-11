@@ -57,7 +57,7 @@
             }
             ?>-->
         </ul>
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto navbarright">
             <a class="nav-link signUp" href="SignIn.php"><span class="fas fa-user"></span> Sign Up</a>
         </ul>
     </div>
