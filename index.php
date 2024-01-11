@@ -36,23 +36,24 @@ session_Start();
 	<header>
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-expand-md navbarBG navbar-dark fixed-top">
-		<a class="navbar-brand" href="index.php">
-			<img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
-                        BaseCamp
-		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-			<ul class="navbar-nav navbarmiddle">
+			<a class="navbar-brand" href="index.php">
+				<img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
+				BaseCamp
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav navbarmiddle">
+					<!-- Navbar Dropdown -->
 
-				<!-- Navbar Dropdown -->
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-						Kurser
-					</a>
-					<div class="dropdown-menu">
-						<ul>
+					<div class="dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							id="navbardrop" aria-expanded="false">
+							Kurser
+						</a>
+
+						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="#">Programmering 1</a></li>
 							<li><a class="dropdown-item" href="#">Programmering 2</a></li>
 
@@ -61,18 +62,16 @@ session_Start();
 
 							<li><a class="dropdown-item" href="#">Webbserver utveckling 1</a></li>
 							<li><a class="dropdown-item" href="#">Programmering 1</a></li>
-
 						</ul>
 					</div>
-				</li>
 
 					<!-- NAVBAR SIGN UP and LOG IN -->
-				<?php
-				if (isset($_SESSION["userNAME"])) {
-					echo '
+					<?php
+					if (isset($_SESSION["userNAME"])) {
+						echo '
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">',
-						$_SESSION["userNAME"], '
+							$_SESSION["userNAME"], '
 					</a>
 				
 					<div class="dropdown-menu">
@@ -82,14 +81,14 @@ session_Start();
 					</div>
 			  	</li>
 				';
-				} else {
-					include('signupAndLogin.php');
-				}
-				?>
+					} else {
+						include('signupAndLogin.php');
+					}
+					?>
 
-			</ul>
-		</div>
-	</nav>
+				</ul>
+			</div>
+		</nav>
 
 
 		<!-- AUTOMATIC VIDEO BACKGROUND -->
