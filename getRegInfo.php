@@ -20,6 +20,8 @@ session_Start();
     `school` TEXT NOT NULL REFERENCES `schools`(`id`),
     `admin` TINYINT NOT NULL
 */
+
+//skapar QueryArgsStruct object och skickar vidare dem till run_query 
 $query = "INSERT INTO schools (id, name) VALUES (:id, :name)";
 $args = new QueryArgsStruct(':id', 'school_id_value', SQLITE3_TEXT);
 $args2 = new QueryArgsStruct(':name', 'school_name_value', SQLITE3_TEXT);

@@ -64,13 +64,16 @@
             ");
         }
 
+        //går igenom varje arg som har matats in i funktionen, första Query object skickas och dess värden name, value, type accessas och bind med bindValue
         function run_query(string $query, QueryArgsStruct ...$args)
         {
             $stmt = $this->prepare($query);
             var_dump($args);
             foreach($args as $arg)
             {
+                var_dump($arg);
                 $stmt->bindValue($arg->name, $arg->value, $arg->type);
+                echo($arg->value);
             }
             $stmt->execute();
         }
