@@ -19,7 +19,7 @@
 /*Css to the header on index page*/
 header{
     position:relative;
-    z-index: 0;
+    z-index: 10;
 }
 
 /*Css to different heading tags*/
@@ -64,7 +64,7 @@ a:hover{
     height: 500px;
     border: none;
     user-select: none;
-    z-index: -1;
+    z-index: 10;
 }
 
 .dropdown-menu{
