@@ -178,12 +178,11 @@ FIX THIS, no position
 @media (max-width: 768px){
     .navbarright{
         width: 100%;
-        text-align: center !important;
         padding-right: 0;
+        padding-left: 1rem;
     }
     .navbarmiddle{
-        padding-left: 0;
-        text-align: center;
+        padding-left: 1rem;
     }
 }
 
