@@ -11,6 +11,13 @@
         public $name;
         public $value;
         public $type;
+
+        function __construct($a1, $a2, $a3)
+        {
+            $name = $a1;
+            $value = $a2;
+            $type = $a3;
+        }
     }
 
      class DBClass extends SQLite3
