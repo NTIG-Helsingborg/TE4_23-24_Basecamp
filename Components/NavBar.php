@@ -29,8 +29,10 @@
                 </ul>
             </div>
 
+            <a class="nav-link" href="Login.php"><span class="fas fa-sign-in-alt"></span> Login</a>
+
             <!-- NAVBAR SIGN UP and LOG IN -->
-            <?php
+            <!--<?php
             if (isset($_SESSION["userNAME"])) {
                 echo '
 				<li class="nav-item dropdown">
@@ -48,8 +50,10 @@
             } else {
                 include('signupAndLogin.php');
             }
-            ?>
-
+            ?>-->
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            <a class="nav-link signUp" href="SignIn.php"><span class="fas fa-user"></span> Sign Up</a>
         </ul>
     </div>
 </nav>
