@@ -30,6 +30,18 @@ session_Start();
 		?>
 	</style>
 
+	<script>
+	$(document).ready(function(){
+		$(window).scroll(function(){
+		if($(this).scrollTop() > 50){
+			$('#myNavbar').removeClass('navbarBG').addClass('navbarBGscroll');
+		} else {
+			$('#myNavbar').removeClass('navbarBGscroll').addClass('navbarBG');
+		}
+		});
+	});
+	</script>
+
 </head>
 
 <body id="indexBackground">

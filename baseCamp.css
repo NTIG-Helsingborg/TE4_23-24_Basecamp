@@ -41,7 +41,11 @@ a:hover{
 
 /*Css to the navbar on index page*/
 .navbarBG {
-    background: #d3d3d3 !important;
+    background: #d3d3d304;
+}
+
+.navbarBGscroll{
+    background: #d3d3d3; 
 }
 
 .navbar a {

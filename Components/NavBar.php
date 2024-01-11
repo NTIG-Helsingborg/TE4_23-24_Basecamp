@@ -1,5 +1,5 @@
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-md navbarBG navbar-dark fixed-top">
+<nav class="navbar navbar-expand-md fixed-top" id="myNavbar">
     <a class="navbar-brand" href="index.php">
         <img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
         BaseCamp
