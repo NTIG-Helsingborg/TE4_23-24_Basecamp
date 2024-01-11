@@ -34,61 +34,7 @@ session_Start();
 
 <body id="indexBackground">
 	<header>
-		<!-- NAVBAR -->
-		<nav class="navbar navbar-expand-md navbarBG navbar-dark fixed-top">
-			<a class="navbar-brand" href="index.php">
-				<img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
-				BaseCamp
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav navbarmiddle">
-					<!-- Navbar Dropdown -->
-
-					<div class="dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-							id="navbardrop" aria-expanded="false">
-							Kurser
-						</a>
-
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Programmering 1</a></li>
-							<li><a class="dropdown-item" href="#">Programmering 2</a></li>
-
-							<li><a class="dropdown-item" href="#">Webbutveckling 1</a></li>
-							<li><a class="dropdown-item" href="#">Webbutveckling 2</a></li>
-
-							<li><a class="dropdown-item" href="#">Webbserver utveckling 1</a></li>
-							<li><a class="dropdown-item" href="#">Programmering 1</a></li>
-						</ul>
-					</div>
-
-					<!-- NAVBAR SIGN UP and LOG IN -->
-					<?php
-					if (isset($_SESSION["userNAME"])) {
-						echo '
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">',
-							$_SESSION["userNAME"], '
-					</a>
-				
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Profil</a>
-						<a class="dropdown-item" href="#">Inställningar</a>
-						<a class="dropdown-item" href="logout.php">Logga ut</a>
-					</div>
-			  	</li>
-				';
-					} else {
-						include('signupAndLogin.php');
-					}
-					?>
-
-				</ul>
-			</div>
-		</nav>
+		<?php include 'Components/Navbar.php'; ?>
 
 
 		<!-- AUTOMATIC VIDEO BACKGROUND -->
@@ -215,9 +161,7 @@ session_Start();
 
 		<div class="col-sm-12 space" style="height:100px;"></div> <!-- this makes space (better than br) -->
 	</section>
-	<!-- Footer -->
-	<?php include 'Footer.php'; ?>
-	<!-- Footer -->
+	<?php include 'Components/Footer.php'; ?>
 
 	<!--- Script Source Files -->
 	<script src="js/jquery-3.3.1.min.js"></script>
