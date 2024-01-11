@@ -41,12 +41,12 @@ a:hover{
 
 /*Css to the navbar on index page*/
 .navbarBG {
-    background: #181515 !important;
+    background: #d3d3d3 !important;
 }
 
 .navbar a {
     font-size: 1.2rem;
-    color: #f7f7f7 !important;
+    color: #000000 !important;
 }
 
 .navbar a:hover {
@@ -68,12 +68,16 @@ a:hover{
     z-index: 10;
 }
 
+.navbar-brand{
+    margin-left: 1rem;
+}
+
 .navbarmiddle{
     padding-left: 20rem;
 }
 
 .navbarright{
-    float: right !important;
+    padding-right: 3rem;
 }
 
 .signUp{
