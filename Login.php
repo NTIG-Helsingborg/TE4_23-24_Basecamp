@@ -27,7 +27,7 @@ session_Start();
 
     <div class="container position-relative " style="height:100vh;">
         <div class="position-absolute start-0 backButton">
-            <a href="index.php">
+            <a href="javascript:history.back()">
                 <button id="goBack">
                     < </button>
             </a>
