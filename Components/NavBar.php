@@ -4,9 +4,14 @@
         <img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
         BaseCamp
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"
+        aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>-->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav navbarmiddle">
             <!-- Navbar Dropdown -->
