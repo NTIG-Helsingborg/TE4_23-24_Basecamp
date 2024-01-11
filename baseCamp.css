@@ -80,10 +80,6 @@ a:hover{
     padding-right: 3vw;
 }
 
-.signUp{
-
-}
-
 .dropdown-menu{
     padding-top: 1rem;
     margin-left: 0 !important;
@@ -190,10 +186,7 @@ FIX THIS, no position
 	.card {
 		margin-top: 20px;
 	}
-	
-	img {
 
-	}
 	.page-footer ul li, .text {
 		text-align: center;
 	}
