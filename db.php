@@ -21,11 +21,18 @@
             $this->open("database.db");
 
             $this->exec("
+                CREATE TABLE IF NOT EXISTS `schools` (
+                    `id` TEXT PRIMARY KEY NOT NULL,
+                    `name` TEXT NOT NULL
+                )
+            "); 
+
+            $this->exec("
                 CREATE TABLE IF NOT EXISTS `users` (
                     `id` TEXT PRIMARY KEY NOT NULL,
                     `username` TEXT NOT NULL,
                     `password_hash` TEXT NOT NULL,
-                    `school` TEXT,
+                    `school` TEXT NOT NULL REFERENCES `schools`(`id`),
                     `admin` TINYINT NOT NULL
                 )
             ");
@@ -33,10 +40,19 @@
             $this->exec("
                 CREATE TABLE IF NOT EXISTS `classes` (
                     `id` TEXT PRIMARY KEY NOT NULL,
-                    `owner` TEXT NOT NULL,
-                    `class_data` TEXT,
-                    `school` TEXT NOT NULL,
-                    FOREIGN KEY(`owner`) REFERENCES `users`(`id`)
+                    `owner` TEXT NOT NULL REFERENCES `users`(`id`),
+                    `name` TEXT NOT NULL,
+                    `data` TEXT,
+                    `school` TEXT NOT NULL REFERENCES `schools`(`id`)
+                )
+            ");
+
+            $this->exec("
+                CREATE TABLE IF NOT EXISTS `chapters` (
+                    `id` TEXT PRIMARY KEY NOT NULL,
+                    `class` TEXT NOT NULL REFERENCES `classes`(`id`),
+                    `data` TEXT,
+                    `name` TEXT NOT NULL
                 )
             ");
         }
