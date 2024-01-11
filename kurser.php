@@ -33,10 +33,10 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-			<ul class="navbar-nav navbarmiddle">
+			<ul class="navbar-nav">
 
 				<!-- Navbar Dropdown -->
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown navbarmiddle">
 					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
 						Kurser
 					</a>
@@ -55,8 +55,12 @@
 					</div>
 				</li>
 
+                                <li class="nav-item dropdown navbarright">
+                                        <a class="nav-link signUp" href="SignIn.php"><span class="fas fa-user"></span> Sign Up</a>
+                                </li>
+
 					<!-- NAVBAR SIGN UP and LOG IN -->
-				<?php
+                                <!--<?php
 				if (isset($_SESSION["userNAME"])) {
 					echo '
 				<li class="nav-item dropdown">
@@ -74,7 +78,7 @@
 				} else {
 					include('signupAndLogin.php');
 				}
-				?>
+				?>-->
 
 			</ul>
 		</div>

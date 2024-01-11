@@ -69,7 +69,11 @@ a:hover{
 }
 
 .navbarmiddle{
-    padding-left: 20%;
+    padding-left: 20rem;
+}
+
+.navbarright{
+    float: right !important;
 }
 
 .signUp{
