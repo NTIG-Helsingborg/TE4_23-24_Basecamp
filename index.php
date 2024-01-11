@@ -113,9 +113,7 @@ session_Start();
 
 	</header>
 
-	<br> <br>
-
-	<div class="container">
+	<div class="container mt-5">
 		<!-- ROW 1 GEMENSKAP -->
 		<section>
 			<div class="row" id="">
@@ -132,9 +130,8 @@ session_Start();
 				</div>
 			</div>
 		</section>
-		<br> <br> <br> <br>
 		<!-- ROW 2 KURSER -->
-		<section>
+		<section class="mt-5">
 			<div class="row" id="">
 				<div class="col-sm-6 order-2 order-sm-1">
 					<h4 class="text-center">Kurser</h4>
@@ -149,9 +146,8 @@ session_Start();
 			</div>
 		</section>
 
-		<br> <br> <br> <br>
 		<!-- ROW 3 SKOLVERKET -->
-		<section>
+		<section class="mt-5">
 			<div class="row" id="">
 				<div class="col-sm-6">
 					<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="200px">
