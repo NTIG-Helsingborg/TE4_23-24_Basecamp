@@ -38,12 +38,13 @@ session_Start();
 		<nav class="navbar navbar-expand-md navbarBG navbar-dark fixed-top">
 			<a class="navbar-brand" href="#">
 				<img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
+				BaseCamp
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav navbarmiddle">
 
 					<!-- Navbar Dropdown -->
 					<li class="nav-item dropdown">

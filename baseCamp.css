@@ -45,7 +45,8 @@ a:hover{
 }
 
 .navbar a {
-    color: #FED979 !important;
+    font-size: 1.2rem;
+    color: #f7f7f7 !important;
 }
 
 .navbar a:hover {
@@ -65,6 +66,10 @@ a:hover{
     border: none;
     user-select: none;
     z-index: 10;
+}
+
+.navbarmiddle{
+    padding-left: 20%;
 }
 
 .dropdown-menu{
@@ -164,7 +169,7 @@ FIX THIS, no position
 	}
 	
 	img {
-		margin-bottom: 20px;
+
 	}
 	.page-footer ul li, .text {
 		text-align: center;

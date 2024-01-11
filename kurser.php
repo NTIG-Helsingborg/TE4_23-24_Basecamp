@@ -32,7 +32,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-			<ul class="navbar-nav ml-auto">
+			<ul class="navbar-nav navbarmiddle">
 
 				<!-- Navbar Dropdown -->
 				<li class="nav-item dropdown">
