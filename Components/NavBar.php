@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-md fixed-top navbarBG" id="myNavbar">
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand nav-link" href="index.php">
         <img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
         BaseCamp
     </a>
@@ -23,14 +23,14 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Programmering 1</a></li>
-                    <li><a class="dropdown-item" href="#">Programmering 2</a></li>
+                    <li><a class="dropdown-item" href="#">Skola 1</a></li>
+                    <li><a class="dropdown-item" href="#">Skola 2</a></li>
 
-                    <li><a class="dropdown-item" href="#">Webbutveckling 1</a></li>
-                    <li><a class="dropdown-item" href="#">Webbutveckling 2</a></li>
+                    <li><a class="dropdown-item" href="#">Skola 3</a></li>
+                    <li><a class="dropdown-item" href="#">Skola 4</a></li>
 
-                    <li><a class="dropdown-item" href="#">Webbserver utveckling 1</a></li>
-                    <li><a class="dropdown-item" href="#">Programmering 1</a></li>
+                    <li><a class="dropdown-item" href="#">Skola 5</a></li>
+                    <li><a class="dropdown-item" href="#">Skola 6</a></li>
                 </ul>
             </div>
 
