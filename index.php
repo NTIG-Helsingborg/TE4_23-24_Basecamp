@@ -31,15 +31,15 @@ session_Start();
 	</style>
 
 	<script>
-	$(document).ready(function(){
-		$(window).scroll(function(){
-		if($(this).scrollTop() > 50){
-			$('#myNavbar').removeClass('navbarBG').addClass('navbarBGscroll');
-		} else {
-			$('#myNavbar').removeClass('navbarBGscroll').addClass('navbarBG');
-		}
+		$(document).ready(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 50) {
+					$('#myNavbar').removeClass('navbarBG').addClass('navbarBGscroll');
+				} else {
+					$('#myNavbar').removeClass('navbarBGscroll').addClass('navbarBG');
+				}
+			});
 		});
-	});
 	</script>
 
 </head>
@@ -60,11 +60,11 @@ session_Start();
 			</div>
 		</div>-->
 		<div class="position-relative">
-			<img src="Images/Skolverket.jpg" class="w-100 h-50" alt="...">
-			<div style="height:125px;"
+			<img src="Images/Skolverket.jpg" class="w-100 h-50" style="background-size:cover;" alt="...">
+			<div style="height:200px;"
 				class="d-flex justify-content-between align-items-center position-absolute top-50 start-50 translate-middle">
-				<div class="bg-primary w-50 h-100 rounded-2 d-flex justify-content-center align-items-center">
-					<h1>BaseCamp</h1>
+				<div class="bg-primary w-10 h-50 rounded-2 d-flex justify-content-center align-items-center">
+					<h2 style="font-size:xxx-large;">BaseCamp</h2>
 				</div>
 				<h3 class="w-25">Study like you do in school with help of your own teachers</h3>
 			</div>
