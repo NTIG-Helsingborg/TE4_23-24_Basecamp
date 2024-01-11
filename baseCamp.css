@@ -45,14 +45,21 @@ a:hover{
     transition: 0.3s ease;
 }
 
+.navbarBG .nav-link{
+    color: #d3d3d3;
+}
+
 .navbarBGscroll{
     background: #d3d3d3; 
     transition: 0.3s ease;
 }
 
+.navbarBGscroll .nav-link{
+    color: #000000;
+}
+
 .navbar a {
     font-size: 1.2rem;
-    color: #000000 !important;
 }
 
 .navbar a:hover {
@@ -67,8 +74,6 @@ a:hover{
     margin: 0px;
     box-shadow: 0px 2px 10px black; /* Remove if it looks better.*/
     background-color: #d3d3d3;
-    width: 300px !important;
-    height: 500px;
     border: none;
     user-select: none;
     z-index: 10;
@@ -88,6 +93,8 @@ a:hover{
 
 .dropdown-menu{
     padding-top: 1rem;
+    max-height: 200px !important;
+    overflow: auto;
     margin-left: 0 !important;
     padding-left: 0 !important;
 }
