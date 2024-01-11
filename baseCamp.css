@@ -400,7 +400,6 @@ form{
     width:450px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
-    height:350px;
   
 }
 
@@ -424,7 +423,9 @@ form{
     font-size:15px;
     text-align: center;
 }
-
+.backButton{
+    top:10%;
+}
 /*Css to the "<" button*/
 #goBack{
     margin-top: 1%;
