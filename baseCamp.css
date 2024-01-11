@@ -41,11 +41,13 @@ a:hover{
 
 /*Css to the navbar on index page*/
 .navbarBG {
-    background: #d3d3d304;
+    background-image: linear-gradient(#d7d7d73a, rgba(255, 255, 255, 0));
+    transition: 0.3s ease;
 }
 
 .navbarBGscroll{
     background: #d3d3d3; 
+    transition: 0.3s ease;
 }
 
 .navbar a {
