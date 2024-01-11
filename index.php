@@ -38,7 +38,7 @@ session_Start();
 
 
 		<!-- AUTOMATIC VIDEO BACKGROUND -->
-		<div class="video-background">
+		<!--<div class="video-background">
 			<div class="video-wrap">
 				<div id="video">
 					<video id="bgvid" autoplay loop muted playsinline>
@@ -46,16 +46,28 @@ session_Start();
 					</video>
 				</div>
 			</div>
+		</div>-->
+		<div class="position-relative">
+			<img src="Images/Skolverket.jpg" class="w-100 h-50" alt="...">
+			<div style="height:125px;"
+				class="d-flex justify-content-between align-items-center position-absolute top-50 start-50 translate-middle">
+				<div class="bg-primary w-50 h-100 rounded-2 d-flex justify-content-center align-items-center">
+					<h1>BaseCamp</h1>
+				</div>
+				<h3 class="w-25">Study like you do in school with help of your own teachers</h3>
+			</div>
+
 		</div>
 
+
 		<!-- TEXT INFRONT OF VIDEO BACKGROUND -->
-		<div class="caption text-center video-text">
+		<!--<div class="caption text-center video-text">
 			<h1>BaseCamp</h1>
 			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit
 				eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in
 				voluptate
 			</h3>
-		</div>
+		</div>-->
 
 	</header>
 
