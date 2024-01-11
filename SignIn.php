@@ -32,7 +32,7 @@ session_Start();
 
     <div class="content">
 
-        <a href="index.php">
+        <a href="javascript:history.back()">
 
 
             <button id="goBack">
