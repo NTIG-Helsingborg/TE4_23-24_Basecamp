@@ -30,77 +30,53 @@ session_Start();
 
 <body id="logInSignInBackground">
 
-    <div class="content">
+    <div class="container position-relative " style="height:100vh;">
+        <div class="position-absolute start-0 backButton">
+            <a href="index.php">
+                <button id="goBack">
+                    < </button>
+            </a>
+        </div>
 
-        <a href="index.php">
+        <div style="height:800px;"
+            class="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center ">
+            <p id="text">Registrera</p>
+            <form action="getRegInfo.php" method="post" class="d-flex flex-column align-items-center">
 
-
-            <button id="goBack">
-
-                < </button>
-
-        </a>
-
-        <br><br><br>
-
-        <center>
-
-            <p id="text">
-
-                Registrera
-
-            </p>
-
-        </center>
-
-        <center>
-
-
-            <form action="getRegInfo.php" method="post">
-                <br>
-
-                <label for="email" id="labelForEmail">
-
-                    Email:
-
-                </label>
-
+                <label for="email" id="labelForEmail">Email:</label>
 
                 <input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
-                    title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required>
+                    title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required class="mt-3">
 
-                <br>
                 <?php
 
                 echo $_SESSION["account_CREATION"] ?? "";
 
                 ?>
 
-                <br>
-
-                <label for="password" id="labelForPassword">
-
-                    Lösenord:
-
-                </label>
+                <label for="password" id="labelForPassword">Lösenord:</label>
 
                 <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                     title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-                    required>
+                    required class="mt-3">
 
-                <br><br><br>
-
-                <button id="submit" type="submit">
+                <button id="submit" type="submit" class="mt-5">
 
                     Registrera
 
                 </button>
 
 
+                <a href="#" id="forgotPassword" class="my-5">
+
+                    Glömt lösenord
+
+                </a>
 
             </form>
 
-        </center>
+        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

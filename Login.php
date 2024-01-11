@@ -52,17 +52,15 @@ session_Start();
 
                 <input type="password" id="password" name="password" title="Invalid" class="mt-3">
 
-                <br><br><br>
 
-                <button id="submit" type="submit" class="mt-4">
+                <button id="submit" type="submit" class="mt-5">
 
                     Logga in
 
                 </button>
 
-                <br><br>
 
-                <a href="#" id="forgotPassword" class="mb-2">
+                <a href="#" id="forgotPassword" class="my-5">
 
                     Glömt lösenord
 
