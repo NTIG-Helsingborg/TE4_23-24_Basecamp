@@ -60,8 +60,8 @@ a:hover{
 .navbar .dropdown-menu {
     margin: 0px;
     box-shadow: 0px 2px 10px black; /* Remove if it looks better.*/
-    background-color: #181515;
-    width: 1000px !important;
+    background-color: #d3d3d3;
+    width: 300px !important;
     height: 500px;
     border: none;
     user-select: none;
