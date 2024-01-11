@@ -10,9 +10,23 @@ session_Start();
 <?php 
 
 
-$asdf = new QueryArgsStruct(":name", "david", SQLITE3_TEXT);
 
-$db->run_query("SELECT * FROM `users` WHERE name=:name", $asdf);
+
+
+/*
+    `id` TEXT PRIMARY KEY NOT NULL,
+    `username` TEXT NOT NULL,
+    `password_hash` TEXT NOT NULL,
+    `school` TEXT NOT NULL REFERENCES `schools`(`id`),
+    `admin` TINYINT NOT NULL
+*/
+$query = "INSERT INTO schools (id, name) VALUES (:id, :name)";
+$args = new QueryArgsStruct(':id', 'school_id_value', SQLITE3_TEXT);
+$args2 = new QueryArgsStruct(':name', 'school_name_value', SQLITE3_TEXT);
+
+$db->run_query($query, $args, $args2);
+
+//$db->run_query("SELECT * FROM `users` WHERE name=:name", $asdf);
 
 ?>
 

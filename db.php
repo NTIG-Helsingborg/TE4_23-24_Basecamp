@@ -14,9 +14,9 @@
 
         function __construct($a1, $a2, $a3)
         {
-            $name = $a1;
-            $value = $a2;
-            $type = $a3;
+            $this->name = $a1;
+            $this->value = $a2;
+            $this->type = $a3;
         }
     }
 
@@ -67,7 +67,7 @@
         function run_query(string $query, QueryArgsStruct ...$args)
         {
             $stmt = $this->prepare($query);
-
+            var_dump($args);
             foreach($args as $arg)
             {
                 $stmt->bindValue($arg->name, $arg->value, $arg->type);
