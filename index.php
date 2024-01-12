@@ -49,59 +49,40 @@ session_Start();
 		<?php include 'Components/Navbar.php'; ?>
 
 
-		<!-- AUTOMATIC VIDEO BACKGROUND -->
-		<!--<div class="video-background">
-			<div class="video-wrap">
-				<div id="video">
-					<video id="bgvid" autoplay loop muted playsinline>
-						<source src="Videos/stars.mp4" type="video/mp4">
-					</video>
-				</div>
-			</div>
-		</div>-->
-		<div class="position-relative">
-			<img src="Images/Skolverket.jpg" class="w-100 h-50" style="background-size:cover;" alt="...">
+		<div class="position-relative" id="headerSection">
+			<img src="Images/Skolverket.jpg" alt="...">
 			<div style="height:200px;"
-				class="d-flex justify-content-between align-items-center position-absolute top-50 start-50 translate-middle">
-				<div class="bg-primary w-10 h-50 rounded-2 d-flex justify-content-center align-items-center">
-					<h2 style="font-size:xxx-large;">BaseCamp</h2>
-				</div>
-				<h3 class="w-25">Study like you do in school with help of your own teachers</h3>
+				class="d-flex flex-column flex-xxl-row justify-content-between align-items-center position-absolute top-50 start-50 translate-middle"
+				id="headerText">
+				<h2 class="p-2 p-md-5">BaseCamp</h2>
+
+				<h3 class="w-50 w-xxl-100">Study like you do in school with help of your own teachers</h3>
 			</div>
 
-		</div>
-
-
-		<!-- TEXT INFRONT OF VIDEO BACKGROUND -->
-		<!--<div class="caption text-center video-text">
-			<h1>BaseCamp</h1>
-			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit
-				eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in
-				voluptate
-			</h3>
-		</div>-->
 
 	</header>
+	<div style="background-color: #030D26; width:100%; height:25px;"></div>
 
-	<div class="container mt-5">
-		<!-- ROW 1 GEMENSKAP -->
-		<section>
-			<div class="row" id="">
-				<div class="col-sm-6">
-					<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="200px"
-						class="img-fluid animated fadeInLeft">
-				</div>
-				<div class="col-sm-6">
-					<h4 class="text-center">Gemenskap</h4>
-					<hr class="bg-light mx-auto" style="width: 100px; height: 2px">
-					<p class="mr-auto">Lorem ipsum eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute
-						irure dolor in reprehenderit in voluptate orem ipsum eiusmod tempor incididunt ut labore et
-						dolore magna aliqua</p>
-				</div>
+	<!-- ROW 1 GEMENSKAP -->
+	<section id="aboutBaseCamp" class="mt-5">
+		<div class="row justify-content-around" id="">
+			<div class="col-lg-4">
+				<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="500px"
+					class="img-fluid animated fadeInLeft">
 			</div>
-		</section>
-		<!-- ROW 2 KURSER -->
-		<section class="mt-5">
+			<div class="col-lg-5" id="info">
+				<h2 class="text-center mt-3">What is BaseCamp</h2>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+	</section>
+	<!-- ROW 2 KURSER -->
+	<!--<section class="mt-5">
 			<div class="row" id="">
 				<div class="col-sm-6 order-2 order-sm-1">
 					<h4 class="text-center">Kurser</h4>
@@ -116,7 +97,7 @@ session_Start();
 			</div>
 		</section>
 
-		<!-- ROW 3 SKOLVERKET -->
+		ROW 3 SKOLVERKET 
 		<section class="mt-5">
 			<div class="row" id="">
 				<div class="col-sm-6">
@@ -130,8 +111,7 @@ session_Start();
 						dolore magna aliqua</p>
 				</div>
 			</div>
-		</section>
-	</div>
+		</section>-->
 
 	<div class="col-sm-12" style="height:75px;"></div> <!-- this makes space (better than br) -->
 
