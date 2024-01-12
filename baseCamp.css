@@ -90,13 +90,31 @@ a:hover{
 .navbarright{
     padding-right: 3vw;
 }
-
+/*
 .dropdown-menu{
+    position: fixed;
+    overflow-x: visible;
+    overflow-y: auto;
     padding-top: 1rem;
     max-height: 200px !important;
-    overflow: auto;
-    margin-left: 0 !important;
-    padding-left: 0 !important;
+}*/
+
+.test{
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: visible !important;
+    padding-top: 1rem;
+    max-height: 200px !important;
+    z-index: 5;
+}
+
+.test2{
+    position: absolute;
+    z-index: 10;
+}
+
+.dropdown-menu::-webkit-scrollbar{
+    display: none;
 }
 
 .dropdown-menu ul{
@@ -107,6 +125,17 @@ a:hover{
 
 .dropdown-item{
     padding-left: 1rem !important;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block !important;
+}
+
+.dropdown1:hover>.dropdown-menu {
+    display: block !important;
+    top: 0;
+    left: 100%; /* Använd 100% för att placera dropdown-menu till höger om dropdown-knappen */
+    margin-top: 0; /* Justera om det behövs */
 }
 
 /*

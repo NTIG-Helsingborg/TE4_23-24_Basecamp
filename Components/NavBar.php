@@ -17,13 +17,22 @@
             <!-- Navbar Dropdown -->
 
             <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop"
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" id="navbardrop"
                     aria-expanded="false">
                     Kurser
                 </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Skola 1</a></li>
+                <ul class="dropdown-menu test">
+                    <li>
+                        <div class="dropdown1 dropend">
+                        <a class="dropdown-item dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" id="navbardrop-inner"
+                        aria-expanded="false">
+                        Skola 1
+                        </a>
+                        <ul class="dropdown-menu test2">
+                            <li><a class="dropdown-item">Hej</a></li>
+                        </ul>
+                        </div>
+                    </li>
                     <li><a class="dropdown-item" href="#">Skola 2</a></li>
 
                     <li><a class="dropdown-item" href="#">Skola 3</a></li>
