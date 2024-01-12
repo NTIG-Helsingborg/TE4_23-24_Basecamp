@@ -48,7 +48,7 @@ session_Start();
 
 </head>
 
-<body id="indexBackground">
+<body>
 	<header>
 		<?php include 'Components/Navbar.php'; ?>
 
@@ -56,11 +56,11 @@ session_Start();
 		<div class="position-relative" id="headerSection">
 			<img src="Images/Skolverket.jpg" alt="...">
 			<div style="height:200px;"
-				class="d-flex flex-column flex-xxl-row justify-content-between align-items-center position-absolute top-50 start-50 translate-middle"
+				class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle"
 				id="headerText">
 				<h2 class="p-2 p-md-5">BaseCamp</h2>
 
-				<h3 class="w-50 w-xxl-100">Study like you do in school with help of your own teachers</h3>
+				<h3 class="w-25 d-none d-xxl-block">Study like you do in school with help of your own teachers</h3>
 			</div>
 
 
@@ -70,11 +70,11 @@ session_Start();
 	<!-- ROW 1 GEMENSKAP -->
 	<section id="aboutBaseCamp" class="mt-5">
 		<div class="row justify-content-around" id="">
-			<div class="col-lg-4">
-				<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="500px"
-					class="img-fluid animated fadeInLeft">
+			<div class="col-sm-12 col-lg-4 ">
+				<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px"
+					class="img-fluid animated fadeInLeft m-auto">
 			</div>
-			<div class="col-lg-5" id="info">
+			<div class="col-sm-12 col-lg-5" id="info">
 				<h2 class="text-center mt-3">What is BaseCamp</h2>
 				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 					sed do
@@ -85,55 +85,21 @@ session_Start();
 			</div>
 		</div>
 	</section>
-	<!-- ROW 2 KURSER -->
-	<!--<section class="mt-5">
-			<div class="row" id="">
-				<div class="col-sm-6 order-2 order-sm-1">
-					<h4 class="text-center">Kurser</h4>
-					<hr class="bg-light mx-auto" style="width: 100px; height: 2px">
-					<p class="mr-auto">Lorem ipsum eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute
-						irure dolor in reprehenderit in voluptate orem ipsum eiusmod tempor incididunt ut labore et
-						dolore magna aliqua</p>
-				</div>
-				<div class="col-sm-6 order-1 order-sm-2 text-right">
-					<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="200px">
-				</div>
-			</div>
-		</section>
 
-		ROW 3 SKOLVERKET 
-		<section class="mt-5">
-			<div class="row" id="">
-				<div class="col-sm-6">
-					<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="200px">
-				</div>
-				<div class="col-sm-6">
-					<h4 class="text-center">Skolverket</h4>
-					<hr class="bg-light mx-auto" style="width: 100px; height: 2px">
-					<p class="mr-auto">Lorem ipsum eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute
-						irure dolor in reprehenderit in voluptate orem ipsum eiusmod tempor incididunt ut labore et
-						dolore magna aliqua</p>
-				</div>
-			</div>
-		</section>-->
 
-	<div class="col-sm-12" style="height:75px;"></div> <!-- this makes space (better than br) -->
 
-	<section class="secbackground">
-		<div class="col-sm-12" style="height:75px;"></div> <!-- this makes space (better than br) -->
+	<section class="recommendCourses mt-4">
 		<div class="row">
 			<div class="col-sm-12">
-				<h4 class="text-center">Populära Kurser</h4>
-				<hr class="bg-light mx-auto" style="width: 100px; height: 2px">
+				<h4 class="text-center mt-4">Rekommenderade Kurser</h4>
 			</div>
 		</div>
 
-		<div class="col-sm-12" style="height:50px;"></div> <!-- this makes space (better than br) -->
 
-		<div class="row">
+		<div class="row mt-3">
 			<!-- RECOMMENDED COURSE 1 -->
 
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 				<div class="card mx-auto text-center">
 					<img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
 					<div class="card-body">
@@ -144,7 +110,7 @@ session_Start();
 				</div>
 			</div>
 			<!-- RECOMMENDED COURSE 2 -->
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 				<div class="card mx-auto text-center">
 					<img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
 					<div class="card-body">
@@ -155,7 +121,7 @@ session_Start();
 				</div>
 			</div>
 			<!-- RECOMMENDED COURSE 3 -->
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 				<div class="card mx-auto text-center">
 					<img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
 					<div class="card-body">
