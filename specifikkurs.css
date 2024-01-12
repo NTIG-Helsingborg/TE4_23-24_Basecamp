@@ -1,0 +1,28 @@
+.sideBar{
+    position: fixed;
+    width: 15%;
+    background-color: #F9F1D4;
+    height: 95vh;
+    overflow: auto;
+    margin-top: 5vh;
+}
+
+.sideBar h1{
+    color: #E291A9; 
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+.sideBar ul{
+    list-style: none;
+    padding-left: 3rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+
+.showlinks{
+    background: none;
+    border: none;
+    color: #E291A9;
+    margin-left: 1rem;
+}
