@@ -22,11 +22,6 @@ header{
     z-index: 10;
 }
 
-/*Css to different heading tags*/
-h1, h6, h4 {
-    color: #FED979;
-    text-shadow: 2px 2px black;
-}
 
 /*Css to the links on index page*/
 a {
@@ -211,7 +206,21 @@ FIX THIS, no position
 	width: 100%;
 	color: white;
 }
-
+#headerSection img{
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+}
+#headerSection div h3{
+    width: 40%;
+    font-size:36px; 
+}
+#headerSection div h2{
+    background-color:#4A48AF;
+    font-size:64px;
+    padding:60px;
+    border-radius:10px;
+}
 /*Css that fixes site when max width is 768px*/
 @media (max-width: 768px){
     .navbarright{
@@ -501,4 +510,19 @@ form{
     font-size: 30px;
     background-color:rgba(0, 0, 0, 0.7);
     
+}
+
+#aboutBaseCamp{
+    width: 100%;
+    height: 500px;
+  
+}
+#aboutBaseCamp #info{
+    background-color:white;
+    color:black;
+    font-size:18px;
+}
+#aboutBaseCamp #info h2{
+    color:blue;
+    font-size:2em;
 }
