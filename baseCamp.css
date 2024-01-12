@@ -1,5 +1,8 @@
 @charset "utf-8";
-
+body{
+    font-family: 'Questrial', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
 /*Css to backgroundcolor for the index page*/
 #indexBackground {
     overflow-x: hidden;
