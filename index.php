@@ -9,7 +9,7 @@ session_Start();
 
 <head>
 	<meta charset="utf-8">
-	<title>Index</title>
+	<title>BaseCamp</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -96,7 +96,7 @@ session_Start();
 		</div>
 
 
-		<div class="row mt-3">
+		<div class="row mt-3 pb-5">
 			<!-- RECOMMENDED COURSE 1 -->
 
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
@@ -133,7 +133,6 @@ session_Start();
 			</div>
 		</div>
 
-		<div class="col-sm-12 space" style="height:100px;"></div> <!-- this makes space (better than br) -->
 	</section>
 	<?php include 'Components/Footer.php'; ?>
 
