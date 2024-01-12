@@ -1,3 +1,7 @@
+body{
+    background-color: #F9F1D4;
+}
+
 .sideBar{
     position: fixed;
     width: 15%;
@@ -11,6 +15,7 @@
     color: #E291A9; 
     padding-top: 2rem;
     padding-left: 2rem;
+    font-size: 1.5rem;
 }
 
 .sideBar ul{
@@ -18,6 +23,7 @@
     padding-left: 3rem;
     line-height: 2rem;
     font-size: 1.2rem;
+    color: black;
 }
 
 .showlinks{
@@ -25,4 +31,25 @@
     border: none;
     color: #E291A9;
     margin-left: 1rem;
+}
+
+.showsideBtn{
+    display: none;
+    margin-top: 10vh;
+    z-index: 100;
+}
+
+@media (max-width: 1500px){
+    .sideBar{
+        display: none;
+        width: 60%;
+    }
+
+    .showsidebar{
+        display: block;
+    }
+    
+    .showsideBtn{
+        display: block;
+    }
 }
