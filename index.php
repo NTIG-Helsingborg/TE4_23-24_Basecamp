@@ -58,9 +58,9 @@ session_Start();
 			<div style="height:200px;"
 				class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle"
 				id="headerText">
-				<h2 class="p-2 p-md-5">BaseCamp</h2>
+				<h1 class="p-2 p-md-5">BaseCamp</h1>
 
-				<h3 class="w-25 d-none d-xxl-block">Study like you do in school with help of your own teachers</h3>
+				<h2 class="w-25 d-none d-xxl-block">Study like you do in school with help of your own teachers</h2>
 			</div>
 
 
@@ -72,7 +72,7 @@ session_Start();
 		<div class="row justify-content-around" id="">
 			<div class="col-sm-12 col-lg-4 ">
 				<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px"
-					class="img-fluid animated fadeInLeft m-auto">
+					class="img-fluid animated fadeInLeft ">
 			</div>
 			<div class="col-sm-12 col-lg-5" id="info">
 				<h2 class="text-center mt-3">What is BaseCamp</h2>
@@ -91,7 +91,7 @@ session_Start();
 	<section class="recommendCourses mt-4">
 		<div class="row">
 			<div class="col-sm-12">
-				<h4 class="text-center mt-4">Rekommenderade Kurser</h4>
+				<h2 class="text-center mt-4">Rekommenderade Kurser</h2>
 			</div>
 		</div>
 
