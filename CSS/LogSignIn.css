@@ -1,0 +1,80 @@
+/*Css to backgroundimage and color*/
+#logInSignInBackground{
+    background-image: url("./Images/moon.PNG");  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #1c1b3a;
+}
+.backButton{
+    top:10%;
+}
+/*Css to the "<" button*/
+#goBack{
+    margin-top: 1%;
+    margin-left: 1%;
+    height: 60px;
+    width: 60px;
+    border:none;
+    border-radius: 5px;
+    color: #f0d397;
+    font-size: 30px;
+    background-color:rgba(0, 0, 0, 0.7);
+    
+}
+
+ /*Css to the form including lables and inputboxes for both email and password*/
+form{
+    width:450px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+  
+}
+
+/*Css to the email inputbox*/
+#email{
+   
+    border: solid 2px #f0d397;
+    border-radius: 2px;
+    width: 250px;
+}
+/*Css to the password inputbox*/
+#password{
+    width:250px;
+    border: solid 2px #f0d397;
+    border-radius: 2px;
+}
+/*Css to the lable over password inputbox*/
+#labelForPassword{
+    color: #f0d397;
+    margin-top: 5%;
+    margin-right: 180px;
+}
+
+/*Css to the lable over email inputbox*/
+#labelForEmail{
+    margin-top: 10%;
+    margin-right: 210px;
+    color:#f0d397;
+ }
+
+
+/*Css to the "Logga in" and "Registrera" button*/
+#submit{
+    
+    border:none;
+    border-radius: 5px;
+    height:35px;
+    width: 250px;
+    background-color:#f0d397;
+    font-size: 18px;
+    color: black;
+}
+
+/*Css to the link "Glömt lösenord"*/
+#forgotPassword{
+    
+    color: #f0d397;
+    text-decoration: none;
+    font-size:15px;
+    text-align: center;
+}

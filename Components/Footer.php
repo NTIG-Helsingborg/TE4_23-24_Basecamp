@@ -1,22 +1,5 @@
 <footer class="page-footer font-small special-color-dark pt-4">
 
-	<!-- Footer Elements -->
-	<div class="container">
-		<br>
-		<!-- Social buttons -->
-		<div class="social-menu">
-
-			<ul>
-				<li><a href=""><i class="fa fa-facebook"></i></a></li>
-				<li><a href=""><i class="fa fa-twitter"></i></a></li>
-				<li><a href=""><i class="fa fa-instagram"></i></a></li>
-				<li><a href=""><i class="fa fa-youtube"></i></a></li>
-				<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-			</ul>
-		</div>
-		<!-- Social buttons -->
-		<br>
-	</div>
 
 	<div class="container text-center  mt-5">
 		<div class="row">

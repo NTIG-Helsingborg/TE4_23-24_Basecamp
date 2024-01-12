@@ -1,7 +1,7 @@
-window.onscroll = function () { fadeIn() };
+//window.onscroll = function () { fadeIn() };
 
 /*  Adds class "showFadeIn" in selected ID depending how far you hjave scrolled. WiP*/
-function fadeIn() {
+/*function fadeIn() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         document.getElementById("fadeIn1").className = "showFadeIn";
     }
@@ -12,4 +12,4 @@ function fadeIn() {
         document.getElementById("fadeIn3").className = "showFadeIn";
     }
     
-}
+}*/

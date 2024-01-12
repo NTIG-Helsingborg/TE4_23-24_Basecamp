@@ -17,7 +17,9 @@ session_Start();
 
 
     <style>
-        <?php include 'baseCamp.css';
+        <?php
+        include 'baseCamp.css';
+        include 'CSS/LogSignIn.css';
         ?>
     </style>
 
