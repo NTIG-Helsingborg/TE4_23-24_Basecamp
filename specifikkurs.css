@@ -9,6 +9,7 @@ body{
     height: 95vh;
     overflow: auto;
     margin-top: 5vh;
+    border-right: solid;
 }
 
 .sideBar h1{
@@ -35,8 +36,12 @@ body{
 
 .showsideBtn{
     display: none;
+    position: absolute;
     margin-top: 10vh;
-    z-index: 100;
+}
+
+.showsideBtnToggle{
+    margin-left: 60%;
 }
 
 @media (max-width: 1500px){
