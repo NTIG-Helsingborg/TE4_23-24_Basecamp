@@ -65,6 +65,9 @@
         });
         </script>
         <script>
+            
+        </script>
+        <script>
             function ShowSideBar(){
                 document.getElementById("sidebar").classList.toggle("showsidebar");
                 document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
