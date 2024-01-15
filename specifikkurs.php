@@ -28,6 +28,7 @@
 <body>
 	<header>
 		<?php include 'Components/Navbar.php'; ?>
+        <div class="title">Hej</div>
 	</header>
     <div id="sidebar" class="sideBar">
         <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
@@ -52,6 +53,22 @@
         </div>
     </div>
     <button onClick="ShowSideBar()" class="showsideBtn" id="showsidebtnID">></button>
+    <div class="content">
+    <div class="contentTop">
+        <div class="contentLeft">
+        <video width="320" height="240" controls class="contentVideo">
+            Your browser does not support the video tag.
+        </video>
+        </div>
+        <div class="contentRight">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit amet ipsumLorem ipsum dolor sit amet</p>
+        </div>
+    </div>
+    <div class="contentBottom">
+        <h1>Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in augue vestibulum, maximus nisl vel, porta ex. Ut dapibus nisi est, eu semper nisl venenatis eget. Duis consectetur lorem pretium gravida lobortis. Vestibulum non egestas nulla. Phasellus iaculis elementum porttitor. Fusce maximus, erat quis finibus aliquet, nisi dolor dictum lacus, sit amet molestie est diam eget risus. Pellentesque blandit, massa a bibendum blandit, metus arcu scelerisque purus, ac fringilla felis dui in nulla. Praesent ullamcorper ante orci, sed volutpat quam tristique ac. Etiam ultrices eu nunc non malesuada. Suspendisse pellentesque molestie justo a porta. Suspendisse potenti. Suspendisse non urna id tellus gravida ultrices. Phasellus in consequat eros.</p>
+    </div>
+    </div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
