@@ -49,11 +49,11 @@ include("getLoginInfo.php");
                     title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required class="mt-3">
 
                 <?php
-                /*
+                
                 if(isset($_SESSION["loginStatus"])){
                     echo $_SESSION["loginStatus"];
                 }
-                */
+                
                 //echo $_SESSION["login_VALID"];
                 ?>
 
