@@ -3,6 +3,7 @@ body{
 }
 
 .title{
+    position: relative;
     display: flex;
     align-items: center; /* Centrera vertikalt */
     width: 100%;
@@ -20,6 +21,7 @@ body{
     height: 95vh;
     overflow: auto;
     border-right: solid;
+    z-index: 15;
 }
 
 .sideBar h1{
@@ -46,8 +48,9 @@ body{
 
 .showsideBtn{
     display: none;
-    position: absolute;
+    position: fixed;
     margin-top: 10vh;
+    z-index: 15;
 }
 
 .showsideBtnToggle{
@@ -55,9 +58,6 @@ body{
 }
 
 .content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 85%;
     margin-left: 15%;
     color: black;
@@ -74,11 +74,24 @@ body{
     text-align: center;
     float: right;
     width: 40%;
+    padding-right: 3%;
 }
 
 .contentVideo{
     width: 90%;
     height: 40%;
+}
+
+.contentTop{
+    width: 100%;
+    clear: both;
+}
+
+.contentBottom{
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    clear: both;
 }
 
 @media (max-width: 1500px){
