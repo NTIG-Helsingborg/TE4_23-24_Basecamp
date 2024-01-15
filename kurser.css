@@ -1,30 +1,31 @@
+.box {
+  padding-top: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #446FC8 90%, #F59191 10%);
+  padding: 20px;
+  color: #fff;
+  height: 200px; /* Uppdatera höjden för att passa din design */
+}
 
-      
-      .box {
-        border-radius: 15px;
-        overflow: hidden;
-        margin-bottom: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        background: linear-gradient(to bottom, #446FC8 90%, #F59191 10%);
-        padding: 100px;
-      }
-      
-      .container {
-        margin-top: 50px;
-      }
-      
-      @media (max-width: 1920px) {
-        .box {
-          height: 300px;
-        }
-      }
-      
-      .hidden {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-      }
-      
-      .visible, .extra-box {
-        opacity: 1;
-        transition: opacity 0.5s ease;
-      }
+.container {
+  margin-top: 50px;
+}
+
+@media (max-width: 1920px) {
+  .box {
+    height: 150px; /* Uppdatera höjden för responsiv design */
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.visible,
+.extra-box {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
