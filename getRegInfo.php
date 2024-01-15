@@ -59,7 +59,7 @@ $db->run_query($query, $args, $args2);
             $identifier = uniqid();
             setcookie("await", $identifier, time()+60*60*24*2);
             $_SESSION["await"] = $identifier;
-            $query = "INSERT users()";
+            //$query = "INSERT users()";
         }
     }
     Cookiecontroll();

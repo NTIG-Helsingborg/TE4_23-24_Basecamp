@@ -62,6 +62,7 @@
                     `name` TEXT NOT NULL
                 )
             ");
+            //test admin, dont know what do if there is more admins. Should we have a super admin lol?
             $idschool = uniqid();
             $adminid = (string)uniqid();
             $passwordAdmin = password_hash("Veryynice123!", PASSWORD_DEFAULT);
