@@ -2,6 +2,7 @@
 
 <?php
 session_Start();
+include("getLoginInfo.php");
 ?>
 
 <html>
@@ -55,7 +56,7 @@ session_Start();
                 <input type="password" id="password" name="password" title="Invalid" class="mt-3">
 
 
-                <button id="submit" type="submit" class="mt-5">
+                <button id="submit" type="submit" type ="login" class="mt-5">
 
                     Logga in
 

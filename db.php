@@ -75,7 +75,7 @@
                 $stmt->bindValue($arg->name, $arg->value, $arg->type);
                 echo($arg->value);
             }
-            $stmt->execute();
+            return $stmt->execute();
         }
      }
 

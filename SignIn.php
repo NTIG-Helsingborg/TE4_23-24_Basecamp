@@ -1,8 +1,10 @@
 <!doctype html>
 
 <?php
-//include('db.php'); //Create connection to databse.
-session_Start();
+include('getRegInfo.php'); //Create connection to databse.
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 
 <html>
@@ -42,7 +44,7 @@ session_Start();
         <div style="height:800px;"
             class="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center ">
             <p id="text">Registrera</p>
-            <form action="getRegInfo.php" method="post" class="d-flex flex-column align-items-center">
+            <form action="" method="post" class="d-flex flex-column align-items-center">
 
                 <label for="email" id="labelForEmail">Email:</label>
 
@@ -61,18 +63,11 @@ session_Start();
                     title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
                     required class="mt-3">
 
-                <button id="submit" type="submit" class="mt-5">
+                <button id="submit" type="submit" name = "signIn" class="mt-5">
 
                     Registrera
 
                 </button>
-
-
-                <a href="#" id="forgotPassword" class="my-5">
-
-                    Glömt lösenord
-
-                </a>
 
             </form>
 
