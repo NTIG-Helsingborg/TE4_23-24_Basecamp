@@ -27,18 +27,23 @@ $db->run_query($query, $args, $args2);
     `school` TEXT NOT NULL REFERENCES `schools`(`id`),
     `admin` TINYINT NOT NULL
 */
+    //function to prevent user from changing his cookie
     function Cookiecontroll(){
+        //user deletes cookie
         if(isset($_SESSION["await"]) && !isset($_COOKIE["await"])){
             setcookie("await", $_SESSION["await"], time() + 60*60*24);
         }
+        //closes an revisits page
         if(!isset($_SESSION["await"]) && isset($_COOKIE["await"])){
             $_SESSION["await"] = $_COOKIE["await"];
         }
+        //control if user has both cookie and session var
         if(!isset($_SESSION["await"]) && !isset($_COOKIE["await"])){
             return;
         }
+        //Incase the user changes a cookie
         if($_SESSION["await"] != $_COOKIE["await"]){
-            $_SESSION["await"] = $_COOKIE["await"];
+            setcookie("await", $_SESSION["await"], time() + 60*60*24);
         }
     }
 
@@ -54,9 +59,9 @@ $db->run_query($query, $args, $args2);
             $identifier = uniqid();
             setcookie("await", $identifier, time()+60*60*24*2);
             $_SESSION["await"] = $identifier;
+            $query = "INSERT users()";
         }
     }
-
     Cookiecontroll();
   
  
