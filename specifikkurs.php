@@ -28,6 +28,7 @@
 <body>
 	<header>
 		<?php include 'Components/Navbar.php'; ?>
+        <div class="title">Hej</div>
 	</header>
     <div id="sidebar" class="sideBar">
         <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
@@ -52,6 +53,16 @@
         </div>
     </div>
     <button onClick="ShowSideBar()" class="showsideBtn" id="showsidebtnID">></button>
+    <div class="content">
+    <div class="contentLeft">
+    <video width="320" height="240" controls class="contentVideo">
+        Your browser does not support the video tag.
+    </video>
+    </div>
+    <div class="contentRight">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit amet ipsumLorem ipsum dolor sit amet
+    </div>
+    </div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
