@@ -2,14 +2,26 @@ body{
     background-color: #F9F1D4;
 }
 
+.title{
+    position: relative;
+    display: flex;
+    align-items: center; /* Centrera vertikalt */
+    width: 100%;
+    background-color: #4A48AF;
+    margin-top: 4.3rem;
+    height: 4rem;
+    padding-left: 15%;
+    font-size: 2rem;
+}
+
 .sideBar{
     position: fixed;
     width: 15%;
     background-color: #F9F1D4;
     height: 95vh;
     overflow: auto;
-    margin-top: 5vh;
     border-right: solid;
+    z-index: 15;
 }
 
 .sideBar h1{
@@ -36,12 +48,50 @@ body{
 
 .showsideBtn{
     display: none;
-    position: absolute;
+    position: fixed;
     margin-top: 10vh;
+    z-index: 15;
 }
 
 .showsideBtnToggle{
     margin-left: 60%;
+}
+
+.content{
+    width: 85%;
+    margin-left: 15%;
+    color: black;
+    padding-top: 2%;
+}
+
+.contentLeft{
+    text-align: center;
+    float: left;
+    width: 60%;
+}
+
+.contentRight{
+    text-align: center;
+    float: right;
+    width: 40%;
+    padding-right: 3%;
+}
+
+.contentVideo{
+    width: 90%;
+    height: 40%;
+}
+
+.contentTop{
+    width: 100%;
+    clear: both;
+}
+
+.contentBottom{
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    clear: both;
 }
 
 @media (max-width: 1500px){

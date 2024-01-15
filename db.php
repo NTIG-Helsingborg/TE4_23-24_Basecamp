@@ -62,7 +62,15 @@
                     `name` TEXT NOT NULL
                 )
             ");
-        }
+            //test admin, dont know what do if there is more admins. Should we have a super admin lol?
+            $idschool = uniqid();
+            $adminid = (string)uniqid();
+            $passwordAdmin = password_hash("Veryynice123!", PASSWORD_DEFAULT);
+            $this->exec("INSERT INTO schools(id, name) VALUES('$idschool', 'NTI Helsingborg')");
+            //för att lägga in variablar använd '$var' 
+            $this->exec("INSERT INTO users(id, username, password_hash, school, admin) VALUES('$adminid', 'Admin', '$passwordAdmin', '1', 1)");
+
+    }
 
         //går igenom varje arg som har matats in i funktionen, första Query object skickas och dess värden name, value, type accessas och bind med bindValue
         function run_query(string $query, QueryArgsStruct ...$args)
@@ -75,7 +83,7 @@
                 $stmt->bindValue($arg->name, $arg->value, $arg->type);
                 echo($arg->value);
             }
-            $stmt->execute();
+            return $stmt->execute();
         }
      }
 
