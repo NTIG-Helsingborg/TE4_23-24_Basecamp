@@ -50,16 +50,25 @@ $db->run_query($query, $args, $args2);
     if(isset($_POST["signIn"]) && $_SERVER["REQUEST_METHOD"] === "POST"){
         $email = $_POST["email"];
         $password = $_POST["password"];
+        $hash = password_hash($password, PASSWORD_DEFAULT);
         $query = "SELECT id FROM users WHERE username = :username";
         $arg = new QueryArgsStruct(":username", $email, SQLITE3_TEXT);
         $res = $db->run_query($query, $arg);
         $result = $res->fetchArray(SQLITE3_ASSOC);
+
         if(!$result){
             //maybe change to a hash
-            $identifier = uniqid();
+            $identifier = bin2hex(random_bytes(20));
             setcookie("await", $identifier, time()+60*60*24*2);
             $_SESSION["await"] = $identifier;
-            //$query = "INSERT users()";
+            $query = "INSERT users(id, username, password_hash, school, admin) VALUES(:id, :username, :password_hash, :school, :admin)";
+            $argId = new QueryArgsStruct(":id", $identifier, SQLITE3_TEXT);
+            $argUsername = new QueryArgsStruct(":username", $email, SQLITE3_TEXT);
+            $argPassword = new QueryArgsStruct(":password_hash", $hash, SQLITE3_TEXT);
+            $argSchool = new QueryArgsStruct(":school", "1", SQLITE3_TEXT);
+            $argAdmin = new QueryArgsStruct(":admin", 0, SQLITE3_TEXT);
+            $resCreate = $db->run_query($query, $argId, $argUsername, $argPassword, $argSchool, $argAdmin);
+            
         }
     }
     Cookiecontroll();
