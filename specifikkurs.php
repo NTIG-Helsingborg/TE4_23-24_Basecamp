@@ -41,7 +41,7 @@
                 <li><a href="#">Länk 1</a></li>
             </ul>
         </div>
-        <h1>Andra skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
+        <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
         <div id="demo1" class="collapse" aria-labelledby="demo1">
             <ul>
                 <li><a href="#">Länk 1</a></li>
@@ -83,7 +83,15 @@
         });
         </script>
         <script>
-            
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 1) {
+                        $('#sidebar').addClass('sidebarScroll');
+                    } else {
+                        $('#sidebar').removeClass('sidebarScroll');
+                    }
+                });
+            });
         </script>
         <script>
             function ShowSideBar(){

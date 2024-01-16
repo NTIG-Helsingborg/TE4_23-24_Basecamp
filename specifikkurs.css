@@ -22,6 +22,11 @@ body{
     overflow: auto;
     border-right: solid;
     z-index: 15;
+    transition: 0.3s ease;
+}
+
+.sidebarScroll{
+    margin-top: -4rem;
 }
 
 .sideBar h1{
@@ -37,6 +42,12 @@ body{
     line-height: 2rem;
     font-size: 1.2rem;
     color: black;
+}
+
+.sideBar li:hover{
+    list-style: square;
+    color: #4A48AF;
+    font-weight: bold;
 }
 
 .showlinks{
@@ -94,7 +105,7 @@ body{
     clear: both;
 }
 
-@media (max-width: 1500px){
+@media (max-width: 1200px){
     .sideBar{
         display: none;
         width: 60%;
