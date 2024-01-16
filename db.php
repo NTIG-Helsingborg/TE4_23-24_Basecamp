@@ -78,18 +78,19 @@
         function run_query(string $query, QueryArgsStruct ...$args)
         {
             $stmt = $this->prepare($query);
-            var_dump($args);
+            //var_dump($args);
             foreach($args as $arg)
             {
-                var_dump($arg);
+                //var_dump($arg);
                 $stmt->bindValue($arg->name, $arg->value, $arg->type);
-                echo($arg->value);
+                //echo($arg->value);
             }
             return $stmt->execute();
         }
      }
 
      $db = new DBClass();
+     /*
      if (!$db)
      {
         echo $db->lastErrorMsg();
@@ -98,4 +99,5 @@
      {
         echo "Opened database.db successfully!";
      }
+     */
 ?>

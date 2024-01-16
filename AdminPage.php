@@ -19,18 +19,44 @@
     //nicely formatted array
     echo '<pre>'; 
     print_r($_SESSION["Userlist"]); 
-    echo '</pre>'; 
-
+    echo '</pre>';
 ?>
 <html>
+<script>
+    function postStatus(id){
+        var isChecked = document.getElementById(id).checked;
+        //console.log(isChecked);
+        fetch("AdminFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                isChecked: isChecked,
+                username: "hey@gmail.com"
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+        })
+    }
+        </script>
     <body>
-        <script></script>
-        <form action = "" method = "post">
-            <ul>  
+            <ul> 
                 <li>
-                    <input type = "checkbox" name = ""></input>
+                    <input type = "checkbox" id = "hey@gmail.com" onclick = "postStatus(this.id)"></input>
                 </li>
             </ul>
-        </form>
+            <div id ="result"></div>
+            <?php
+                foreach($_SESSION["Userlist"] as $key => $value){
+                    echo '
+                    <li>
+                        <input type = "checkbox" id = ' . $key . ' onclick = "postStatus(this.id)"></input>
+                    </li>
+                    ';
+                }
+            ?>
     </body> 
 </html>
