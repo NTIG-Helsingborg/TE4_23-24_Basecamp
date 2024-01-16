@@ -79,7 +79,7 @@ body{
 
 .contentVideo{
     width: 90%;
-    height: 40%;
+    aspect-ratio: 16/9;
 }
 
 .contentTop{

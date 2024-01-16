@@ -56,9 +56,9 @@
     <div class="content">
     <div class="contentTop">
         <div class="contentLeft">
-        <video width="320" height="240" controls class="contentVideo">
+        <iframe class="contentVideo" src="https://www.youtube.com/embed/LurwQGUorM4?si=H51qBgXCri6J_IAh">
             Your browser does not support the video tag.
-        </video>
+        </iframe>
         </div>
         <div class="contentRight">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit amet ipsumLorem ipsum dolor sit amet</p>
