@@ -49,34 +49,35 @@ session_Start();
 </head>
 
 <body>
+
+<!-- Introduction part of the main page. Contains background image -->
 	<header>
 		<?php include 'Components/Navbar.php'; ?>
 
 
 		<div class="position-relative" id="headerSection">
 			<img src="Images/Skolverket.jpg" alt="...">
-			<div style="height:200px;"
-				class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle"
+			<div class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle"
 				id="headerText">
 				<h1 class="p-2 p-md-5">BaseCamp</h1>
 
 				<h2 class="w-25 d-none d-xxl-block">Study like you do in school with help of your own teachers</h2>
 			</div>
-
-
 	</header>
-	<div style="background-color: #030D26; width:100%; height:25px;"></div>
 
-	<!-- ROW 1 GEMENSKAP -->
-	<section id="aboutBaseCamp" class="mt-5">
-		<div class="row justify-content-around" id="">
+
+	<!-- <div style="background-color: #030D26; width:100%; height:25px;"></div> Doesnt have any purpouse but i keep just in case -->
+
+	<!-- ------------------General information about BaseCamp-------------- -->
+	<section  class="mt-5 aboutBaseCamp">
+		<div class="row justify-content-around" >
 			<div class="col-sm-12 col-lg-4 ">
 				<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px"
 					class="img-fluid animated fadeInLeft ">
 			</div>
-			<div class="col-sm-12 col-lg-5" id="info">
-				<h2 class="text-center mt-3">What is BaseCamp</h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+			<div class="col-sm-12 col-lg-5 info">
+				<h2 class="text-center mt-5">What is BaseCamp</h2>
+				<p class=" text-center mt-5 w-75 m-auto ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 					sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -87,50 +88,53 @@ session_Start();
 	</section>
 
 
-
-	<section class="recommendCourses mt-4">
+<!-- -----------------Blue text that tells about what BaseCam is for from diferent perspektives----------------- -->
+	<section class="WhatBaseCampFor mt-4">
+		
 		<div class="row">
-			<div class="col-sm-12">
-				<h2 class="text-center mt-4">Rekommenderade Kurser</h2>
+			<div class="col-sm-12 col-md-6">
+				<img src="" alt="">
+				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the students</h2>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+
+				<div class="vertical"></div>
+
+			<div class="col-sm-12 col-md-6">
+				<img src="" alt="">
+				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the teachers</h2>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 		</div>
 
+	</section>
 
-		<div class="row mt-3 pb-5">
-			<!-- RECOMMENDED COURSE 1 -->
+<!-- --------------------------Even more information------------------------- -->
 
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-				<div class="card mx-auto text-center">
-					<img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
-					<div class="card-body">
-						<h4 class="card-title">Programmering 1</h4>
-						<p class="card-text">Programmering 1 is blah blah llorem lipsum whatever whateverwhatever</p>
-						<a href="#" class="btn btn-primary">Visit the course</a>
-					</div>
-				</div>
+<section  class="mt-5 pb-5  aboutBaseCamp">
+		<div class="row justify-content-around" >
+			
+			<div class=" text-center pb-5 col-sm-12 col-lg-5 info">
+				<h2 class=" mt-5">What is BaseCamp</h2>
+				<p class="  mt-5 w-75 m-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<button type="button" class="btn btn-primary btn-lg">Learn more</button>
+
 			</div>
-			<!-- RECOMMENDED COURSE 2 -->
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-				<div class="card mx-auto text-center">
-					<img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
-					<div class="card-body">
-						<h4 class="card-title">Webbutveckling 1</h4>
-						<p class="card-text">Webbutveckling 1 is blah blah lorem lipsum whatever whateverwhatever</p>
-						<a href="#" class="btn btn-primary">Visit the course</a>
-					</div>
-				</div>
-			</div>
-			<!-- RECOMMENDED COURSE 3 -->
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-				<div class="card mx-auto text-center">
-					<img class="card-img-top" src="Images/coding.jpg" alt="Card image" style="width:100%">
-					<div class="card-body">
-						<h4 class="card-title">Webbutveckling 2</h4>
-						<p class="card-text">Webbutveckling 2 is blah blah lorem lipsum whatever whateverwhatever</p>
-						<a href="#" class="btn btn-primary">Visit the course</a>
-					</div>
-				</div>
-			</div>
+		</div>
+	</section>
+
+
 		</div>
 
 	</section>

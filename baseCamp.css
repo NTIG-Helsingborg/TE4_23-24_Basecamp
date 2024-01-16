@@ -1,9 +1,9 @@
 @charset "utf-8";
 :root{
-    --background-color: #F9F1D4;
+    --background-color: #fffbef;
     --font-color-black:rgb(46, 46, 46);
     --font-color-white: rgb(243, 74, 74);
-    --btn-primary-bg:#4A48AF;
+    --btn-primary-bg:#3d21bbde;
 }
 
 body{
@@ -17,12 +17,6 @@ body{
 }
 
 
-/*Css to the header on index page*/
-header{
-    position:relative;
-    z-index: 10;
-}
-
 
 /*Css to the links on index page*/
 a {
@@ -35,7 +29,16 @@ a:hover{
     text-decoration: none;
 }
 
-/*Css to the navbar on index page*/
+
+/*-----------------------Css to the header on index page------------------------------------*/
+header{
+    position:relative;
+    z-index: 10;
+    padding-top: 0%;
+    padding-bottom: 2vh;
+ 
+}
+/*------------------------Css to the navbar on index page--------------------------------*/
 .navbarBG {
     background-image: linear-gradient(#d7d7d73a, rgba(255, 255, 255, 0));
     transition: 0.3s ease;
@@ -46,7 +49,7 @@ a:hover{
 }
 
 .navbarBGscroll{
-    background: #d3d3d3; 
+    background: #ffffff; 
     transition: 0.3s ease;
 }
 
@@ -69,7 +72,7 @@ a:hover{
 .navbar .dropdown-menu {
     margin: 0px;
     box-shadow: 0px 2px 10px black; /* Remove if it looks better.*/
-    background-color: #d3d3d3;
+    background-color: #eef2f7;
     border: none;
     user-select: none;
     z-index: 10;
@@ -95,7 +98,7 @@ a:hover{
     max-height: 200px !important;
 }*/
 
-.dropCourses{
+.test{
     position: fixed;
     overflow-y: scroll;
     overflow-x: visible !important;
@@ -104,7 +107,7 @@ a:hover{
     z-index: 5;
 }
 
-.dropSchools{
+.test2{
     position: absolute;
     z-index: 10;
 }
@@ -139,6 +142,9 @@ a:hover{
     background-color: #FED979;
 }
 
+
+
+
 /*Bootstrap Mobile Gutter Fix*/
 .row, .container-fluid {
     margin-left: 0px!important;
@@ -151,6 +157,7 @@ a:hover{
     width: 100%;
     height: 75vh;
     object-fit: cover;
+
 }
 
 #headerSection div h1{
@@ -163,8 +170,12 @@ a:hover{
     width: 40%;
     font-size:36px; 
 }
+
+
+
+
 /*Css that fixes site when max width is 768px*/
-@media (max-width: 767px){
+@media (max-width: 768px){
     .navbarright{
         width: 100%;
         padding-right: 0;
@@ -186,125 +197,185 @@ a:hover{
 
 }
 
+
+/*------------ Vi har ingen recomended del på sida så jag tar bort det for now ------------*/
+
 /*Css to the cards with recommended and popular courses*/
-.card {
+/* .card {
 	width: 300px;
 	background-color: var(--background-color);
 	border-color: #fff;
 	border-radius: 4px;
 	border-width: 4px;
 	box-shadow: 0 6px 10px black;
-    color:var(--font-color-black);
+    color:var(--font-color-black); */
 	/* this makes the card transition smoother */
-	transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+	/* transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
   	cursor: pointer;
-}
+} */
 
-.card:hover{
-    transform: scale(1.05); /* makes the card pop out when hovering */
+/* .card:hover{
+    transform: scale(1.05); 
   	box-shadow: 0 10px 20px black;
-}
+} */
 
 /*Css to the background of the cardsection*/
-.recommendCourses {
+
+
+
+
+
+
+
+/*---------------------Css to all paragraphs------------------*/
+
+.WhatBaseCampFor{
     
-	background-color: #446FC8;
+    background-image: linear-gradient(
+        135deg,
+        hsl(254deg 70% 57%) 0%,
+        hsl(254deg 69% 56%) 9%,
+        hsl(253deg 69% 55%) 19%,
+        hsl(252deg 69% 54%) 30%,
+        hsl(251deg 69% 52%) 42%,
+        hsl(250deg 69% 51%) 54%,
+        hsl(248deg 70% 49%) 66%,
+        hsl(246deg 75% 48%) 78%,
+        hsl(244deg 80% 46%) 89%,
+        hsl(239deg 88% 44%) 100%
+      );
+    padding-block: 20vh;
+}
+.vertical {
+    border-left: 3px solid rgb(255, 255, 255);
+    height: 40vh;
+    position: absolute;
+    left: 50%;
+    margin-top: -10vh;
 }
 
-
-/*Some Css for the footer*/
-.page-footer {
-    background-color: #181515;
-    color: white;
-}
-.page-footer a:hover {
-    border-bottom: 2px solid #FED979;
-}
-.page-footer ul li, .text {
-    
-    line-height: 20px;
-}
-.page-footer .footerCenteredText {
-    margin: 0px auto;
-    width: 50%;
-}
-
-.justify_text{
-    text-align:justify;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-} 
-
-@media (max-width: 1024px) {
-    .caption h1 {
-		font-size: 1.4rem;
-		letter-spacing: .15rem;
-	}
-	.caption h3 {
-		font-size: 1.1em;
-	}
-	
-	.col-sm-6 {
-		text-align: center!important;
-	}
-}
-
-/*Does not work, could be because "Display: ? ;"*/
-@keyframes slideLeft {
-    from {
-        left: -1000px;
-    }
-
-    to {
-        left: 100%;
-    }
-}
-
-@keyframes slide {
-    from { 
-        top: -500px; 
-            /* This should be based on the height of navbar dropdown*/
-    }
-
-    to {
-        top: 100%;
-    }
-}
-
-
-
-/*Css to all paragraphs*/
 #text{
 
   color:#f0d397;
   font-size: 4em;
-
-}
-
-
-
-
-#aboutBaseCamp{
-    width: 100%;
   
 }
-#aboutBaseCamp #info{
+
+
+.aboutBaseCamp{
+    width: 100%;
+    
+  
+}
+.aboutBaseCamp .info{
+    background-color:white;
+    color:var(--font-color-black);
+    font-size:18px;
+    border-radius: 15px;
+}
+.aboutBaseCamp .info h2{
+    color:#446FC8;
+    font-size:2em;
+}
+.aboutBaseCamp .info p{
+    color:var(--font-color-black);
+}
+.aboutBaseCamp{
+    width: 100%;
+ 
+}
+.aboutBaseCamp .info{
     background-color:white;
     color:var(--font-color-black);
     font-size:18px;
 }
-#aboutBaseCamp #info h2{
+.aboutBaseCamp .info h2{
     color:#446FC8;
     font-size:2em;
 }
-#aboutBaseCamp #info p{
+.aboutBaseCamp .info p{
     color:var(--font-color-black);
 }
+    
+
+
+
+@media (min-width: 768px) {
+  .button-66 {
+    padding: 16px 44px;
+    min-width: 150px;
+  }
+}
+
+
+
+
+
+    /*---------------------------Some Css for the footer----------------------*/
+    .page-footer {
+        background-color: #181515;
+        color: white;
+    }
+    .page-footer a:hover {
+        border-bottom: 2px solid #FED979;
+    }
+    .page-footer ul li, .text {
+        
+        line-height: 20px;
+    }
+    /* .page-footer .footerCenteredText {
+        margin: 0px auto;
+        width: 50%;
+    }
+    
+    .justify_text{
+        text-align:justify;
+    } */
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    } 
+    
+    @media (max-width: 1024px) {
+        .caption h1 {
+            font-size: 1.4rem;
+            letter-spacing: .15rem;
+        }
+        .caption h3 {
+            font-size: 1.1em;
+        }
+        
+        .col-sm-6 {
+            text-align: center!important;
+        }
+    }
+    
+    /*Does not work, could be because "Display: ? ;"*/
+    @keyframes slideLeft {
+        from {
+            left: -1000px;
+        }
+    
+        to {
+            left: 100%;
+        }
+    }
+    
+    @keyframes slide {
+        from { 
+            top: -500px; 
+                /* This should be based on the height of navbar dropdown*/
+        }
+        
+        to {
+            top: 100%;
+        }
+    }
+    
+    
