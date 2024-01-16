@@ -1,3 +1,15 @@
+
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  max-width: 800px; /* Justera maxbredden efter behov */
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .box {
   padding-top: 30px;
   border-radius: 15px;
@@ -7,16 +19,18 @@
   background: linear-gradient(to bottom, #446FC8 90%, #F59191 10%);
   padding: 20px;
   color: #fff;
-  height: 200px; /* Uppdatera höjden för att passa din design */
-}
-
-.container {
-  margin-top: 50px;
+  width: 100%;
 }
 
 @media (max-width: 1920px) {
   .box {
-    height: 150px; /* Uppdatera höjden för responsiv design */
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    height: 100px;
   }
 }
 
@@ -24,8 +38,28 @@
   display: none;
 }
 
-.visible,
-.extra-box {
-  opacity: 1;
-  transition: opacity 0.5s ease;
+.button-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rounded-button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 45%;
 }

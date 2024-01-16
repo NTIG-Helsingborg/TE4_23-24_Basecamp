@@ -41,7 +41,7 @@
                 <li><a href="#">Länk 1</a></li>
             </ul>
         </div>
-        <h1>Andra skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
+        <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
         <div id="demo1" class="collapse" aria-labelledby="demo1">
             <ul>
                 <li><a href="#">Länk 1</a></li>
@@ -49,6 +49,34 @@
                 <li><a href="#">Länk 1</a></li>
                 <li><a href="#">Länk 1</a></li>
                 <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 2</a></li>
             </ul>
         </div>
     </div>
@@ -56,9 +84,9 @@
     <div class="content">
     <div class="contentTop">
         <div class="contentLeft">
-        <video width="320" height="240" controls class="contentVideo">
+        <iframe class="contentVideo" src="https://www.youtube.com/embed/LurwQGUorM4?si=H51qBgXCri6J_IAh">
             Your browser does not support the video tag.
-        </video>
+        </iframe>
         </div>
         <div class="contentRight">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit amet ipsumLorem ipsum dolor sit amet</p>
@@ -83,7 +111,15 @@
         });
         </script>
         <script>
-            
+            $(document).ready(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 1) {
+                        $('#sidebar').addClass('sidebarScroll');
+                    } else {
+                        $('#sidebar').removeClass('sidebarScroll');
+                    }
+                });
+            });
         </script>
         <script>
             function ShowSideBar(){

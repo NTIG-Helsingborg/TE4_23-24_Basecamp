@@ -13,22 +13,22 @@
         <span class="navbar-toggler-icon"></span>
     </button>-->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav navbarmiddle">
+        <!-- <ul class="navbar-nav navbarmiddle"> -->
             <!-- Navbar Dropdown -->
 
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" id="navbardrop"
                     aria-expanded="false">
                     Kurser
                 </a>
-                <ul class="dropdown-menu test">
+                <ul class="dropdown-menu dropCourses">
                     <li>
                         <div class="dropdown1 dropend">
                         <a class="dropdown-item dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" id="navbardrop-inner"
                         aria-expanded="false">
                         Skola 1
                         </a>
-                        <ul class="dropdown-menu test2">
+                        <ul class="dropdown-menu dropSchools">
                             <li><a class="dropdown-item">Hej</a></li>
                         </ul>
                         </div>
@@ -41,7 +41,37 @@
                     <li><a class="dropdown-item" href="#">Skola 5</a></li>
                     <li><a class="dropdown-item" href="#">Skola 6</a></li>
                 </ul>
-            </div>
+            </div> -->
+
+            <nav class="menu ">
+            <ul>
+             
+                <li>
+                    <a href="#">Skolor▾</a>
+                    <ul>
+                    <li><a href="#">Skola 1 ▾</a>
+                            <ul>
+                                <li><a href="#">Hej</a></li>
+                                <li><a href="#">På dig</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Skola 2 ▾</a>
+                            <ul>
+                                <li><a href="#">Hej</a></li>
+                                <li><a href="#">På dig</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Skola 3 ▾</a>
+                            <ul>
+                                <li><a href="#">Hej</a></li>
+                                <li><a href="#">På dig</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+               
+            </ul>
+        </nav>
 
             <a class="nav-link" href="Login.php"><span class="fas fa-sign-in-alt"></span> Login</a>
 

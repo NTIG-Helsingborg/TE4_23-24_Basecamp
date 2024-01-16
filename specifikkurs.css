@@ -18,25 +18,46 @@ body{
     position: fixed;
     width: 15%;
     background-color: #F9F1D4;
-    height: 95vh;
-    overflow: auto;
+    height: 90vh;
+    overflow-y: scroll;
     border-right: solid;
     z-index: 15;
+    transition: 0.3s ease;
+}
+
+.sideBar::-webkit-scrollbar{
+    background: #EFE6C3;
+    height: 50px;
+    width: 12px;
+}
+
+.sideBar::-webkit-scrollbar-thumb{
+    background-color: #4A48AF;
+}
+
+.sidebarScroll{
+    margin-top: -4rem;
 }
 
 .sideBar h1{
     color: #E291A9; 
     padding-top: 2rem;
-    padding-left: 2rem;
+    padding-left: 1rem;
     font-size: 1.5rem;
 }
 
 .sideBar ul{
     list-style: none;
-    padding-left: 3rem;
+    padding-left: 2rem;
     line-height: 2rem;
     font-size: 1.2rem;
     color: black;
+}
+
+.sideBar li:hover{
+    list-style: square;
+    color: #4A48AF;
+    font-weight: bold;
 }
 
 .showlinks{
@@ -79,7 +100,7 @@ body{
 
 .contentVideo{
     width: 90%;
-    height: 40%;
+    aspect-ratio: 16/9;
 }
 
 .contentTop{
@@ -94,7 +115,7 @@ body{
     clear: both;
 }
 
-@media (max-width: 1500px){
+@media (max-width: 1200px){
     .sideBar{
         display: none;
         width: 60%;
