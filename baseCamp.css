@@ -98,14 +98,70 @@ header{
     max-height: 200px !important;
 }*/
 
-.test{
+/* .test{
     position: fixed;
     overflow-y: scroll;
     overflow-x: visible !important;
     padding-top: 1rem;
     max-height: 200px !important;
     z-index: 5;
+} */
+
+
+
+.menu ul {
+    all: unset;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: transparent; /* Set the background color to transparent */
 }
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 10px;
+}
+
+/* Style the submenus */
+.menu ul li ul {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+}
+
+.menu ul ul li {
+    width: max-content;
+    min-width: 100%;
+    max-width: 200px;
+}
+
+.menu ul a {
+    all: unset;
+    color: #000000;
+    cursor: pointer;
+}
+
+.menu ul a:hover {
+    background: rgba(240, 248, 255, 0.877);
+}
+
+.menu ul li:hover > ul {
+    display: flex;
+}
+
+.menu ul ul ul {
+    top: 0;
+    left: 100%;
+}
+
+
+
+
+
 
 .test2{
     position: absolute;
