@@ -31,6 +31,7 @@
         <div class="title">Hej</div>
 	</header>
     <div id="sidebar" class="sideBar">
+        <div class="menu-item">
         <h1>Related</h1><button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false">&#11167;</button>
         <div id="demo" class="collapse" aria-labelledby="demo">
             <ul>
@@ -41,6 +42,8 @@
                 <li><a href="#">Länk 1</a></li>
             </ul>
         </div>
+        </div>
+        <div class="menu-item">
         <h1>Skolor</h1><button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false">&#11167;</button>
         <div id="demo1" class="collapse" aria-labelledby="demo1">
             <ul>
@@ -50,6 +53,7 @@
                 <li><a href="#">Länk 1</a></li>
                 <li><a href="#">Länk 1</a></li>
             </ul>
+        </div>
         </div>
     </div>
     <button onClick="ShowSideBar()" class="showsideBtn" id="showsidebtnID">></button>
