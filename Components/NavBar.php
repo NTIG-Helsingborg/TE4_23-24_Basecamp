@@ -21,14 +21,14 @@
                     aria-expanded="false">
                     Kurser
                 </a>
-                <ul class="dropdown-menu test">
+                <ul class="dropdown-menu dropCourses">
                     <li>
                         <div class="dropdown1 dropend">
                         <a class="dropdown-item dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" id="navbardrop-inner"
                         aria-expanded="false">
                         Skola 1
                         </a>
-                        <ul class="dropdown-menu test2">
+                        <ul class="dropdown-menu dropSchools">
                             <li><a class="dropdown-item">Hej</a></li>
                         </ul>
                         </div>
