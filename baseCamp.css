@@ -98,7 +98,7 @@ header{
     max-height: 200px !important;
 }*/
 
-.test{
+.dropCourses{
     position: fixed;
     overflow-y: scroll;
     overflow-x: visible !important;
@@ -107,7 +107,7 @@ header{
     z-index: 5;
 }
 
-.test2{
+.dropSchools{
     position: absolute;
     z-index: 10;
 }
