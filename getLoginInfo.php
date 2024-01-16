@@ -9,11 +9,11 @@
         $username = $_POST["emailL"];
         $password = $_POST["passwordL"];
         $passwordStatement = "SELECT password_hash FROM users WHERE id = :id";
-        $adminCheck = $db->query("SELECT id FROM users WHERE username = 'Admin'");
+        $adminCheck = $db->query("SELECT admin FROM users WHERE username = 'Admin'");
         $adminCheckRes = $adminCheck->fetchArray(SQLITE3_ASSOC);
 
 
-        $findIdStatement = "SELECT id FROM users WHERE username = :username";
+        $findIdStatement = "SELECT id, admin FROM users WHERE username = :username";
         $argUsername = new QueryArgsStruct(":username", $username, SQLITE3_TEXT);
         $resId = $db->run_query($findIdStatement, $argUsername);
         $userId = $resId->fetchArray(SQLITE3_ASSOC);
@@ -29,8 +29,11 @@
 
         echo "<br><br><br>";
         var_dump($passwordMatch);
+        echo "<br><br><br>";
+        var_dump($userId);
+
         if($passwordMatch && $userId["id"] !== false){
-            if($userId["id"] == $adminCheckRes["id"]){
+            if($userId["admin"] == $adminCheckRes["admin"]){
                 $_SESSION["loginStatus"] = "Admin";
                 header("Location: /AdminPage.php");
                 exit();
