@@ -1,3 +1,15 @@
+
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  max-width: 800px; /* Justera maxbredden efter behov */
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .box {
   padding-top: 30px;
   border-radius: 15px;
@@ -7,16 +19,18 @@
   background: linear-gradient(to bottom, #446FC8 90%, #F59191 10%);
   padding: 20px;
   color: #fff;
-  height: 200px;
-}
-
-.container {
-  margin-top: 50px;
+  width: 100%;
 }
 
 @media (max-width: 1920px) {
   .box {
     height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    height: 100px;
   }
 }
 
@@ -26,32 +40,26 @@
 
 .button-container {
   position: fixed;
-  top: 50%;
-  transform: translateY(50%);
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .rounded-button {
   background-color: red;
   border: none;
   color: white;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 15px;
   cursor: pointer;
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
+  width: 45%;
 }
