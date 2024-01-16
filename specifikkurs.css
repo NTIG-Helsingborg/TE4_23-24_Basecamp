@@ -32,13 +32,13 @@ body{
 .sideBar h1{
     color: #E291A9; 
     padding-top: 2rem;
-    padding-left: 2rem;
+    padding-left: 1rem;
     font-size: 1.5rem;
 }
 
 .sideBar ul{
     list-style: none;
-    padding-left: 3rem;
+    padding-left: 2rem;
     line-height: 2rem;
     font-size: 1.2rem;
     color: black;
@@ -55,6 +55,7 @@ body{
     border: none;
     color: #E291A9;
     margin-left: 1rem;
+    display: inline-block;
 }
 
 .showsideBtn{
