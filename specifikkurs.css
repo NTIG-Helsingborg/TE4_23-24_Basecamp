@@ -18,11 +18,21 @@ body{
     position: fixed;
     width: 15%;
     background-color: #F9F1D4;
-    height: 95vh;
-    overflow: auto;
+    height: 90vh;
+    overflow-y: scroll;
     border-right: solid;
     z-index: 15;
     transition: 0.3s ease;
+}
+
+.sideBar::-webkit-scrollbar{
+    background: #EFE6C3;
+    height: 50px;
+    width: 12px;
+}
+
+.sideBar::-webkit-scrollbar-thumb{
+    background-color: #4A48AF;
 }
 
 .sidebarScroll{
@@ -55,7 +65,6 @@ body{
     border: none;
     color: #E291A9;
     margin-left: 1rem;
-    display: inline-block;
 }
 
 .showsideBtn{

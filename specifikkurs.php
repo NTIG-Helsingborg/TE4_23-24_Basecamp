@@ -31,7 +31,7 @@
         <div class="title">Hej</div>
 	</header>
     <div id="sidebar" class="sideBar">
-        <h1>Related</h1><button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false">&#11167;</button>
+        <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
         <div id="demo" class="collapse" aria-labelledby="demo">
             <ul>
                 <li><a href="#">Länk 1</a></li>
@@ -41,7 +41,7 @@
                 <li><a href="#">Länk 1</a></li>
             </ul>
         </div>
-        <h1>Skolor</h1><button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false">&#11167;</button>
+        <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
         <div id="demo1" class="collapse" aria-labelledby="demo1">
             <ul>
                 <li><a href="#">Länk 1</a></li>
@@ -49,6 +49,34 @@
                 <li><a href="#">Länk 1</a></li>
                 <li><a href="#">Länk 1</a></li>
                 <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 1</a></li>
+                <li><a href="#">Länk 2</a></li>
             </ul>
         </div>
     </div>
