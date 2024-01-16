@@ -14,14 +14,14 @@
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- Länk till din separat CSS-fil -->
+  <!-- CSS-fil -->
   <link rel="stylesheet" href="kurser.css">
 </head>
 
 <body>
 
   <header>
-    <!-- Navbar eller annan header-innehåll här -->
+    <?php include 'Components/Navbar.php'; ?>
   </header>
 
   <!-- 12 Content boxes -->
@@ -53,9 +53,9 @@
   </div>
 
   <!-- Knappar -->
-  <div class="container">
-    <button id="showGroupLeft"><i class="fa fa-chevron-left"></i></button>
-    <button id="showGroupRight"><i class="fa fa-chevron-right"></i></button>
+  <div class="button-container">
+    <button id="showGroupLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i></button>
+    <button id="showGroupRight" class="rounded-button right"><i class="fa fa-chevron-right"></i></button>
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
