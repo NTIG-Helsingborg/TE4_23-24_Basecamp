@@ -2,13 +2,14 @@
 #myNavbar{
   position:relative !important;
 }
+
 #box-container {
   margin-top: 5%;
+  margin-left: 15%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px; /* Justera maxbredden efter behov */
-  width: 100%;
+  flex-direction: column;align-items: center;
+  max-width: calc(100% - 15%);; /* Justera maxbredden efter behov */
+  width:auto;
   box-sizing: border-box;
 }
 
@@ -21,7 +22,7 @@
   padding: 20px;
   color: #fff;
   width: 100%;
-  height: 175px;
+  height: 300px;
   transition:all 0.5s ease-in-out;
 }
 .box:hover{
@@ -31,16 +32,17 @@
   color: #fff;
   text-decoration: none;
 }
-
-@media (max-width: 1920px) {
-  .box {
-    height: 150px;
+@media (max-width: 1200px) {
+  #box-container {
+    margin-left: 0;
+    max-width: 100%;
   }
 }
 
+
 @media (max-width: 768px) {
   .box {
-    height: 100px;
+    height: 200px;
   }
 }
 

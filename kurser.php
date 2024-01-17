@@ -112,8 +112,8 @@
 
   <!-- Knappar -->
   <div class="button-container">
-    <button id="showGroupLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i></button>
-    <button id="showGroupRight" class="rounded-button right"><i class="fa fa-chevron-right"></i></button>
+    <button id="showGroupLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
+    <button id="showGroupRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
