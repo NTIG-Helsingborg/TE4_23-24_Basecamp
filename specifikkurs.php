@@ -28,8 +28,8 @@
 <body>
 	<header>
 		<?php include 'Components/Navbar.php'; ?>
-        <div class="title">Hej</div>
 	</header>
+    <div class="title">Hej</div>
     <div id="sidebar" class="sideBar">
         <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
         <div id="demo" class="collapse" aria-labelledby="demo">
@@ -114,9 +114,9 @@
             $(document).ready(function () {
                 $(window).scroll(function () {
                     if ($(this).scrollTop() > 1) {
-                        $('#sidebar').addClass('sidebarScroll');
+                        $('#sidebar, #showsidebtnID').addClass('sidebarScroll');
                     } else {
-                        $('#sidebar').removeClass('sidebarScroll');
+                        $('#sidebar, #showsidebtnID').removeClass('sidebarScroll');
                     }
                 });
             });
