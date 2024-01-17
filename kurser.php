@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- CSS-fil -->
-  <link rel="stylesheet" href="kurser.css">
+  <link rel="stylesheet" href="baseCamp.css">
+  <link rel="stylesheet" href="CSS/kurser.css">
 </head>
 
 <body>
@@ -22,7 +23,13 @@
   <header>
     <?php include 'Components/Navbar.php'; ?>
   </header>
-
+  <div class="course-title">
+    <div class="container">
+      <h1>Welcome to Programming 1</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit
+        amet ipsum</p>
+    </div>
+  </div>
   <!-- 12 Content boxes -->
   <div class="container" id="box-container">
     <!-- Första gruppen med boxar -->
@@ -31,8 +38,12 @@
       <?php for ($i = 1; $i <= 6; $i++) { ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="box">
-            <h4>Rubrik <?php echo $i; ?></h4>
-            <p>Beskrivning av kursen <?php echo $i; ?>.</p>
+            <h4>Rubrik
+              <?php echo $i; ?>
+            </h4>
+            <p>Beskrivning av kursen
+              <?php echo $i; ?>.
+            </p>
           </div>
         </div>
       <?php } ?>
@@ -43,8 +54,12 @@
       <?php for ($i = 7; $i <= 12; $i++) { ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="box">
-            <h4>Rubrik <?php echo $i; ?></h4>
-            <p>Beskrivning av kursen <?php echo $i; ?>.</p>
+            <h4>Rubrik
+              <?php echo $i; ?>
+            </h4>
+            <p>Beskrivning av kursen
+              <?php echo $i; ?>.
+            </p>
           </div>
         </div>
       <?php } ?>
@@ -57,7 +72,8 @@
     <button id="showGroupRight" class="rounded-button right"><i class="fa fa-chevron-right"></i></button>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
