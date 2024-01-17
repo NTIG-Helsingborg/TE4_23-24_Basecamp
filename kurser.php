@@ -15,11 +15,11 @@
 
   <!-- CSS-fil -->
   <link rel="stylesheet" href="baseCamp.css">
+  <link rel="stylesheet" href="specifikkurs.css">
   <link rel="stylesheet" href="CSS/kurser.css">
 </head>
 
 <body>
-
   <header>
     <?php include 'Components/Navbar.php'; ?>
   </header>
@@ -30,6 +30,50 @@
         amet ipsum</p>
     </div>
   </div>
+  <div id="sidebar" class="sideBar">
+    <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i
+          class="fa fa-chevron-down"></i></button></h1>
+    <div id="demo1" class="collapse" aria-labelledby="demo1">
+      <ul>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 1</a></li>
+        <li><a href="#">Länk 2</a></li>
+      </ul>
+    </div>
+  </div>
+  <button onClick="ShowSideBar()" class="showsideBtn" id="showsidebtnID"><i class="fa fa-chevron-right"></i></button>
+
+
   <!-- 12 Content boxes -->
   <div class="container" id="box-container">
     <!-- Första gruppen med boxar -->
@@ -93,6 +137,32 @@
       group1.classList.remove('hidden');
       group2.classList.add('hidden');
     });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('.collapse').on('shown.bs.collapse', function () {
+        $(this).prev().find('.showlinks').html('<i class="fa fa-chevron-up"></i>');
+      }).on('hidden.bs.collapse', function () {
+        $(this).prev().find('.showlinks').html('<i class="fa fa-chevron-down"></i>');
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 1) {
+          $('#sidebar, #showsidebtnID').addClass('sidebarScroll');
+        } else {
+          $('#sidebar, #showsidebtnID').removeClass('sidebarScroll');
+        }
+      });
+    });
+  </script>
+  <script>
+    function ShowSideBar() {
+      document.getElementById("sidebar").classList.toggle("showsidebar");
+      document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
+    }
   </script>
 
 </body>
