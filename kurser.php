@@ -23,7 +23,13 @@
   <header>
     <?php include 'Components/Navbar.php'; ?>
   </header>
-
+  <div class="course-title">
+    <div class="container">
+      <h1>Welcome to Programming 1</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit
+        amet ipsum</p>
+    </div>
+  </div>
   <!-- 12 Content boxes -->
   <div class="container" id="box-container">
     <!-- Första gruppen med boxar -->

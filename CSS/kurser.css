@@ -3,26 +3,33 @@
   position:relative !important;
 }
 #box-container {
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
   max-width: 800px; /* Justera maxbredden efter behov */
   width: 100%;
   box-sizing: border-box;
-  border: 2px dashed blue;
 }
 
 .box {
   padding-top: 30px;
   border-radius: 15px;
-  overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background: linear-gradient(to bottom, #446FC8 90%, #F59191 10%);
   padding: 20px;
   color: #fff;
   width: 100%;
+  height: 175px;
+  transition:all 0.5s ease-in-out;
+}
+.box:hover{
+  background: linear-gradient(to bottom, #446FC8 10%, #F59191 90%);
+  transform: scale(1.075);
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (max-width: 1920px) {
@@ -65,4 +72,32 @@
   border-radius: 15px;
   cursor: pointer;
   width: 45%;
+}
+
+.course-title{
+  color: white;
+  background-color: #4A48AF;
+  text-align: left;
+  margin-bottom: 20px;
+  height:20vh;
+}
+.course-title .container{
+  
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:left;
+  padding-top:50px;
+}
+.course-title .container p, .course-title .container h1{
+  padding:16px;
+  width: 100%;
+}
+
+.course-title .container h1{
+  border-bottom: 2px solid white;
+  font-weight: bold;
+
 }
