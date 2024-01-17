@@ -98,16 +98,17 @@
     text-align: center;
     float: right;
     width: 40%;
-    padding-right: 3%;
 }
 
 .contentVideo{
-    width: 90%;
+    width: 100%;
     aspect-ratio: 16/9;
 }
 
 .contentTop{
     width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
     clear: both;
 }
 
@@ -132,22 +133,23 @@
         display: block;
     }
 
-.content{
-    width: 95%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-}
+    .content{
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+    }
 
-.contentLeft{
-    text-align: center;
-    float: left;
-    width: 60%;
-}
+    .contentVideo{
+        width: 94%;
+    }
+    
+    .contentLeft{
+        float: none;
+        width: 100%;
+    }
 
-.contentRight{
-    text-align: center;
-    float: right;
-    width: 40%;
-    padding-right: 3%;
-}
+    .contentRight{
+        float: none;
+        width: 100%;
+    }
 }
