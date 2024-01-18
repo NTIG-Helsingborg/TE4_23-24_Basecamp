@@ -38,6 +38,7 @@
                 CREATE TABLE IF NOT EXISTS `users` (
                     `id` TEXT PRIMARY KEY NOT NULL,
                     `username` TEXT NOT NULL,
+                    `name` TEXT NOT NULL,
                     `password_hash` TEXT NOT NULL,
                     `school` TEXT NOT NULL REFERENCES `schools`(`id`),
                     `admin` TINYINT NOT NULL
@@ -65,12 +66,14 @@
             //test admin, dont know what do if there is more admins. Should we have a super admin lol?
             $StatementK1 = $this->querySingle("SELECT id from users WHERE username = 'Admin'");
             if(!$StatementK1){
-                $idschool = uniqid();
+                $idschool = bin2hex(random_bytes(20));
+                $idschool2 = bin2hex(random_bytes(20));
                 $adminid = (string)uniqid();
                 $passwordAdmin = password_hash("Veryynice123!", PASSWORD_DEFAULT);
-                $this->exec("INSERT INTO schools(id, name) VALUES('$idschool', 'NTI Helsingborg')");
+                $this->exec("INSERT INTO schools(id, name) VALUES('$idschool', 'NTI-Helsingborg')");
+                $this->exec("INSERT INTO schools(id, name) VALUES('$idschool2', 'NTI-Vetenskap')");
                 //för att lägga in variablar använd '$var' 
-                $this->exec("INSERT INTO users(id, username, password_hash, school, admin) VALUES('$adminid', 'Admin', '$passwordAdmin', '1', 1)");
+                $this->exec("INSERT INTO users(id, username, name, password_hash, school, admin) VALUES('$adminid', 'Admin', 'Admin', '$passwordAdmin', '$idschool', 1)");
             }
     }
 
@@ -100,4 +103,16 @@
         echo "Opened database.db successfully!";
      }
      */
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+        //To Be Displayed in dropdown
+        $resultSchools = $db->query("SELECT name FROM schools");
+        $i = 0;
+        $_SESSION["schoolDisplay"] = array();
+        while($res = $resultSchools->fetchArray(SQLITE3_ASSOC)){
+            $_SESSION["schoolDisplay"][$i]["name"] = $res["name"];
+            $i++;
+        }
+        $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false; 
+    }
 ?>
