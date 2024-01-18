@@ -1,5 +1,5 @@
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-md fixed-top navbarBG" id="myNavbar">
+<nav class="navbar navbar-expand-md fixed-top" id="myNavbar">
     <a class="navbar-brand nav-link" href="index.php">
         <img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
         BaseCamp
@@ -9,30 +9,21 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
-    </button>-->
+    </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav navbarmiddle"> 
             <!-- Navbar Dropdown -->
 
-
-            
-            <!-- <div class="dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" id="navbardrop"
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop"
                     aria-expanded="false">
                     Kurser
                 </a>
-                <ul class="dropdown-menu dropCourses">
-                    <li>
-                        <div class="dropdown1 dropend">
-                        <a href="#">Digital Marketing ▾</a>
-                            <ul>
-                                <li><a href="#">SEO</a></li>
-                                <li><a href="#">Social Media</a></li>
-                            </ul>
-                        </div>
-                    </li>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Skola 1</a></li>
                     <li><a class="dropdown-item" href="#">Skola 2</a></li>
 
                     <li><a class="dropdown-item" href="#">Skola 3</a></li>
@@ -41,37 +32,9 @@
                     <li><a class="dropdown-item" href="#">Skola 5</a></li>
                     <li><a class="dropdown-item" href="#">Skola 6</a></li>
                 </ul>
-            </div> -->
+            </div>
 
-            <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Skolor
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">skola 1 </a></li>
-            <li><a class="dropdown-item" href="#">skola 2</a></li>
-            <li><a class="dropdown-item" href="#">skola 3</a></li>
-            <li><a class="dropdown-item" href="#">skola 4</a></li>
-            <li><a class="dropdown-item" href="#">skola 5</a></li>
-            <li><a class="dropdown-item" href="#">skola 6</a></li>
-            <li><a class="dropdown-item" href="#">skola 7</a></li>
-            <li class="nav-item dropend">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                skola 8
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">something</a></li>
-                <li><a class="dropdown-item" href="#">Förlust</a></li>
-                
-               
-              </ul>
-            </li>
+            
           </ul>
         </li>
      
@@ -79,7 +42,7 @@
     
     </div>
   </div>
-</nav>
+
 
 
 

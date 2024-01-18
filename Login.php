@@ -29,7 +29,6 @@ include("getLoginInfo.php");
 </head>
 
 <body id="logInSignInBackground">
-
     <div class="container position-relative " style="height:100vh;">
         <div class="position-absolute start-0 backButton">
             <a href="javascript:history.back()">
@@ -40,44 +39,67 @@ include("getLoginInfo.php");
 
         <div style="height:800px;"
             class="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center ">
-            <p id="text">Logga in</p>
-            <form action="" method="post" class="d-flex flex-column align-items-center">
-
-                <label for="emailL" id="labelForEmail">Email:</label>
-
-                <input type="text" id="email" name="emailL" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
-                    title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required class="mt-3">
-
-                <?php
-                
+            <?php
+                /*
                 if(isset($_SESSION["loginStatus"])){
                     echo $_SESSION["loginStatus"];
                 }
-                
-                //echo $_SESSION["login_VALID"];
-                ?>
-
-                <label for="password" id="labelForPassword">Lösenord:</label>
-
-
-                <input type="password" id="password" name="passwordL" title="Invalid" class="mt-3">
-
-
-                <button id="submit" type="submit" name ="login" class="mt-5">
-
-                    Logga in
-
-                </button>
-
-
-                <a href="#" id="forgotPassword" class="my-5">
-
-                    Glömt lösenord
-
-                </a>
-
-            </form>
-
+                */
+            ?>
+            
+            <?php
+                if(!isset($_SESSION["loginStatus"])){
+                    echo '
+                    <p id="text">Logga in</p>
+                    <form action="" method="post" class="d-flex flex-column align-items-center">
+    
+                        <label for="emailL" id="labelForEmail">Email:</label>
+    
+                        <input type="text" id="email" name="emailL" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
+                            title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required class="mt-3">
+    
+                        <?php
+                        
+                    
+                        //echo $_SESSION["login_VALID"];
+                        ?>
+    
+                        <label for="password" id="labelForPassword">Lösenord:</label>
+    
+    
+                        <input type="password" id="password" name="passwordL" title="Invalid" class="mt-3">
+    
+    
+                        <button id="submit" type="submit" name ="login" class="mt-5">
+    
+                            Logga in
+    
+                        </button>
+    
+    
+                        <a href="#" id="forgotPassword" class="my-5">
+    
+                            Glömt lösenord
+    
+                        </a>
+    
+                    </form>
+                    ';
+                }
+                else{
+                    echo ' 
+                    <p id="text">Logga in</p>
+                    <form action="" method="post" class="d-flex flex-column align-items-center">
+                    ';
+                    echo '<div style = "color: #f0d397; margin: 20px;">'. $_SESSION["loginStatus"] . '</div>';
+                    echo '
+                    <button id="submit" type="submit" name ="loggaUt" class="mt-5">
+                    Logga ut
+                    </button>
+                    ';
+                    echo "</form>";
+                }
+            ?>
         </div>
 
     </div>

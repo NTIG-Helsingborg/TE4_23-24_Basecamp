@@ -80,25 +80,18 @@
     <!-- Första gruppen med boxar -->
     <div class="row box-group" id="group1">
       <!-- Box 1-6 -->
-      <?php for ($i = 1; $i <= 6; $i++) { ?>
         <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="box">
-            <h4>Rubrik
-              <?php echo $i; ?>
-            </h4>
-            <p>Beskrivning av kursen
-              <?php echo $i; ?>.
-            </p>
-          </div>
+          <button onclick="addNewBox()">+</button>
         </div>
-      <?php } ?>
     </div>
-    <div class="button-container">
-      <button id="buttonLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
-      <button id="buttonRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
-    </div>
+
   </div>
 
+  <!-- Knappar -->
+  <div class="button-container">
+    <button id="buttonLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
+    <button id="buttonRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -144,6 +137,21 @@
       document.getElementById("sidebar").classList.toggle("showsidebar");
       document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
     }
+  </script>
+
+  <script>
+      function addNewBox(){
+          var boxTitle=prompt("Ange rubrik för det nya kapitlet!");
+          var boxDescription = prompt("Ange en kort beskrivning för det nya kapitlet!");
+
+          var newBox = document.createElement('div');
+          newBox.className='box';
+          newBox.innerHTML='<h4>' + boxTitle + '</h4><p>' + boxDescription + '</p>';
+
+          var container = document.getElementById('group1');
+
+          container.appendChild(newBox);
+      }
   </script>
 
 </body>
