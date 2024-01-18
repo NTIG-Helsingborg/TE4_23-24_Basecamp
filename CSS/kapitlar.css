@@ -124,7 +124,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   color: #fff;
-  width: 80%;
+  width: 90%;
   height: 14vh;
 
 }
@@ -143,8 +143,13 @@
 }
 
 .boxCourse h4{
-  padding: 16px;
+  padding-top: 16px;
 }
+
+.boxCourse h4, p{
+  padding-left: 16px;
+}
+
 
 @keyframes gradient {
   50% {
