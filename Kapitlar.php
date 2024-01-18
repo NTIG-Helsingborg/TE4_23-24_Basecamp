@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="baseCamp.css">
   <link rel="stylesheet" href="specifikkurs.css">
   <link rel="stylesheet" href="CSS/kapitlar.css">
+  <link rel="stylesheet" href="./CSS/navbarbackground.css">
 </head>
 
 <body>

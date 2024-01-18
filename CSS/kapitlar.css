@@ -1,8 +1,4 @@
 
-#myNavbar{
-  position:relative !important;
-}
-
 #box-container {
   margin-top: 5%;
   margin-left: 15%;
@@ -70,11 +66,16 @@
   cursor: pointer;
 }
 
+.sidebarScroll{
+  margin-top: -17rem;
+}
+
 .course-title{
   color: white;
   background-color: #4A48AF;
   text-align: left;
   height:17rem;
+  margin-top: 4.5rem;
 }
 .course-title .container{
   
