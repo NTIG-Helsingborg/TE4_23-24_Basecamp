@@ -47,31 +47,25 @@
             <ul>
              
                 <li>
-                    <a href="#">Kurser▾</a>
+                    <a href="#">Skolor▾</a>
                     <ul>
-                    <li><a href="#">Kurs 1</a>
-
+                    <li><a href="#">Skola 1 ▾</a>
+                            <ul>
+                                <li><a href="#">Hej</a></li>
+                                <li><a href="#">På dig</a></li>
+                            </ul>
                         </li>
-                        <li><a href="#">Kurs 2</a>
-
+                        <li><a href="#">Skola 2 ▾</a>
+                            <ul>
+                                <li><a href="#">Hej</a></li>
+                                <li><a href="#">På dig</a></li>
+                            </ul>
                         </li>
-                        <li><a href="#">Kurs 4</a>
-
-                        </li>
-                        <li><a href="#">Kurs 5</a>
-
-                        </li>
-                        <li><a href="#">Kurs 6</a>
-
-                        </li>
-                        <li><a href="#">Kurs 7</a>
-
-                        </li>
-                        <li><a href="#">Kurs 8</a>
-
-                        </li>
-                        <li><a href="#">Kurs 9</a>
-
+                        <li><a href="#">Skola 3 ▾</a>
+                            <ul>
+                                <li><a href="#">Hej</a></li>
+                                <li><a href="#">På dig</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
