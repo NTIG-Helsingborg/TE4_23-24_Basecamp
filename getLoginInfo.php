@@ -4,7 +4,7 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-
+    //INLOGGNING
     if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])){
         $username = $_POST["emailL"];
         $password = $_POST["passwordL"];
@@ -20,6 +20,7 @@
         
         $passwordMatch;
         $hash;
+        //Om hash hittas i databasen.
         if($userId !== false){
             $argId = new QueryArgsStruct(":id", $userId["id"], SQLITE3_TEXT);
             $resPassword = $db->run_query($passwordStatement, $argId);
@@ -27,12 +28,9 @@
             $passwordMatch = password_verify($password, $hash["password_hash"]);
         }
 
-        echo "<br><br><br>";
-        var_dump($passwordMatch);
-        echo "<br><br><br>";
-        var_dump($userId);
-
+        //OM hash matchar lösenord och användare hittas
         if($passwordMatch && $userId["id"] !== false){
+            //OM user har samma admin status till admin
             if($userId["admin"] == $adminCheckRes["admin"]){
                 $_SESSION["loginStatus"] = "Admin";
                 header("Location: /AdminPage.php");

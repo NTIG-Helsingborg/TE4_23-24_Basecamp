@@ -32,7 +32,6 @@ form{
 
 /*Css to the email inputbox*/
 #email{
-   
     border: solid 2px #f0d397;
     border-radius: 2px;
     width: 250px;
@@ -55,7 +54,24 @@ form{
     margin-top: 10%;
     margin-right: 210px;
     color:#f0d397;
- }
+}
+
+#labelForName{
+    margin-top: 10%;
+    margin-right: 210px;
+    color:#f0d397;
+}
+#labelForSchool{
+    margin-top: 10%;
+    margin-right: 210px;
+    color:#f0d397;
+}
+
+#name{
+    border: solid 2px #f0d397;
+    border-radius: 2px;
+    width: 250px;
+}
 
 
 /*Css to the "Logga in" and "Registrera" button*/
@@ -68,6 +84,7 @@ form{
     background-color:#f0d397;
     font-size: 18px;
     color: black;
+    margin-bottom: 30px;
 }
 
 /*Css to the link "Glömt lösenord"*/
