@@ -141,16 +141,26 @@
 
   <script>
       function addNewBox(){
-          var boxTitle=prompt("Ange rubrik för det nya kapitlet!");
-          var boxDescription = prompt("Ange en kort beskrivning för det nya kapitlet!");
+            var boxTitle=prompt("Ange rubrik för det nya kapitlet!");
+            var boxDescription = prompt("Ange en kort beskrivning för det nya kapitlet!");
 
-          var newBox = document.createElement('div');
-          newBox.className='box';
-          newBox.innerHTML='<h4>' + boxTitle + '</h4><p>' + boxDescription + '</p>';
+            var newBox = document.createElement('div');
+            newBox.className='box';
+            newBox.innerHTML='<h4>' + boxTitle + '</h4><p>' + boxDescription + '</p>';
 
-          var container = document.getElementById('group1');
+            var deleteButton = document.createElement('button');
+            deleteButton.innerHTML = 'Ta bort';
+            deleteButton.onclick = function() {
+            // Ta bort den aktuella boxen när knappen klickas på
+            newBox.remove();
+            };
 
-          container.appendChild(newBox);
+            // Lägg till "Ta bort" knappen i den nya boxen
+            newBox.appendChild(deleteButton);
+
+            var container = document.getElementById('group1');
+
+            container.appendChild(newBox);
       }
   </script>
 

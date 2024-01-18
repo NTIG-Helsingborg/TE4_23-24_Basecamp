@@ -16,7 +16,7 @@
   <!-- CSS-fil -->
   <link rel="stylesheet" href="baseCamp.css">
   <link rel="stylesheet" href="specifikkurs.css">
-  <link rel="stylesheet" href="CSS/kurser.css">
+  <link rel="stylesheet" href="CSS/kapitlar.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
   </header>
   <div class="course-title">
     <div class="container">
-      <h1>Welcome to Programming 1</h1>
+      <h1>Welcome to your coursers</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit
         amet ipsum</p>
     </div>
@@ -82,52 +82,29 @@
     <div class="row box-group" id="group1">
       <!-- Box 1-6 -->
       <?php for ($i = 1; $i <= 6; $i++) { ?>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="box">
+        <div class="col-lg-12 col-md-12 col-sm-6">
+          <div class="boxCourse">
             <h4>Rubrik
               <?php echo $i; ?>
             </h4>
             <p>Beskrivning av kursen
               <?php echo $i; ?>.
             </p>
+            
           </div>
         </div>
       <?php } ?>
     </div>
+</div>
 
-  </div>
+<button class="circular-button"></button>
 
-  <!-- Knappar -->
-  <!-- <div class="button-container">
-    <button id="buttonLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
-    <button id="buttonRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
-  </div> -->
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
-
-
-
-
-
-
-  <!-- <script>
-
-
-    // Lägg till händelsehanterare för klick händelsen på knapparna
-    document.getElementById('buttonLeft').addEventListener('click', function () {
-      //Ska användas för att gå till föregående kurs
-    });
-
-    document.getElementById('buttonRight').addEventListener('click', function () {
-      //Ska användas för att gå till nästa kurs
-
-    });
-  </script>
-
 
   <script>
     $(document).ready(function () {
@@ -154,7 +131,7 @@
       document.getElementById("sidebar").classList.toggle("showsidebar");
       document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
     }
-  </script> -->
+  </script>
 
 </body>
 
