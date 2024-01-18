@@ -16,7 +16,7 @@
   <!-- CSS-fil -->
   <link rel="stylesheet" href="baseCamp.css">
   <link rel="stylesheet" href="specifikkurs.css">
-  <link rel="stylesheet" href="CSS/kurser.css">
+  <link rel="stylesheet" href="CSS/kapitlar.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
   </header>
   <div class="course-title">
     <div class="container">
-      <h1>Welcome to Programming 1</h1>
+      <h1>Welcome to your coursers</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit
         amet ipsum</p>
     </div>
@@ -82,8 +82,8 @@
     <div class="row box-group" id="group1">
       <!-- Box 1-6 -->
       <?php for ($i = 1; $i <= 6; $i++) { ?>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="box">
+        <div class="col-lg-12 col-md-12 col-sm-6">
+          <div class="boxCourse">
             <h4>Rubrik
               <?php echo $i; ?>
             </h4>
