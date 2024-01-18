@@ -88,12 +88,12 @@ include("getLoginInfo.php");
                 }
                 else{
                     echo ' 
-                    <p id="text">Logga in</p>
+                    <p id="text">Inloggad</p>
                     <form action="" method="post" class="d-flex flex-column align-items-center">
                     ';
-                    echo '<div style = "color: #f0d397; margin: 20px;">'. $_SESSION["loginStatus"] . '</div>';
+                    echo '<div style = "color: #f0d397; margin: 20px; font-size: 20px;">'. $_SESSION["loginStatus"] . '</div>';
                     echo '
-                    <button id="submit" type="submit" name ="loggaUt" class="mt-5">
+                    <button id="submit" type="submit" name ="loggaut" class="mt-5">
                     Logga ut
                     </button>
                     ';
