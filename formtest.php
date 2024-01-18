@@ -17,7 +17,7 @@
         <textarea id="description" name="data" rows="4" required></textarea><br>
 
         <label for="url">YouTube URL:</label> <br> 
-        <input type="text" id="url" name="url" required><br> <br> 
+        <input type="text" id="url" name="url" ><br> <br> 
 
         <input type="submit" name = "submit" value="Submit">
     </form>
