@@ -9,7 +9,7 @@
         $username = $_POST["emailL"];
         $password = $_POST["passwordL"];
         $passwordStatement = "SELECT password_hash FROM users WHERE id = :id";
-        $adminCheck = $db->query("SELECT admin FROM users WHERE username = 'Admin'");
+        $adminCheck = $db->query("SELECT admin, id FROM users WHERE username = 'Admin'");
         $adminCheckRes = $adminCheck->fetchArray(SQLITE3_ASSOC);
 
 
@@ -31,7 +31,7 @@
         //OM hash matchar lösenord och användare hittas
         if($passwordMatch && $userId["id"] !== false){
             //OM user har samma admin status till admin
-            if($userId["admin"] == $adminCheckRes["admin"]){
+            if($userId["admin"] == $adminCheckRes["admin"] && $adminCheckRes["id"] == $userId["id"] ){
                 $_SESSION["loginStatus"] = "Admin";
                 header("Location: /AdminPage.php");
                 exit();

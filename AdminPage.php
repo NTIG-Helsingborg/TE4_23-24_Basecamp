@@ -21,6 +21,7 @@
         $_SESSION["Userlist"][$i]["admin"] = $row["admin"];
         $i++;
     }
+
     //nicely formatted array
     /*
     echo '<pre>'; 

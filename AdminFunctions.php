@@ -33,21 +33,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $statement = "UPDATE users SET admin = :admin WHERE id = :id";
         $argAdmin = new QueryArgsStruct(":admin", $isChecked ? 1 : 0 , SQLITE3_INTEGER);
         $argId = new QueryArgsStruct(":id", $resId["id"], SQLITE3_TEXT);
-        $res = $db->run_query($statement, $argAdmin, $argId);
+        $res = $db->run_query($statement, $argAdmin, $argId); 
     }
 
     if(isset($jsonData["deleteVar"])){
         $statementDeleteUsers = "DELETE FROM users WHERE id = :id";
         $statementDeleteClasses = "DELETE FROM classes WHERE owner = :owner";
-        
-
-        $statementGetIdFromClass = "SELECT id FROM classes WHERE owner = :owner";
-        $statementDeleteChapters = "DELETE FROM chapters WHERE class = :class";
-    
+        $statementDeleteChapters = "DELETE FROM chapters WHERE owner =:owner";
+        print_r($_SESSION["Userlist"]);
         foreach($_SESSION["Userlist"] as $key => $value){
             if($value["admin"] == 0){
-                $argIdFromClass = new QueryArgsStruct(":class", $value["id"], SQLITE3_TEXT);
-                
+                echo $value["admin"];
+              
+                $argOwnerChapters = new QueryArgsStruct(":owner", $value["id"], SQLITE3_TEXT);
+                $resChapters = $db->run_query($statementDeleteChapters, $argOwnerChapters);
+                $chapterDeleted = $resChapters->fetchArray(SQLITE3_ASSOC);
+
+                $argOwnerClasses = new QueryArgsStruct(":owner", $value["id"], SQLITE3_TEXT);
+                $resClasses = $db->run_query($statementDeleteClasses, $argOwnerClasses);
+                $classesDeleted =  $resClasses->fetchArray(SQLITE3_ASSOC);
+
+                $argIdUsers = new QueryArgsStruct(":id", $value["id"], SQLITE3_TEXT);
+                $resUsers = $db->run_query($statementDeleteUsers, $argIdUsers);
+                $classesDeleted =  $resUsers->fetchArray(SQLITE3_ASSOC);
+                header("Refresh: 0");
             }
         }
     }
