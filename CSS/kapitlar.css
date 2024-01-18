@@ -130,7 +130,7 @@
   height: 14vh;
 
 }
-.boxCourse:hover{
+.boxCourse:hover {
 
 
   animation: gradient 10s ease infinite;
@@ -144,7 +144,51 @@
   text-decoration: none; */
 }
 
+.boxCourse h4{
+  padding: 16px;
+}
+
 @keyframes gradient {
   50% {
     background-position: 100% 0;
   }}
+
+  .circular-button {
+    width: 70px;
+    text-align: center;
+    height: 70px;
+    border-radius: 50%;
+    background-color:#b4b4b4;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+margin-top: 2vh;
+margin-bottom: 5vh;
+transition: all 0.3s ease;
+
+  }
+
+  .circular-button::before,
+  .circular-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+  }
+
+  .circular-button::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .circular-button:hover {
+    background-color: #0056b3;
+  }
