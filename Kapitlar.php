@@ -16,7 +16,7 @@
   <!-- CSS-fil -->
   <link rel="stylesheet" href="baseCamp.css">
   <link rel="stylesheet" href="specifikkurs.css">
-  <link rel="stylesheet" href="CSS/kurser.css">
+  <link rel="stylesheet" href="CSS/kapitlar.css">
 </head>
 
 <body>
