@@ -13,9 +13,11 @@
         <span class="navbar-toggler-icon"></span>
     </button>-->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <!-- <ul class="navbar-nav navbarmiddle"> -->
+        <ul class="navbar-nav navbarmiddle"> 
             <!-- Navbar Dropdown -->
 
+
+            
             <!-- <div class="dropdown">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" id="navbardrop"
                     aria-expanded="false">
@@ -24,13 +26,11 @@
                 <ul class="dropdown-menu dropCourses">
                     <li>
                         <div class="dropdown1 dropend">
-                        <a class="dropdown-item dropdown-toggle" role="button" data-bs-toggle="dropdown" data-bs-hover="dropdown" id="navbardrop-inner"
-                        aria-expanded="false">
-                        Skola 1
-                        </a>
-                        <ul class="dropdown-menu dropSchools">
-                            <li><a class="dropdown-item">Hej</a></li>
-                        </ul>
+                        <a href="#">Digital Marketing ▾</a>
+                            <ul>
+                                <li><a href="#">SEO</a></li>
+                                <li><a href="#">Social Media</a></li>
+                            </ul>
                         </div>
                     </li>
                     <li><a class="dropdown-item" href="#">Skola 2</a></li>
@@ -43,40 +43,50 @@
                 </ul>
             </div> -->
 
-            <nav class="menu ">
-            <ul>
-             
-                <li>
-                    <a href="#">Skolor▾</a>
-                    <ul>
-                    <li><a href="#">Skola 1 ▾</a>
-                            <ul>
-                                <li><a href="#">Hej</a></li>
-                                <li><a href="#">På dig</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Skola 2 ▾</a>
-                            <ul>
-                                <li><a href="#">Hej</a></li>
-                                <li><a href="#">På dig</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Skola 3 ▾</a>
-                            <ul>
-                                <li><a href="#">Hej</a></li>
-                                <li><a href="#">På dig</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Skolor
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">skola 1 </a></li>
+            <li><a class="dropdown-item" href="#">skola 2</a></li>
+            <li><a class="dropdown-item" href="#">skola 3</a></li>
+            <li><a class="dropdown-item" href="#">skola 4</a></li>
+            <li><a class="dropdown-item" href="#">skola 5</a></li>
+            <li><a class="dropdown-item" href="#">skola 6</a></li>
+            <li><a class="dropdown-item" href="#">skola 7</a></li>
+            <li class="nav-item dropend">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                skola 8
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">something</a></li>
+                <li><a class="dropdown-item" href="#">Förlust</a></li>
+                
                
-            </ul>
-        </nav>
+              </ul>
+            </li>
+          </ul>
+        </li>
+     
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+
+
 
             <a class="nav-link" href="Login.php"><span class="fas fa-sign-in-alt"></span> Login</a>
 
-            <!-- NAVBAR SIGN UP and LOG IN -->
-            <!--<?php
+            <!-- AVBAR SIGN UP and LOG IN -->
+            <?php
             if (isset($_SESSION["userNAME"])) {
                 echo '
 				<li class="nav-item dropdown">
@@ -94,7 +104,7 @@
             } else {
                 include('signupAndLogin.php');
             }
-            ?>-->
+            ?>
         </ul>
         <ul class="navbar-nav ms-auto navbarright">
             <a class="nav-link signUp" href="SignIn.php"><span class="fas fa-user"></span> Sign Up</a>

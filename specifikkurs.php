@@ -28,10 +28,10 @@
 <body>
 	<header>
 		<?php include 'Components/Navbar.php'; ?>
-        <div class="title">Hej</div>
 	</header>
+    <div class="title">Hej</div>
     <div id="sidebar" class="sideBar">
-        <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
+        <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false"><i class="fa fa-chevron-down"></i></button></h1> 
         <div id="demo" class="collapse" aria-labelledby="demo">
             <ul>
                 <li><a href="#">Länk 1</a></li>
@@ -41,7 +41,7 @@
                 <li><a href="#">Länk 1</a></li>
             </ul>
         </div>
-        <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false">&#11167;</button></h1> 
+        <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i class="fa fa-chevron-down"></i></button></h1> 
         <div id="demo1" class="collapse" aria-labelledby="demo1">
             <ul>
                 <li><a href="#">Länk 1</a></li>
@@ -80,7 +80,7 @@
             </ul>
         </div>
     </div>
-    <button onClick="ShowSideBar()" class="showsideBtn" id="showsidebtnID">></button>
+    <button onClick="ShowSideBar()" class="showsideBtn" id="showsidebtnID"><i class="fa fa-chevron-right"></i></button>
     <div class="content">
     <div class="contentTop">
         <div class="contentLeft">
@@ -104,9 +104,9 @@
         <script>
         $(document).ready(function(){
             $('.collapse').on('shown.bs.collapse', function(){
-                $(this).prev().find('.showlinks').html('&#11165;');
+                $(this).prev().find('.showlinks').html('<i class="fa fa-chevron-up"></i>');
             }).on('hidden.bs.collapse', function(){
-                $(this).prev().find('.showlinks').html('&#11167;');
+                $(this).prev().find('.showlinks').html('<i class="fa fa-chevron-down"></i>');
             });
         });
         </script>
@@ -114,9 +114,9 @@
             $(document).ready(function () {
                 $(window).scroll(function () {
                     if ($(this).scrollTop() > 1) {
-                        $('#sidebar').addClass('sidebarScroll');
+                        $('#sidebar, #showsidebtnID').addClass('sidebarScroll');
                     } else {
-                        $('#sidebar').removeClass('sidebarScroll');
+                        $('#sidebar, #showsidebtnID').removeClass('sidebarScroll');
                     }
                 });
             });

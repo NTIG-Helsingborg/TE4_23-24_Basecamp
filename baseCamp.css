@@ -89,78 +89,63 @@ header{
 .navbarright{
     padding-right: 3vw;
 }
-/*
-.dropdown-menu{
+
+
+
+/* ...existing code... */
+
+/* .dropdown-menu{
     position: fixed;
     overflow-x: visible;
     overflow-y: auto;
     padding-top: 1rem;
     max-height: 200px !important;
-}*/
+    z-index: 10; 
+}
 
-/* .dropCourses{
+.dropCourses{
     position: fixed;
-    overflow-y: scroll;
+    overflow-y: auto; 
     overflow-x: visible !important;
     padding-top: 1rem;
     max-height: 200px !important;
-    z-index: 5;
+    z-index: 15; 
 } */
 
 
-
-.menu ul {
-    all: unset;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: transparent; /* Set the background color to transparent */
+.dropend .dropdown-toggle {
+    color: rgb(26, 25, 121);
+    margin-left: 1em;
 }
 
-.menu ul li {
-    position: relative;
-}
-
-.menu ul li a {
-    display: block;
-    padding: 10px;
-}
-
-/* Style the submenus */
-.menu ul li ul {
-    position: absolute;
+.dropdown .dropdown-menu {
     display: none;
-    flex-direction: column;
+ 
 }
 
-.menu ul ul li {
-    width: max-content;
-    min-width: 100%;
-    max-width: 200px;
+.dropdown:hover > .dropdown-menu,
+.dropend:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0.125em;
+    margin-left: 0.125em;
 }
 
-.menu ul a {
-    all: unset;
-    color: #000000;
-    cursor: pointer;
+@media screen and (min-width: 769px) {
+    .dropend:hover > .dropdown-menu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .dropend .dropdown-toggle {
+        margin-left: 0.5em;
+    }
 }
 
-.menu ul a:hover {
-    background: rgba(240, 248, 255, 0.877);
+/* Add the following CSS to fix the scrolling functionality */
+.dropdown-menu.scrollable {
+    max-height: 200px;
+    overflow-y: auto;
 }
-
-.menu ul li:hover > ul {
-    display: flex;
-}
-
-.menu ul ul ul {
-    top: 0;
-    left: 100%;
-}
-
-
-
-
 
 
 
