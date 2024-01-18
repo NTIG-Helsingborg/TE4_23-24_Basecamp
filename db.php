@@ -80,7 +80,7 @@
                 $adminNameStatement =  $this->query("SELECT id from users WHERE username = 'Admin'");
 
                 $adminRes = $adminNameStatement->fetchArray(SQLITE3_ASSOC);
-                $adminName = $adminRes["id"];
+                $adminName = "Admin";
                 echo "<br>";
                 echo $idClass;
                 echo "<br>";
