@@ -10,23 +10,28 @@
 }
 
 .box {
+  transform: translate(0%,0%);
   padding-top: 30px;
   border-radius: 15px;
   margin-bottom: 20px;
+
+  border: none;
+  outline: none;
+  background: linear-gradient(45deg,#446FC8, #6f36da, #E96D74);
+  background-size: 400% 400%;
+  box-shadow: 2vw 5vw 0 #E96D74;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to bottom, #446FC8 90%, #F59191 10%);
   padding: 20px;
   color: #fff;
   width: 100%;
   height: 20vh;
-  transition:all 0.5s ease-in-out;
+  transition: all 0.3s ease;
 }
 .box:hover{
-  background: linear-gradient(to bottom, #446FC8 10%, #F59191 90%);
-  transform: scale(1.075);
-  cursor: pointer;
-  color: #fff;
-  text-decoration: none;
+
+  animation: gradient 10s ease infinite;
+    scale: 1.03;
+    box-shadow: 0.2vw 0.2vw 0 #F59191;
 }
 @media (max-width: 1200px) {
   #box-container {
@@ -111,9 +116,9 @@
   color: #e8e8e8;
   border: none;
   outline: none;
-  background: linear-gradient(45deg,#446FC8,  #5f2ebb, #e748f0);
+  background: linear-gradient(45deg,#446FC8, #6f36da, #E96D74);
   background-size: 400% 400%;
-  box-shadow: 2vw 5vw 0 lightcoral;
+  box-shadow: 2vw 5vw 0 #E96D74;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 15px;
