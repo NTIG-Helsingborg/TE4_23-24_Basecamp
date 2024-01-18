@@ -82,6 +82,7 @@
     <div class="row box-group" id="group1">
       <!-- Box 1-6 -->
       <?php for ($i = 1; $i <= 6; $i++) { ?>
+     
         <div class="col-lg-12 col-md-12 col-sm-6">
           <div class="boxCourse">
             <h4>Rubrik

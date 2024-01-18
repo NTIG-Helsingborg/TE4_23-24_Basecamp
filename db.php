@@ -60,7 +60,8 @@
                     `id` TEXT PRIMARY KEY NOT NULL,
                     `owner` TEXT NOT NULL REFERENCES `users`(`id`),
                     `class` TEXT NOT NULL REFERENCES `classes`(`id`),
-                    `data` TEXT,
+                    `data` TEXT NOT NULL,
+                    `url` TEXT,
                     `name` TEXT NOT NULL
                 )
             ");
@@ -69,12 +70,27 @@
             if(!$StatementK1){
                 $idschool = bin2hex(random_bytes(20));
                 $idschool2 = bin2hex(random_bytes(20));
+                $idClass = bin2hex(random_bytes(20));
+
                 $adminid = (string)uniqid();
                 $passwordAdmin = password_hash("Veryynice123!", PASSWORD_DEFAULT);
                 $this->exec("INSERT INTO schools(id, name) VALUES('$idschool', 'NTI-Helsingborg')");
                 $this->exec("INSERT INTO schools(id, name) VALUES('$idschool2', 'NTI-Vetenskap')");
-                //för att lägga in variablar använd '$var' 
                 $this->exec("INSERT INTO users(id, username, name, password_hash, school, admin) VALUES('$adminid', 'Admin', 'Admin', '$passwordAdmin', '$idschool', 1)");
+                $adminNameStatement =  $this->query("SELECT id from users WHERE username = 'Admin'");
+
+                $adminRes = $adminNameStatement->fetchArray(SQLITE3_ASSOC);
+                $adminName = "Admin";
+                echo "<br>";
+                echo $idClass;
+                echo "<br>";
+                echo $adminName;
+                echo "<br>";
+                echo $idschool;
+
+                $this->exec("INSERT INTO classes(id, owner, name, data, school) VALUES('$idClass', '$adminName', 'Programmering 1', 'genomgångar för programmering 1', '$idschool')");
+                //för att lägga in variablar använd '$var' 
+               
             }
     }
 
