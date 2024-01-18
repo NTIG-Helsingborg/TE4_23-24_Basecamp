@@ -43,32 +43,38 @@
                 </ul>
             </div> -->
 
-            <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Skolor
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">skola 1 </a></li>
-            <li><a class="dropdown-item" href="#">skola 2</a></li>
-            <li><a class="dropdown-item" href="#">skola 3</a></li>
-            <li><a class="dropdown-item" href="#">skola 4</a></li>
-            <li><a class="dropdown-item" href="#">skola 5</a></li>
-            <li><a class="dropdown-item" href="#">skola 6</a></li>
-            <li><a class="dropdown-item" href="#">skola 7</a></li>
-            <li class="nav-item dropend">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                skola 8
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">something</a></li>
-                <li><a class="dropdown-item" href="#">Förlust</a></li>
-                
+            <nav class="menu ">
+            <ul>
+             
+                <li>
+                    <a href="#">Kurser▾</a>
+                    <ul>
+                    <li><a href="#">Kurs 1</a>
+
+                        </li>
+                        <li><a href="#">Kurs 2</a>
+
+                        </li>
+                        <li><a href="#">Kurs 4</a>
+
+                        </li>
+                        <li><a href="#">Kurs 5</a>
+
+                        </li>
+                        <li><a href="#">Kurs 6</a>
+
+                        </li>
+                        <li><a href="#">Kurs 7</a>
+
+                        </li>
+                        <li><a href="#">Kurs 8</a>
+
+                        </li>
+                        <li><a href="#">Kurs 9</a>
+
+                        </li>
+                    </ul>
+                </li>
                
               </ul>
             </li>
