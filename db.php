@@ -58,6 +58,7 @@
             $this->exec("
                 CREATE TABLE IF NOT EXISTS `chapters` (
                     `id` TEXT PRIMARY KEY NOT NULL,
+                    `owner` TEXT NOT NULL REFERENCES `users`(`id`),
                     `class` TEXT NOT NULL REFERENCES `classes`(`id`),
                     `data` TEXT,
                     `name` TEXT NOT NULL
