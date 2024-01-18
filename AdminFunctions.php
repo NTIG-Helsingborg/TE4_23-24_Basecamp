@@ -39,11 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($jsonData["deleteVar"])){
         $statementDeleteUsers = "DELETE FROM users WHERE id = :id";
         $statementDeleteClasses = "DELETE FROM classes WHERE owner = :owner";
-        $statementGetIdFromClass = "SELECT id FROM classes WHERE owner = :owner";
-        $statementGetIdFromClass = "SELECT id FROM classes WHERE owner = :owner";
+        
 
+        $statementGetIdFromClass = "SELECT id FROM classes WHERE owner = :owner";
+        $statementDeleteChapters = "DELETE FROM chapters WHERE class = :class";
+    
         foreach($_SESSION["Userlist"] as $key => $value){
             if($value["admin"] == 0){
+                $argIdFromClass = new QueryArgsStruct(":class", $value["id"], SQLITE3_TEXT);
                 
             }
         }
