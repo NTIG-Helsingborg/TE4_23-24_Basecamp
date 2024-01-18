@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $statementDeleteUsers = "DELETE FROM users WHERE id = :id";
         $statementDeleteClasses = "DELETE FROM classes WHERE owner = :owner";
         $statementGetIdFromClass = "SELECT id FROM classes WHERE owner = :owner";
-        $argGetIdFromClass = new QueryArgsStruct();
+        $statementGetIdFromClass = "SELECT id FROM classes WHERE owner = :owner";
 
         foreach($_SESSION["Userlist"] as $key => $value){
             if($value["admin"] == 0){
