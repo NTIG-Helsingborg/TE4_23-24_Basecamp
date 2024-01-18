@@ -93,9 +93,12 @@
         </div>
       <?php } ?>
     </div>
-    <div class="button-container">
-      <button id="buttonLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
-      <button id="buttonRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
+    <div class="button-container d-flex flex-column flex-sm-row ">
+      <button id="buttonLeft" class="rounded-button left p-1 p-sm-4 my-3 my-sm-5"><i
+          class="fa fa-chevron-left"></i>Webbutveckling
+        1</button>
+      <button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5">Programmering 2<i
+          class="fa fa-chevron-right"></i></button>
     </div>
   </div>
 
