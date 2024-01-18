@@ -79,11 +79,11 @@
   <div class="container" id="box-container">
     <!-- Första gruppen med boxar -->
     <div class="row box-group" id="group1">
-    <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="box">
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="box">
           <button onclick="addNewBox()">+</button>
-          </div>
-    </div>
+        </div>
+      </div>
       <!-- Box 1-6 -->
     </div>
     <div class="button-container d-flex flex-column flex-sm-row ">
@@ -93,7 +93,7 @@
       <button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5">Programmering 2<i
           class="fa fa-chevron-right"></i></button>
     </div>
-    </div>
+  </div>
 
   </div>
 
@@ -146,35 +146,35 @@
   </script>
 
   <script>
-      function addNewBox() {
-    var boxTitle = prompt("Ange rubrik för det nya kapitlet!");
-    var boxDescription = prompt("Ange en kort beskrivning för det nya kapitlet!");
+    function addNewBox() {
+      var boxTitle = prompt("Ange rubrik för det nya kapitlet!");
+      var boxDescription = prompt("Ange en kort beskrivning för det nya kapitlet!");
 
-    var newBox = document.createElement('div');
-    newBox.className = 'col-lg-4 col-md-6 col-sm-6';
+      var newBox = document.createElement('div');
+      newBox.className = 'col-lg-4 col-md-6 col-sm-6';
 
-    var boxInner = document.createElement('div');
-    boxInner.className = 'box';
-    boxInner.innerHTML = '<h4>' + boxTitle + '</h4><p>' + boxDescription + '</p>';
+      var boxInner = document.createElement('div');
+      boxInner.className = 'box';
+      boxInner.innerHTML = '<h4>' + boxTitle + '</h4><p>' + boxDescription + '</p>';
 
-    var deleteButton = document.createElement('button');
-    deleteButton.className = 'btn btn-danger'; // Lägg till Bootstrap-klass för knappstilen
-    deleteButton.innerHTML = 'Ta bort';
-    deleteButton.onclick = function () {
+      var deleteButton = document.createElement('button');
+      deleteButton.className = 'btn btn-danger'; // Lägg till Bootstrap-klass för knappstilen
+      deleteButton.innerHTML = 'Ta bort';
+      deleteButton.onclick = function () {
         // Ta bort den aktuella boxen när knappen klickas på
         newBox.remove();
-    };
+      };
 
-    // Lägg till "Ta bort" knappen i den nya boxen
-    boxInner.appendChild(deleteButton);
+      // Lägg till "Ta bort" knappen i den nya boxen
+      boxInner.appendChild(deleteButton);
 
-    // Lägg till boxens innehåll i den yttre boxen
-    newBox.appendChild(boxInner);
+      // Lägg till boxens innehåll i den yttre boxen
+      newBox.appendChild(boxInner);
 
-    var container = document.getElementById('group1');
+      var container = document.getElementById('group1');
 
-    container.appendChild(newBox);
-}
+      container.appendChild(newBox);
+    }
 
   </script>
 
