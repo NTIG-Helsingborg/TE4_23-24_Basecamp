@@ -87,6 +87,7 @@
                     <th style = "background-color: red; cursor: pointer;" onclick = "deleteFetch()">
                         Delete unchecked
                     </th>
+                    
                 </tr>
                 <?php
                     foreach($_SESSION["Userlist"] as $key => $value){

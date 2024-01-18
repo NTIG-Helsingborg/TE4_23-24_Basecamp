@@ -9,50 +9,46 @@
     </button>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav navbarmiddle"> 
+        <ul class="navbar-nav ms-auto navbarright"> 
             <!-- Navbar Dropdown - Lärare -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop" aria-expanded="false">
+                <a class="nav-link dropdown-toggle white-text" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop" aria-expanded="false">
                     Lärare
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="Login.php">Login</a></li>
-                    <li><a class="dropdown-item" href="SignUp.php">Signup</a></li>
+                <ul class="dropdown-menu dropdown-menu-start" style="background-color: white;">
+                    <li><a class="dropdown-item white-text" href="Login.php">Login</a></li>
+                    <li><a class="dropdown-item white-text" href="SignUp.php">Signup</a></li>
                 </ul>
             </li>
 
             <!-- Navbar Dropdown - Kurser -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop" aria-expanded="false">
+                <a class="nav-link dropdown-toggle white-text" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop" aria-expanded="false">
                     Kurser
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Skola 1</a></li>
-                    <li><a class="dropdown-item" href="#">Skola 2</a></li>
-                    <li><a class="dropdown-item" href="#">Skola 3</a></li>
-                    <li><a class="dropdown-item" href="#">Skola 4</a></li>
-                    <li><a class="dropdown-item" href="#">Skola 5</a></li>
-                    <li><a class="dropdown-item" href="#">Skola 6</a></li>
+                <ul class="dropdown-menu dropdown-menu-start" style="background-color: white;">
+                    <li><a class="dropdown-item white-text" href="#">Skola 1</a></li>
+                    <li><a class="dropdown-item white-text" href="#">Skola 2</a></li>
+                    <li><a class="dropdown-item white-text" href="#">Skola 3</a></li>
+                    <li><a class="dropdown-item white-text" href="#">Skola 4</a></li>
+                    <li><a class="dropdown-item white-text" href="#">Skola 5</a></li>
+                    <li><a class="dropdown-item white-text" href="#">Skola 6</a></li>
                 </ul>
             </li>
-        </ul>
 
-        <!-- Your existing code... -->
-
-        <ul class="navbar-nav ms-auto navbarright">
             <?php
             if (isset($_SESSION["userNAME"])) {
                 echo '
                     <!-- Navbar Dropdown - User -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">',
+                        <a class="nav-link dropdown-toggle white-text" href="#" id="navbardrop" data-toggle="dropdown">',
                         $_SESSION["userNAME"], '
                         </a>
                     
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Profil</a>
-                            <a class="dropdown-item" href="#">Inställningar</a>
-                            <a class="dropdown-item" href="logout.php">Logga ut</a>
+                        <div class="dropdown-menu dropdown-menu-start">
+                            <a class="dropdown-item white-text" href="#">Profil</a>
+                            <a class="dropdown-item white-text" href="#">Inställningar</a>
+                            <a class="dropdown-item white-text" href="logout.php">Logga ut</a>
                         </div>
                     </li>
                     ';

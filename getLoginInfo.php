@@ -38,9 +38,12 @@
             }
             else{
                 $_SESSION["loginStatus"] = "Teacher";
+                header("Refresh: 0");
             }
         }
-
-
+    }
+    if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["loggaut"])){
+        unset($_SESSION["loginStatus"]);
+        header("Refresh: 0");
     }
 ?>
