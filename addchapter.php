@@ -79,19 +79,25 @@
   <div class="container" id="box-container">
     <!-- Första gruppen med boxar -->
     <div class="row box-group" id="group1">
-      <!-- Box 1-6 -->
-        <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="box">
           <button onclick="addNewBox()">+</button>
         </div>
+      </div>
+      <!-- Box 1-6 -->
     </div>
+    <div class="button-container d-flex flex-column flex-sm-row ">
+      <button id="buttonLeft" class="rounded-button left p-1 p-sm-4 my-3 my-sm-5"><i
+          class="fa fa-chevron-left"></i>Webbutveckling
+        1</button>
+      <button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5">Programmering 2<i
+          class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
 
   </div>
 
   <!-- Knappar -->
-  <div class="button-container">
-    <button id="buttonLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
-    <button id="buttonRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
-  </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -140,28 +146,36 @@
   </script>
 
   <script>
-      function addNewBox(){
-            var boxTitle=prompt("Ange rubrik för det nya kapitlet!");
-            var boxDescription = prompt("Ange en kort beskrivning för det nya kapitlet!");
+    function addNewBox() {
+      var boxTitle = prompt("Ange rubrik för det nya kapitlet!");
+      var boxDescription = prompt("Ange en kort beskrivning för det nya kapitlet!");
 
-            var newBox = document.createElement('div');
-            newBox.className='box';
-            newBox.innerHTML='<h4>' + boxTitle + '</h4><p>' + boxDescription + '</p>';
+      var newBox = document.createElement('div');
+      newBox.className = 'col-lg-4 col-md-6 col-sm-6';
 
-            var deleteButton = document.createElement('button');
-            deleteButton.innerHTML = 'Ta bort';
-            deleteButton.onclick = function() {
-            // Ta bort den aktuella boxen när knappen klickas på
-            newBox.remove();
-            };
+      var boxInner = document.createElement('div');
+      boxInner.className = 'box';
+      boxInner.innerHTML = '<h4>' + boxTitle + '</h4><p>' + boxDescription + '</p>';
 
-            // Lägg till "Ta bort" knappen i den nya boxen
-            newBox.appendChild(deleteButton);
+      var deleteButton = document.createElement('button');
+      deleteButton.className = 'btn btn-danger'; // Lägg till Bootstrap-klass för knappstilen
+      deleteButton.innerHTML = 'Ta bort';
+      deleteButton.onclick = function () {
+        // Ta bort den aktuella boxen när knappen klickas på
+        newBox.remove();
+      };
 
-            var container = document.getElementById('group1');
+      // Lägg till "Ta bort" knappen i den nya boxen
+      boxInner.appendChild(deleteButton);
 
-            container.appendChild(newBox);
-      }
+      // Lägg till boxens innehåll i den yttre boxen
+      newBox.appendChild(boxInner);
+
+      var container = document.getElementById('group1');
+
+      container.appendChild(newBox);
+    }
+
   </script>
 
 </body>
