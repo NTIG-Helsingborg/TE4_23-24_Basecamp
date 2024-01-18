@@ -150,8 +150,8 @@
       boxInner.innerHTML = '<h4>' + boxTitle + '</h4><p>' + boxDescription + '</p>';
 
       var deleteButton = document.createElement('button');
-      deleteButton.className = 'btn btn-danger'; // Lägg till Bootstrap-klass för knappstilen
-      deleteButton.innerHTML = 'Ta bort';
+      deleteButton.className = 'deleteBtn'; // Lägg till Bootstrap-klass för knappstilen
+      deleteButton.innerHTML = 'X';
       deleteButton.onclick = function () {
         // Ta bort den aktuella boxen när knappen klickas på
         newBox.remove();

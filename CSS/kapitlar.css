@@ -28,6 +28,8 @@
   animation: gradient 10s ease infinite;
     scale: 1.03;
     box-shadow: 0.2vw 0.2vw 0 #F59191;
+
+  cursor:pointer;
 }
 @media (max-width: 1200px) {
   #box-container {
@@ -96,7 +98,24 @@
   font-weight: bold;
 
 }
+.deleteBtn{
+  position: absolute;
+  top:0;
+  right:0;
+  margin:8px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  box-shadow: none;
+  border:none;
+  color:white;
+  font-size:2rem;
 
+  transition: color 0.3s ease;
+}
+.deleteBtn:hover{
+  color:red;
+}
 
 /* -------------------------css for Coursers -------------------------- */
 
