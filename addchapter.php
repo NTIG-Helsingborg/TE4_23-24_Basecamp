@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Kurser</title>
+  <title>Kapitlar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -16,7 +16,8 @@
   <!-- CSS-fil -->
   <link rel="stylesheet" href="baseCamp.css">
   <link rel="stylesheet" href="specifikkurs.css">
-  <link rel="stylesheet" href="CSS/kurser.css">
+  <link rel="stylesheet" href="CSS/kapitlar.css">
+  <link rel="stylesheet" href="./CSS/navbarbackground.css">
 </head>
 
 <body>
@@ -30,8 +31,6 @@
         amet ipsum</p>
     </div>
   </div>
-
-  <!-- ---------------------------------Sidebar---------------------------- -->
   <div id="sidebar" class="sideBar">
     <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i
           class="fa fa-chevron-down"></i></button></h1>
@@ -98,10 +97,10 @@
   </div>
 
   <!-- Knappar -->
-  <!-- <div class="button-container">
+  <div class="button-container">
     <button id="buttonLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
     <button id="buttonRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
-  </div> -->
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -109,12 +108,7 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-
-
-
-
-
-  <!-- <script>
+  <script>
 
 
     // Lägg till händelsehanterare för klick händelsen på knapparna
@@ -127,8 +121,6 @@
 
     });
   </script>
-
-
   <script>
     $(document).ready(function () {
       $('.collapse').on('shown.bs.collapse', function () {
@@ -154,7 +146,7 @@
       document.getElementById("sidebar").classList.toggle("showsidebar");
       document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
     }
-  </script> -->
+  </script>
 
 </body>
 
