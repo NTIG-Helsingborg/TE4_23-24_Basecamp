@@ -30,6 +30,8 @@
         amet ipsum</p>
     </div>
   </div>
+
+  <!-- ---------------------------------Sidebar---------------------------- -->
   <div id="sidebar" class="sideBar">
     <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i
           class="fa fa-chevron-down"></i></button></h1>
@@ -96,10 +98,10 @@
   </div>
 
   <!-- Knappar -->
-  <div class="button-container">
+  <!-- <div class="button-container">
     <button id="buttonLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
     <button id="buttonRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
-  </div>
+  </div> -->
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -107,7 +109,12 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-  <script>
+
+
+
+
+
+  <!-- <script>
 
 
     // Lägg till händelsehanterare för klick händelsen på knapparna
@@ -120,6 +127,8 @@
 
     });
   </script>
+
+
   <script>
     $(document).ready(function () {
       $('.collapse').on('shown.bs.collapse', function () {
@@ -145,7 +154,7 @@
       document.getElementById("sidebar").classList.toggle("showsidebar");
       document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
     }
-  </script>
+  </script> -->
 
 </body>
 
