@@ -92,28 +92,13 @@
         </div>
       <?php } ?>
     </div>
-    <!-- Andra gruppen med boxar (initialt dolda) -->
-    <div class="row box-group hidden" id="group2">
-      <!-- Box 7-12 -->
-      <?php for ($i = 7; $i <= 12; $i++) { ?>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-          <div class="box">
-            <h4>Rubrik
-              <?php echo $i; ?>
-            </h4>
-            <p>Beskrivning av kursen
-              <?php echo $i; ?>.
-            </p>
-          </div>
-        </div>
-      <?php } ?>
-    </div>
+
   </div>
 
   <!-- Knappar -->
   <div class="button-container">
-    <button id="showGroupLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
-    <button id="showGroupRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
+    <button id="buttonLeft" class="rounded-button left"><i class="fa fa-chevron-left"></i>Webbutveckling 1</button>
+    <button id="buttonRight" class="rounded-button right">Programmering 2<i class="fa fa-chevron-right"></i></button>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -123,19 +108,16 @@
     crossorigin="anonymous"></script>
 
   <script>
-    var boxContainer = document.getElementById('box-container');
-    var group1 = document.getElementById('group1');
-    var group2 = document.getElementById('group2');
+
 
     // Lägg till händelsehanterare för klick händelsen på knapparna
-    document.getElementById('showGroupLeft').addEventListener('click', function () {
-      group1.classList.add('hidden');
-      group2.classList.remove('hidden');
+    document.getElementById('buttonLeft').addEventListener('click', function () {
+      //Ska användas för att gå till föregående kurs
     });
 
-    document.getElementById('showGroupRight').addEventListener('click', function () {
-      group1.classList.remove('hidden');
-      group2.classList.add('hidden');
+    document.getElementById('buttonRight').addEventListener('click', function () {
+      //Ska användas för att gå till nästa kurs
+
     });
   </script>
   <script>
