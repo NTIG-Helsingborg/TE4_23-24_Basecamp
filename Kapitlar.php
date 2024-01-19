@@ -166,6 +166,8 @@
       var container = document.getElementById('group1');
 
       container.appendChild(newBox);
+
+      window.location.href = 'editchapter.php';
     }
 
   </script>
