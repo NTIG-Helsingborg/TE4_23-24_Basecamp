@@ -11,11 +11,11 @@
 }
 
 .sideBar{
-    position: fixed;
+    position: absolute;
     width: 15%;
     background-color: #F9F1D4;
-    height: 95vh;
-    overflow-y: scroll;
+    height: 100% !important;
+    overflow: auto;
     border-right: solid;
     z-index: 8;
     transition: 0.3s ease !important;
@@ -29,10 +29,6 @@
 
 .sideBar::-webkit-scrollbar-thumb{
     background-color: #4A48AF;
-}
-
-.sidebarScroll{
-    margin-top: -4rem;
 }
 
 .sideBar h1{
