@@ -103,12 +103,22 @@
         </div>
         </div>
         <div class="contentRight">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editShortTextModal">
+            Redigera text
+        </button>
+        <div id="testEditShortText">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit amet ipsumLorem ipsum dolor sit amet</p>
+        </div>
         </div>
     </div>
     <div class="contentBottom">
         <h1 id="testEditTitle1">Lorem Ipsum</h1>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTextModal">
+            Redigera text
+        </button>
+        <div id="testEditText">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in augue vestibulum, maximus nisl vel, porta ex. Ut dapibus nisi est, eu semper nisl venenatis eget. Duis consectetur lorem pretium gravida lobortis. Vestibulum non egestas nulla. Phasellus iaculis elementum porttitor. Fusce maximus, erat quis finibus aliquet, nisi dolor dictum lacus, sit amet molestie est diam eget risus. Pellentesque blandit, massa a bibendum blandit, metus arcu scelerisque purus, ac fringilla felis dui in nulla. Praesent ullamcorper ante orci, sed volutpat quam tristique ac. Etiam ultrices eu nunc non malesuada. Suspendisse pellentesque molestie justo a porta. Suspendisse potenti. Suspendisse non urna id tellus gravida ultrices. Phasellus in consequat eros.</p>
+        </div>
     </div>
     </div>
 
@@ -147,6 +157,42 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
                     <button type="button" class="btn btn-primary" onclick="editVideo()">Spara ändringar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editShortTextModal" tabindex="-1" aria-labelledby="editShortTextModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-shorttext" id="editShortTextModalLabel">Redigera kort text</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="newShortText">Ny kort text:</label>
+                    <input type="text" id="newShortText" class="form-control" placeholder="Skriv en kort beskrivning">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
+                    <button type="button" class="btn btn-primary" onclick="editShortText()">Spara ändringar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editTextModal" tabindex="-1" aria-labelledby="editTextModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-text" id="editTextModalLabel">Redigera text</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="newText">Ny text:</label>
+                    <input type="text" id="newText" class="form-control" placeholder="Skriv en beskrivning">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
+                    <button type="button" class="btn btn-primary" onclick="editText()">Spara ändringar</button>
                 </div>
             </div>
         </div>
@@ -194,6 +240,20 @@
                 var newVideo = document.getElementById("newVideo").value;
                 document.getElementById("testEditVideo").innerHTML ='<iframe class="contentVideo" src="' + newVideo + '">Your browser does not support the video tag.</iframe>';
                 $('#editVideoModal').modal('hide'); // Dölj modalen efter ändringar
+            }
+        </script>
+        <script>
+            function editShortText() {
+                var newShortText = document.getElementById("newShortText").value;
+                document.getElementById("testEditShortText").innerHTML = '<p>' + newShortText + '</p>';
+                $('#editShortTextModal').modal('hide'); // Dölj modalen efter ändringar
+            }
+        </script>
+        <script>
+            function editText() {
+                var newText = document.getElementById("newText").value;
+                document.getElementById("testEditText").innerHTML = '<p>' + newText + '</p>';
+                $('#editTextModal').modal('hide'); // Dölj modalen efter ändringar
             }
         </script>
 </body>
