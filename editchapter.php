@@ -245,14 +245,14 @@
         <script>
             function editShortText() {
                 var newShortText = document.getElementById("newShortText").value;
-                document.getElementById("testEditShortText").innerHTML = '<p>' + newShortText + '</p>';
+                document.getElementById("testEditShortText").textContent = newShortText;
                 $('#editShortTextModal').modal('hide'); // Dölj modalen efter ändringar
             }
         </script>
         <script>
             function editText() {
                 var newText = document.getElementById("newText").value;
-                document.getElementById("testEditText").innerHTML = '<p>' + newText + '</p>';
+                document.getElementById("testEditText").textContent = newText;
                 $('#editTextModal').modal('hide'); // Dölj modalen efter ändringar
             }
         </script>
