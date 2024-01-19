@@ -1,3 +1,6 @@
+<?php
+include "db.php";
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -37,51 +40,21 @@
           class="fa fa-chevron-down"></i></button></h1>
     <div id="demo1" class="collapse" aria-labelledby="demo1">
       <ul>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 2</a></li>
+        <?php
+        foreach($_SESSION["schoolDisplay"] as $key=>$value){
+          echo  '
+          <li><a href="#">' . $value["name"] .'</a></li>
+          ';
+        }
+        ?>
       </ul>
     </div>
   </div>
   <button onClick="ShowSideBar()" class="showsideBtn" id="showsidebtnID"><i class="fa fa-chevron-right"></i></button>
 
-
-  <!-- 12 Content boxes -->
-  <div class="container" id="box-container">
-    <!-- Första gruppen med boxar -->
-    <div class="row box-group" id="group1">
-      <!-- Box 1-6 -->
-      <?php for ($i = 1; $i <= 6; $i++) { ?>
+  <?php
+  /*
+    <?php for ($i = 1; $i <= 6; $i++) { ?>
      
         <div class="col-lg-12 col-md-12 col-sm-6">
           <div class="boxCourse">
@@ -95,10 +68,42 @@
           </div>
         </div>
       <?php } ?>
+
+
+           foreach($_SESSION["classDisplay"] as $key=>$value){
+          echo '<div class="col-lg-12 col-md-12 col-sm-6">
+          <div class="boxCourse">';
+          echo '
+          <h4>' . $value["name"].'</h4>
+          <p>' .$value["data"]. '</p>
+        ';
+          echo '</div>
+          </div>';
+        }
+  */
+  ?>
+  <!-- 12 Content boxes -->
+  <div class="container" id="box-container">
+    <!-- Första gruppen med boxar -->
+    <div class="row box-group" id="group1">
+      <!-- Box 1-6 -->
+      <?php
+      foreach($_SESSION["classDisplay"] as $key=>$value){
+          echo '
+          <div class="col-lg-12 col-md-12 col-sm-6">
+          <div class="boxCourse">';
+          echo '
+          <h4>' . $value["name"].'</h4>
+          <p>' .$value["data"]. '</p>
+        ';
+          echo '</div>
+          </div>';
+        }
+      ?>
     </div>
 </div>
 
-<button class="circular-button"></button>
+<button class="circular-button" onclick = "addCourse()"></button>
 
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -131,6 +136,26 @@
     function ShowSideBar() {
       document.getElementById("sidebar").classList.toggle("showsidebar");
       document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
+    }
+  </script>
+  <script>
+    function addCourse(){
+      var rubrik = prompt("Lägg till rubrik");
+      var description = prompt("Lägg till kort beskrivning");
+      fetch("kurserFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                rubrik: rubrik,
+                description: description
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+          location.reload();
+        })
     }
   </script>
 

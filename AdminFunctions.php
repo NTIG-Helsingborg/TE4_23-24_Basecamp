@@ -1,6 +1,7 @@
 <?php
-header("Content-Type: application/json");
 include "db.php";
+header("Content-Type: application/json");
+
 
 
 
@@ -24,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "isChecked" => $isChecked,   
     ];
     //använd också en session variabel som kontrollerar så att det är en admin som gör requesten
-    if(isset($isChecked) && ! isset($jsonData["deleteVar"])){
         $statement = "SELECT id FROM users WHERE username = :username";
         $argUsername = new QueryArgsStruct(":username", $jsonData["username"], SQLITE3_TEXT);
         $res = $db->run_query($statement, $argUsername);
@@ -59,6 +59,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Refresh: 0");
             }
         }
+    }
+    if(isset($jsonData["addschool"])){
+        $id = bin2hex(random_bytes(20));
+        $statement =  "INSERT INTO schools(id, name) VALUES(:id, :name)";
+        $argId = new QueryArgsStruct(":id", $id, SQLITE3_TEXT);
+        $argName= new QueryArgsStruct(":name", $jsonData["school"], SQLITE3_TEXT);
+        $result = $db->run_query($statement, $argId, $argName);
     }
     // Convert the associative array to JSON and echo it,
     // Vilket skickar tillbaka responsen till client sidan

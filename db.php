@@ -131,5 +131,18 @@
             $i++;
         }
         $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false; 
+
+        $c = 0;
+        $resultClasses = $db->query("SELECT * FROM classes");
+        $_SESSION["classDisplay"] = array();        
+        while($res1 = $resultClasses->fetchArray(SQLITE3_ASSOC)){
+            $_SESSION["classDisplay"][$c]["id"] = $res1["id"];
+            $_SESSION["classDisplay"][$c]["owner"] = $res1["owner"];
+            $_SESSION["classDisplay"][$c]["name"] = $res1["name"];
+            $_SESSION["classDisplay"][$c]["data"] = $res1["data"];
+            $_SESSION["classDisplay"][$c]["school"] = $res1["school"];
+            $c++;
+        }
+        $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false; 
     }
 ?>
