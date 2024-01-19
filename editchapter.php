@@ -170,7 +170,7 @@
                 </div>
                 <div class="modal-body">
                     <label for="newShortText">Ny kort text:</label>
-                    <input type="text" id="newShortText" class="form-control" placeholder="Skriv en kort beskrivning">
+                    <textarea type="text" id="newShortText" class="form-control" placeholder="Skriv en kort beskrivning"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
@@ -188,7 +188,7 @@
                 </div>
                 <div class="modal-body">
                     <label for="newText">Ny text:</label>
-                    <input type="text" id="newText" class="form-control" placeholder="Skriv en beskrivning">
+                    <textarea type="text" id="newText" class="form-control" placeholder="Skriv en beskrivning"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
