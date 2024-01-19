@@ -61,7 +61,7 @@
 
 .showsideBtn{
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 8;
     color: #030D26;
     background: #F9F1D4;
