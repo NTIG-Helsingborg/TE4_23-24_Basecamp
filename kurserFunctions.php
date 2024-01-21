@@ -6,9 +6,12 @@
         $jsonData = json_decode($postData, true);
         if(isset($jsonData["rubrik"]) && isset($jsonData["description"])){
             $statement = "INSERT INTO classes(id, owner, name, data, school) VALUES(:id, :owner, :name, :data, :school)";
+            echo $_SESSION["loginData"]["username"];
             $id = bin2hex(random_bytes(20));
-            $resUid = $db->query("SELECT id, school FROM users WHERE username = 'Admin'");
-            $uid = $resUid->fetchArray(SQLITE3_ASSOC);
+            $statementUid = "SELECT id, school FROM users WHERE username = :username";
+            $argUidUsername = new QueryArgsStruct(":username", $_SESSION["loginData"]["username"], SQLITE3_TEXT);
+            $resultUid = $db->run_query($statementUid, $argUidUsername);
+            $uid = $resultUid->fetchArray(SQLITE3_ASSOC);
 
             $argId = new QueryArgsStruct(":id", $id, SQLITE3_TEXT);
             $argOwner = new QueryArgsStruct(":owner", $uid["id"], SQLITE3_TEXT);
@@ -17,7 +20,14 @@
             $argSchool = new QueryArgsStruct(":school", $uid["school"], SQLITE3_TEXT);
 
             $result = $db->run_query($statement, $argId, $argOwner, $argName, $argData, $argSchool);
-            echo "hey hey";
+        }
+        if(isset($jsonData["school"])){
+            $statement = "SELECT id FROM schools where name = :name";
+            $argSchool = new QueryArgsStruct(":name", $jsonData["school"], SQLITE3_TEXT);
+            $result = $db->run_query($statement, $argSchool);
+            $id = $result->fetchArray(SQLITE3_ASSOC);
+            $_SESSION["ClassFromSchool"] = $id["id"];
+            echo $_SESSION["ClassFromSchool"];
         }
     }
 ?>

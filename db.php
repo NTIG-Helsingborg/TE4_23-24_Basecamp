@@ -123,14 +123,14 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
         //To Be Displayed in dropdown
-        $resultSchools = $db->query("SELECT name FROM schools");
+        $resultSchools = $db->query("SELECT id, name FROM schools");
         $i = 0;
         $_SESSION["schoolDisplay"] = array();
         while($res = $resultSchools->fetchArray(SQLITE3_ASSOC)){
             $_SESSION["schoolDisplay"][$i]["name"] = $res["name"];
             $i++;
         }
-        $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false; 
+
 
         $c = 0;
         $resultClasses = $db->query("SELECT * FROM classes");
@@ -143,6 +143,11 @@
             $_SESSION["classDisplay"][$c]["school"] = $res1["school"];
             $c++;
         }
-        $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false; 
+        $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false;
+
+        //Default choosen school för kurser
+        $resultDef = $db->query("SELECT id FROM schools WHERE name = 'NTI-Helsingborg'");
+        $def = $resultDef->fetchArray(SQLITE3_ASSOC);
+        $_SESSION["SchoolDefault"] = $def["id"];
     }
 ?>

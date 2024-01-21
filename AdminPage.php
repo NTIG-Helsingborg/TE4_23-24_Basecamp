@@ -12,7 +12,6 @@
     while($row = $res->fetchArray(SQLITE3_ASSOC)){
         $resSchoolName = $db->run_query($statementSchoolFromId, new QueryArgsStruct(":id", $row["school"], SQLITE3_TEXT));
         $schoolName = $resSchoolName->fetchArray(SQLITE3_ASSOC);
-
         $_SESSION["Userlist"][$i]["id"] = $row["id"];
         $_SESSION["Userlist"][$i]["username"] = $row["username"];
         $_SESSION["Userlist"][$i]["name"] = $row["name"];
@@ -89,6 +88,11 @@
     }
     </script>
     <body>
+        <?php
+            echo "<pre>";
+            print_r($_SESSION["loginData"]);
+            echo "</pre>"
+        ?>
         <div style = "margin:30px;">
             <table class = "users">
                 <tr>
