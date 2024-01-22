@@ -2,6 +2,8 @@ body{
     background-color: #e1e9ec;
 }
 
+
+/* -----------------------Original Css users-------------------------- */
 .users {
     font-family: "Questrial", sans-serif;
     border-collapse: collapse;
@@ -27,15 +29,16 @@ padding: 8px;
 
 }
 
+/* ----------------------- Css for Filter? -------------------------- */
+
+.wraper{
+
+}
 
 
 
-/*        <div style = "width: 300px; margin-left: auto; margin-right: auto;">
-            <input type ="text" id = "newSchool"></input>
-            <button type = "button" onclick = "addSchool()">Lägg tillskola</button>
-        <div>
-        
-*/
+
+/* ------------------------Css for teachers info boxes ------------------------- */
 #box-container{
     
     margin-left: auto;

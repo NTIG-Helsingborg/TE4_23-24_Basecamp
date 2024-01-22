@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    include('backend/db.php'); //Create connection to databse.
+    include('db.php'); //Create connection to databse.
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -39,7 +39,7 @@
             }
             else{
                 $_SESSION["loginStatus"] = "Teacher";
-                $_SESSION["loginData"] = ["id" =>$userId["id"], "username" => $userId["username"]];
+                $_SESSION["loginData"] = ["id" => $userId["id"], "username" => $userId["username"]];
                 header("Refresh: 0");
             }
         }
