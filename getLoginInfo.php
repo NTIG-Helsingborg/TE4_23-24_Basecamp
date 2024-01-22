@@ -13,7 +13,7 @@
         $adminCheckRes = $adminCheck->fetchArray(SQLITE3_ASSOC);
 
 
-        $findIdStatement = "SELECT id, admin FROM users WHERE username = :username";
+        $findIdStatement = "SELECT * FROM users WHERE username = :username";
         $argUsername = new QueryArgsStruct(":username", $username, SQLITE3_TEXT);
         $resId = $db->run_query($findIdStatement, $argUsername);
         $userId = $resId->fetchArray(SQLITE3_ASSOC);
@@ -33,11 +33,13 @@
             //OM user har samma admin status till admin
             if($userId["admin"] == $adminCheckRes["admin"] && $adminCheckRes["id"] == $userId["id"] ){
                 $_SESSION["loginStatus"] = "Admin";
+                $_SESSION["loginData"] = ["id" => $userId["id"], "username" =>$userId["username"]];
                 header("Location: /AdminPage.php");
                 exit();
             }
             else{
                 $_SESSION["loginStatus"] = "Teacher";
+                $_SESSION["loginData"] = ["id" =>$userId["id"], "username" => $userId["username"]];
                 header("Refresh: 0");
             }
         }

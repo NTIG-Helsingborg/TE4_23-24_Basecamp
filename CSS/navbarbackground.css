@@ -5,3 +5,7 @@
 .navbarBG .nav-link{
     color: #000000 !important;
 }
+.white-bg {
+    background-color: white;
+    padding: 10px 0; 
+}

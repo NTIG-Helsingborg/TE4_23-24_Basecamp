@@ -12,7 +12,6 @@
     while($row = $res->fetchArray(SQLITE3_ASSOC)){
         $resSchoolName = $db->run_query($statementSchoolFromId, new QueryArgsStruct(":id", $row["school"], SQLITE3_TEXT));
         $schoolName = $resSchoolName->fetchArray(SQLITE3_ASSOC);
-
         $_SESSION["Userlist"][$i]["id"] = $row["id"];
         $_SESSION["Userlist"][$i]["username"] = $row["username"];
         $_SESSION["Userlist"][$i]["name"] = $row["name"];
@@ -68,9 +67,34 @@
             console.log(data);
         })
     }
+    function addSchool(){
+        var addschool = "addschool";
+        var school = document.getElementById("newSchool").value;
+        fetch("AdminFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                addschool: "addschool",
+                school: school
+            })
+        })
+        .then(response => response.text())
+        .then(() =>{
+            location.reload();
+        });
+        
+    }
     </script>
     <body>
-            <table id = "users">
+        <?php
+            echo "<pre>";
+            print_r($_SESSION["loginData"]);
+            echo "</pre>"
+        ?>
+        <div style = "margin:30px;">
+            <table class = "users">
                 <tr>
                     <th>
                         Adminstatus   
@@ -82,7 +106,7 @@
                         Namn
                     </th>
                     <th>
-                        School
+                        Skolor
                     </th>
                     <th style = "background-color: red; cursor: pointer;" onclick = "deleteFetch()">
                         Delete unchecked
@@ -110,5 +134,29 @@
                     */
                 ?>
             </table>
+        </div>
+
+        <div>
+            <table class = "users">
+                <tr>
+                    <th>
+                        Skolor
+                    </th>
+                <tr>
+                  <?php
+                    foreach($_SESSION["schoolDisplay"] as $key => $value){
+                        echo '
+                        <tr>
+                            <td>'. $value["name"] . '</td>
+                        </tr>
+                        ';
+                    }
+                  ?>
+            </table>
+        </div>
+        <div style = "width: 300px; margin-left: auto; margin-right: auto;">
+            <input type ="text" id = "newSchool"></input>
+            <button type = "button" onclick = "addSchool()">Lägg tillskola</button>
+        <div>
     </body> 
 </html>

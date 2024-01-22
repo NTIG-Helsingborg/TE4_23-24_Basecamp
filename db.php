@@ -80,7 +80,7 @@
                 $adminNameStatement =  $this->query("SELECT id from users WHERE username = 'Admin'");
 
                 $adminRes = $adminNameStatement->fetchArray(SQLITE3_ASSOC);
-                $adminName = $adminRes["id"];
+                $adminName = "Admin";
                 echo "<br>";
                 echo $idClass;
                 echo "<br>";
@@ -123,13 +123,31 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
         //To Be Displayed in dropdown
-        $resultSchools = $db->query("SELECT name FROM schools");
+        $resultSchools = $db->query("SELECT id, name FROM schools");
         $i = 0;
         $_SESSION["schoolDisplay"] = array();
         while($res = $resultSchools->fetchArray(SQLITE3_ASSOC)){
             $_SESSION["schoolDisplay"][$i]["name"] = $res["name"];
             $i++;
         }
-        $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false; 
+
+
+        $c = 0;
+        $resultClasses = $db->query("SELECT * FROM classes");
+        $_SESSION["classDisplay"] = array();        
+        while($res1 = $resultClasses->fetchArray(SQLITE3_ASSOC)){
+            $_SESSION["classDisplay"][$c]["id"] = $res1["id"];
+            $_SESSION["classDisplay"][$c]["owner"] = $res1["owner"];
+            $_SESSION["classDisplay"][$c]["name"] = $res1["name"];
+            $_SESSION["classDisplay"][$c]["data"] = $res1["data"];
+            $_SESSION["classDisplay"][$c]["school"] = $res1["school"];
+            $c++;
+        }
+        $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false;
+
+        //Default choosen school för kurser
+        $resultDef = $db->query("SELECT id FROM schools WHERE name = 'NTI-Helsingborg'");
+        $def = $resultDef->fetchArray(SQLITE3_ASSOC);
+        $_SESSION["SchoolDefault"] = $def["id"];
     }
 ?>

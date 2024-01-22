@@ -9,7 +9,7 @@
     <title>YouTube Video Upload</title>
 </head>
 <body>
-    <form action="videotest" method="post">
+    <form action="videotest.php" method="post">
         <label for="title">Name:</label> <br> 
         <input type="text" id="title" name="name" required><br>
 
@@ -17,7 +17,7 @@
         <textarea id="description" name="data" rows="4" required></textarea><br>
 
         <label for="url">YouTube URL:</label> <br> 
-        <input type="text" id="url" name="url" required><br> <br> 
+        <input type="text" id="url" name="url" ><br> <br> 
 
         <input type="submit" name = "submit" value="Submit">
     </form>

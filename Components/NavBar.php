@@ -1,5 +1,5 @@
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-md fixed-top" id="myNavbar">
+<nav class="navbar navbar-expand-md fixed-top white-bg navbarBG" id="myNavbar">
     <a class="navbar-brand nav-link" href="index.php">
         <img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
         BaseCamp
@@ -15,7 +15,7 @@
                 <a class="nav-link dropdown-toggle white-text" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop" aria-expanded="false">
                     Lärare
                 </a>
-                <ul class="dropdown-menu dropdown-menu-start" style="background-color: white;">
+                <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item white-text" href="Login.php">Login</a></li>
                     <li><a class="dropdown-item white-text" href="SignUp.php">Signup</a></li>
                 </ul>
@@ -26,7 +26,7 @@
                 <a class="nav-link dropdown-toggle white-text" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop" aria-expanded="false">
                     Kurser
                 </a>
-                <ul class="dropdown-menu dropdown-menu-start" style="background-color: white;">
+                <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item white-text" href="#">Skola 1</a></li>
                     <li><a class="dropdown-item white-text" href="#">Skola 2</a></li>
                     <li><a class="dropdown-item white-text" href="#">Skola 3</a></li>
@@ -45,7 +45,7 @@
                         $_SESSION["userNAME"], '
                         </a>
                     
-                        <div class="dropdown-menu dropdown-menu-start">
+                        <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item white-text" href="#">Profil</a>
                             <a class="dropdown-item white-text" href="#">Inställningar</a>
                             <a class="dropdown-item white-text" href="logout.php">Logga ut</a>
