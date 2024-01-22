@@ -1,39 +1,40 @@
 <?php
-    include("backend/db.php");
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    $statementSchoolFromId = "SELECT name as school FROM schools WHERE id = :id";
-    $res = $db->query("SELECT * FROM users WHERE username != 'Admin'");
-    $_SESSION["Userlist"] = array();
-    $i = 0;
-    //$res->fetchArray(SQLITE3_ASSOC) srkiver nästa row från statement och repeterar false om inga fler arrays finns
-    //kod som loopar genom varje rad executad query
-    while($row = $res->fetchArray(SQLITE3_ASSOC)){
-        $resSchoolName = $db->run_query($statementSchoolFromId, new QueryArgsStruct(":id", $row["school"], SQLITE3_TEXT));
-        $schoolName = $resSchoolName->fetchArray(SQLITE3_ASSOC);
-        $_SESSION["Userlist"][$i]["id"] = $row["id"];
-        $_SESSION["Userlist"][$i]["username"] = $row["username"];
-        $_SESSION["Userlist"][$i]["name"] = $row["name"];
-        $_SESSION["Userlist"][$i]["password"] = $row["password_hash"];
-        $_SESSION["Userlist"][$i]["school"] = $schoolName["school"];
-        $_SESSION["Userlist"][$i]["admin"] = $row["admin"];
-        $i++;
-    }
+include("backend/db.php");
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$statementSchoolFromId = "SELECT name as school FROM schools WHERE id = :id";
+$res = $db->query("SELECT * FROM users WHERE username != 'Admin'");
+$_SESSION["Userlist"] = array();
+$i = 0;
+//$res->fetchArray(SQLITE3_ASSOC) srkiver nästa row från statement och repeterar false om inga fler arrays finns
+//kod som loopar genom varje rad executad query
+while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+    $resSchoolName = $db->run_query($statementSchoolFromId, new QueryArgsStruct(":id", $row["school"], SQLITE3_TEXT));
+    $schoolName = $resSchoolName->fetchArray(SQLITE3_ASSOC);
+    $_SESSION["Userlist"][$i]["id"] = $row["id"];
+    $_SESSION["Userlist"][$i]["username"] = $row["username"];
+    $_SESSION["Userlist"][$i]["name"] = $row["name"];
+    $_SESSION["Userlist"][$i]["password"] = $row["password_hash"];
+    $_SESSION["Userlist"][$i]["school"] = $schoolName["school"];
+    $_SESSION["Userlist"][$i]["admin"] = $row["admin"];
+    $i++;
+}
 
-    //nicely formatted array
-    /*
-    echo '<pre>'; 
-    print_r($_SESSION["Userlist"]); 
-    echo '</pre>';
-    */
+//nicely formatted array
+/*
+echo '<pre>'; 
+print_r($_SESSION["Userlist"]); 
+echo '</pre>';
+*/
 ?>
 <html>
-    <head>
+
+<head>
     <link rel="stylesheet" href="CSS/AdminPage.css">
-    </head>
-    <script>
-    function postStatus(id){
+</head>
+<script>
+    function postStatus(id) {
         var isCheckedId = document.getElementById(id);
         fetch("backend/AdminFunctions.php", {
             method: "POST",
@@ -45,13 +46,13 @@
                 username: id
             })
         })
-        .then(response => response.text())
-        .then(data => {
-            console.log(data);
-        })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
     }
 
-    function deleteFetch(){
+    function deleteFetch() {
         var deleteVar = "Delete";
         fetch("backend/AdminFunctions.php", {
             method: "POST",
@@ -62,12 +63,12 @@
                 deleteVar: deleteVar,
             })
         })
-        .then(response => response.text())
-        .then(data => {
-            console.log(data);
-        })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
     }
-    function addSchool(){
+    function addSchool() {
         var addschool = "addschool";
         var school = document.getElementById("newSchool").value;
         fetch("backend/AdminFunctions.php", {
@@ -80,83 +81,85 @@
                 school: school
             })
         })
-        .then(response => response.text())
-        .then(() =>{
-            location.reload();
-        });
-        
+            .then(response => response.text())
+            .then(() => {
+                location.reload();
+            });
+
     }
-    </script>
-    <body>
-        <?php
-            echo "<pre>";
-            print_r($_SESSION["loginData"]);
-            echo "</pre>"
+</script>
+
+<body>
+    <?php
+    echo "<pre>";
+    print_r($_SESSION["loginData"]);
+    echo "</pre>"
         ?>
-        <div >
-            <table class = "users">
-                <tr>
-                    <th>
-                        Adminstatus   
-                    </th>
-                    <th>
-                        Username 
-                    </th>
-                    <th>
-                        Namn
-                    </th>
-                    <th>
-                        Skolor
-                    </th>
-                    <th onclick = "deleteFetch()">
-                        Delete unchecked
-                    </th>
-                  
-                </tr>
-                <?php
-                    foreach($_SESSION["Userlist"] as $key => $value){
-                        $checkVar = $value["admin"] ? "checked" : "";
-                        echo '
+    <div>
+        <table class="users">
+            <tr>
+                <th>
+                    Adminstatus
+                </th>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Namn
+                </th>
+                <th>
+                    Skolor
+                </th>
+                <th onclick="deleteFetch()">
+                    Delete unchecked
+                </th>
+
+            </tr>
+            <?php
+            foreach ($_SESSION["Userlist"] as $key => $value) {
+                $checkVar = $value["admin"] ? "checked" : "";
+                echo '
                         <tr>
-                            <td><input type = "checkbox" id = '.$value["username"].' onclick = "postStatus(this.id)" '.$checkVar.'></td>
-                            <td>'. $value["username"] . '</td>
-                            <td>'. $value["name"] . '</td>
-                            <td>'. $value["school"] . '</td>
+                            <td><input type = "checkbox" id = ' . $value["username"] . ' onclick = "postStatus(this.id)" ' . $checkVar . '></td>
+                            <td>' . $value["username"] . '</td>
+                            <td>' . $value["name"] . '</td>
+                            <td>' . $value["school"] . '</td>
                             <td></td>
                         </tr>
                         ';
-                    }
-                    /*
-                            <tr>
-                                <td style = "text-align:center"><input type = "checkbox"></td>
-                                <td>hey@gmail.com</td>
-                            </tr>
-                    */
-                ?>
-            </table>
-        </div>
+            }
+            /*
+                    <tr>
+                        <td style = "text-align:center"><input type = "checkbox"></td>
+                        <td>hey@gmail.com</td>
+                    </tr>
+            */
+            ?>
+        </table>
+    </div>
 
-        <div>
-            <table class = "users">
-                <tr>
-                    <th>
-                        Skolor
-                    </th>
-                <tr>
-                  <?php
-                    foreach($_SESSION["schoolDisplay"] as $key => $value){
-                        echo '
+    <div>
+        <table class="users">
+            <tr>
+                <th>
+                    Skolor
+                </th>
+            <tr>
+                <?php
+                foreach ($_SESSION["schoolDisplay"] as $key => $value) {
+                    echo '
                         <tr>
-                            <td>'. $value["name"] . '</td>
+                            <td>' . $value["name"] . '</td>
                         </tr>
                         ';
-                    }
-                  ?>
-            </table>
-        </div>
+                }
+                ?>
+        </table>
+    </div>
+    <div>
+        <input type="text" id="newSchool"></input>
+        <button type="button" onclick="addSchool()">Lägg tillskola</button>
         <div>
-            <input type ="text" id = "newSchool"></input>
-            <button type = "button" onclick = "addSchool()">Lägg tillskola</button>
-        <div>
-    </body> 
+</body>
+
 </html>
