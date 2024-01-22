@@ -31,6 +31,16 @@ echo '</pre>';
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <title>Admin page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/AdminPage.css">
 </head>
 <script>
@@ -89,6 +99,12 @@ echo '</pre>';
     }
 </script>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
 
 
 <!-- ---------------------html------------------------- -->
@@ -98,62 +114,11 @@ echo '</pre>';
     print_r($_SESSION["loginData"]);
     echo "</pre>"
         ?>
-        <div >
+    <div class="container" id="box-container">
+        <!-- Första gruppen med boxar -->
+        <div class="row box-group" id="group1">
 
-
-    
-        <button> Alla ansökningar </button>    
-        <button> Accepterade </button>
-
-            <hr>
-
-        <div class="count-window">
-            <?php
-            $count = count($_SESSION["Userlist"]); 
-            echo $count; 
-            ?>
         </div>
-
-            <table class = "users">
-                <tr>
-                    <th>
-                        Adminstatus   
-                    </th>
-                    <th>
-                        Username 
-                    </th>
-                    <th>
-                        Namn
-                    </th>
-                    <th>
-                        Skolor
-                    </th>
-                    <th onclick = "deleteFetch()">
-                        Delete unchecked
-                    </th>
-                  
-                </tr>
-                <?php
-                    foreach($_SESSION["Userlist"] as $key => $value){
-                        $checkVar = $value["admin"] ? "checked" : "";
-                        echo '
-                        <tr>
-                            <td><input type = "checkbox" id = ' . $value["username"] . ' onclick = "postStatus(this.id)" ' . $checkVar . '></td>
-                            <td>' . $value["username"] . '</td>
-                            <td>' . $value["name"] . '</td>
-                            <td>' . $value["school"] . '</td>
-                            <td></td>
-                        </tr>
-                        ';
-            }
-            /*
-                    <tr>
-                        <td style = "text-align:center"><input type = "checkbox"></td>
-                        <td>hey@gmail.com</td>
-                    </tr>
-            */
-            ?>
-        </table>
     </div>
 
     <div>
@@ -181,3 +146,25 @@ echo '</pre>';
 </body>
 
 </html>
+
+<?php
+/*
+foreach ($_SESSION["Userlist"] as $key => $value) {
+    $checkVar = $value["admin"] ? "checked" : "";
+    echo '
+            <tr>
+                <td><input type = "checkbox" id = ' . $value["username"] . ' onclick = "postStatus(this.id)" ' . $checkVar . '></td>
+                <td>' . $value["username"] . '</td>
+                <td>' . $value["name"] . '</td>
+                <td>' . $value["school"] . '</td>
+                <td></td>
+            </tr>
+            ';
+}*/
+/*
+        <tr>
+            <td style = "text-align:center"><input type = "checkbox"></td>
+            <td>hey@gmail.com</td>
+        </tr>
+*/
+?>
