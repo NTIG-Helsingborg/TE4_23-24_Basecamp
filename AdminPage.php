@@ -26,7 +26,11 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 echo '<pre>'; 
 print_r($_SESSION["Userlist"]); 
 echo '</pre>';
+
+
 */
+$row = $db->get_users()->fetchArray();
+echo json_encode($row);
 ?>
 <html>
 
@@ -47,36 +51,40 @@ echo '</pre>';
 
 
 <!-- ---------------------html------------------------- -->
+
 <body>
     <?php
     echo "<pre>";
     //print_r($_SESSION["loginData"]);
     echo "</pre>";
 
-    echo $db->get_users();
+    //echo $db->get_users();
     ?>
     <div class="container" id="box-container">
         <!-- Första gruppen med boxar -->
         <div class="row box-group" id="group1">
-            <!--Alla ansäkningsboxar-->
+            <!--Alla ansökningsboxar-->
+            <div class="col-12 ansökningbox">
+                <h2>Magnus Andersson</h2>
+            </div>
         </div>
     </div>
 
 
-    
-    <button> Alla ansökningar </button>    
-        <button> Accepterade </button>
 
-            <hr>
+    <button> Alla ansökningar </button>
+    <button> Accepterade </button>
 
-        <div class="count-window">
-            <?php
-            $count = count($_SESSION["Userlist"]); 
-            echo $count; 
-            ?>
-        </div>
+    <hr>
 
-        
+    <div class="count-window">
+        <?php
+        $count = count($_SESSION["Userlist"]);
+        echo $count;
+        ?>
+    </div>
+
+
 
     <div>
         <table class="users">

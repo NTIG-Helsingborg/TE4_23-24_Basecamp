@@ -36,3 +36,18 @@ padding: 8px;
         <div>
         
 */
+#box-container{
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.ansökningbox{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    height: 100px;
+}
