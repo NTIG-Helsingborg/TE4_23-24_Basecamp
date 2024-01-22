@@ -1,9 +1,10 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-md fixed-top white-bg navbarBG" id="myNavbar">
     <a class="navbar-brand nav-link" href="index.php">
-        <img src="Images/Base_Camp_3.0.png" alt="Logo" style="width: 90px;">
-        BaseCamp
+        <img src="Images/Navbarlogo/Base_Camp_3.0-B.png" alt="Logo" style="width: 150px;">
+        <img src="Images/Navbarlogo/BasecampName-B.png" alt="Logo" style="width: 150px;">
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"
         aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,7 +20,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item white-text" href="Login.php">Login</a></li>
-                    <li><a class="dropdown-item white-text" href="SignUp.php">Signup</a></li>
+                    <li><a class="dropdown-item white-text" href="SignIn.php">Signup</a></li>
                 </ul>
             </li>
 

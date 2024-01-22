@@ -1,5 +1,5 @@
 <?php
-    include "db.php";
+    include "backend/db.php";
     header("Content-Type: application/json");
     if($_SERVER["REQUEST_METHOD"] === "POST"){
         $postData = file_get_contents("php://input");       //Tar emot post datan som skickas i en assioativ array
@@ -31,9 +31,6 @@
             $id = $result->fetchArray(SQLITE3_ASSOC);
             $_SESSION["ClassFromSchool"] = $id["id"];
             echo $_SESSION["ClassFromSchool"];
-        }
-        if(isset($jsonData["id"]) && isset($jsonData["name"])){
-            $_SESSION["selectedClass"] = ["id" =>$jsonData["id"], "name" => $jsonData["name"]];
         }
     }
 ?>

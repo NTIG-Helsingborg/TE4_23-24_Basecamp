@@ -26,11 +26,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 echo '<pre>'; 
 print_r($_SESSION["Userlist"]); 
 echo '</pre>';
-
-
 */
-$row = $db->get_users()->fetchArray();
-echo json_encode($row);
 ?>
 <html>
 
@@ -53,20 +49,31 @@ echo json_encode($row);
 <!-- ---------------------html------------------------- -->
 
 <body>
-    <?php
-    echo "<pre>";
-    //print_r($_SESSION["loginData"]);
-    echo "</pre>";
-
-    //echo $db->get_users();
-    ?>
     <div class="container" id="box-container">
         <!-- Första gruppen med boxar -->
         <div class="row box-group" id="group1">
-            <!--Alla ansökningsboxar-->
-            <div class="col-12 ansökningbox">
-                <h2>Magnus Andersson</h2>
-            </div>
+            <?php
+            $usersResult = $db->get_users();
+
+
+            while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
+                // Now $user is an associative array representing a single user
+                echo '
+                    <div class="col-12 my-2 ansökningbox flex-column flex-md-row">
+                    <div class = "info">
+                        <h2>' . htmlspecialchars($user['username']) . '</h2>
+                        <a href = "mailto:"' . htmlspecialchars($user['email']) . '>' . htmlspecialchars($user['email']) . '</a>
+                    </div>
+                    <div class = "action">
+                        <button class = "btn btn-primary">Acceptera</button>
+                        <button class = "btn btn-danger">Neka</button>
+                    
+                    </div>
+                        
+                    </div>';
+            }
+            ?>
+
         </div>
     </div>
 
@@ -78,20 +85,20 @@ echo json_encode($row);
                 <button> Alla ansökningar </button>
 
                 <button> Accepterade </button>
-                    <div class="count-window">
-                        <?php
-                        $count = count($_SESSION["Userlist"]);
-                        echo $count;
-                        ?>
-                    </div>
+                <div class="count-window">
+                    <?php
+                    $count = count($_SESSION["Userlist"]);
+                    echo $count;
+                    ?>
+                </div>
 
             </div>
 
-           
+
             <div class="col">
 
-                    <h2>Admin</h2>
-                    <img src="" alt="">
+                <h2>Admin</h2>
+                <img src="" alt="">
 
             </div>
 
@@ -180,34 +187,4 @@ echo json_encode($row);
                 }
             </script>
 
-            <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-                crossorigin="anonymous"></script>
-
-</body>
-
 </html>
-
-<?php
-/*
-foreach ($_SESSION["Userlist"] as $key => $value) {
-    $checkVar = $value["admin"] ? "checked" : "";
-    echo '
-            <tr>
-                <td><input type = "checkbox" id = ' . $value["username"] . ' onclick = "postStatus(this.id)" ' . $checkVar . '></td>
-                <td>' . $value["username"] . '</td>
-                <td>' . $value["name"] . '</td>
-                <td>' . $value["school"] . '</td>
-                <td></td>
-            </tr>
-            ';
-}*/
-/*
-        <tr>
-            <td style = "text-align:center"><input type = "checkbox"></td>
-            <td>hey@gmail.com</td>
-        </tr>
-*/
-?>

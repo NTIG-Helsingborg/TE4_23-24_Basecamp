@@ -14,7 +14,7 @@
 .sideBar {
   position: absolute;
   width: 15%;
-  background-color:var( --light-begie);
+  background-color: #f9f1d4;
   height: 100% !important;
   overflow: auto;
   border-right: solid;
@@ -33,7 +33,7 @@
 }
 
 .sideBar h1 {
-  color: var(--dark-blue);
+  color: #030d26;
   padding-top: 2rem;
   padding-left: 1rem;
   font-size: 1.5rem;
@@ -44,7 +44,7 @@
   padding-left: 2rem;
   line-height: 2rem;
   font-size: 1.2rem;
-  color: var(--dark-blue);
+  color: #030d26;
 }
 
 .sideBar li:hover {
@@ -56,7 +56,7 @@
 .showlinks {
   background: none;
   border: none;
-  color: var(--dark-blue);
+  color: #030d26;
   margin-left: 1rem;
 }
 
@@ -64,8 +64,8 @@
   display: none;
   position: absolute;
   z-index: 8;
-  color: var(--dark-blue);
-  background: var(--light-begie);
+  color: #030d26;
+  background: #f9f1d4;
   border: none;
   border-radius: 10px;
   font-size: 2rem;

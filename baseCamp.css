@@ -1,18 +1,8 @@
 @charset "utf-8";
 :root {
   --background-color: #fffbef;
-  --light-begie:#f9f1d4;
-  --begie:#f0d397;
   --font-color-black: rgb(46, 46, 46);
   --btn-primary-bg: #3d21bbde;
-  --dark-blue:#030d26;
-  --purple:#6f36da;
-  --medium-blue:#446fc8;
-  --coral:#E96D74;
-  --red:rgb(201, 58, 58); 
-  --light-grey: #b4b4b4;
-  --green:#04AA6D;
-
 }
 
 body {
@@ -111,7 +101,7 @@ header {
 } */
 
 .dropend .dropdown-toggle {
-  color: rgb(168, 167, 255);
+  color: rgb(26, 25, 121);
   margin-left: 1em;
 }
 
@@ -252,7 +242,7 @@ header {
 }
 
 #text {
-  color: white;
+  color: #f0d397;
   font-size: 4em;
 }
 
@@ -266,7 +256,7 @@ header {
   border-radius: 15px;
 }
 .aboutBaseCamp .info h2 {
-  color: var(--medium-blue);
+  color: #446fc8;
   font-size: 2em;
 }
 .aboutBaseCamp .info p {
@@ -281,7 +271,7 @@ header {
   font-size: 18px;
 }
 .aboutBaseCamp .info h2 {
-  color: var(--medium-blue);
+  color: #446fc8;
   font-size: 2em;
 }
 .aboutBaseCamp .info p {

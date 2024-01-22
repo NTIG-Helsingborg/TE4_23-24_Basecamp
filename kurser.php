@@ -43,7 +43,7 @@ include "backend/db.php";
         <?php
         foreach ($_SESSION["schoolDisplay"] as $key => $value) {
           echo '
-          <li><a href="#" id = "'. $value["name"] . '" onclick = "schoolChooseFetch(this.id)">' . $value["name"] . '</a></li>
+          <li><a href="#" id = "' . $value["name"] . '" onclick = "schoolChooseFetch(this.id)">' . $value["name"] . '</a></li>
           ';
         }
         ?>
@@ -89,34 +89,21 @@ include "backend/db.php";
         }
   */
   ?>
-   <!-- 12 Content boxes -->
-<div class="container" id="box-container">
+  <!-- 12 Content boxes -->
+  <div class="container" id="box-container">
     <!-- Första gruppen med boxar -->
     <div class="row box-group" id="group1">
       <!-- Box 1-6 -->
-     
       <?php
       /*
         if(!isset($_SESSION["ClassFromSchool"]) && $value["school"] == $_SESSION["SchoolDefault"]){
             echo '
-            <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
-            <div class="boxCourse">';
-            echo '<h4>' . $value["name"] .  '</h4>';
-            echo'<p>' .$value["data"]. '</p>';
-            echo '</div>
-            </div>';
-          }
-          // \' eftersom det finns double qoutes
-          if(isset($_SESSION["ClassFromSchool"])){
-            if($value["school"] == $_SESSION["ClassFromSchool"]){
-              echo '
-              <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
+              <div class="col-lg-12 col-md-12 col-sm-6">
               <div class="boxCourse">';
-              echo '<h4>' . $value["name"] .  '</h4>';
-              echo'<p>' .$value["data"]. '</p>';
-              echo '</div>
+            echo '<h4>' . $value["name"] . '</h4>';
+            echo '<p>' . $value["data"] . '</p>';
+            echo '</div>
               </div>';
-            }
           }
       */
       foreach($_SESSION["classDispla"] as $key=>$value){
@@ -139,13 +126,12 @@ Tidagare
 <button class="circular-button"></button>
 -->
   <?php
-    if(isset($_SESSION["loginStatus"])){
-      echo '
-        <button class="circular-button" onclick = "addCourse()"></button>
-      ';
-    }
+  if (isset($_SESSION["loginStatus"])) {
+    echo '
+      <button class="circular-button" onclick = "addCourse()"></button>
+    ';
+  }
   ?>
-
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -226,9 +212,10 @@ Tidagare
           description: description
         })
       })
+    })
         .then(response => response.text())
       .then(data => {
-        console.log(data);
+        location.reload();
       })
     }
 
@@ -242,7 +229,8 @@ Tidagare
           school: id,
         })
       })
-      .then(response => response.text())
+    })
+        .then(response => response.text())
       .then(() => {
         location.reload();
       })

@@ -39,20 +39,10 @@ class DBClass extends SQLite3
                 CREATE TABLE IF NOT EXISTS `users` (
                     `id` TEXT PRIMARY KEY NOT NULL,
                     `username` TEXT NOT NULL,
-                    `email` TEXT NOT NULL,
+                    `name` TEXT NOT NULL,
                     `password_hash` TEXT NOT NULL,
                     `school` TEXT NOT NULL REFERENCES `schools`(`id`),
                     `admin` TINYINT NOT NULL
-                )
-            ");
-
-        $this->exec("
-                CREATE TABLE IT NOT EXISTS `pending_users` (
-                    `id` TEXT PRIMARY KEY NOT NULL,
-                    `username` TEXT NOT NULL,
-                    `email` TEXT NOT NULL,
-                    `password_hash` TEXT NOT NULL,
-                    `school` TEXT NOT NULL REFERENCES `schools`(`id`)
                 )
             ");
 
@@ -76,8 +66,6 @@ class DBClass extends SQLite3
                     `name` TEXT NOT NULL
                 )
             ");
-
-
         //test admin, dont know what do if there is more admins. Should we have a super admin lol?
         $StatementK1 = $this->querySingle("SELECT id from users WHERE username = 'Admin'");
         if (!$StatementK1) {
@@ -89,7 +77,7 @@ class DBClass extends SQLite3
             $passwordAdmin = password_hash("Veryynice123!", PASSWORD_DEFAULT);
             $this->exec("INSERT INTO schools(id, name) VALUES('$idschool', 'NTI-Helsingborg')");
             $this->exec("INSERT INTO schools(id, name) VALUES('$idschool2', 'NTI-Vetenskap')");
-            $this->exec("INSERT INTO users(id, username, email, password_hash, school, admin) VALUES('$adminid', 'Admin', 'Admin@sillymail.ax', '$passwordAdmin', '$idschool', 1)");
+            $this->exec("INSERT INTO users(id, username, name, password_hash, school, admin) VALUES('$adminid', 'Admin', 'Admin', '$passwordAdmin', '$idschool', 1)");
             $adminNameStatement = $this->query("SELECT id from users WHERE username = 'Admin'");
 
             $adminRes = $adminNameStatement->fetchArray(SQLITE3_ASSOC);
@@ -119,10 +107,6 @@ class DBClass extends SQLite3
         }
         return $stmt->execute();
     }
-    /**
-     * Adds user to the pending_users table
-     */
-
     function add_pending_user($username, $email, $password, $school)
     {
         $user_id = bin2hex(random_bytes(20));
@@ -166,21 +150,17 @@ class DBClass extends SQLite3
     function get_pending_users()
     {
         return $this->run_query("
-                SELECT id, username, email, password_hash, school FROM `pending_users`
-            ");
+                 SELECT id, username, email, password_hash, school FROM `pending_users`
+             ");
     }
-
-    /**
-     * Returns all approved users
-     */
     function get_users()
     {
         return $this->run_query("
-                SELECT id, username, email, password_hash, school, admin FROM `users`
-            ");
+            SELECT id, username, email, password_hash, school, admin FROM `users`
+        ");
     }
-
 }
+
 
 $db = new DBClass();
 /*
@@ -203,6 +183,8 @@ if (session_status() == PHP_SESSION_NONE) {
         $_SESSION["schoolDisplay"][$i]["name"] = $res["name"];
         $i++;
     }
+
+
     $c = 0;
     $resultClasses = $db->query("SELECT * FROM classes");
     $_SESSION["classDisplay"] = array();
@@ -214,21 +196,6 @@ if (session_status() == PHP_SESSION_NONE) {
         $_SESSION["classDisplay"][$c]["school"] = $res1["school"];
         $c++;
     }
-
-    $v = 0;
-    $resultClasses = $db->query("SELECT * FROM chapters");
-    $_SESSION["chapterDisplay"] = array();
-    while ($res2 = $resultClasses->fetchArray(SQLITE3_ASSOC)) {
-        $_SESSION["chapterDisplay"][$v]["id"] = $res2["id"];
-        $_SESSION["chapterDisplay"][$v]["owner"] = $res2["owner"];
-        $_SESSION["chapterDisplay"][$v]["class"] = $res2["class"];
-        $_SESSION["chapterDisplay"][$v]["data"] = $res2["data"];
-        $_SESSION["chapterDisplay"][$v]["url"] = $res2["url"];
-        $_SESSION["chapterDisplay"][$v]["name"] = $res2["name"];
-        $v++;
-    }
-
-
     $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false;
 
     //Default choosen school för kurser
