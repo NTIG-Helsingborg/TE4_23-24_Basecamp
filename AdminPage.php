@@ -121,6 +121,22 @@ echo '</pre>';
         </div>
     </div>
 
+
+    
+    <button> Alla ansökningar </button>    
+        <button> Accepterade </button>
+
+            <hr>
+
+        <div class="count-window">
+            <?php
+            $count = count($_SESSION["Userlist"]); 
+            echo $count; 
+            ?>
+        </div>
+
+        
+
     <div>
         <table class="users">
             <tr>
