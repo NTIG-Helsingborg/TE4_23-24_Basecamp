@@ -1,5 +1,5 @@
 <?php
-    include("db.php");
+    include("backend/db.php");
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -35,7 +35,7 @@
     <script>
     function postStatus(id){
         var isCheckedId = document.getElementById(id);
-        fetch("AdminFunctions.php", {
+        fetch("backend/AdminFunctions.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -53,7 +53,7 @@
 
     function deleteFetch(){
         var deleteVar = "Delete";
-        fetch("AdminFunctions.php", {
+        fetch("backend/AdminFunctions.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -70,7 +70,7 @@
     function addSchool(){
         var addschool = "addschool";
         var school = document.getElementById("newSchool").value;
-        fetch("AdminFunctions.php", {
+        fetch("backend/AdminFunctions.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

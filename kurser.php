@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "backend/db.php";
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -165,7 +165,7 @@ Tidagare
     function addCourse(){
       var rubrik = prompt("Lägg till rubrik");
       var description = prompt("Lägg till kort beskrivning");
-      fetch("kurserFunctions.php", {
+      fetch("backend/kurserFunctions.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -182,7 +182,7 @@ Tidagare
     }
 
     function schoolChooseFetch(id){
-      fetch("kurserFunctions.php", {
+      fetch("backend/kurserFunctions.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "backend/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     // Assuming you have a form with fields like title, description, and url
