@@ -15,7 +15,7 @@
 
   <!-- CSS-fil -->
   <link rel="stylesheet" href="baseCamp.css">
-  <link rel="stylesheet" href="specifikkurs.css">
+  <link rel="stylesheet" href="CSS/specifikkurs.css">
   <link rel="stylesheet" href="CSS/kapitlar.css">
   <link rel="stylesheet" href="./CSS/navbarbackground.css">
 </head>
@@ -166,6 +166,8 @@
       var container = document.getElementById('group1');
 
       container.appendChild(newBox);
+
+
 
       window.location.href = 'editchapter.php';
     }

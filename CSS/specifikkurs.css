@@ -1,0 +1,154 @@
+@import "../baseCamp.css";
+.title {
+  position: relative;
+  display: flex;
+  align-items: center; /* Centrera vertikalt */
+  width: 100%;
+  background-color: var(--btn-primary-bg);
+  margin-top: 4.3rem;
+  height: 4rem;
+  padding-left: 15%;
+  font-size: 2rem;
+}
+
+.sideBar {
+  position: absolute;
+  width: 15%;
+  background-color: #f9f1d4;
+  height: 100% !important;
+  overflow: auto;
+  border-right: solid;
+  z-index: 8;
+  transition: 0.3s ease !important;
+}
+
+.sideBar::-webkit-scrollbar {
+  background: #efe6c3;
+  height: 50px;
+  width: 12px;
+}
+
+.sideBar::-webkit-scrollbar-thumb {
+  background-color: var(--btn-primary-bg);
+}
+
+.sideBar h1 {
+  color: #030d26;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.sideBar ul {
+  list-style: none;
+  padding-left: 2rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  color: #030d26;
+}
+
+.sideBar li:hover {
+  list-style: square;
+  color: var(--btn-primary-bg);
+  font-weight: bold;
+}
+
+.showlinks {
+  background: none;
+  border: none;
+  color: #030d26;
+  margin-left: 1rem;
+}
+
+.showsideBtn {
+  display: none;
+  position: absolute;
+  z-index: 8;
+  color: #030d26;
+  background: #f9f1d4;
+  border: none;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.showsideBtnToggle {
+  margin-left: 60%;
+  transform: rotate(180deg);
+}
+
+.content {
+  width: 85%;
+  margin-left: 15%;
+  color: black;
+  padding-top: 2%;
+}
+
+.contentLeft {
+  text-align: center;
+  float: left;
+  width: 60%;
+}
+
+.contentRight {
+  text-align: center;
+  float: right;
+  width: 40%;
+  padding-left: 3%;
+}
+
+.contentVideo {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.contentTop {
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+  clear: both;
+}
+
+.contentBottom {
+  padding-top: 1%;
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+  clear: both;
+}
+
+@media (max-width: 1200px) {
+  .sideBar {
+    display: none;
+    width: 60%;
+  }
+
+  .showsidebar {
+    display: block;
+  }
+
+  .showsideBtn {
+    display: block;
+  }
+
+  .content {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+  .contentVideo {
+    width: 94%;
+  }
+
+  .contentLeft {
+    float: none;
+    width: 100%;
+  }
+
+  .contentRight {
+    float: none;
+    width: 100%;
+  }
+}

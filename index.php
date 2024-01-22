@@ -50,7 +50,7 @@ session_Start();
 
 <body>
 
-<!-- Introduction part of the main page. Contains background image -->
+	<!-- Introduction part of the main page. Contains background image -->
 	<header>
 		<?php include 'Components/Navbar.php'; ?>
 
@@ -69,8 +69,8 @@ session_Start();
 	<!-- <div style="background-color: #030D26; width:100%; height:25px;"></div> Doesnt have any purpouse but i keep just in case -->
 
 	<!-- ------------------General information about BaseCamp-------------- -->
-	<section  class="mt-5 aboutBaseCamp">
-		<div class="row justify-content-around" >
+	<section class="mt-5 aboutBaseCamp">
+		<div class="row justify-content-around">
 			<div class="col-sm-12 col-lg-4 ">
 				<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px"
 					class="img-fluid animated fadeInLeft ">
@@ -88,38 +88,46 @@ session_Start();
 	</section>
 
 
-<!-- -----------------Blue text that tells about what BaseCam is for from diferent perspektives----------------- -->
+	<!-- -----------------Blue text that tells about what BaseCam is for from diferent perspektives----------------- -->
 	<section class="WhatBaseCampFor mt-4">
-		
+
 		<div class="row">
 			<div class="col-sm-12 col-md-6">
 				<img src="" alt="">
 				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the students</h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+					pariatur.
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+					est laborum.</p>
 			</div>
 
-				<div class="vertical"></div>
+			<div class="vertical d-none d-md-block"></div>
 
 			<div class="col-sm-12 col-md-6">
 				<img src="" alt="">
 				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the teachers</h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+					pariatur.
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+					est laborum.</p>
 			</div>
 		</div>
 
 	</section>
 
-<!-- --------------------------Even more information------------------------- -->
+	<!-- --------------------------Even more information------------------------- -->
 
-<section  class="mt-5 pb-5  aboutBaseCamp">
-		<div class="row justify-content-around" >
-			
+	<section class="mt-5 pb-5  aboutBaseCamp">
+		<div class="row justify-content-around">
+
 			<div class=" text-center pb-5 col-sm-12 col-lg-5 info">
 				<h2 class=" mt-5">What is BaseCamp</h2>
 				<p class="  mt-5 w-75 m-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -128,14 +136,14 @@ session_Start();
 					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
 					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<button type="button" class="btn btn-primary btn-lg">Learn more</button>
+				<button type="button" class="btn btn-primary btn-lg">Learn more</button>
 
 			</div>
 		</div>
 	</section>
 
 
-		</div>
+	</div>
 
 	</section>
 	<?php include 'Components/Footer.php'; ?>
@@ -145,7 +153,7 @@ session_Start();
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
-	
+
 
 	<!--- End of Script Source Files -->
 
