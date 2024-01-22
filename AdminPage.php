@@ -87,31 +87,43 @@
         
     }
     </script>
+
+
+
+
+<!-- -------------------------------html-------------------------------------- -->
+
+
     <body>
         <?php
             echo "<pre>";
             print_r($_SESSION["loginData"]);
             echo "</pre>"
         ?>
+
         <div >
+
+        <button></button>
+
+
             <table class = "users">
                 <tr>
-                    <th>
-                        Adminstatus   
-                    </th>
-                    <th>
-                        Username 
-                    </th>
-                    <th>
-                        Namn
-                    </th>
-                    <th>
-                        Skolor
-                    </th>
-                    <th onclick = "deleteFetch()">
-                        Delete unchecked
-                    </th>
-                  
+                        <th>
+                            Adminstatus   
+                        </th>
+                        <th>
+                            Username 
+                        </th>
+                        <th>
+                            Namn
+                        </th>
+                        <th>
+                            Skolor
+                        </th>
+                        <th onclick = "deleteFetch()">
+                            Delete unchecked
+                        </th>
+                    
                 </tr>
                 <?php
                     foreach($_SESSION["Userlist"] as $key => $value){
