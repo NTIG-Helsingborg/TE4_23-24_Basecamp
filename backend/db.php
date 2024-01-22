@@ -46,6 +46,16 @@
             ");
 
             $this->exec("
+                CREATE TABLE IT NOT EXISTS `pending_users` (
+                    `id` TEXT PRIMARY KEY NOT NULL,
+                    `username` TEXT NOT NULL,
+                    `name` TEXT NOT NULL,
+                    `password_hash` TEXT NOT NULL,
+                    `school` TEXT NOT NULL REFERENCES `schools`(`id`)
+                )
+            ");
+
+            $this->exec("
                 CREATE TABLE IF NOT EXISTS `classes` (
                     `id` TEXT PRIMARY KEY NOT NULL,
                     `owner` TEXT NOT NULL REFERENCES `users`(`id`),
@@ -65,6 +75,7 @@
                     `name` TEXT NOT NULL
                 )
             ");
+
             //test admin, dont know what do if there is more admins. Should we have a super admin lol?
             $StatementK1 = $this->querySingle("SELECT id from users WHERE username = 'Admin'");
             if(!$StatementK1){
