@@ -76,6 +76,66 @@
                 )
             ");
 
+            /**
+             * Adds user to the pending_users table
+             */
+            function add_pending_user($username, $name, $password, $school)
+            {
+                $user_id = bin2hex(random_bytes(20));
+                $hashed_password = password_hash($password);
+
+                $temp_query = "INSERT INTO `pending_users`(id, username, name, password_hash, school) VALUES(:id, :username, :password_hash, :school)";
+
+                return $this->run_query(
+                    $temp_query,
+                    new QueryArgsStruct(":id", $user_id, SQLITE3_TEXT),
+                    new QueryArgsStruct(":username", $username, SQLITE3_TEXT),
+                    new QueryArgsStruct(":name", $name, SQLITE3_TEXT),
+                    new QueryArgsStruct(":password_hash", $hashed_password, SQLITE3_TEXT),
+                    new QueryArgsStruct(":school", $school, SQLITE3_TEXT)
+                );
+            }
+
+            /**
+             * Adds user to the users table
+             */
+            function add_user($username, $name, $hashed_password, $school, $is_admin = 0)
+            {
+                $user_id = bin2hex(random_bytes(20));
+
+                $temp_query = "INSERT INTO `users`(id, username, name, password_hash, school, admin) VALUES(:id, :username, :password_hash, :school, :admin)";
+
+                return $this->run_query(
+                    $temp_query,
+                    new QueryArgsStruct(":id", $user_id, SQLITE3_TEXT),
+                    new QueryArgsStruct(":username", $username, SQLITE3_TEXT),
+                    new QueryArgsStruct(":name", $name, SQLITE3_TEXT),
+                    new QueryArgsStruct(":password_hash", $hashed_password, SQLITE3_TEXT),
+                    new QueryArgsStruct(":school", $school, SQLITE3_TEXT),
+                    new QueryArgsStruct(":admin", $is_admin, SQLITE3_TEXT)
+                );
+            }
+
+            /**
+             * Returns all pending users
+             */
+            function get_pending_users()
+            {
+                return $this->run_query("
+                    SELECT id, username, name, password_hash, school FROM `pending_users`
+                ");
+            }
+
+            /**
+             * Returns all approved users
+             */
+            function get_users()
+            {
+                return $this->run_query("
+                    SELECT id, username, name, password_hash, school, admin FROM `users`
+                ");
+            }
+
             //test admin, dont know what do if there is more admins. Should we have a super admin lol?
             $StatementK1 = $this->querySingle("SELECT id from users WHERE username = 'Admin'");
             if(!$StatementK1){
