@@ -93,7 +93,7 @@
             print_r($_SESSION["loginData"]);
             echo "</pre>"
         ?>
-        <div style = "margin:30px;">
+        <div >
             <table class = "users">
                 <tr>
                     <th>
@@ -108,10 +108,10 @@
                     <th>
                         Skolor
                     </th>
-                    <th style = "background-color: red; cursor: pointer;" onclick = "deleteFetch()">
+                    <th onclick = "deleteFetch()">
                         Delete unchecked
                     </th>
-                    
+                  
                 </tr>
                 <?php
                     foreach($_SESSION["Userlist"] as $key => $value){
@@ -154,7 +154,7 @@
                   ?>
             </table>
         </div>
-        <div style = "width: 300px; margin-left: auto; margin-right: auto;">
+        <div>
             <input type ="text" id = "newSchool"></input>
             <button type = "button" onclick = "addSchool()">Lägg tillskola</button>
         <div>
