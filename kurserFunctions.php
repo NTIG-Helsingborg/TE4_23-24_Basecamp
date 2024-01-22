@@ -20,9 +20,11 @@
             $argSchool = new QueryArgsStruct(":school", $uid["school"], SQLITE3_TEXT);
             $result = $db->run_query($statement, $argId, $argOwner, $argName, $argData, $argSchool);
             $m = 0;
-            $resultClasses = $db->query("SELECT * FROM classes");
-            $_SESSION["classDispla"] = array();        
-            while($res2 = $resultClasses->fetchArray(SQLITE3_ASSOC)){
+            $resultClasses2 = $db->query("SELECT * FROM classes");
+            //unset($_SESSION["classDisplay"]);
+            $_SESSION["classDispla"] = array(); 
+                  
+            while($res2 = $resultClasses2->fetchArray(SQLITE3_ASSOC)){
                 $_SESSION["classDispla"][$m]["id"] = $res2["id"];
                 $_SESSION["classDispla"][$m]["owner"] = $res2["owner"];
                 $_SESSION["classDispla"][$m]["name"] = $res2["name"];

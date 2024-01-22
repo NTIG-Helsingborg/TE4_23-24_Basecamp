@@ -197,7 +197,6 @@ if (session_status() == PHP_SESSION_NONE) {
         $c++;
     }
     $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false;
-
     //Default choosen school för kurser
     $resultDef = $db->query("SELECT id FROM schools WHERE name = 'NTI-Helsingborg'");
     $def = $resultDef->fetchArray(SQLITE3_ASSOC);

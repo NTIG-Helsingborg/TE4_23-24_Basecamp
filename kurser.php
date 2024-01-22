@@ -1,5 +1,6 @@
 <?php
-include "backend/db.php";
+include "db.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -106,14 +107,17 @@ include "backend/db.php";
               </div>';
           }
       */
-      foreach($_SESSION["classDispla"] as $key=>$value){
-        echo '
-        <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
-        <div class="boxCourse">';
-        echo '<h4>' . $value["name"] .  '</h4>';
-        echo'<p>' .$value["data"]. '</p>';
-        echo '</div>
-        </div>';
+      foreach($_SESSION["classDisplay"] as $key=>$value){
+        if($value["school"] == $_SESSION["ClassFromSchool"]){
+          echo '
+          <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
+          <div class="boxCourse">';
+          echo '<h4>' . $value["name"] .  '</h4>';
+          echo'<p>' .$value["data"]. '</p>';
+          echo '</div>
+          </div>';
+        }
+     
         //echo '<h1>'.$_SESSION["SchoolDefault"].'<h1>';
         //echo '<h1>'.$value["school"].'<h1>';
       }
@@ -184,7 +188,8 @@ Tidagare
           console.log(data);
         })
       }
-
+    
+      
       function openCourse(id, name){
       fetch("backend/kurserFunctions.php", {
             method: "POST",
@@ -205,7 +210,7 @@ Tidagare
     function addCourse() {
       var rubrik = prompt("Lägg till rubrik");
       var description = prompt("Lägg till kort beskrivning");
-      fetch("backend/kurserFunctions.php", {
+      fetch("kurserFunctions.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -217,12 +222,12 @@ Tidagare
       })
       .then(response => response.text())
       .then(data => {
-        console.log(data);
+        location.reload();
       })
     }
 
     function schoolChooseFetch(id) {
-      fetch("backend/kurserFunctions.php", {
+      fetch("kurserFunctions.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -232,7 +237,7 @@ Tidagare
         })
       })
         .then(response => response.text())
-      .then(() => {
+      .then(data => {
         location.reload();
       })
     }
