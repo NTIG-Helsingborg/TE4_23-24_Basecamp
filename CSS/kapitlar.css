@@ -1,21 +1,22 @@
+@import "../baseCamp.css";
 
 #box-container {
-  padding:5rem;
+  padding: 5rem;
 
   box-sizing: border-box;
 }
 
 .box {
-  transform: translate(0%,0%);
+  transform: translate(0%, 0%);
   padding-top: 30px;
   border-radius: 15px;
   margin-bottom: 20px;
 
   border: none;
   outline: none;
-  background: linear-gradient(45deg,#446FC8, #6f36da, #E96D74);
+  background: linear-gradient(45deg, #446fc8, #6f36da, #e96d74);
   background-size: 400% 400%;
-  box-shadow: 2vw 5vw 0 #E96D74;
+  box-shadow: 2vw 5vw 0 #e96d74;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   color: #fff;
@@ -23,13 +24,12 @@
   height: 20vh;
   transition: all 0.3s ease;
 }
-.box:hover{
-
+.box:hover {
   animation: gradient 10s ease infinite;
-    scale: 1.03;
-    box-shadow: 0.2vw 0.2vw 0 #F59191;
+  scale: 1.03;
+  box-shadow: 0.2vw 0.2vw 0 #f59191;
 
-  cursor:pointer;
+  cursor: pointer;
 }
 @media (max-width: 1200px) {
   #box-container {
@@ -38,9 +38,7 @@
   }
 }
 
-
 @media (max-width: 768px) {
- 
 }
 
 .hidden {
@@ -52,12 +50,12 @@
   display: flex;
   justify-content: space-around;
 }
-.button-container button i{
-  margin:16px;
+.button-container button i {
+  margin: 16px;
 }
 
 .rounded-button {
-  background-color: #E96D74;
+  background-color: #e96d74;
   border: none;
   color: white;
   text-align: center;
@@ -67,67 +65,61 @@
   cursor: pointer;
 }
 
-.course-title{
+.course-title {
   color: white;
-  background-color: #4A48AF;
+  background-color: var(--btn-primary-bg);
   text-align: left;
-  height:17rem;
+  height: 17rem;
   margin-top: 4.5rem;
 }
-.course-title .container{
-  
+.course-title .container {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:left;
-  padding-top:50px;
+  justify-content: left;
+  padding-top: 50px;
 }
-.course-title .container p, .course-title .container h1{
-  padding:16px;
+.course-title .container p,
+.course-title .container h1 {
+  padding: 16px;
   width: 100%;
 }
 
-.course-title .container h1{
+.course-title .container h1 {
   border-bottom: 2px solid white;
   font-weight: bold;
-
 }
-.deleteBtn{
+.deleteBtn {
   position: absolute;
-  top:0;
-  right:0;
-  margin:8px;
+  top: 0;
+  right: 0;
+  margin: 8px;
   width: 50px;
   height: 50px;
   background-color: transparent;
   box-shadow: none;
-  border:none;
-  color:white;
-  font-size:2rem;
+  border: none;
+  color: white;
+  font-size: 2rem;
 
   transition: color 0.3s ease;
 }
-.deleteBtn:hover{
-  color:red;
+.deleteBtn:hover {
+  color: red;
 }
 
 /* -------------------------css for Coursers -------------------------- */
 
-
 .boxCourse {
-
-
-
-
-  transform: translate(0%,0%);
+  transform: translate(0%, 0%);
   color: #e8e8e8;
   border: none;
   outline: none;
-  background: linear-gradient(45deg,#446FC8, #6f36da, #E96D74);
+  background: linear-gradient(45deg, #446fc8, #6f36da, #e96d74);
   background-size: 400% 400%;
-  box-shadow: 2vw 5vw 0 #E96D74;
+  box-shadow: 2vw 5vw 0 #e96d74;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 15px;
@@ -137,15 +129,12 @@
   color: #fff;
   width: 90%;
   height: 14vh;
-
 }
 .boxCourse:hover {
-
-
   animation: gradient 10s ease infinite;
-    scale: 1.03;
-    box-shadow: 0.2vw 0.2vw 0 #F59191;
-  
+  scale: 1.03;
+  box-shadow: 0.2vw 0.2vw 0 #f59191;
+
   /* background: linear-gradient(to bottom, #446FC8 10%, #F59191 90%);
   transform: scale(1.075);
   cursor: pointer;
@@ -153,56 +142,56 @@
   text-decoration: none; */
 }
 
-.boxCourse h4{
+.boxCourse h4 {
   padding-top: 16px;
 }
 
-.boxCourse h4, p{
+.boxCourse h4,
+p {
   padding-left: 16px;
 }
-
 
 @keyframes gradient {
   50% {
     background-position: 100% 0;
-  }}
-
-  .circular-button {
-    width: 70px;
-    text-align: center;
-    height: 70px;
-    border-radius: 50%;
-    background-color:#b4b4b4;
-    position: relative;
-    margin: auto;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-margin-top: 2vh;
-margin-bottom: 5vh;
-transition: all 0.3s ease;
-
   }
+}
 
-  .circular-button::before,
-  .circular-button::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 25px;
-    height: 2px;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-  }
+.circular-button {
+  width: 70px;
+  text-align: center;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #b4b4b4;
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+  transition: all 0.3s ease;
+}
 
-  .circular-button::before {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
+.circular-button::before,
+.circular-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
 
-  .circular-button:hover {
-    background-color: #0056b3;
-  }
+.circular-button::before {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.circular-button:hover {
+  background-color: #0056b3;
+}
