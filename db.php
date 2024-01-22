@@ -130,8 +130,6 @@
             $_SESSION["schoolDisplay"][$i]["name"] = $res["name"];
             $i++;
         }
-
-
         $c = 0;
         $resultClasses = $db->query("SELECT * FROM classes");
         $_SESSION["classDisplay"] = array();        
@@ -143,6 +141,21 @@
             $_SESSION["classDisplay"][$c]["school"] = $res1["school"];
             $c++;
         }
+
+        $v = 0;
+        $resultClasses = $db->query("SELECT * FROM chapters");
+        $_SESSION["chapterDisplay"] = array();        
+        while($res2 = $resultClasses->fetchArray(SQLITE3_ASSOC)){
+            $_SESSION["chapterDisplay"][$v]["id"] = $res2["id"];
+            $_SESSION["chapterDisplay"][$v]["owner"] = $res2["owner"];
+            $_SESSION["chapterDisplay"][$v]["class"] = $res2["class"];
+            $_SESSION["chapterDisplay"][$v]["data"] = $res2["data"];
+            $_SESSION["chapterDisplay"][$v]["url"] = $res2["url"];
+            $_SESSION["chapterDisplay"][$v]["name"] = $res2["name"];
+            $v++;
+        }
+
+
         $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false;
 
         //Default choosen school för kurser
