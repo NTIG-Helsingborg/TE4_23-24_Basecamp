@@ -51,26 +51,25 @@ echo '</pre>';
 <!-- ---------------------html------------------------- -->
 
 <body>
-    <?php
-
-    //echo $db->get_users();
-    
-    $usersResult = $db->get_users();
-
-    ?>
     <div class="container" id="box-container">
         <!-- Första gruppen med boxar -->
-        <div class="row box-group" id="group1">.
+        <div class="row box-group" id="group1">
             <?php
+            $usersResult = $db->get_users();
+
             while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
                 // Now $user is an associative array representing a single user
                 echo '
-                    <div class="col-12 my-2 ansökningbox">
+                    <div class="col-12 my-2 ansökningbox flex-column flex-md-row">
                     <div class = "info">
                         <h2>' . htmlspecialchars($user['username']) . '</h2>
-                        <p>' . htmlspecialchars($user['email']) . '</p>
+                        <a href = "mailto:"' . htmlspecialchars($user['email']) . '>' . htmlspecialchars($user['email']) . '</a>
                     </div>
-                        
+                    <div class = "action">
+                        <button class = "btn btn-primary">Acceptera</button>
+                        <button class = "btn btn-danger">Neka</button>
+                    
+                    </div>
                         
                     </div>';
             }
@@ -87,20 +86,20 @@ echo '</pre>';
                 <button> Alla ansökningar </button>
 
                 <button> Accepterade </button>
-                    <div class="count-window">
-                        <?php
-                        $count = count($_SESSION["Userlist"]);
-                        echo $count;
-                        ?>
-                    </div>
+                <div class="count-window">
+                    <?php
+                    $count = count($_SESSION["Userlist"]);
+                    echo $count;
+                    ?>
+                </div>
 
             </div>
 
-           
+
             <div class="col">
 
-                    <h2>Admin</h2>
-                    <img src="" alt="">
+                <h2>Admin</h2>
+                <img src="" alt="">
 
             </div>
 
