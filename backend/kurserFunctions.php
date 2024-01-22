@@ -9,7 +9,7 @@
             echo $_SESSION["loginData"]["username"];
             $id = bin2hex(random_bytes(20));
             $statementUid = "SELECT id, school FROM users WHERE username = :username";
-            $argUidUsername = new QueryArgsStruct(":username", $_SESSION["loginData"]["username"], SQLITE3_TEXT);
+            $argUidUsername = new QueryArgsStruct(":username", "Admin", SQLITE3_TEXT);
             $resultUid = $db->run_query($statementUid, $argUidUsername);
             $uid = $resultUid->fetchArray(SQLITE3_ASSOC);
 
@@ -20,9 +20,6 @@
             $argSchool = new QueryArgsStruct(":school", $uid["school"], SQLITE3_TEXT);
 
             $result = $db->run_query($statement, $argId, $argOwner, $argName, $argData, $argSchool);
-            echo "<pre>";
-            print_r($_SESSION["classDisplay"]);
-            echo "</pre>";
         }
         if(isset($jsonData["school"])){
             $statement = "SELECT id FROM schools where name = :name";

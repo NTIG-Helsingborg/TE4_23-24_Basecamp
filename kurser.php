@@ -166,7 +166,7 @@ Tidagare
     }
   </script>
   <script>
-     document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     // Your code here, which will be executed when the DOM is ready
        fetch("backend/setClasses.php", {
             method: "POST",
@@ -179,9 +179,10 @@ Tidagare
         })
         .then(response => response.text())
         .then(data => {
-          console.log();
+          console.log(data);
         })
-      });
+    });
+
       function openCourse(id, name){
       fetch("backend/kurserFunctions.php", {
             method: "POST",
@@ -212,7 +213,6 @@ Tidagare
           description: description
         })
       })
-    })
         .then(response => response.text())
       .then(data => {
         location.reload();
@@ -229,7 +229,6 @@ Tidagare
           school: id,
         })
       })
-    })
         .then(response => response.text())
       .then(() => {
         location.reload();

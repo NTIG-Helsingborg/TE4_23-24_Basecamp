@@ -1,5 +1,8 @@
 <?php
     include "db.php";
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     header("Content-Type: application/json");
     if($_SERVER["REQUEST_METHOD"] === "POST"){
         $postData = file_get_contents("php://input");       //Tar emot post datan som skickas i en assioativ array
@@ -15,9 +18,12 @@
             $_SESSION["classDispla"][$m]["school"] = $res2["school"];
             $m++;
         }
+        /*
         $resultDef = $db->query("SELECT id FROM schools WHERE name = 'NTI-Helsingborg'");
         $def = $resultDef->fetchArray(SQLITE3_ASSOC);
         $_SESSION["SchoolDefault"] = $def["id"];
         echo "hey there";
+        */
+        print_r($_SESSION["classDispla"]);
     }
 ?>
