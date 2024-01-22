@@ -1,11 +1,5 @@
-body{
-    background-color: #e1e9ec;
-}
-
-
-/* -----------------------Original Css users-------------------------- */
 .users {
-    font-family: "Questrial", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 50%;
     margin-left: auto;
@@ -17,46 +11,14 @@ border: 1px solid #ddd;
 padding: 8px;
 }
 
-.users tr:nth-child(even){
-    background-color: #f2f2f2;
-}
+.users tr:nth-child(even){background-color: #f2f2f2;}
 
-.users tr:hover {
-    background-color: #ddd;
-}
+.users tr:hover {background-color: #ddd;}
 
 .users th {
-
-}
-
-/* ----------------------- Css for Filter? -------------------------- */
-
-.wraper{
-
-}
-
-
-
-
-/* ------------------------Css for teachers info boxes ------------------------- */
-#box-container{
-    
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-}
-.ansökningbox{
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    height: 125px;
-}
-.ansökningbox .info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 33%;
-    padding:1rem;
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: #04AA6D;
+color: white;
 }
