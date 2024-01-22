@@ -4,7 +4,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-include("getLoginInfo.php");
+include("backend/getLoginInfo.php");
 ?>
 
 <html>

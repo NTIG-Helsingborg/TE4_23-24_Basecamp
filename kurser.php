@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include "backend/db.php";
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -61,7 +61,7 @@ include "db.php";
       <!-- Box 1-6 -->
       <?php for ($i = 1; $i <= 6; $i++) { ?>
         <div class="col-lg-12 col-md-12 col-sm-6">
-          <div class="boxCourse">
+          <div class="box-Course">
             <h4>Rubrik
               <?php echo $i; ?>
             </h4>
@@ -71,6 +71,10 @@ include "db.php";
           </div>
         </div>
       <?php } ?>
+      <div class="row buttonBoxKur">
+      <label class="circular-button">+</label>
+      
+      </div>
     </div>
   </div>
         foreach($_SESSION["classDisplay"] as $key=>$value){
@@ -161,7 +165,7 @@ Tidagare
     function addCourse() {
       var rubrik = prompt("Lägg till rubrik");
       var description = prompt("Lägg till kort beskrivning");
-      fetch("kurserFunctions.php", {
+      fetch("backend/kurserFunctions.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -171,14 +175,15 @@ Tidagare
           description: description
         })
       })
+    })
         .then(response => response.text())
-        .then(data => {
-          location.reload();
-        })
+      .then(data => {
+        location.reload();
+      })
     }
 
     function schoolChooseFetch(id) {
-      fetch("kurserFunctions.php", {
+      fetch("backend/kurserFunctions.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -187,10 +192,11 @@ Tidagare
           school: id,
         })
       })
+    })
         .then(response => response.text())
-        .then(() => {
-          location.reload();
-        })
+      .then(() => {
+        location.reload();
+      })
     }
   </script>
 

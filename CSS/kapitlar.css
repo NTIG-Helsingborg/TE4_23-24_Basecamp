@@ -6,31 +6,33 @@
   box-sizing: border-box;
 }
 
-.box {
-  transform: translate(0%, 0%);
-  padding-top: 30px;
-  border-radius: 15px;
-  margin-bottom: 20px;
 
-  border: none;
-  outline: none;
-  background: linear-gradient(45deg, #446fc8, #6f36da, #e96d74);
+.box, .buttonBoxKap{
+  width: 100%;
+  height: 20vh;
+  padding: 20px;
+}
+
+.box , .box-Course {
+  background: linear-gradient(45deg,#446FC8, #6f36da, #E96D74);
   background-size: 400% 400%;
   box-shadow: 2vw 5vw 0 #e96d74;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   color: #fff;
-  width: 100%;
-  height: 20vh;
-  transition: all 0.3s ease;
 }
-.box:hover {
+
+
+.box:hover, .box-Course:hover{
+
   animation: gradient 10s ease infinite;
   scale: 1.03;
   box-shadow: 0.2vw 0.2vw 0 #f59191;
 
   cursor: pointer;
 }
+
+
+
 @media (max-width: 1200px) {
   #box-container {
     margin-left: 0;
