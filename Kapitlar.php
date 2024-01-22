@@ -91,9 +91,16 @@
             </p>
           </div>
         </div>
-      <?php } ?>
+        <?php } ?>
+      </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="buttonBoxKap">
+      <label class="circular-button">+</label>
+      </div>
     </div>
-    <button class="circular-button"></button>
+
+
     <div class="button-container d-flex flex-column flex-sm-row ">
       <button id="buttonLeft" class="rounded-button left p-1 p-sm-4 my-3 my-sm-5"><i
           class="fa fa-chevron-left"></i>Webbutveckling

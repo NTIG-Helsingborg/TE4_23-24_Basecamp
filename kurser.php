@@ -84,7 +84,7 @@
       <?php for ($i = 1; $i <= 6; $i++) { ?>
      
         <div class="col-lg-12 col-md-12 col-sm-6">
-          <div class="boxCourse">
+          <div class="box-Course">
             <h4>Rubrik
               <?php echo $i; ?>
             </h4>
@@ -95,10 +95,12 @@
           </div>
         </div>
       <?php } ?>
+      <div class="row buttonBoxKur">
+      <label class="circular-button">+</label>
+      
+      </div>
     </div>
 </div>
-
-<button class="circular-button"></button>
 
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
