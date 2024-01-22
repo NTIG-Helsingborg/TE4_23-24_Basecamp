@@ -64,7 +64,8 @@ if (session_status() == PHP_SESSION_NONE) {
                             ';
                             
                             echo '
-                            <select name = "school" id = "school" style = "width: 180px">';
+                            <label for="school" id="labelForSchool">Skola:</label>
+                            <select name = "school" id = "school"';
                              
                             foreach($_SESSION["schoolDisplay"] as $key => $value){
                                 echo '
