@@ -46,6 +46,16 @@
             ");
 
             $this->exec("
+                CREATE TABLE IT NOT EXISTS `pending_users` (
+                    `id` TEXT PRIMARY KEY NOT NULL,
+                    `username` TEXT NOT NULL,
+                    `name` TEXT NOT NULL,
+                    `password_hash` TEXT NOT NULL,
+                    `school` TEXT NOT NULL REFERENCES `schools`(`id`)
+                )
+            ");
+
+            $this->exec("
                 CREATE TABLE IF NOT EXISTS `classes` (
                     `id` TEXT PRIMARY KEY NOT NULL,
                     `owner` TEXT NOT NULL REFERENCES `users`(`id`),
@@ -65,6 +75,7 @@
                     `name` TEXT NOT NULL
                 )
             ");
+
             //test admin, dont know what do if there is more admins. Should we have a super admin lol?
             $StatementK1 = $this->querySingle("SELECT id from users WHERE username = 'Admin'");
             if(!$StatementK1){
@@ -130,8 +141,6 @@
             $_SESSION["schoolDisplay"][$i]["name"] = $res["name"];
             $i++;
         }
-
-
         $c = 0;
         $resultClasses = $db->query("SELECT * FROM classes");
         $_SESSION["classDisplay"] = array();        
@@ -143,6 +152,21 @@
             $_SESSION["classDisplay"][$c]["school"] = $res1["school"];
             $c++;
         }
+
+        $v = 0;
+        $resultClasses = $db->query("SELECT * FROM chapters");
+        $_SESSION["chapterDisplay"] = array();        
+        while($res2 = $resultClasses->fetchArray(SQLITE3_ASSOC)){
+            $_SESSION["chapterDisplay"][$v]["id"] = $res2["id"];
+            $_SESSION["chapterDisplay"][$v]["owner"] = $res2["owner"];
+            $_SESSION["chapterDisplay"][$v]["class"] = $res2["class"];
+            $_SESSION["chapterDisplay"][$v]["data"] = $res2["data"];
+            $_SESSION["chapterDisplay"][$v]["url"] = $res2["url"];
+            $_SESSION["chapterDisplay"][$v]["name"] = $res2["name"];
+            $v++;
+        }
+
+
         $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false;
 
         //Default choosen school för kurser

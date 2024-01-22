@@ -29,5 +29,8 @@
             $_SESSION["ClassFromSchool"] = $id["id"];
             echo $_SESSION["ClassFromSchool"];
         }
+        if(isset($jsonData["id"]) && isset($jsonData["name"])){
+            $_SESSION["selectedClass"] = ["id" =>$jsonData["id"], "name" => $jsonData["name"]];
+        }
     }
 ?>
