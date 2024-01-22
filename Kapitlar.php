@@ -1,3 +1,7 @@
+<?php
+include "videotest.php"
+?>
+
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -35,40 +39,17 @@
     <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i
           class="fa fa-chevron-down"></i></button></h1>
     <div id="demo1" class="collapse" aria-labelledby="demo1">
+      <!--
+         <li><a href="#">Länk 1</a></li>  x antal gångaer
+      -->
       <ul>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 1</a></li>
-        <li><a href="#">Länk 2</a></li>
+        <?php
+          foreach($_SESSION["schoolDisplay"] as $key=>$value){
+            echo  '
+            <li><a href="#" id = "'.$value["name"].'" onclick = "schoolChooseFetch(this.id)">' . $value["name"] .'</a></li>
+            ';
+          }
+        ?>
       </ul>
     </div>
   </div>
@@ -79,9 +60,30 @@
   <div class="container" id="box-container">
     <!-- Första gruppen med boxar -->
     <div class="row box-group" id="group1">
-
+      <?php
+        foreach($_SESSION["chapterDisplay"] as $key=>$value){
+          if(isset($_SESSION["selectedClass"])){
+            if($_SESSION["selectedClass"]["id"] == $value["class"]){
+            }
+              echo '<div class = "col-lg-4 col-md-6 col-sm-6" id = "'.$value["id"].'"' . 'onclick = "chooseChapter(\''.$value["id"].'\', \''.$value["class"].'\', \''.$value["data"].'\', \''.$value["url"].'\', \''.$value["name"].'\');">';
+              echo '<div class = "box">';
+              echo '<button class = "deleteBtn" onclick = "deleteClass(\''.$value["id"].'\');">X</button>';
+              echo '<h4>'.$value["name"].'</h4>';
+              echo '</div>';
+              echo "</div>";
+          }
+        }
+      ?>
     </div>
-    <button class="circular-button" onclick="addNewBox()"></button>
+
+    <?php
+      if($_SESSION["loginStatus"]){
+          echo '
+          <button class="circular-button" onclick="addNewBoxToDb()"></button>
+          ';
+      }
+    ?>
+
     <div class="button-container d-flex flex-column flex-sm-row ">
       <button id="buttonLeft" class="rounded-button left p-1 p-sm-4 my-3 my-sm-5"><i
           class="fa fa-chevron-left"></i>Webbutveckling
@@ -138,6 +140,12 @@
     }
   </script>
   <script>
+    //vill inte riktigt ändra i databasen
+    function addNewBoxToDb(){
+      //var rubrik = prompt("Ange rubrik för det nya kapitlet!");
+      window.location.href = 'formtest.php';
+    }
+
     function addNewBox() {
       var boxTitle = prompt("Ange rubrik för det nya kapitlet!");
       var boxDescription = prompt("Ange en kort beskrivning för det nya kapitlet!");
@@ -172,6 +180,63 @@
       window.location.href = 'editchapter.php';
     }
 
+    //användes från början kurser.php filen
+    function schoolChooseFetch(id){
+      fetch("kurserFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              school: id,
+            })
+        })
+        .then(response => response.text())
+        .then(() => {
+          location.reload();
+        })
+      }
+
+  function deleteClass(id){
+    console.log(id);
+    fetch("kapitlarFunctions.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        class: id,
+      })
+    })
+    .then(response => response.text())
+    .then(data =>{
+    location.reload();
+        });
+    event.stopPropagation();
+    }
+
+    function chooseChapter(id, Class, data, url, name){
+      fetch("kapitlarFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              chapterArr: "set",
+              id: id,
+              class: Class,
+              data: data,
+              url: url,
+              name: name,
+            })
+        })
+        .then(response => response.text())
+        .then(data =>{
+          window.location.href = 'editchapter.php';
+        });
+        //hindrar parent för att aktiveras
+        event.stopPropagation();
+    }
   </script>
 
 </body>

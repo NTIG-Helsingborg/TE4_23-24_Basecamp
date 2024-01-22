@@ -108,15 +108,26 @@ include "db.php";
           }
       */
       foreach($_SESSION["classDisplay"] as $key=>$value){
-        if($value["school"] == $_SESSION["ClassFromSchool"]){
-          echo '
-          <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
-          <div class="boxCourse">';
-          echo '<h4>' . $value["name"] .  '</h4>';
-          echo'<p>' .$value["data"]. '</p>';
-          echo '</div>
-          </div>';
+        if(isset($_SESSION["ClassFromSchool"])){
+          if($_SESSION["ClassFromSchool"] == $value["school"])
+            echo '
+            <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
+            <div class="boxCourse">';
+            echo '<h4>' . $value["name"] .  '</h4>';
+            echo'<p>' .$value["data"]. '</p>';
+            echo '</div>
+            </div>';
         }
+        if(!isset($_SESSION["ClassFromSchool"]) && $value["school"] == $_SESSION["SchoolDefault"]){
+            echo '
+            <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
+            <div class="boxCourse">';
+            echo '<h4>' . $value["name"] .  '</h4>';
+            echo'<p>' .$value["data"]. '</p>';
+            echo '</div>
+            </div>';
+        }
+
      
         //echo '<h1>'.$_SESSION["SchoolDefault"].'<h1>';
         //echo '<h1>'.$value["school"].'<h1>';
@@ -191,7 +202,7 @@ Tidagare
     
       
       function openCourse(id, name){
-      fetch("backend/kurserFunctions.php", {
+      fetch("kurserFunctions.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

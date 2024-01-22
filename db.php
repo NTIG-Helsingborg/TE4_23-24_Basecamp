@@ -184,7 +184,6 @@ if (session_status() == PHP_SESSION_NONE) {
         $i++;
     }
 
-
     $c = 0;
     $resultClasses = $db->query("SELECT * FROM classes");
     $_SESSION["classDisplay"] = array();
@@ -196,6 +195,20 @@ if (session_status() == PHP_SESSION_NONE) {
         $_SESSION["classDisplay"][$c]["school"] = $res1["school"];
         $c++;
     }
+
+    $l = 0;
+    $resultChapters = $db->query("SELECT * FROM chapters");
+    $_SESSION["chapterDisplay"] = array();
+    while ($res4 = $resultChapters->fetchArray(SQLITE3_ASSOC)) {
+        $_SESSION["chapterDisplay"][$l]["id"] = $res4["id"];
+        $_SESSION["chapterDisplay"][$l]["owner"] = $res4["owner"];
+        $_SESSION["chapterDisplay"][$l]["class"] = $res4["class"];
+        $_SESSION["chapterDisplay"][$l]["data"] = $res4["data"];
+        $_SESSION["chapterDisplay"][$l]["url"] = $res4["url"];
+        $_SESSION["chapterDisplay"][$l]["name"] = $res4["name"];
+        $l++;
+    }
+
     $_SESSION["onPage"] = isset($_COOKIE["await"]) ? true : false;
     //Default choosen school för kurser
     $resultDef = $db->query("SELECT id FROM schools WHERE name = 'NTI-Helsingborg'");
