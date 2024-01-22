@@ -43,78 +43,19 @@ echo '</pre>';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="CSS/AdminPage.css">
 </head>
-<script>
-    function postStatus(id) {
-        var isCheckedId = document.getElementById(id);
-        fetch("backend/AdminFunctions.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                isChecked: isCheckedId.checked,
-                username: id
-            })
-        })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-            })
-    }
-
-    function deleteFetch() {
-        var deleteVar = "Delete";
-        fetch("backend/AdminFunctions.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                deleteVar: deleteVar,
-            })
-        })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-            })
-    }
-    function addSchool() {
-        var addschool = "addschool";
-        var school = document.getElementById("newSchool").value;
-        fetch("backend/AdminFunctions.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                addschool: "addschool",
-                school: school
-            })
-        })
-            .then(response => response.text())
-            .then(() => {
-                location.reload();
-            });
-
-    }
-</script>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
 
 <body>
     <?php
     echo "<pre>";
-    print_r($_SESSION["loginData"]);
-    echo "</pre>"
-        ?>
+    //print_r($_SESSION["loginData"]);
+    echo "</pre>";
+
+    echo $db->get_users();
+    ?>
     <div class="container" id="box-container">
         <!-- Första gruppen med boxar -->
         <div class="row box-group" id="group1">
-
+            <!--Alla ansäkningsboxar-->
         </div>
     </div>
 
@@ -140,6 +81,70 @@ echo '</pre>';
         <input type="text" id="newSchool"></input>
         <button type="button" onclick="addSchool()">Lägg tillskola</button>
         <div>
+
+
+            <script>
+                function postStatus(id) {
+                    var isCheckedId = document.getElementById(id);
+                    fetch("backend/AdminFunctions.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            isChecked: isCheckedId.checked,
+                            username: id
+                        })
+                    })
+                        .then(response => response.text())
+                        .then(data => {
+                            console.log(data);
+                        })
+                }
+
+                function deleteFetch() {
+                    var deleteVar = "Delete";
+                    fetch("backend/AdminFunctions.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            deleteVar: deleteVar,
+                        })
+                    })
+                        .then(response => response.text())
+                        .then(data => {
+                            console.log(data);
+                        })
+                }
+                function addSchool() {
+                    var addschool = "addschool";
+                    var school = document.getElementById("newSchool").value;
+                    fetch("backend/AdminFunctions.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            addschool: "addschool",
+                            school: school
+                        })
+                    })
+                        .then(response => response.text())
+                        .then(() => {
+                            location.reload();
+                        });
+
+                }
+            </script>
+
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
+
 </body>
 
 </html>
