@@ -71,17 +71,31 @@ echo json_encode($row);
     </div>
 
 
+    <div class="wraper">
+        <div class="row">
+            <div class="col">
 
-    <button> Alla ansökningar </button>
-    <button> Accepterade </button>
+                <button> Alla ansökningar </button>
 
-    <hr>
+                <button> Accepterade </button>
+                    <div class="count-window">
+                        <?php
+                        $count = count($_SESSION["Userlist"]);
+                        echo $count;
+                        ?>
+                    </div>
 
-    <div class="count-window">
-        <?php
-        $count = count($_SESSION["Userlist"]);
-        echo $count;
-        ?>
+            </div>
+
+           
+            <div class="col">
+
+                    <h2>Admin</h2>
+                    <img src="" alt="">
+
+            </div>
+
+        </div>
     </div>
 
 
