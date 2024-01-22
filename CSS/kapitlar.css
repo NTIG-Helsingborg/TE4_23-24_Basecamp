@@ -23,7 +23,7 @@
   outline: none;
   background: linear-gradient(45deg,#446FC8, #6f36da, #E96D74);
   background-size: 400% 400%;
-  box-shadow: 2vw 5vw 0 #E96D74;
+  box-shadow: 2vw 5vw 0 var(--coral);
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 15px;
@@ -40,7 +40,7 @@
 
   animation: gradient 10s ease infinite;
   scale: 1.03;
-  box-shadow: 0.2vw 0.2vw 0 #f59191;
+  box-shadow: 0.2vw 0.2vw 0 var(--coral);
 
   cursor: pointer;
 }
@@ -71,7 +71,7 @@
 }
 
 .rounded-button {
-  background-color: #e96d74;
+  background-color: var(--coral);
   border: none;
   color: white;
   text-align: center;
@@ -123,7 +123,7 @@
   transition: color 0.3s ease;
 }
 .deleteBtn:hover {
-  color: red;
+  color: var(--red);
 }
 
 /* -------------------------css for Coursers -------------------------- */
@@ -133,23 +133,23 @@
   color: #e8e8e8;
   border: none;
   outline: none;
-  background: linear-gradient(45deg, #446fc8, #6f36da, #e96d74);
+  background: linear-gradient(45deg, var(--medium-blue), var(--purple), var(--coral));
   background-size: 400% 400%;
-  box-shadow: 2vw 5vw 0 #e96d74;
+  box-shadow: 2vw 5vw 0 var(--coral);
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 15px;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  color: #fff;
+  color: white;
   width: 90%;
   height: 14vh;
 }
 .boxCourse:hover {
   animation: gradient 10s ease infinite;
   scale: 1.03;
-  box-shadow: 0.2vw 0.2vw 0 #f59191;
+  box-shadow: 0.2vw 0.2vw 0 var(--coral);
 
   /* background: linear-gradient(to bottom, #446FC8 10%, #F59191 90%);
   transform: scale(1.075);
@@ -178,7 +178,7 @@ p {
   text-align: center;
   height: 70px;
   border-radius: 50%;
-  background-color: #b4b4b4;
+  background-color: var(--light-grey);
   position: relative;
   margin: auto;
   cursor: pointer;
@@ -209,5 +209,5 @@ p {
 }
 
 .circular-button:hover {
-  background-color: #0056b3;
+  background-color: var(--medium-blue);
 }
