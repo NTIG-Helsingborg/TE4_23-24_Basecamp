@@ -44,6 +44,9 @@ echo '</pre>';
     <link rel="stylesheet" href="CSS/AdminPage.css">
 </head>
 
+
+
+<!-- ---------------------html------------------------- -->
 <body>
     <?php
     echo "<pre>";
@@ -58,6 +61,22 @@ echo '</pre>';
             <!--Alla ansäkningsboxar-->
         </div>
     </div>
+
+
+    
+    <button> Alla ansökningar </button>    
+        <button> Accepterade </button>
+
+            <hr>
+
+        <div class="count-window">
+            <?php
+            $count = count($_SESSION["Userlist"]); 
+            echo $count; 
+            ?>
+        </div>
+
+        
 
     <div>
         <table class="users">
