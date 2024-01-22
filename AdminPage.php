@@ -89,6 +89,9 @@ echo '</pre>';
     }
 </script>
 
+
+
+<!-- ---------------------html------------------------- -->
 <body>
     <?php
     echo "<pre>";
@@ -96,6 +99,21 @@ echo '</pre>';
     echo "</pre>"
         ?>
         <div >
+
+
+    
+        <button> Alla ansökningar </button>    
+        <button> Accepterade </button>
+
+            <hr>
+
+        <div class="count-window">
+            <?php
+            $count = count($_SESSION["Userlist"]); 
+            echo $count; 
+            ?>
+        </div>
+
             <table class = "users">
                 <tr>
                     <th>
