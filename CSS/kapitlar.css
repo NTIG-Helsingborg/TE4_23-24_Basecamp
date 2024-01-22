@@ -12,15 +12,29 @@
   height: 20vh;
   padding: 20px;
 }
+.box, .boxCourse {
 
-.box , .box-Course {
+
+
+
+  transform: translate(0%,0%);
+  color: #e8e8e8;
+  border: none;
+  outline: none;
   background: linear-gradient(45deg,#446FC8, #6f36da, #E96D74);
   background-size: 400% 400%;
-  box-shadow: 2vw 5vw 0 #e96d74;
+  box-shadow: 2vw 5vw 0 #E96D74;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
   color: #fff;
-}
+  width: 90%;
+  height: 14vh;
 
+}
 
 .box:hover, .box-Course:hover{
 
