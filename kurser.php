@@ -114,8 +114,8 @@ include "backend/db.php";
         echo'<p>' .$value["data"]. '</p>';
         echo '</div>
         </div>';
-        echo '<h1>'.$_SESSION["SchoolDefault"].'<h1>';
-        echo '<h1>'.$value["school"].'<h1>';
+        //echo '<h1>'.$_SESSION["SchoolDefault"].'<h1>';
+        //echo '<h1>'.$value["school"].'<h1>';
       }
         
       ?>
@@ -124,11 +124,12 @@ include "backend/db.php";
   <!-- 
 Tidagare
 <button class="circular-button"></button>
+<button class="circular-button" onclick = "addCourse()"></button>
 -->
   <?php
   if (isset($_SESSION["loginStatus"])) {
     echo '
-      <button class="circular-button" onclick = "addCourse()"></button>
+    <button class="circular-button" onclick = "addCourse()"></button>
     ';
   }
   ?>
@@ -166,7 +167,8 @@ Tidagare
     }
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+
+    function getSes() {
     // Your code here, which will be executed when the DOM is ready
        fetch("backend/setClasses.php", {
             method: "POST",
@@ -181,7 +183,7 @@ Tidagare
         .then(data => {
           console.log(data);
         })
-    });
+      }
 
       function openCourse(id, name){
       fetch("backend/kurserFunctions.php", {
@@ -213,9 +215,9 @@ Tidagare
           description: description
         })
       })
-        .then(response => response.text())
+      .then(response => response.text())
       .then(data => {
-        location.reload();
+        console.log(data);
       })
     }
 

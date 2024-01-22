@@ -18,6 +18,15 @@
             $argName = new QueryArgsStruct(":name", $jsonData["rubrik"], SQLITE3_TEXT);
             $argData = new QueryArgsStruct(":data", $jsonData["description"], SQLITE3_TEXT);
             $argSchool = new QueryArgsStruct(":school", $uid["school"], SQLITE3_TEXT);
+            /*
+            echo "id:" . $uid["id"];
+            echo "<br>";
+            echo "rubrik " . $jsonData["rubrik"];
+            echo "<br>";
+            echo "decription " . $jsonData["description"];
+            echo "<br>";
+            echo "school " . $uid["school"];
+            */
             $result = $db->run_query($statement, $argId, $argOwner, $argName, $argData, $argSchool);
             $m = 0;
             $resultClasses = $db->query("SELECT * FROM classes");
