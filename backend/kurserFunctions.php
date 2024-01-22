@@ -20,11 +20,9 @@
             $argSchool = new QueryArgsStruct(":school", $uid["school"], SQLITE3_TEXT);
 
             $result = $db->run_query($statement, $argId, $argOwner, $argName, $argData, $argSchool);
-            
             echo "<pre>";
             print_r($_SESSION["classDisplay"]);
             echo "</pre>";
-
         }
         if(isset($jsonData["school"])){
             $statement = "SELECT id FROM schools where name = :name";

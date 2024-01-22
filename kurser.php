@@ -96,8 +96,8 @@ include "backend/db.php";
       <!-- Box 1-6 -->
      
       <?php
-      foreach($_SESSION["classDisplay"] as $key=>$value){
-          if(!isset($_SESSION["ClassFromSchool"]) && $value["school"] == $_SESSION["SchoolDefault"]){
+      /*
+        if(!isset($_SESSION["ClassFromSchool"]) && $value["school"] == $_SESSION["SchoolDefault"]){
             echo '
             <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
             <div class="boxCourse">';
@@ -118,7 +118,19 @@ include "backend/db.php";
               </div>';
             }
           }
-        }
+      */
+      foreach($_SESSION["classDispla"] as $key=>$value){
+        echo '
+        <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
+        <div class="boxCourse">';
+        echo '<h4>' . $value["name"] .  '</h4>';
+        echo'<p>' .$value["data"]. '</p>';
+        echo '</div>
+        </div>';
+        echo '<h1>'.$_SESSION["SchoolDefault"].'<h1>';
+        echo '<h1>'.$value["school"].'<h1>';
+      }
+        
       ?>
     </div>
   </div>
@@ -168,6 +180,22 @@ Tidagare
     }
   </script>
   <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    // Your code here, which will be executed when the DOM is ready
+       fetch("backend/setClasses.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              id: "get"
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+          console.log();
+        })
+      });
       function openCourse(id, name){
       fetch("backend/kurserFunctions.php", {
             method: "POST",
