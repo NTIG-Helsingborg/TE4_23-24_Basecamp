@@ -29,8 +29,6 @@ echo '</pre>';
 
 
 */
-$row = $db->get_users()->fetchArray();
-echo json_encode($row);
 ?>
 <html>
 
@@ -54,19 +52,30 @@ echo json_encode($row);
 
 <body>
     <?php
-    echo "<pre>";
-    //print_r($_SESSION["loginData"]);
-    echo "</pre>";
 
     //echo $db->get_users();
+    
+    $usersResult = $db->get_users();
+
     ?>
     <div class="container" id="box-container">
         <!-- Första gruppen med boxar -->
-        <div class="row box-group" id="group1">
-            <!--Alla ansökningsboxar-->
-            <div class="col-12 ansökningbox">
-                <h2>Magnus Andersson</h2>
-            </div>
+        <div class="row box-group" id="group1">.
+            <?php
+            while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
+                // Now $user is an associative array representing a single user
+                echo '
+                    <div class="col-12 my-2 ansökningbox">
+                    <div class = "info">
+                        <h2>' . htmlspecialchars($user['username']) . '</h2>
+                        <p>' . htmlspecialchars($user['email']) . '</p>
+                    </div>
+                        
+                        
+                    </div>';
+            }
+            ?>
+
         </div>
     </div>
 

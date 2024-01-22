@@ -43,11 +43,17 @@ padding: 8px;
     width: 80%;
 }
 .ansökningbox{
-    margin-left: auto;
-    margin-right: auto;
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    height: 100px;
+    height: 125px;
+}
+.ansökningbox .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 33%;
+    padding:1rem;
 }
