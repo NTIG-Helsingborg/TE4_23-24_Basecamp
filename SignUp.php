@@ -1,7 +1,7 @@
 <!doctype html>
 
 <?php
-include('getRegInfo.php'); //Create connection to databse.
+include('backend/getRegInfo.php'); //Create connection to databse.
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
