@@ -1,12 +1,13 @@
 /*Css to backgroundimage and color*/
+
 #logInSignInBackground {
-  background-image: url("./Images/moon.PNG");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #1c1b3a;
+  background: linear-gradient(#446FC8, #FFFBEF);
 }
 .backButton {
   top: 10%;
+  z-index: 10;
 }
 /*Css to the "<" button*/
 #goBack {
@@ -16,57 +17,69 @@
   width: 60px;
   border: none;
   border-radius: 5px;
-  color: #f0d397;
+  color:white;
   font-size: 30px;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index:10;
 }
 
 /*Css to the form including lables and inputboxes for both email and password*/
 form {
+  padding-top: 5%;
   width: 450px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+  padding-bottom: 5%;
 }
 
 /*Css to the email inputbox*/
 #email {
-  border: solid 2px #f0d397;
+  border: solid 2px white;
   border-radius: 2px;
   width: 250px;
 }
+
+#school{
+  width: 250px;
+  border-radius: 2px;
+  border: solid 2px white;
+  height: 10%;
+  margin-top: 4%;
+}
+
 /*Css to the password inputbox*/
 #password {
   width: 250px;
-  border: solid 2px #f0d397;
+  border: solid 2px white;
   border-radius: 2px;
 }
 /*Css to the lable over password inputbox*/
 #labelForPassword {
-  color: #f0d397;
+  color: white;
   margin-top: 5%;
   margin-right: 180px;
 }
 
 /*Css to the lable over email inputbox*/
 #labelForEmail {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-right: 210px;
-  color: #f0d397;
+  color: white;
 }
 
 #labelForName {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-right: 210px;
-  color: #f0d397;
+  color: white;
 }
 #labelForSchool {
-  margin-top: 10%;
+  margin-top: 5%;
   margin-right: 210px;
-  color: #f0d397;
+  color: white;
 }
 
 #name {
-  border: solid 2px #f0d397;
+  border: solid 2px white;
   border-radius: 2px;
   width: 250px;
 }
@@ -88,7 +101,7 @@ form {
   border-radius: 5px;
   height: 35px;
   width: 250px;
-  background-color: #f0d397;
+  background-color: white;
   font-size: 18px;
   color: black;
   margin-bottom: 30px;
@@ -96,7 +109,7 @@ form {
 
 /*Css to the link "Glömt lösenord"*/
 #forgotPassword {
-  color: #f0d397;
+  color: white;
   text-decoration: none;
   font-size: 15px;
   text-align: center;

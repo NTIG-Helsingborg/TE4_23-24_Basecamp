@@ -43,7 +43,7 @@ include "backend/db.php";
         <?php
         foreach ($_SESSION["schoolDisplay"] as $key => $value) {
           echo '
-          <li><a href="#" id = "' . $value["name"] . '" onclick = "schoolChooseFetch(this.id)">' . $value["name"] . '</a></li>
+          <li><a href="#" id = "'. $value["name"] . '" onclick = "schoolChooseFetch(this.id)">' . $value["name"] . '</a></li>
           ';
         }
         ?>
@@ -89,31 +89,36 @@ include "backend/db.php";
         }
   */
   ?>
-  <!-- 12 Content boxes -->
-  <div class="container" id="box-container">
+   <!-- 12 Content boxes -->
+<div class="container" id="box-container">
     <!-- Första gruppen med boxar -->
     <div class="row box-group" id="group1">
       <!-- Box 1-6 -->
+     
       <?php
-      foreach ($_SESSION["classDisplay"] as $key => $value) {
-
-        if (!isset($_SESSION["ClassFromSchool"]) && $value["school"] == $_SESSION["SchoolDefault"]) {
-          echo '<h4>' . $value["name"] . '</h4>';
-          echo '<p>' . $value["data"] . '</p>';
-        }
-
-        if (isset($_SESSION["ClassFromSchool"])) {
-          if ($value["school"] == $_SESSION["ClassFromSchool"]) {
+      foreach($_SESSION["classDisplay"] as $key=>$value){
+          if(!isset($_SESSION["ClassFromSchool"]) && $value["school"] == $_SESSION["SchoolDefault"]){
             echo '
-              <div class="col-lg-12 col-md-12 col-sm-6">
-              <div class="boxCourse">';
-            echo '<h4>' . $value["name"] . '</h4>';
-            echo '<p>' . $value["data"] . '</p>';
+            <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
+            <div class="boxCourse">';
+            echo '<h4>' . $value["name"] .  '</h4>';
+            echo'<p>' .$value["data"]. '</p>';
             echo '</div>
+            </div>';
+          }
+          // \' eftersom det finns double qoutes
+          if(isset($_SESSION["ClassFromSchool"])){
+            if($value["school"] == $_SESSION["ClassFromSchool"]){
+              echo '
+              <div class="col-lg-12 col-md-12 col-sm-6" onclick = "openCourse(\''.$value["id"].'\', \''.$value["name"].'\');">
+              <div class="boxCourse">';
+              echo '<h4>' . $value["name"] .  '</h4>';
+              echo'<p>' .$value["data"]. '</p>';
+              echo '</div>
               </div>';
+            }
           }
         }
-      }
       ?>
     </div>
   </div>
@@ -122,12 +127,13 @@ Tidagare
 <button class="circular-button"></button>
 -->
   <?php
-  if (isset($_SESSION["loginStatus"])) {
-    echo '
-      <button class="circular-button" onclick = "addCourse()"></button>
-    ';
-  }
+    if(isset($_SESSION["loginStatus"])){
+      echo '
+        <button class="circular-button" onclick = "addCourse()"></button>
+      ';
+    }
   ?>
+
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -162,6 +168,23 @@ Tidagare
     }
   </script>
   <script>
+      function openCourse(id, name){
+      fetch("backend/kurserFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              id: id,
+              name: name,
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+          window.location.href = 'Kapitlar.php';
+        })
+    }
+
     function addCourse() {
       var rubrik = prompt("Lägg till rubrik");
       var description = prompt("Lägg till kort beskrivning");
@@ -175,10 +198,9 @@ Tidagare
           description: description
         })
       })
-    })
         .then(response => response.text())
       .then(data => {
-        location.reload();
+        console.log(data);
       })
     }
 
@@ -192,8 +214,7 @@ Tidagare
           school: id,
         })
       })
-    })
-        .then(response => response.text())
+      .then(response => response.text())
       .then(() => {
         location.reload();
       })

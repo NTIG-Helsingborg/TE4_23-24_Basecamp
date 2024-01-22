@@ -20,7 +20,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item white-text" href="Login.php">Login</a></li>
-                    <li><a class="dropdown-item white-text" href="SignIn.php">Signup</a></li>
+                    <li><a class="dropdown-item white-text" href="SignUp.php">Signup</a></li>
                 </ul>
             </li>
 
