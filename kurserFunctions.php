@@ -40,5 +40,9 @@
             $id = $result->fetchArray(SQLITE3_ASSOC);
             $_SESSION["ClassFromSchool"] = $id["id"];
         }
+        //This might be an issue in the future
+        if(isset($jsonData["id"]) && isset($jsonData["name"])){
+            $SESSION[$_SESSION["selectedClass"]] = ["id" => $jsonData["id"], "name" => $jsonData["name"]];
+        }
     }
 ?>
