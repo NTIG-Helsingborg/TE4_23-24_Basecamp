@@ -20,5 +20,12 @@
         print_r($_SESSION["selectedChapter"]);
         echo "</pre>";
       }
+      if(isset($jsonData["classArgs"])){
+        //$dataParsed = $jsonData["classArgs"];
+        $_SESSION["selectedClass"] = ["id" => $jsonData["classArgs"]["id"], "name" => $jsonData["classArgs"]["name"]];
+        echo "<pre>";
+        print_r($jsonData["classArgs"]);
+        echo "</pre>";
+      }
   }
 ?>

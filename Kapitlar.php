@@ -30,7 +30,11 @@ include "videotest.php"
   </header>
   <div class="course-title">
     <div class="container">
-      <h1>Welcome to Programming 1</h1>
+      <?php
+          echo '
+          <h1>Welcome to '.$_SESSION["selectedClass"]["name"].'</h1>
+          ';
+      ?>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula pulvinar in sit
         amet ipsum</p>
     </div>
@@ -114,20 +118,53 @@ include "videotest.php"
       $argDesc= new QueryArgsStruct(":id", $_SESSION["selectedClass"]["id"], SQLITE3_TEXT);
       $resDesc = $db->run_query($statementDesc, $argDesc);
       $Desc = $resDesc->fetchArray(SQLITE3_ASSOC);
+      
       echo '<div class="button-container d-flex flex-column flex-sm-row ">';
-      if($Asc){
+      for($q = 0; $q < count($_SESSION["classDisplay"]); $q++){
+        if($_SESSION["classDisplay"][$q]["id"] == $_SESSION["selectedClass"]["id"]){
+            if(isset($_SESSION["classDisplay"][$q-1]["name"])){
+              $prevData = json_encode($_SESSION["classDisplay"][$q-1]);
+              //htmlspecialchars eftersom json_encode() generar double qoutes  
+              echo '
+              <button id="buttonLeft" class="rounded-button left p-1 p-sm-4 my-3 my-sm-5" onclick = "changeClass(\''.htmlspecialchars($prevData, ENT_QUOTES, 'UTF-8').'\')"><i
+              class="fa fa-chevron-left"></i>
+              ';
+              echo $_SESSION["classDisplay"][$q-1]["name"];
+              echo '</button>';
+            }
+            $nextData = json_encode($_SESSION["classDisplay"][$q+1]);
+            if(isset($_SESSION["classDisplay"][$q+1]["name"])){
+              echo '
+              <button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5" onclick = "changeClass(\''.htmlspecialchars($nextData, ENT_QUOTES, 'UTF-8').'\')">';
+              echo $_SESSION["classDisplay"][$q+1]["name"];
+              echo'
+              <i class="fa fa-chevron-right"></i></button>
+              ';
+            }
+
+        }
+      }
+      /*
+      if($Desc){
         echo '
         <button id="buttonLeft" class="rounded-button left p-1 p-sm-4 my-3 my-sm-5"><i
-        class="fa fa-chevron-left"></i>Webbutveckling
-        1</button>';
+        class="fa fa-chevron-left"></i>
+        ';
+        echo $Desc["name"];
+        echo '</button>';
       }
-      if(!$Desc){
-          echo '<button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5"><i
-          class="fa fa-chevron-right"></i>'.$Desc["name"].'</button>';
+      if($Asc){
+          echo '
+          <button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5">';
+          echo $Asc["name"];
+          echo'
+          <i class="fa fa-chevron-right"></i></button>
+          ';
       }
-      echo '</div>';
+      */
       
     ?>
+    </div>
   </div>
 
 
@@ -140,15 +177,6 @@ include "videotest.php"
   <script>
 
 
-    // Lägg till händelsehanterare för klick händelsen på knapparna
-    document.getElementById('buttonLeft').addEventListener('click', function () {
-      //Ska användas för att gå till föregående kurs
-    });
-
-    document.getElementById('buttonRight').addEventListener('click', function () {
-      //Ska användas för att gå till nästa kurs
-
-    });
   </script>
   <script>
     $(document).ready(function () {
@@ -251,6 +279,25 @@ include "videotest.php"
         });
     event.stopPropagation();
     }
+    
+
+    function changeClass(args){
+      fetch("kapitlarFunctions.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        classArgs: JSON.parse(args),
+      })
+    })
+    .then(response => response.text())
+    .then(data =>{
+      location.reload();
+    });
+    }
+
+
 
     function chooseChapter(id, Class, data, url, name){
       fetch("kapitlarFunctions.php", {
