@@ -1,3 +1,6 @@
+<!-- This is the admin page. Josef will be the only one with the access to this page and when a user sign ups on the platform, Josef can choose whether to accept the newly signed up user as a teacher or not
+If the user becomes a teacher they can then add courses and chapters inside of those courses-->
+
 <?php
 include("db.php");
 if (session_status() == PHP_SESSION_NONE) {
@@ -21,12 +24,6 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     $i++;
 }
 
-//nicely formatted array
-/*
-echo '<pre>'; 
-print_r($_SESSION["Userlist"]); 
-echo '</pre>';
-*/
 ?>
 <html>
 
@@ -45,39 +42,9 @@ echo '</pre>';
 </head>
 
 
-
-<!-- ---------------------html------------------------- -->
-
 <body>
-    <div class="container" id="box-container">
-        <!-- Första gruppen med boxar -->
-        <div class="row box-group" id="group1">
-            <?php
-            $usersResult = $db->get_users();
 
-
-            while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
-                // Now $user is an associative array representing a single user
-                echo '
-                    <div class="col-12 my-2 ansökningbox flex-column flex-md-row">
-                    <div class = "info">
-                        <h2>' . htmlspecialchars($user['username']) . '</h2>
-                        <a href = "mailto:"' . htmlspecialchars($user['email']) . '>' . htmlspecialchars($user['email']) . '</a>
-                    </div>
-                    <div class = "action">
-                        <button class = "btn btn-primary">Acceptera</button>
-                        <button class = "btn btn-danger">Neka</button>
-                    
-                    </div>
-                        
-                    </div>';
-            }
-            ?>
-
-        </div>
-    </div>
-
-
+    <!-- This is used to have 2 buttons, first is to showcase all of the signed up users and the second is to showcase all of the accepted users-->
     <div class="wraper">
         <div class="row">
             <div class="col">
@@ -104,9 +71,32 @@ echo '</pre>';
 
         </div>
     </div>
-
-
-
+    <!-- This container is used to showcase all of the users that have signed up and are awaiting for Josef to Accept/Remove as a teacher-->
+    <div class="container" id="box-container">
+        <!-- Första gruppen med boxar -->
+        <div class="row box-group" id="group1">
+            <?php
+            //Call the function to get all users from the database
+            $usersResult = $db->get_users();
+            // Loop through all users
+            while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
+                // Now $user is an associative array representing a single user
+                echo '
+                    <div class="col-12 my-2 ansökningbox flex-column flex-md-row">
+                        <div class = "info">
+                            <h2>' . htmlspecialchars($user['username']) . '</h2>
+                            <a href = "mailto:"' . htmlspecialchars($user['email']) . '>' . htmlspecialchars($user['email']) . '</a>
+                        </div>
+                        <div class = "action">
+                            <button class = "btn btn-primary">Acceptera</button>
+                            <button class = "btn btn-danger">Neka</button>
+                        </div>
+                    </div>';
+            }
+            ?>
+        </div>
+    </div>
+    <!-- This container is used to showcase all of active schools on the platform-->
     <div>
         <table class="users">
             <tr>
@@ -125,6 +115,8 @@ echo '</pre>';
                 ?>
         </table>
     </div>
+    <!-- Input used to add a new school to the platform-->
+
     <div>
         <input type="text" id="newSchool"></input>
         <button type="button" onclick="addSchool()">Lägg tillskola</button>
@@ -186,5 +178,6 @@ echo '</pre>';
 
                 }
             </script>
+</body>
 
 </html>
