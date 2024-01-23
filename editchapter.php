@@ -1,3 +1,5 @@
+<!--Sida för att redigera kapitlen, redirectas till denna sidan när man skapat ett kapitel och ska då lägga till innehållet på kapitlet-->
+
 <!DOCTYPE html>
 <html>
 
@@ -26,20 +28,25 @@
 </head>
 
 <body>
+    <!--Importera komponenten navbar-->
     <header>
         <?php include 'Components/Navbar.php'; ?>
     </header>
 
+    <!--Titel-->
     <div class="title">
+        <!--Knapp för att redigera titel, pekar mot en modal längre ner i koden-->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTitleModal">
             Redigera titel
         </button>
+        <!--Titeln som redigeras, även en annan titel redigeras längre ner-->
         <div id="testEditTitle">
             Hej
         </div>
     </div>
-
+    <!--Kod för sidebar-->
     <div id="sidebar" class="sideBar">
+        <!--Related: Tänkt för olika kapitel inom kursen-->
         <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false"><i
                     class="fa fa-chevron-down"></i></button></h1>
         <div id="demo" class="collapse" aria-labelledby="demo">
@@ -51,6 +58,7 @@
                 <li><a href="#">Länk 1</a></li>
             </ul>
         </div>
+        <!--Skolor: Tänkt för olika skolor med samma kurs/kapitel-->
         <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i
                     class="fa fa-chevron-down"></i></button></h1>
         <div id="demo1" class="collapse" aria-labelledby="demo1">
@@ -91,13 +99,16 @@
             </ul>
         </div>
     </div>
+    <!--Knapp för att visa sidebar när sidan är i mobilläge-->
     <button onClick="ShowSideBar()" class="showsideBtn" id="showsidebtnID"><i class="fa fa-chevron-right"></i></button>
     <div class="content">
         <div class="contentTop">
             <div class="contentLeft">
+                <!--Knapp för att ändra video. pekar på modal längre ner i koden-->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editVideoModal">
                     Redigera video
                 </button>
+                <!--Div box med videon som redigeras-->
                 <div id="testEditVideo">
                     <iframe class="contentVideo" src="https://www.youtube.com/embed/LurwQGUorM4?si=H51qBgXCri6J_IAh">
                         Your browser does not support the video tag.
@@ -105,10 +116,12 @@
                 </div>
             </div>
             <div class="contentRight">
+                <!--Knapp för att redigera den korta beskrivningen till videon, pekar till modal längre ner i koden-->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#editShortTextModal">
                     Redigera text
                 </button>
+                <!--Texten som redigeras-->
                 <div id="testEditShortText">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula
                         pulvinar in sit amet ipsumLorem ipsum dolor sit amet</p>
@@ -117,10 +130,12 @@
         </div>
         <div class="contentBottom">
             <h1 id="testEditTitle1">Lorem Ipsum</h1>
+            <!--Knapp för att redigera den långa beskrivningen av videon/ämnet/kapitlet, pekar på modal längre ner på sidan-->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTextModal">
                 Redigera text
             </button>
             <div id="testEditText">
+                <!--Texten som redigeras-->
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in augue vestibulum, maximus nisl vel,
                     porta ex. Ut dapibus nisi est, eu semper nisl venenatis eget. Duis consectetur lorem pretium gravida
                     lobortis. Vestibulum non egestas nulla. Phasellus iaculis elementum porttitor. Fusce maximus, erat
@@ -154,6 +169,7 @@
             </div>
         </div>
     </div>
+    <!--Modal för att redigera videon-->
     <div class="modal fade" id="editVideoModal" tabindex="-1" aria-labelledby="editVideoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -172,6 +188,7 @@
             </div>
         </div>
     </div>
+    <!--Modal för att redigera den korta texten till videon-->
     <div class="modal fade" id="editShortTextModal" tabindex="-1" aria-labelledby="editShortTextModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -192,6 +209,7 @@
             </div>
         </div>
     </div>
+    <!--Modal för att redigera den långa texten/beskrivningen-->
     <div class="modal fade" id="editTextModal" tabindex="-1" aria-labelledby="editTextModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -224,6 +242,7 @@
             });
         });
     </script>
+    <!-- används ej, var innan för att göra sidebaren responsiv när man skrollade. behövs ej mer
     <script>
         $(document).ready(function () {
             $(window).scroll(function () {
@@ -235,12 +254,15 @@
             });
         });
     </script>
+    -->
+    <!--Script för att sidebarknappen ska funka-->
     <script>
         function ShowSideBar() {
             document.getElementById("sidebar").classList.toggle("showsidebar");
             document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
         }
     </script>
+    <!--Script för att redigera titel-->
     <script>
         function editTitle() {
             var newTitle = document.getElementById("newTitle").value;
@@ -249,6 +271,7 @@
             $('#editTitleModal').modal('hide'); // Dölj modalen efter ändringar
         }
     </script>
+    <!--Script för att redigera videon-->
     <script>
         function editVideo() {
             var newVideo = document.getElementById("newVideo").value;
@@ -256,6 +279,7 @@
             $('#editVideoModal').modal('hide'); // Dölj modalen efter ändringar
         }
     </script>
+    <!--Script för att redigera den korta beskrivningen-->
     <script>
         function editShortText() {
             var newShortText = document.getElementById("newShortText").value;
@@ -263,6 +287,7 @@
             $('#editShortTextModal').modal('hide'); // Dölj modalen efter ändringar
         }
     </script>
+    <!--Script för att redigera den långa beskriningen-->
     <script>
         function editText() {
             var newText = document.getElementById("newText").value;
