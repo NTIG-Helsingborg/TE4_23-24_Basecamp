@@ -1,6 +1,10 @@
 <?php
   include "db.php";
   header("Content-Type: application/json");
+  /*
+  för att få det första värdet efter vald rad
+  $query = "SELECT name FROM schools WHERE name > :name ORDER BY name ASC LIMIT 1";
+  */
   if($_SERVER["REQUEST_METHOD"] === "POST"){
       $postData = file_get_contents("php://input");       //Tar emot post datan som skickas i en assioativ array
       $jsonData = json_decode($postData, true);
