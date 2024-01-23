@@ -132,8 +132,9 @@ include "videotest.php"
               echo $_SESSION["classDisplay"][$q-1]["name"];
               echo '</button>';
             }
-            $nextData = json_encode($_SESSION["classDisplay"][$q+1]);
+            
             if(isset($_SESSION["classDisplay"][$q+1]["name"])){
+              $nextData = json_encode($_SESSION["classDisplay"][$q+1]);
               echo '
               <button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5" onclick = "changeClass(\''.htmlspecialchars($nextData, ENT_QUOTES, 'UTF-8').'\')">';
               echo $_SESSION["classDisplay"][$q+1]["name"];

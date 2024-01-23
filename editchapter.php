@@ -1,5 +1,7 @@
 <!--Sida för att redigera kapitlen, redirectas till denna sidan när man skapat ett kapitel och ska då lägga till innehållet på kapitlet-->
-
+<?php
+    include "db.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -41,7 +43,9 @@
         </button>
         <!--Titeln som redigeras, även en annan titel redigeras längre ner-->
         <div id="testEditTitle">
-            Hej
+            <?php
+                echo $_SESSION["selectedChapter"]["name"];
+            ?>
         </div>
     </div>
     <!--Kod för sidebar-->
@@ -62,40 +66,18 @@
         <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i
                     class="fa fa-chevron-down"></i></button></h1>
         <div id="demo1" class="collapse" aria-labelledby="demo1">
-            <ul>
+            <!--
                 <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 1</a></li>
-                <li><a href="#">Länk 2</a></li>
+            -->
+            <ul> 
+            <?php
+                // Display schools from session data
+                foreach ($_SESSION["schoolDisplay"] as $key => $value) {
+                    echo '
+                    <li><a href="#" id="' . $value["name"] . '" onclick="schoolChooseFetch(this.id)">' . $value["name"] . '</a></li>
+                    ';
+                }
+            ?>
             </ul>
         </div>
     </div>
@@ -117,15 +99,18 @@
             </div>
             <div class="contentRight">
                 <!--Knapp för att redigera den korta beskrivningen till videon, pekar till modal längre ner i koden-->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <!-- 
+                    tidigare kod:
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#editShortTextModal">
                     Redigera text
-                </button>
-                <!--Texten som redigeras-->
-                <div id="testEditShortText">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula
-                        pulvinar in sit amet ipsumLorem ipsum dolor sit amet</p>
-                </div>
+                    </button>
+                    <div id="testEditShortText">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ante non metus vehicula
+                            pulvinar in sit amet ipsumLorem ipsum dolor sit amet</p>
+                    </div>
+                -->
+                
             </div>
         </div>
         <div class="contentBottom">
@@ -189,7 +174,10 @@
         </div>
     </div>
     <!--Modal för att redigera den korta texten till videon-->
-    <div class="modal fade" id="editShortTextModal" tabindex="-1" aria-labelledby="editShortTextModalLabel"
+    <!--
+        tidigare kod:
+
+        <div class="modal fade" id="editShortTextModal" tabindex="-1" aria-labelledby="editShortTextModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -209,6 +197,8 @@
             </div>
         </div>
     </div>
+    -->
+
     <!--Modal för att redigera den långa texten/beskrivningen-->
     <div class="modal fade" id="editTextModal" tabindex="-1" aria-labelledby="editTextModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -295,6 +285,24 @@
             $('#editTextModal').modal('hide'); // Dölj modalen efter ändringar
         }
     </script>
+    <script>
+        function schoolChooseFetch(id) {
+            // Fetch and send data to "kurserFunctions.php" for further processing
+            fetch("kurserFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                school: id,
+            })
+            })
+            .then(response => response.text())
+            .then(data => {
+            location.reload();
+            })
+        }
+  </script>
 </body>
 
 </html>
