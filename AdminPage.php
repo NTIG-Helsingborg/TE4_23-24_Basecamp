@@ -1,5 +1,5 @@
 <?php
-include("backend/db.php");
+include("db.php");
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }

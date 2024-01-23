@@ -183,22 +183,7 @@ Tidagare
   </script>
   <script>
 
-    function getSes() {
-    // Your code here, which will be executed when the DOM is ready
-       fetch("backend/setClasses.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              id: "get"
-            })
-        })
-        .then(response => response.text())
-        .then(data => {
-          console.log(data);
-        })
-      }
+ 
     
       
       function openCourse(id, name){
