@@ -9,7 +9,7 @@
     <title>YouTube Video Upload</title>
 </head>
 <body>
-    <form action="videotest.php" method="post">
+    <form action="" method="post">
         <label for="title">Name:</label> <br> 
         <input type="text" id="title" name="name" required><br>
 

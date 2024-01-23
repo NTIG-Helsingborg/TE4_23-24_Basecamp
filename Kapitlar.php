@@ -64,7 +64,7 @@ include "videotest.php"
         foreach($_SESSION["chapterDisplay"] as $key=>$value){
           if(isset($_SESSION["selectedClass"])){
             if($_SESSION["selectedClass"]["id"] == $value["class"]){
-            }
+            
               echo '<div class = "col-lg-4 col-md-6 col-sm-6" id = "'.$value["id"].'"' . 'onclick = "chooseChapter(\''.$value["id"].'\', \''.$value["class"].'\', \''.$value["data"].'\', \''.$value["url"].'\', \''.$value["name"].'\');">';
               echo '<div class = "box">';
               echo '<button class = "deleteBtn" onclick = "deleteClass(\''.$value["id"].'\');">X</button>';
@@ -73,6 +73,7 @@ include "videotest.php"
               echo "</div>";
           }
         }
+      }
       ?>
     </div>
 
@@ -83,7 +84,8 @@ include "videotest.php"
           ';
       }
     ?>
-
+    <!--
+    tidigare kod:
     <div class="button-container d-flex flex-column flex-sm-row ">
       <button id="buttonLeft" class="rounded-button left p-1 p-sm-4 my-3 my-sm-5"><i
           class="fa fa-chevron-left"></i>Webbutveckling
@@ -91,6 +93,41 @@ include "videotest.php"
       <button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5">Programmering 2<i
           class="fa fa-chevron-right"></i></button>
     </div>
+  
+
+    knappar som väljer nästa kurs
+    
+    håller id för vald class
+    $_SESSION["selectedClass"]
+
+    $query = "SELECT name FROM schools WHERE name > :name ORDER BY name ASC LIMIT 1";
+    SELECT id FROM courses WHERE id < :currentCourseId ORDER BY id DESC LIMIT 1
+    --> 
+    <?php
+      
+      $statementAsc = "SELECT name FROM classes WHERE id > :id ORDER BY id ASC LIMIT 1";
+      $argAsc= new QueryArgsStruct(":id", $_SESSION["selectedClass"]["id"], SQLITE3_TEXT);
+      $resAsc = $db->run_query($statementAsc, $argAsc);
+      $Asc = $resAsc->fetchArray(SQLITE3_ASSOC);
+      
+      $statementDesc = "SELECT name FROM classes WHERE id < :id ORDER BY id DESC LIMIT 1";
+      $argDesc= new QueryArgsStruct(":id", $_SESSION["selectedClass"]["id"], SQLITE3_TEXT);
+      $resDesc = $db->run_query($statementDesc, $argDesc);
+      $Desc = $resDesc->fetchArray(SQLITE3_ASSOC);
+      echo '<div class="button-container d-flex flex-column flex-sm-row ">';
+      if($Asc){
+        echo '
+        <button id="buttonLeft" class="rounded-button left p-1 p-sm-4 my-3 my-sm-5"><i
+        class="fa fa-chevron-left"></i>Webbutveckling
+        1</button>';
+      }
+      if(!$Desc){
+          echo '<button id="buttonRight" class="rounded-button right p-1 p-sm-4 my-3 my-sm-5"><i
+          class="fa fa-chevron-right"></i>'.$Desc["name"].'</button>';
+      }
+      echo '</div>';
+      
+    ?>
   </div>
 
 
