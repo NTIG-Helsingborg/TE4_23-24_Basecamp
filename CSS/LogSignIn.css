@@ -53,24 +53,25 @@ form {
   margin-right: 210px;
   color: #f0d397;
 }
-
+/*Css to the lable over Name inputbox*/
 #labelForName {
   margin-top: 10%;
   margin-right: 210px;
   color: #f0d397;
 }
+/*Css to the lable over School inputbox*/
 #labelForSchool {
   margin-top: 10%;
   margin-right: 210px;
   color: #f0d397;
 }
-
+/*Css to name color and width*/
 #name {
   border: solid 2px #f0d397;
   border-radius: 2px;
   width: 250px;
 }
-
+/*Css to the label Popup*/
 #myPopup {
   display: none;
   position: fixed;
