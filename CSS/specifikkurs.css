@@ -119,6 +119,10 @@
 }
 
 @media (max-width: 1200px) {
+  .title{
+    padding-left: 2.5%;
+  }
+
   .sideBar {
     display: none;
     width: 60%;
@@ -139,7 +143,7 @@
   }
 
   .contentVideo {
-    width: 94%;
+    width: 100%;
   }
 
   .contentLeft {
@@ -150,5 +154,6 @@
   .contentRight {
     float: none;
     width: 100%;
+    padding: 0;
   }
 }
