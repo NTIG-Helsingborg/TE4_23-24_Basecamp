@@ -77,10 +77,10 @@ include "db.php";
             echo '
             <div class="col-lg-12 col-md-12 col-sm-6" onclick="openCourse(\'' . $value["id"] . '\', \'' . $value["name"] . '\');">
             <div class="boxCourse">';
-          echo '<h4>' . $value["name"] .  '</h4>';
-          echo '<p>' . $value["data"] . '</p>';
-          echo '</div>
-            </div>';
+            echo '<h4>' . $value["name"] .  '</h4>';
+            echo '<p>' . $value["data"] . '</p>';
+            echo '</div>
+              </div>';
         }
         // Check if no specific school is chosen and the class belongs to the default school
         if (!isset($_SESSION["ClassFromSchool"]) && $value["school"] == $_SESSION["SchoolDefault"]) {

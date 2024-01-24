@@ -85,7 +85,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                     <div class="col-12 my-2 ansökningbox flex-column flex-md-row">
                         <div class = "info">
                             <h2>' . htmlspecialchars($user['username']) . '</h2>
-                            <a href = "mailto:"' . htmlspecialchars($user['email']) . '>' . htmlspecialchars($user['email']) . '</a>
+                            <a href = "mailto:"' . htmlspecialchars($user['username']) . '>' . htmlspecialchars($user['username']) . '</a>
                         </div>
                         <div class = "action">
                             <button class = "btn btn-primary">Acceptera</button>

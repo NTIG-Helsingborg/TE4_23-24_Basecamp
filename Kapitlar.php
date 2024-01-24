@@ -45,6 +45,8 @@ include "videotest.php"
     <div id="demo1" class="collapse" aria-labelledby="demo1">
       <!--
          <li><a href="#">Länk 1</a></li>  x antal gångaer
+        
+         Nedanstående får ut alla skolor, session variabel finns i db.php
       -->
       <ul>
         <?php
@@ -65,14 +67,16 @@ include "videotest.php"
     <!-- Första gruppen med boxar -->
     <div class="row box-group" id="group1">
       <?php
+        //Loopars igenom en session variabel som finns i db.php som får alla chapters och dess kolumner
         foreach($_SESSION["chapterDisplay"] as $key=>$value){
+          //selected class sätts i kurserFunctions.php
           if(isset($_SESSION["selectedClass"])){
             if($_SESSION["selectedClass"]["id"] == $value["class"]){
-            
+              //eftersom '' används och functionen som finns onclick använder av "" så använder vi oss av \' för att kunna skriva in single qoutes
               echo '<div class = "col-lg-4 col-md-6 col-sm-6" id = "'.$value["id"].'"' . 'onclick = "chooseChapter(\''.$value["id"].'\', \''.$value["class"].'\', \''.$value["data"].'\', \''.$value["url"].'\', \''.$value["name"].'\');">';
-              echo '<div class = "box">';
+              echo '<div class = "box">';   
               echo '<button class = "deleteBtn" onclick = "deleteClass(\''.$value["id"].'\');">X</button>';
-              echo '<h4>'.$value["name"].'</h4>';
+              echo '<h4>'.$value["name"].'</h4>'; // "." Konjugerar ihop strängar
               echo '</div>';
               echo "</div>";
           }
@@ -246,7 +250,7 @@ include "videotest.php"
       window.location.href = 'editchapter.php';
     }
 
-    //användes från början kurser.php filen
+    //användes från början kurser.php filen, kanske inte nödvändigt här eftersom det är bättre att ha en dropdown med skolor
     function schoolChooseFetch(id){
       fetch("kurserFunctions.php", {
             method: "POST",

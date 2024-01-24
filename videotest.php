@@ -1,6 +1,5 @@
 <?php
 include "db.php";
-
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     // Assuming you have a form with fields like title, description, and url
     $title = $_POST["name"];

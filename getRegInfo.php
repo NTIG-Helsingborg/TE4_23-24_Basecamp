@@ -4,7 +4,7 @@ include('db.php'); //Create connection to databse.
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-//Destroys the $_COOKIE["await"] lock
+//Destroys the $_COOKIE["await"] lock, unfortunatly this lock can be broken
 if(isset($_COOKIE["await"])){
     $statement = "SELECT admin FROM users WHERE id = :id";
     $argCookieId = new QueryArgsStruct(":id", $_COOKIE["await"], SQLITE3_TEXT);
@@ -46,7 +46,7 @@ $db->run_query($query, $args, $args2);
     `school` TEXT NOT NULL REFERENCES `schools`(`id`),
     `admin` TINYINT NOT NULL
 */
-    //function to prevent user from changing his cookie
+    //function to prevent user from changing his cookie, however both session variables and cookies can be removed at the same time :/
     function Cookiecontroll(){
         //user deletes cookie
         if(isset($_SESSION["await"]) && !isset($_COOKIE["await"])){

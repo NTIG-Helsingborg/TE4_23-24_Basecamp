@@ -107,6 +107,7 @@ class DBClass extends SQLite3
         }
         return $stmt->execute();
     }
+    //pending_users inte tillagd än email, kolumnen inte rikitgt nödvändig eftersom användaren måste använda mail som username
     function add_pending_user($username, $email, $password, $school)
     {
         $user_id = bin2hex(random_bytes(20));
@@ -183,7 +184,7 @@ if (session_status() == PHP_SESSION_NONE) {
         $_SESSION["schoolDisplay"][$i]["name"] = $res["name"];
         $i++;
     }
-
+    //fetchArray ger bara resultat för en rad, därför behövs en while loop som får ut varje rad
     $c = 0;
     $resultClasses = $db->query("SELECT * FROM classes");
     $_SESSION["classDisplay"] = array();
