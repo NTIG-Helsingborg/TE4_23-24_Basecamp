@@ -73,7 +73,7 @@ include "db.php";
       foreach ($_SESSION["classDisplay"] as $key => $value) {
         // Check if a specific school is chosen
         if (isset($_SESSION["ClassFromSchool"])) {
-          if ($_SESSION["ClassFromSchool"] == $value["school"])
+          if ($_SESSION["ClassFromSchool"] == $value["school"]){
             echo '
             <div class="col-lg-12 col-md-12 col-sm-6" onclick="openCourse(\'' . $value["id"] . '\', \'' . $value["name"] . '\');">
             <div class="boxCourse">';
@@ -81,6 +81,7 @@ include "db.php";
             echo '<p>' . $value["data"] . '</p>';
             echo '</div>
               </div>';
+          }
         }
         // Check if no specific school is chosen and the class belongs to the default school
         if (!isset($_SESSION["ClassFromSchool"]) && $value["school"] == $_SESSION["SchoolDefault"]) {
