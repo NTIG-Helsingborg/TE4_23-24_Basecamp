@@ -63,7 +63,7 @@ include "videotest.php"
 
 
   <!-- 12 Content boxes -->
-  <div class="container" id="box-container">
+  <div class="" id="box-container">
     <!-- Första gruppen med boxar -->
     <div class="row box-group" id="group1">
       <?php

@@ -2,10 +2,15 @@
 
 #box-container {
   padding: 5rem;
-
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
   box-sizing: border-box;
 }
 
+.box{
+  margin-top: 1rem;
+}
 
 .box, .buttonBoxKap{
   width: 100%;
@@ -72,7 +77,7 @@
   background-color: var(--btn-primary-bg);
   text-align: left;
   height: 17rem;
-  margin-top: 4.5rem;
+  margin-top: 8.2rem;
 }
 .course-title .container {
   height: 100%;
@@ -196,4 +201,11 @@ p {
 
 .circular-button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 1200px){
+  #box-container{
+    width: 100%;
+    margin: 0;
+  }
 }
