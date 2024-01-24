@@ -199,3 +199,10 @@ p {
 .circular-button:hover {
   background-color: #0056b3;
 }
+
+@media (max-width: 1200px){
+  #box-container{
+    width: 100%;
+    margin: 0;
+  }
+}
