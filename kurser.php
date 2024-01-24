@@ -28,6 +28,7 @@ include "db.php";
   <link rel="stylesheet" href="baseCamp.css">
   <link rel="stylesheet" href="CSS/specifikkurs.css">
   <link rel="stylesheet" href="CSS/kapitlar.css">
+  <link rel="stylesheet" href="./CSS/navbarbackground.css">
 </head>
 
 <body>
