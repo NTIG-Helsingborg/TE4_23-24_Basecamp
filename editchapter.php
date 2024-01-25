@@ -37,10 +37,22 @@
 
     <!--Titel-->
     <div class="title">
-        <!--Knapp för att redigera titel, pekar mot en modal längre ner i koden-->
+        <!--Knapp för att redigera titel, pekar mot en modal längre ner i koden
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTitleModal">
             Redigera titel
         </button>
+    
+        -->
+        <?php
+            if(isset($_SESSION["loginStatus"])){
+                echo '
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTitleModal">
+                    Redigera titel
+                </button>
+                ';
+
+            } 
+        ?>
         <!--Titeln som redigeras, även en annan titel redigeras längre ner-->
         <div id="testEditTitle">
             <?php
@@ -86,16 +98,44 @@
     <div class="content">
         <div class="contentTop">
             <div class="contentLeft">
-                <!--Knapp för att ändra video. pekar på modal längre ner i koden-->
+                <!--Knapp för att ändra video. pekar på modal längre ner i koden
+                tidigare: 
+
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editVideoModal">
                     Redigera video
                 </button>
-                <!--Div box med videon som redigeras-->
-                <div id="testEditVideo">
-                    <iframe class="contentVideo" src="https://www.youtube.com/embed/LurwQGUorM4?si=H51qBgXCri6J_IAh">
-                        Your browser does not support the video tag.
-                    </iframe>
-                </div>
+                -->
+                <?php
+                if(isset($_SESSION["loginStatus"])){
+                    echo '
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editVideoModal">
+                        Redigera video
+                    </button>
+                    ';
+                }
+                ?>
+                
+                <!--Div box med videon som redigeras
+                tidigare:
+
+                    <div id="testEditVideo">
+                        <iframe class="contentVideo" src="https://www.youtube.com/embed/LurwQGUorM4?si=H51qBgXCri6J_IAh">
+                            Your browser does not support the video tag.
+                        </iframe>
+                    </div>
+                -->
+                <?php
+                    if($_SESSION["selectedChapter"]["url"] !== ""){
+                        echo'
+                        <div id="testEditVideo">
+                            <iframe class="contentVideo" src='.$_SESSION["selectedChapter"]["url"].'>
+                                Your browser does not support the video tag.
+                            </iframe>
+                        </div>
+                        ';
+                
+                    }
+                ?>
             </div>
             <div class="contentRight">
                 <!--Knapp för att redigera den korta beskrivningen till videon, pekar till modal längre ner i koden-->
@@ -114,21 +154,34 @@
             </div>
         </div>
         <div class="contentBottom">
-            <h1 id="testEditTitle1">Lorem Ipsum</h1>
-            <!--Knapp för att redigera den långa beskrivningen av videon/ämnet/kapitlet, pekar på modal längre ner på sidan-->
+            <?php
+                echo '<h1 id="testEditTitle1">'.$_SESSION["selectedChapter"]["name"].'</h1>';
+            ?>
+            <!--Knapp för att redigera den långa beskrivningen av videon/ämnet/kapitlet, pekar på modal längre ner på sidan
+                
+            tidigare:
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTextModal">
                 Redigera text
             </button>
+            -->
+            <?php
+                if(isset($_SESSION["loginStatus"])){
+                    echo '
+                    
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTextModal">
+                        Redigera text
+                    </button>
+            ';
+
+                }
+            ?>
+            
             <div id="testEditText">
                 <!--Texten som redigeras-->
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in augue vestibulum, maximus nisl vel,
-                    porta ex. Ut dapibus nisi est, eu semper nisl venenatis eget. Duis consectetur lorem pretium gravida
-                    lobortis. Vestibulum non egestas nulla. Phasellus iaculis elementum porttitor. Fusce maximus, erat
-                    quis finibus aliquet, nisi dolor dictum lacus, sit amet molestie est diam eget risus. Pellentesque
-                    blandit, massa a bibendum blandit, metus arcu scelerisque purus, ac fringilla felis dui in nulla.
-                    Praesent ullamcorper ante orci, sed volutpat quam tristique ac. Etiam ultrices eu nunc non
-                    malesuada. Suspendisse pellentesque molestie justo a porta. Suspendisse potenti. Suspendisse non
-                    urna id tellus gravida ultrices. Phasellus in consequat eros.</p>
+                <?php
+                    echo '<p>'.$_SESSION["selectedChapter"]["data"].'</p>';
+                ?>
+                
             </div>
         </div>
     </div>
@@ -252,12 +305,17 @@
             document.getElementById("showsidebtnID").classList.toggle("showsideBtnToggle");
         }
     </script>
-    <!--Script för att redigera titel-->
-    <script>
-        function editTitle() {
+    <!--Script för att redigera titel
+         function editTitle() {
             var newTitle = document.getElementById("newTitle").value;
             document.getElementById("testEditTitle").innerHTML = newTitle;
             document.getElementById("testEditTitle1").innerHTML = newTitle;
+            $('#editTitleModal').modal('hide'); // Dölj modalen efter ändringar
+        }
+    -->
+    <script>
+        function editTitle() {
+            var newTitle = document.getElementById("newTitle").value;
             $('#editTitleModal').modal('hide'); // Dölj modalen efter ändringar
         }
     </script>
