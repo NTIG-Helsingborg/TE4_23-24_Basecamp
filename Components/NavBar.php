@@ -2,8 +2,8 @@
 <nav class="navbar navbar-expand-md fixed-top white-bg navbarBG" id="myNavbar">
     <!-- Navbar Brand -->
     <a class="navbar-brand nav-link" href="index.php">
-        <img src="Images/Navbarlogo/Base_Camp_3.0-B.png" alt="Logo" style="width: 150px;">
-        <img src="Images/Navbarlogo/BasecampName-B.png" alt="Logo" style="width: 150px;">
+        <img src="../Images/Navbarlogo/Base_Camp_3.0-B.png" alt="Logo" style="width: 150px;">
+        <img src="../Images/Navbarlogo/BasecampName-B.png" alt="Logo" style="width: 150px;">
     </a>
 
     <!-- Navbar Toggler Button -->
