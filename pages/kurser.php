@@ -143,7 +143,7 @@ include "db.php";
 
     function openCourse(id, name) {
       // Fetch and send data to "kurserFunctions.php" for further processing
-      fetch("kurserFunctions.php", {
+      fetch("../kurserFunctions.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
