@@ -12,16 +12,14 @@ session_Start();
 	<title>BaseCamp</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="./InteractionAndBehaviour.js"></script>
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,8 +33,8 @@ session_Start();
 	</style>
 
 	<script>
-		$(document).ready(function () {
-			$(window).scroll(function () {
+		$(document).ready(function() {
+			$(window).scroll(function() {
 				if ($(this).scrollTop() > 50) {
 					$('#myNavbar').removeClass('navbarBG').addClass('navbarBGscroll');
 				} else {
@@ -57,8 +55,7 @@ session_Start();
 
 		<div class="position-relative" id="headerSection">
 			<img src="../Images/Skolverket.jpg" alt="...">
-			<div class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle"
-				id="headerText">
+			<div class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle" id="headerText">
 				<h1 class="p-2 p-md-5">BaseCamp</h1>
 
 				<h2 class="w-25 d-none d-xxl-block">Study like you do in school with help of your own teachers</h2>
@@ -72,8 +69,7 @@ session_Start();
 	<section class="mt-5 aboutBaseCamp">
 		<div class="row justify-content-around">
 			<div class="col-sm-12 col-lg-4 ">
-				<img src="../Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px"
-					class="img-fluid animated fadeInLeft ">
+				<img src="../Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px" class="img-fluid animated fadeInLeft ">
 			</div>
 			<div class="col-sm-12 col-lg-5 info">
 				<h2 class="text-center mt-5">What is BaseCamp</h2>
@@ -150,9 +146,7 @@ session_Start();
 
 	<!--- Script Source Files -->
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
 	<!--- End of Script Source Files -->
