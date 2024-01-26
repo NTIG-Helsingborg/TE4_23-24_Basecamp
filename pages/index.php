@@ -90,7 +90,7 @@ session_Start();
 		<div class="row">
 			<div class="col-sm-12 col-md-6">
 				<img src="" alt="">
-				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the students</h2>
+				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean for the <b>students</b></h2>
 				<p class="mr-auto text-center mt-3 w-75 m-auto">
 					BaseCamp allows for ease of access to learning material and asignments. It also allows for students to
 					learn about new technics and languages, allowing students to learn and explore outside the confines of
@@ -99,11 +99,11 @@ session_Start();
 					</p>
 			</div>
 
-			<div class="vertical d-none d-md-block"></div>
+			<div class="vertical d-none "></div>
 
 			<div class="col-sm-12 col-md-6">
 				<img src="" alt="">
-				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the teachers</h2>
+				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean for the <b>teachers</b></h2>
 				<p class="mr-auto text-center mt-3 w-75 m-auto">
 					BaseCamp allows teachers to share learning material and asignments with other teachers,
 					allowing for a more uniform teaching experience across the NTI schools. It also allows for teachers 
