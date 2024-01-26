@@ -69,20 +69,24 @@ session_Start();
 	<!-- <div style="background-color: #030D26; width:100%; height:25px;"></div> Doesnt have any purpouse but i keep just in case -->
 
 	<!-- ------------------General information about BaseCamp-------------- -->
-	<section class="mt-5 aboutBaseCamp">
+	<section class="mt-5 mb-5 aboutBaseCamp">
 		<div class="row justify-content-around">
-			<div class="col-sm-12 col-lg-4 ">
-				<img src="../Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px"
-					class="img-fluid animated fadeInLeft ">
+			<div class="col-sm-12 col-lg-5">
+				<div class="mx-auto w-75">
+					<img src="../Images/coding.jpg" class="img-fluid animated fadeInLeft img-thumbnail" alt="Image of Code">
+				</div>
 			</div>
-			<div class="col-sm-12 col-lg-5 info">
-				<h2 class="text-center mt-5">What is BaseCamp</h2>
-				<p class=" text-center mt-5 w-75 m-auto ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="col-sm-12 col-lg-7 info">
+				<div class="mx-auto w-75 ">
+					<h2 class="text-center mt-5">What is BaseCamp</h2>
+					<p class=" text-center mt-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+						sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+						occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</div>	
 			</div>
 		</div>
 	</section>
