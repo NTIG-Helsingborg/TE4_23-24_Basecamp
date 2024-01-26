@@ -1,5 +1,5 @@
 <?php
-  include "db.php";
+  include "../db.php";
   header("Content-Type: application/json");
   /*
   för att få det första värdet efter vald rad, funkar inte här
