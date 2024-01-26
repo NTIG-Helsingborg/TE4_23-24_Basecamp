@@ -17,10 +17,10 @@
 				<hr class="bg-light mb-4 mt-0 d-inline-block mx-auto" style="width: 85px; height: 2px">
 				<div class="footerCenteredText">
 					<ul class="list-unstyled">
-						<li class="my-2"><a href="#"> HTML</a></li>
-						<li class="my-2"><a href="#">CSS </a></li>
-						<li class="my-2"><a href="#">Bootstrap</a></li>
-						<li class="my-2"><a href="#">Javascript</a></li>
+						<li class="my-2"><a href="#html"> HTML</a></li>
+						<li class="my-2"><a href="#css">CSS </a></li>
+						<li class="my-2"><a href="#bootstrap">Bootstrap</a></li>
+						<li class="my-2"><a href="#js">Javascript</a></li>
 					</ul>
 				</div>
 			</div>
@@ -30,10 +30,10 @@
 				<hr class="bg-light mb-4 mt-0 d-inline-block mx-auto" style="width: 85px; height: 2px">
 				<div class="footerCenteredText">
 					<ul class="list-unstyled">
-						<li class="my-2"><a href="#"> Home</a></li>
-						<li class="my-2"><a href="#">Kurser </a></li>
-						<li class="my-2"><a href="#">Sign Up</a></li>
-						<li class="my-2"><a href="#">Login</a></li>
+						<li class="my-2"><a href="index.php"> Home</a></li>
+						<li class="my-2"><a href="kurser.php">Kurser </a></li>
+						<li class="my-2"><a href="signIn.php">Sign Up</a></li>
+						<li class="my-2"><a href="Login.php">Login</a></li>
 					</ul>
 				</div>
 			</div>
