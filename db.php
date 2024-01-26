@@ -26,7 +26,7 @@ class DBClass extends SQLite3
     function __construct()
     {
         //unlink("database.db");
-        $this->open("database.db");
+        $this->open($_SERVER['DOCUMENT_ROOT'] . "/database.db");
 
         $this->exec("
                 CREATE TABLE IF NOT EXISTS `schools` (
@@ -111,7 +111,7 @@ class DBClass extends SQLite3
     function add_pending_user($username, $email, $password, $school)
     {
         $user_id = bin2hex(random_bytes(20));
-        $hashed_password = password_hash($password);
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         $temp_query = "INSERT INTO `pending_users`(id, username, email, password_hash, school) VALUES(:id, :username, :email, :password_hash, :school)";
 
@@ -216,4 +216,3 @@ if (session_status() == PHP_SESSION_NONE) {
     $def = $resultDef->fetchArray(SQLITE3_ASSOC);
     $_SESSION["SchoolDefault"] = $def["id"];
 }
-?>
