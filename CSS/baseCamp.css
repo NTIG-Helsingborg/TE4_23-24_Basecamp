@@ -256,23 +256,7 @@ header {
   width: 100%;
 }
 .aboutBaseCamp .info {
-  background-color: white;
-  color: var(--font-color-black);
-  font-size: 18px;
-  border-radius: 15px;
-}
-.aboutBaseCamp .info h2 {
-  color: #446fc8;
-  font-size: 2em;
-}
-.aboutBaseCamp .info p {
-  color: var(--font-color-black);
-}
-.aboutBaseCamp {
-  width: 100%;
-}
-.aboutBaseCamp .info {
-  background-color: white;
+  background-color: inherit;
   color: var(--font-color-black);
   font-size: 18px;
 }
