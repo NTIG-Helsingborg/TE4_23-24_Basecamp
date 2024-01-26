@@ -29,7 +29,7 @@ session_Start();
 	<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Raleway&display=swap" rel="stylesheet">
 
 	<style>
-		<?php include 'CSS/baseCamp.css';
+		<?php include '../CSS/baseCamp.css';
 		$_SESSION["account_CREATION"] = "";
 		?>
 	</style>
