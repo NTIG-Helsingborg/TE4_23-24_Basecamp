@@ -1,5 +1,5 @@
 <?php
-include "videotest.php"
+include "../videotest.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,15 +18,15 @@ include "videotest.php"
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- CSS-fil -->
-  <link rel="stylesheet" href="baseCamp.css">
-  <link rel="stylesheet" href="CSS/specifikkurs.css">
-  <link rel="stylesheet" href="CSS/kapitlar.css">
-  <link rel="stylesheet" href="./CSS/navbarbackground.css">
+  <link rel="stylesheet" href="../CSS/baseCamp.css">
+  <link rel="stylesheet" href="../CSS/specifikkurs.css">
+  <link rel="stylesheet" href="../CSS/kapitlar.css">
+  <link rel="stylesheet" href="../CSS/navbarbackground.css">
 </head>
 
 <body>
   <header>
-    <?php include 'Components/Navbar.php'; ?>
+    <?php include '../Components/Navbar.php'; ?>
   </header>
   <div class="course-title">
     <div class="container">
@@ -86,12 +86,12 @@ include "videotest.php"
     </div>
 
     <?php
-      if($_SESSION["loginStatus"]){
-          echo '
-          <button class="circular-button" onclick="addNewBoxToDb()"></button>
-          ';
-      }
-    ?>
+    if(isset($_SESSION["loginStatus"]) && $_SESSION["loginStatus"]){
+        echo '
+        <button class="circular-button" onclick="addNewBoxToDb()"></button>
+        ';
+    }
+?>
     <!--
     tidigare kod:
     <div class="button-container d-flex flex-column flex-sm-row ">
@@ -213,7 +213,7 @@ include "videotest.php"
     //vill inte riktigt ändra i databasen
     function addNewBoxToDb(){
       //var rubrik = prompt("Ange rubrik för det nya kapitlet!");
-      window.location.href = 'formtest.php';
+      window.location.href = '../formtest.php';
     }
 
     function addNewBox() {
@@ -247,12 +247,12 @@ include "videotest.php"
 
 
 
-      window.location.href = 'editchapter.php';
+      window.location.href = '../editchapter.php';
     }
 
     //användes från början kurser.php filen, kanske inte nödvändigt här eftersom det är bättre att ha en dropdown med skolor
     function schoolChooseFetch(id){
-      fetch("kurserFunctions.php", {
+      fetch("../kurserFunctions.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -269,7 +269,7 @@ include "videotest.php"
 
   function deleteClass(id){
     console.log(id);
-    fetch("kapitlarFunctions.php", {
+    fetch("../kapitlarFunctions.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -287,7 +287,7 @@ include "videotest.php"
     
 
     function changeClass(args){
-      fetch("kapitlarFunctions.php", {
+      fetch("../kapitlarFunctions.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -305,7 +305,7 @@ include "videotest.php"
 
 
     function chooseChapter(id, Class, data, url, name){
-      fetch("kapitlarFunctions.php", {
+      fetch("../kapitlarFunctions.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -321,7 +321,7 @@ include "videotest.php"
         })
         .then(response => response.text())
         .then(data =>{
-          window.location.href = 'editchapter.php';
+          window.location.href = '../editchapter.php';
         });
         //hindrar parent för att aktiveras
         event.stopPropagation();

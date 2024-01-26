@@ -1,6 +1,6 @@
 <?php
 // Include the "db.php" file for database connection
-include "db.php";
+include "../db.php";
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +143,7 @@ include "db.php";
 
     function openCourse(id, name) {
       // Fetch and send data to "kurserFunctions.php" for further processing
-      fetch("kurserFunctions.php", {
+      fetch("../kurserFunctions.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -155,7 +155,7 @@ include "db.php";
       })
       .then(response => response.text())
       .then(data => {
-        window.location.href = 'Kapitlar.php';
+        window.location.href = '../Kapitlar.php';
       })
     }
 
@@ -163,7 +163,7 @@ include "db.php";
       // Prompt user for input and send data to "kurserFunctions.php" for further processing
       var rubrik = prompt("Add a title");
       var description = prompt("Add a brief description");
-      fetch("kurserFunctions.php", {
+      fetch("../kurserFunctions.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -181,7 +181,7 @@ include "db.php";
 
     function schoolChooseFetch(id) {
       // Fetch and send data to "kurserFunctions.php" for further processing
-      fetch("kurserFunctions.php", {
+      fetch("../kurserFunctions.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
