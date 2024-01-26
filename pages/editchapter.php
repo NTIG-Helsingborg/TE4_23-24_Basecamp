@@ -1,6 +1,6 @@
 <!--Sida för att redigera kapitlen, redirectas till denna sidan när man skapat ett kapitel och ska då lägga till innehållet på kapitlet-->
 <?php
-    include "db.php";
+    include "../db.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,9 +8,9 @@
 <head>
     <meta charset="utf-8">
     <title>Kurser</title>
-    <link rel="stylesheet" href="./kurser.css">
-    <link rel="stylesheet" href="CSS/specifikkurs.css">
-    <link rel="stylesheet" href="./CSS/navbarbackground.css">
+    <link rel="stylesheet" href="../CSS/kurser.css">
+    <link rel="stylesheet" href="../CSS/specifikkurs.css">
+    <link rel="stylesheet" href="../CSS/navbarbackground.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        <?php include 'baseCamp.css';
+        <?php include '../CSS/baseCamp.css';
         $_SESSION["account_CREATION"] = "";
         ?>
     </style>
@@ -32,7 +32,7 @@
 <body>
     <!--Importera komponenten navbar-->
     <header>
-        <?php include 'Components/Navbar.php'; ?>
+        <?php include '../Components/Navbar.php'; ?>
     </header>
 
     <!--Titel-->
