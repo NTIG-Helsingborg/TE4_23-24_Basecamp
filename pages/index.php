@@ -77,12 +77,12 @@ session_Start();
 			</div>
 			<div class="col-sm-12 col-lg-5 info">
 				<h2 class="text-center mt-5">What is BaseCamp</h2>
-				<p class=" text-center mt-5 w-75 m-auto ">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class=" text-center mt-5 w-75 m-auto "> 
+					BaseCamp is a collection of learning material made by students for students.
+					It was made by a team of developers from NTI Helsingborg TE4 at the request of Josef Nobach and Linda Wannerö.
+					Made with with the purpose to gather and share learning material for students and teachers,
+					to create a collective set of information easily accesable for students. Making the programing classes shared among the NTI schools more uniform.
+				</p>
 			</div>
 		</div>
 	</section>
@@ -95,14 +95,12 @@ session_Start();
 			<div class="col-sm-12 col-md-6">
 				<img src="" alt="">
 				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the students</h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur.
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-					est laborum.</p>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">
+					BaseCamp allows for ease of access to learning material and asignments. It also allows for students to
+					learn about new technics and languages, allowing students to learn and explore outside the confines of
+					class. Since the material is created by students they are able to explain the material in a way that is 
+					easier to understand for other students.  	
+					</p>
 			</div>
 
 			<div class="vertical d-none d-md-block"></div>
@@ -110,14 +108,13 @@ session_Start();
 			<div class="col-sm-12 col-md-6">
 				<img src="" alt="">
 				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the teachers</h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur.
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-					est laborum.</p>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">
+					BaseCamp allows teachers to share learning material and asignments with other teachers,
+					allowing for a more uniform teaching experience across the NTI schools. It also allows for teachers 
+					to find help in teaching out new concepts and languages. BaseCamp also allows teachers to refere to an
+					source of information that is created by students, allowing for a more student friendly explanation of
+					difficult concepts.	
+				</p>
 			</div>
 		</div>
 
