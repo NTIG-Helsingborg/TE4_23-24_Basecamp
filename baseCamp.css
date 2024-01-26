@@ -26,6 +26,12 @@ a:hover {
   text-decoration: none;
 }
 
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  /* Oskar: Made images not draggable */
+}
+
 /*-----------------------Css to the header on index page------------------------------------*/
 header {
   position: relative;
@@ -242,7 +248,7 @@ header {
 }
 
 #text {
-  color: #f0d397;
+  color: white;
   font-size: 4em;
 }
 

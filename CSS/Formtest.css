@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-inline: auto;
+    padding-top: 7%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+
+label{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+input, textarea{
+    padding: 1%;
+}
+
+label{
+    margin-top: 2%;
+}
+
+.submit{
+    margin-top: 5%;
+    width: 50%;
+    align-self: center;
+    border-radius: 5%;
+}
