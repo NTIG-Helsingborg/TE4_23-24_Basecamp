@@ -29,7 +29,7 @@ session_Start();
 	<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Raleway&display=swap" rel="stylesheet">
 
 	<style>
-		<?php include 'baseCamp.css';
+		<?php include 'CSS/baseCamp.css';
 		$_SESSION["account_CREATION"] = "";
 		?>
 	</style>
@@ -52,11 +52,11 @@ session_Start();
 
 	<!-- Introduction part of the main page. Contains background image -->
 	<header>
-		<?php include 'Components/Navbar.php'; ?>
+		<?php include '../Components/Navbar.php'; ?>
 
 
 		<div class="position-relative" id="headerSection">
-			<img src="Images/Skolverket.jpg" alt="...">
+			<img src="../Images/Skolverket.jpg" alt="...">
 			<div class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle"
 				id="headerText">
 				<h1 class="p-2 p-md-5">BaseCamp</h1>
@@ -72,7 +72,7 @@ session_Start();
 	<section class="mt-5 aboutBaseCamp">
 		<div class="row justify-content-around">
 			<div class="col-sm-12 col-lg-4 ">
-				<img src="Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px"
+				<img src="../Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px"
 					class="img-fluid animated fadeInLeft ">
 			</div>
 			<div class="col-sm-12 col-lg-5 info">
@@ -146,7 +146,7 @@ session_Start();
 	</div>
 
 	</section>
-	<?php include 'Components/Footer.php'; ?>
+	<?php include '../Components/Footer.php'; ?>
 
 	<!--- Script Source Files -->
 	<script src="js/jquery-3.3.1.min.js"></script>
