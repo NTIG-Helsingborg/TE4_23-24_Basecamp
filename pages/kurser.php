@@ -25,16 +25,16 @@ include "db.php";
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Custom CSS files -->
-  <link rel="stylesheet" href="baseCamp.css">
-  <link rel="stylesheet" href="CSS/specifikkurs.css">
-  <link rel="stylesheet" href="CSS/kapitlar.css">
-  <link rel="stylesheet" href="./CSS/navbarbackground.css">
+  <link rel="stylesheet" href="../CSS/baseCamp.css">
+  <link rel="stylesheet" href="../CSS/specifikkurs.css">
+  <link rel="stylesheet" href="../CSS/kapitlar.css">
+  <link rel="stylesheet" href="../CSS/navbarbackground.css">
 </head>
 
 <body>
   <!-- Header Section -->
   <header>
-    <?php include 'Components/Navbar.php'; ?>
+    <?php include '../components/Navbar.php'; ?>
   </header>
 
   <!-- Course Title Section -->
