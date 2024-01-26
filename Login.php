@@ -21,7 +21,7 @@ include("getLoginInfo.php");
 
     <style>
         <?php
-        include 'baseCamp.css';
+        include 'CSS/baseCamp.css';
         include 'CSS/LogSignIn.css';
         ?>
     </style>
