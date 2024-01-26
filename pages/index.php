@@ -12,16 +12,14 @@ session_Start();
 	<title>BaseCamp</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="./InteractionAndBehaviour.js"></script>
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,8 +33,8 @@ session_Start();
 	</style>
 
 	<script>
-		$(document).ready(function () {
-			$(window).scroll(function () {
+		$(document).ready(function() {
+			$(window).scroll(function() {
 				if ($(this).scrollTop() > 50) {
 					$('#myNavbar').removeClass('navbarBG').addClass('navbarBGscroll');
 				} else {
@@ -57,8 +55,7 @@ session_Start();
 
 		<div class="position-relative" id="headerSection">
 			<img src="../Images/Skolverket.jpg" alt="...">
-			<div class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle"
-				id="headerText">
+			<div class="w-75 d-flex flex-column flex-xxl-row justify-content-around align-items-center position-absolute top-50 start-50 translate-middle" id="headerText">
 				<h1 class="p-2 p-md-5">BaseCamp</h1>
 
 				<h2 class="w-25 d-none d-xxl-block">Study like you do in school with help of your own teachers</h2>
@@ -71,6 +68,8 @@ session_Start();
 	<!-- ------------------General information about BaseCamp-------------- -->
 	<section class="mt-5 mb-5 aboutBaseCamp">
 		<div class="row justify-content-around">
+			<div class="col-sm-12 col-lg-4 ">
+				<img src="../Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px" class="img-fluid animated fadeInLeft ">
 			<div class="col-sm-12 col-lg-5">
 				<div class="mx-auto w-75">
 					<img src="../Images/coding.jpg" class="img-fluid animated fadeInLeft img-thumbnail" alt="Image of Code">
@@ -98,30 +97,27 @@ session_Start();
 		<div class="row">
 			<div class="col-sm-12 col-md-6">
 				<img src="" alt="">
-				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the students</h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur.
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-					est laborum.</p>
+				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean for the <b>students</b></h2>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">
+					BaseCamp allows for ease of access to learning material and asignments. It also allows for students to
+					learn about new technics and languages, allowing students to learn and explore outside the confines of
+					class. Since the material is created by students they are able to explain the material in a way that is 
+					easier to understand for other students.  	
+					</p>
 			</div>
 
-			<div class="vertical d-none d-md-block"></div>
+			<div class="vertical d-none "></div>
 
 			<div class="col-sm-12 col-md-6">
 				<img src="" alt="">
-				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean fot the teachers</h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur.
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-					est laborum.</p>
+				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean for the <b>teachers</b></h2>
+				<p class="mr-auto text-center mt-3 w-75 m-auto">
+					BaseCamp allows teachers to share learning material and asignments with other teachers,
+					allowing for a more uniform teaching experience across the NTI schools. It also allows for teachers 
+					to find help in teaching out new concepts and languages. BaseCamp also allows teachers to refere to an
+					source of information that is created by students, allowing for a more student friendly explanation of
+					difficult concepts.	
+				</p>
 			</div>
 		</div>
 
@@ -154,9 +150,7 @@ session_Start();
 
 	<!--- Script Source Files -->
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
 	<!--- End of Script Source Files -->
