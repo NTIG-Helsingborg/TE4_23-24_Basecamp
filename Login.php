@@ -67,7 +67,7 @@ include("getLoginInfo.php");
                         <label for="password" id="labelForPassword">Lösenord:</label>
     
     
-                        <input type="password" id="password" name="passwordL" title="Invalid" class="mt-3">
+                        <input type="password" id="password" name="passwordL" required title="Invalid" class="mt-3">
     
     
                         <button id="submit" type="submit" name ="login" class="mt-5">
