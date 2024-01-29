@@ -50,7 +50,7 @@ include("getLoginInfo.php");
             <?php
                 if(!isset($_SESSION["loginStatus"])){
                     echo '
-                    <p id="text">Logga in</p>
+                    <p id="text" class="loginHeader">Logga in</p>
                     <form action="" method="post" class="d-flex flex-column align-items-center">
     
                         <label for="emailL" id="labelForEmail">Email:</label>

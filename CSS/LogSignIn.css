@@ -2,7 +2,7 @@
 #logInSignInBackground {
   background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(#446fc8, #fffbef);
+  background: var(--background-color);
 }
 .backButton {
   top: 10%;
@@ -17,14 +17,18 @@
   border-radius: 5px;
   color: white;
   font-size: 30px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--btn-primary-bg);
+}
+
+.loginHeader {
+  font-weight: bolder;
 }
 
 /*Css to the form including lables and inputboxes for both email and password*/
 form {
   padding-top: 5%;
-  width: 450px;
-  background: rgba(0, 0, 0, 0.7);
+  width: 500px;
+  background: var(--btn-primary-bg);
   border-radius: 10px;
   padding-bottom: 5%;
 }

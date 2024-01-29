@@ -247,7 +247,7 @@ header {
 }
 
 #text {
-  color: white;
+  color: var(--btn-primary-bg);
   font-size: 4em;
 }
 
