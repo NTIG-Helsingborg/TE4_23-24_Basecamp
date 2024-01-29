@@ -64,11 +64,20 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
             <div class="row g-0">
                 <div class="col-1"></div>
                 <div id="informationbox" class="row g-0 col-10">
-                    <div class="col-12 d-flex">
+                    <div class="col-12 d-flex mb-2">
                         <h2 class="options col-4">Alla Ansökningar</h2>
                         <h2 class="options col-4">Accepterande</h2>
+                        <div class="col-2"></div>
+                        <h2 class="col-1">Admin</h2>
+                        <div class="col-1">
+                        </div>
                     </div>
                     <hr>
+
+                <div class=" d-flex p-5">
+                    <h3 class="pe-5 opacity-50">Select all</h3>
+                    <input type="checkbox" id="selectall" name="selectall" value="selectall">
+                </div>
                 </div>
                 <div class="col-1"></div>
             </div>

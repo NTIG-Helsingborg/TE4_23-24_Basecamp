@@ -29,12 +29,21 @@
 }
 
 #rightbox {
+  user-select: none;
   background: #d4d9db;
   height: 100vh;
 }
 
 #informationbox {
   padding-block: 100px;
+}
+#adminpfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: auto;
+  display: block;
+  margin-bottom: 10%;
 }
 
 .options {
@@ -44,8 +53,15 @@
 .options:hover {
   opacity: 1;
   color: #2f4490;
-  user-select: none;
   cursor: pointer;
+}
+
+#selectall{
+    width: 25px;
+    border-radius: 50%;
+    opacity: 0.5;
+    background-color: #828AA6;
+
 }
 
 #leftbox {
