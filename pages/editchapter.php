@@ -1,6 +1,6 @@
 <!--Sida för att redigera kapitlen, redirectas till denna sidan när man skapat ett kapitel och ska då lägga till innehållet på kapitlet-->
 <?php
-    include "../db.php";
+include "../db.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,14 +12,12 @@
     <link rel="stylesheet" href="../CSS/specifikkurs.css">
     <link rel="stylesheet" href="../CSS/navbarbackground.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="./InteractionAndBehaviour.js"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
@@ -44,27 +42,25 @@
     
         -->
         <?php
-            if(isset($_SESSION["loginStatus"])){
-                echo '
+        if (isset($_SESSION["loginStatus"])) {
+            echo '
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTitleModal">
                     Redigera titel
                 </button>
                 ';
-
-            } 
+        }
         ?>
         <!--Titeln som redigeras, även en annan titel redigeras längre ner-->
         <div id="testEditTitle">
             <?php
-                echo $_SESSION["selectedChapter"]["name"];
+            echo $_SESSION["selectedChapter"]["name"];
             ?>
         </div>
     </div>
     <!--Kod för sidebar-->
     <div id="sidebar" class="sideBar">
         <!--Related: Tänkt för olika kapitel inom kursen-->
-        <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false"><i
-                    class="fa fa-chevron-down"></i></button></h1>
+        <h1>Related <button data-bs-toggle="collapse" data-bs-target="#demo" class="showlinks" aria-expanded="false"><i class="fa fa-chevron-down"></i></button></h1>
         <div id="demo" class="collapse" aria-labelledby="demo">
             <ul>
                 <li><a href="#">Länk 1</a></li>
@@ -75,21 +71,20 @@
             </ul>
         </div>
         <!--Skolor: Tänkt för olika skolor med samma kurs/kapitel-->
-        <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i
-                    class="fa fa-chevron-down"></i></button></h1>
+        <h1>Skolor <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i class="fa fa-chevron-down"></i></button></h1>
         <div id="demo1" class="collapse" aria-labelledby="demo1">
             <!--
                 <li><a href="#">Länk 1</a></li>
             -->
-            <ul> 
-            <?php
+            <ul>
+                <?php
                 // Display schools from session data
                 foreach ($_SESSION["schoolDisplay"] as $key => $value) {
                     echo '
                     <li><a href="#" id="' . $value["name"] . '" onclick="schoolChooseFetch(this.id)">' . $value["name"] . '</a></li>
                     ';
                 }
-            ?>
+                ?>
             </ul>
         </div>
     </div>
@@ -106,7 +101,7 @@
                 </button>
                 -->
                 <?php
-                if(isset($_SESSION["loginStatus"])){
+                if (isset($_SESSION["loginStatus"])) {
                     echo '
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editVideoModal">
                         Redigera video
@@ -114,7 +109,7 @@
                     ';
                 }
                 ?>
-                
+
                 <!--Div box med videon som redigeras
                 tidigare:
 
@@ -125,16 +120,15 @@
                     </div>
                 -->
                 <?php
-                    if($_SESSION["selectedChapter"]["url"] !== ""){
-                        echo'
+                if ($_SESSION["selectedChapter"]["url"] !== "") {
+                    echo '
                         <div id="testEditVideo">
-                            <iframe class="contentVideo" src='.$_SESSION["selectedChapter"]["url"].'>
+                            <iframe class="contentVideo" src=' . $_SESSION["selectedChapter"]["url"] . '>
                                 Your browser does not support the video tag.
                             </iframe>
                         </div>
                         ';
-                
-                    }
+                }
                 ?>
             </div>
             <div class="contentRight">
@@ -150,12 +144,12 @@
                             pulvinar in sit amet ipsumLorem ipsum dolor sit amet</p>
                     </div>
                 -->
-                
+
             </div>
         </div>
         <div class="contentBottom">
             <?php
-                echo '<h1 id="testEditTitle1">'.$_SESSION["selectedChapter"]["name"].'</h1>';
+            echo '<h1 id="testEditTitle1">' . $_SESSION["selectedChapter"]["name"] . '</h1>';
             ?>
             <!--Knapp för att redigera den långa beskrivningen av videon/ämnet/kapitlet, pekar på modal längre ner på sidan
                 
@@ -165,23 +159,22 @@
             </button>
             -->
             <?php
-                if(isset($_SESSION["loginStatus"])){
-                    echo '
+            if (isset($_SESSION["loginStatus"])) {
+                echo '
                     
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editTextModal">
                         Redigera text
                     </button>
             ';
-
-                }
+            }
             ?>
-            
+
             <div id="testEditText">
                 <!--Texten som redigeras-->
                 <?php
-                    echo '<p>'.$_SESSION["selectedChapter"]["data"].'</p>';
+                echo '<p>' . $_SESSION["selectedChapter"]["data"] . '</p>';
                 ?>
-                
+
             </div>
         </div>
     </div>
@@ -262,8 +255,7 @@
                 </div>
                 <div class="modal-body">
                     <label for="newText">Ny text:</label>
-                    <textarea type="text" id="newText" class="form-control"
-                        placeholder="Skriv en beskrivning"></textarea>
+                    <textarea type="text" id="newText" class="form-control" placeholder="Skriv en beskrivning"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
@@ -272,15 +264,13 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!--ändra ikon för sidebarknapparna när man klickar på dom:-->
     <script>
-        $(document).ready(function () {
-            $('.collapse').on('shown.bs.collapse', function () {
+        $(document).ready(function() {
+            $('.collapse').on('shown.bs.collapse', function() {
                 $(this).prev().find('.showlinks').html('<i class="fa fa-chevron-up"></i>');
-            }).on('hidden.bs.collapse', function () {
+            }).on('hidden.bs.collapse', function() {
                 $(this).prev().find('.showlinks').html('<i class="fa fa-chevron-down"></i>');
             });
         });
@@ -347,20 +337,20 @@
         function schoolChooseFetch(id) {
             // Fetch and send data to "kurserFunctions.php" for further processing
             fetch("kurserFunctions.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                school: id,
-            })
-            })
-            .then(response => response.text())
-            .then(data => {
-            location.reload();
-            })
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        school: id,
+                    })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    location.reload();
+                })
         }
-  </script>
+    </script>
 </body>
 
 </html>
