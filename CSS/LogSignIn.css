@@ -2,7 +2,7 @@
 #logInSignInBackground {
   background-repeat: no-repeat;
   background-size: cover;
-  background: var(--background-color);
+  background-color: var(--background-color);
 }
 .backButton {
   top: 10%;
@@ -11,13 +11,16 @@
 #goBack {
   margin-top: 1%;
   margin-left: 1%;
-  height: 60px;
-  width: 60px;
   border: none;
   border-radius: 5px;
-  color: white;
+  color: var(--btn-primary-bg);
   font-size: 30px;
-  background-color: var(--btn-primary-bg);
+  text-wrap: nowrap;
+  background: none;
+  cursor: pointer;
+}
+#goBack:hover {
+  text-decoration: underline;
 }
 
 .loginHeader {
@@ -26,9 +29,9 @@
 
 /*Css to the form including lables and inputboxes for both email and password*/
 form {
-  padding-top: 5%;
+  padding-top: 10%;
   width: 500px;
-  background: var(--btn-primary-bg);
+  background-color: var(--btn-primary-bg);
   border-radius: 10px;
   padding-bottom: 5%;
 }
@@ -114,4 +117,5 @@ form {
   text-decoration: none;
   font-size: 15px;
   text-align: center;
+  font-weight: bold;
 }

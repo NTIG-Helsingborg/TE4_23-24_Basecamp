@@ -24,9 +24,9 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
     <style>
-        <?php include 'baseCamp.css';
+        <?php 
+        include 'baseCamp.css';
         include 'CSS/LogSignIn.css';
-
         ?>
     </style>
 

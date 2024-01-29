@@ -31,9 +31,8 @@ include("getLoginInfo.php");
 <body id="logInSignInBackground">
     <div class="container position-relative " style="height:100vh;">
         <div class="position-absolute start-0 backButton">
-            <a href="javascript:history.back()">
-                <button id="goBack">
-                    < </button>
+            <a href="/pages/index.php">
+                <button id="goBack">< Home Page</button>
             </a>
         </div>
 
@@ -55,8 +54,8 @@ include("getLoginInfo.php");
     
                         <label for="emailL" id="labelForEmail">Email:</label>
     
-                        <input type="text" id="email" name="emailL" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
-                            title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required class="mt-3">
+                        <input type="email" id="email" name="emailL" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
+                            title="Du använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required class="mt-3">
     
                         <?php
                         
@@ -79,9 +78,9 @@ include("getLoginInfo.php");
     
                         <a href="#" id="forgotPassword" class="my-5">
     
-                            Glömt lösenord
+                            Glömt lösenord?
     
-                        </a>
+                        </a
     
                     </form>
                     ';
