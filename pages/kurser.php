@@ -1,6 +1,6 @@
 <?php
 // Include the "db.php" file for database connection
-include "../db.php";
+require_once("../db.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,16 +12,14 @@ include "../db.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <!-- jQuery and Popper.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Custom CSS files -->
@@ -48,8 +46,7 @@ include "../db.php";
 
   <!-- Sidebar Section -->
   <div id="sidebar" class="sideBar">
-    <h1>Schools <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i
-          class="fa fa-chevron-down"></i></button></h1>
+    <h1>Schools <button data-bs-toggle="collapse" data-bs-target="#demo1" class="showlinks" aria-expanded="false"><i class="fa fa-chevron-down"></i></button></h1>
     <div id="demo1" class="collapse" aria-labelledby="demo1">
       <ul>
         <?php
@@ -71,10 +68,11 @@ include "../db.php";
     <div class="row box-group" id="group1">
       <!-- Displaying class information from session data -->
       <?php
+
       foreach ($_SESSION["classDisplay"] as $key => $value) {
         // Check if a specific school is chosen
         if (isset($_SESSION["ClassFromSchool"])) {
-          if ($_SESSION["ClassFromSchool"] == $value["school"]){
+          if ($_SESSION["ClassFromSchool"] == $value["school"]) {
             echo '
             <div class="col-lg-12 col-md-12 col-sm-6" onclick="openCourse(\'' . $value["id"] . '\', \'' . $value["name"] . '\');">
             <div class="boxCourse">';
@@ -110,24 +108,21 @@ include "../db.php";
   ?>
 
   <!-- External Script and Libraries -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   <!-- Custom JavaScript -->
   <script>
-    $(document).ready(function () {
-      $('.collapse').on('shown.bs.collapse', function () {
+    $(document).ready(function() {
+      $('.collapse').on('shown.bs.collapse', function() {
         $(this).prev().find('.showlinks').html('<i class="fa fa-chevron-up"></i>');
-      }).on('hidden.bs.collapse', function () {
+      }).on('hidden.bs.collapse', function() {
         $(this).prev().find('.showlinks').html('<i class="fa fa-chevron-down"></i>');
       });
     });
 
-    $(document).ready(function () {
-      $(window).scroll(function () {
+    $(document).ready(function() {
+      $(window).scroll(function() {
         if ($(this).scrollTop() > 1) {
           $('#sidebar, #showsidebtnID').addClass('sidebarScroll');
         } else {
@@ -144,19 +139,19 @@ include "../db.php";
     function openCourse(id, name) {
       // Fetch and send data to "kurserFunctions.php" for further processing
       fetch("../kurserFunctions.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          id: id,
-          name: name,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            id: id,
+            name: name,
+          })
         })
-      })
-      .then(response => response.text())
-      .then(data => {
-        window.location.href = '../Kapitlar.php';
-      })
+        .then(response => response.text())
+        .then(data => {
+          window.location.href = '../Kapitlar.php';
+        })
     }
 
     function addCourse() {
@@ -164,36 +159,36 @@ include "../db.php";
       var rubrik = prompt("Add a title");
       var description = prompt("Add a brief description");
       fetch("../kurserFunctions.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          rubrik: rubrik,
-          description: description
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            rubrik: rubrik,
+            description: description
+          })
         })
-      })
-      .then(response => response.text())
-      .then(data => {
-        location.reload();
-      })
+        .then(response => response.text())
+        .then(data => {
+          location.reload();
+        })
     }
 
     function schoolChooseFetch(id) {
       // Fetch and send data to "kurserFunctions.php" for further processing
       fetch("../kurserFunctions.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          school: id,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            school: id,
+          })
         })
-      })
-      .then(response => response.text())
-      .then(data => {
-        location.reload();
-      })
+        .then(response => response.text())
+        .then(data => {
+          location.reload();
+        })
     }
   </script>
 
