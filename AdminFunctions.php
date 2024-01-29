@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ];
     //använd också en session variabel som kontrollerar så att det är en admin som gör requesten
     if (isset($isChecked) && !isset($jsonData["deleteVar"]) && !isset($jsonData["addschool"])) {
-        $statement = "SELECT id FROM users WHERE username = :username";
-        $argUsername = new QueryArgsStruct(":username", $jsonData["username"], SQLITE3_TEXT);
-        $res = $db->run_query($statement, $argUsername);
+        $statement = "SELECT id FROM users WHERE mail = :mail";
+        $argmail = new QueryArgsStruct(":mail", $jsonData["mail"], SQLITE3_TEXT);
+        $res = $db->run_query($statement, $argmail);
         $resId = $res->fetchArray(SQLITE3_ASSOC);
 
         $statement = "UPDATE users SET admin = :admin WHERE id = :id";

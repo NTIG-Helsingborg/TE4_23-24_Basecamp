@@ -6,11 +6,11 @@
         $jsonData = json_decode($postData, true);
         if(isset($jsonData["rubrik"]) && isset($jsonData["description"])){
             $statement = "INSERT INTO classes(id, owner, name, data, school) VALUES(:id, :owner, :name, :data, :school)";
-            echo $_SESSION["loginData"]["username"];
+            echo $_SESSION["loginData"]["mail"];
             $id = bin2hex(random_bytes(20));
-            $statementUid = "SELECT id, school FROM users WHERE username = :username";
-            $argUidUsername = new QueryArgsStruct(":username", "Admin", SQLITE3_TEXT);
-            $resultUid = $db->run_query($statementUid, $argUidUsername);
+            $statementUid = "SELECT id, school FROM users WHERE mail = :mail";
+            $argUidmail = new QueryArgsStruct(":mail", "Admin", SQLITE3_TEXT);
+            $resultUid = $db->run_query($statementUid, $argUidmail);
             $uid = $resultUid->fetchArray(SQLITE3_ASSOC);
 
             $argId = new QueryArgsStruct(":id", $id, SQLITE3_TEXT);

@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 $statementSchoolFromId = "SELECT name as school FROM schools WHERE id = :id";
-$res = $db->query("SELECT * FROM users WHERE username != 'Admin'");
+$res = $db->query("SELECT * FROM users WHERE mail != 'Admin'");
 $_SESSION["Userlist"] = array();
 $i = 0;
 //$res->fetchArray(SQLITE3_ASSOC) srkiver nästa row från statement och repeterar false om inga fler arrays finns
@@ -16,7 +16,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     $resSchoolName = $db->run_query($statementSchoolFromId, new QueryArgsStruct(":id", $row["school"], SQLITE3_TEXT));
     $schoolName = $resSchoolName->fetchArray(SQLITE3_ASSOC);
     $_SESSION["Userlist"][$i]["id"] = $row["id"];
-    $_SESSION["Userlist"][$i]["username"] = $row["username"];
+    $_SESSION["Userlist"][$i]["mail"] = $row["mail"];
     $_SESSION["Userlist"][$i]["name"] = $row["name"];
     $_SESSION["Userlist"][$i]["password"] = $row["password_hash"];
     $_SESSION["Userlist"][$i]["school"] = $schoolName["school"];
@@ -117,8 +117,8 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                 echo '
                     <div class="col-12 my-2 ansökningbox flex-column flex-md-row">
                         <div class = "info">
-                            <h2>' . htmlspecialchars($user['username']) . '</h2>
-                            <a href = "mailto:"' . htmlspecialchars($user['username']) . '>' . htmlspecialchars($user['username']) . '</a>
+                            <h2>' . htmlspecialchars($user['mail']) . '</h2>
+                            <a href = "mailto:"' . htmlspecialchars($user['mail']) . '>' . htmlspecialchars($user['mail']) . '</a>
                         </div>
                         <div class = "action">
                             <button class = "btn btn-primary">Acceptera</button>
@@ -166,7 +166,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                         },
                         body: JSON.stringify({
                             isChecked: isCheckedId.checked,
-                            username: id
+                            mail: id
                         })
                     })
                         .then(response => response.text())

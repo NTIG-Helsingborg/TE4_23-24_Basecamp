@@ -45,13 +45,13 @@
 
             <?php
             // Check if user is logged in
-            if (isset($_SESSION["userNAME"])) {
+            if (isset($_SESSION["mail"])) {
                 // Display User Dropdown
                 echo '
                     <!-- Navbar Dropdown - User -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle white-text" href="#" id="navbardrop" data-toggle="dropdown">',
-                    $_SESSION["userNAME"], '
+                    $_SESSION["mail"], '
                         </a>
                         <!-- User Dropdown Menu -->
                         <div class="dropdown-menu dropdown-menu-end">
