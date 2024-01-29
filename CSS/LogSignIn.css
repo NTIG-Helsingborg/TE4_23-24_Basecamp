@@ -8,7 +8,7 @@
   top: 10%;
 }
 /*Css to the "<" button*/
-#goBack {
+.goBackBtn {
   margin-top: 1%;
   margin-left: 1%;
   border: none;
@@ -19,19 +19,21 @@
   background: none;
   cursor: pointer;
 }
-#goBack:hover {
+.goBackBtn:hover {
   text-decoration: underline;
 }
 
 .loginHeader {
   font-weight: bolder;
+  color: #3d21bbde;
+  font-size: 4em;
 }
 
 /*Css to the form including lables and inputboxes for both email and password*/
 form {
-  padding-top: 10%;
+  padding-top: 5%;
   width: 500px;
-  background-color: var(--btn-primary-bg);
+  background-color: #3d21bbde;
   border-radius: 10px;
   padding-bottom: 5%;
 }
@@ -112,10 +114,14 @@ form {
 }
 
 /*Css to the link "Glömt lösenord"*/
-#forgotPassword {
+.noticeLink {
   color: white;
   text-decoration: none;
   font-size: 15px;
   text-align: center;
   font-weight: bold;
+  cursor: pointer;
+}
+.noticeLink:hover {
+  text-decoration: underline;
 }

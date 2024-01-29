@@ -36,15 +36,15 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <div class="container position-relative " style="height:100vh;">
         <div class="position-absolute start-0 backButton">
-            <a href="javascript:history.back()">
-                <button id="goBack">
-                    < </button>
+            <a href="/pages/index.php">
+                <button class="goBackBtn">
+                    < Tillbaka</button>
             </a>
         </div>
 
         <div style="height:800px;"
             class="position-absolute top-50 start-50 translate-middle d-flex flex-column align-items-center ">
-            <p id="text">Registrera</p>
+            <p class="loginHeader">Registrera</p>
             <form action="" method="post" class="d-flex flex-column align-items-center">
                 <?php
                     if(!isset($_COOKIE["await"])){
@@ -53,7 +53,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             <input type = "text" id ="name" name = "name" pattern="\S+" title="fält kan ej vara tom" required class="mt-3">
                             <label for="email" id="labelForEmail">Email:</label>
                             
-                            <input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
+                            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
                                 title="DU använder ogiltiga tecken, använd endast a-z,A-Z,0-9" required class="mt-3">
                         
                             <?php

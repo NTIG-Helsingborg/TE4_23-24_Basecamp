@@ -246,7 +246,7 @@ header {
   margin-top: -10vh;
 }
 
-#text {
+.text {
   color: var(--btn-primary-bg);
   font-size: 4em;
 }
