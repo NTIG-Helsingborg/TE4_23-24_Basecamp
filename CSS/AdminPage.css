@@ -1,74 +1,121 @@
 .users {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto
-}              
-
-.users td, .users th {
-border: 1px solid #ddd;
-padding: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.users tr:nth-child(even){background-color: #f2f2f2;}
+.users td,
+.users th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
-.users tr:hover {background-color: #ddd;}
+.users tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.users tr:hover {
+  background-color: #ddd;
+}
 
 .users th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #04AA6D;
-    color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+#rightbox {
+  background: #d4d9db;
+  height: 100vh;
+}
+
+#informationbox {
+  padding-block: 100px;
+}
+
+.options {
+  opacity: 0.75;
+}
+
+.options:hover {
+  opacity: 1;
+  color: #2f4490;
+  user-select: none;
+  cursor: pointer;
+}
+
+#leftbox {
+  background: #4a48af;
+  height: 100vh;
+  color: #dedede;
+}
+
+.schools {
+  padding-top: 5%;
+  margin-top: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 5%;
+  padding-left: 15%;
+  padding-right: 0;
+  width: 100%;
+}
+
+.schools:hover {
+  background: #5351c6;
+  user-select: none;
+  cursor: pointer;
+}
+.schools:active {
+  background: #4a48af;
+  user-select: none;
+  cursor: pointer;
 }
 
 /* ----------------------- Css for Filter? -------------------------- */
 
-.wraper{
-
+.wraper {
 }
-
-
-
 
 /* ------------------------Css for teachers info boxes ------------------------- */
-#box-container{
-    
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+#box-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
-.ansökningbox{
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    height: fit-content;
-    border-left:10px solid #446FC8;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.ansökningbox {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  height: fit-content;
+  border-left: 10px solid #446fc8;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.ansökningbox .info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    padding:1rem;
+.ansökningbox .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
 }
-.ansökningbox .info a{
-    color:black;
+.ansökningbox .info a {
+  color: black;
 }
-.ansökningbox .action{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    height: 100%;
-    padding:1rem;
+.ansökningbox .action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 100%;
+  padding: 1rem;
 }
-.ansökningbox .action button{
-    padding: 0.75rem;
-    margin:12px;
+.ansökningbox .action button {
+  padding: 0.75rem;
+  margin: 12px;
 }

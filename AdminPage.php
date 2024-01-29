@@ -43,6 +43,39 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 
 
 <body>
+    <div class="row g-0">
+
+        <div id="leftbox" class="col-2">
+            <div class="row g-0">
+                <div class="col-12">
+                    <h1 class="text-center p-4">BASECAMP</h1>
+                </div>
+                <div class="pt-5 col-12">
+                    <h4 class="schools">NTI HELSINGBORG</h4>
+                    <h4 class="schools">NTI MALMÖ</h4>
+                    <h4 class="schools">NTI RÖNNE</h4>
+                    <h4 class="schools">NTI COOLSCHOOL</h4>
+                    <h4 class="schools">NTI SOMETHING</h4>
+                </div>
+            </div>
+
+        </div>
+        <div id="rightbox" class="col-10">
+            <div class="row g-0">
+                <div class="col-1"></div>
+                <div id="informationbox" class="row g-0 col-10">
+                    <div class="col-12 d-flex">
+                        <h2 class="options col-4">Alla Ansökningar</h2>
+                        <h2 class="options col-4">Accepterande</h2>
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+    </div>
+
 
     <!-- This is used to have 2 buttons, first is to showcase all of the signed up users and the second is to showcase all of the accepted users-->
     <div class="wraper">
@@ -73,13 +106,13 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     </div>
     <!-- This container is used to showcase all of the users that have signed up and are awaiting for Josef to Accept/Remove as a teacher-->
     <div class="container" id="box-container">
-        <!-- Första gruppen med boxar -->
+
         <div class="row box-group" id="group1">
             <?php
             //Call the function to get all users from the database
             $usersResult = $db->get_users();
             // Loop through all users
-            while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
+            /* while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
                 // Now $user is an associative array representing a single user
                 echo '
                     <div class="col-12 my-2 ansökningbox flex-column flex-md-row">
@@ -92,7 +125,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                             <button class = "btn btn-danger">Neka</button>
                         </div>
                     </div>';
-            }
+            } */
             ?>
         </div>
     </div>
@@ -178,6 +211,8 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 
                 }
             </script>
+        </div>
+    </div>
 </body>
 
 </html>
