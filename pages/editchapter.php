@@ -56,7 +56,9 @@
         <!--Titeln som redigeras, även en annan titel redigeras längre ner-->
         <div id="testEditTitle">
             <?php
-                echo $_SESSION["selectedChapter"]["name"];
+                if(isset($_SESSION["selectedChapter"]) && isset($_SESSION["selectedChapter"]["name"])) {
+                    echo $_SESSION["selectedChapter"]["name"];
+                }
             ?>
         </div>
     </div>
@@ -125,6 +127,7 @@
                     </div>
                 -->
                 <?php
+                if(isset($_SESSION["selectedChapter"]) && isset($_SESSION["selectedChapter"]["url"])) {
                     if($_SESSION["selectedChapter"]["url"] !== ""){
                         echo'
                         <div id="testEditVideo">
@@ -133,9 +136,10 @@
                             </iframe>
                         </div>
                         ';
-                
                     }
+                }
                 ?>
+                
             </div>
             <div class="contentRight">
                 <!--Knapp för att redigera den korta beskrivningen till videon, pekar till modal längre ner i koden-->
@@ -155,7 +159,9 @@
         </div>
         <div class="contentBottom">
             <?php
-                echo '<h1 id="testEditTitle1">'.$_SESSION["selectedChapter"]["name"].'</h1>';
+            if (isset($_SESSION["selectedChapter"]) && isset($_SESSION["selectedChapter"]["name"])) {
+                echo '<h1 id="testEditTitle1">' . $_SESSION["selectedChapter"]["name"] . '</h1>';
+            }
             ?>
             <!--Knapp för att redigera den långa beskrivningen av videon/ämnet/kapitlet, pekar på modal längre ner på sidan
                 
@@ -179,7 +185,9 @@
             <div id="testEditText">
                 <!--Texten som redigeras-->
                 <?php
+                if(isset($_SESSION["selectedChapter"]) && isset($_SESSION["selectedChapter"]["data"])) {
                     echo '<p>'.$_SESSION["selectedChapter"]["data"].'</p>';
+                }
                 ?>
                 
             </div>
