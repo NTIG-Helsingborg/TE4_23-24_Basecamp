@@ -42,4 +42,4 @@ Denna fil kommer ni dock att behöva ändra på. Ta bort ; på linorna där det 
 
 En sista sak som ni behöver göra är ändra "PHP Path", i mitt fall är det C:\Program Files\php\php.exe . Så den finns i samma foldern som .ini-development
 
-Nu kan ni gå till index.php, högerklicka och "PHP Server: Serve Project"
+Nu kan ni gå till index.php, högerklicka och sedan clicka på "PHP Server: Serve Project"
