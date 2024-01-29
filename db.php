@@ -38,7 +38,7 @@ class DBClass extends SQLite3
         $this->exec("
                 CREATE TABLE IF NOT EXISTS `users` (
                     `id` TEXT PRIMARY KEY NOT NULL,
-                    `username` TEXT NOT NULL,
+                    `mail` TEXT NOT NULL,
                     `name` TEXT NOT NULL,
                     `password_hash` TEXT NOT NULL,
                     `school` TEXT NOT NULL REFERENCES `schools`(`id`),
@@ -67,7 +67,7 @@ class DBClass extends SQLite3
                 )
             ");
         //test admin, dont know what do if there is more admins. Should we have a super admin lol?
-        $StatementK1 = $this->querySingle("SELECT id from users WHERE username = 'Admin'");
+        $StatementK1 = $this->querySingle("SELECT id from users WHERE mail = 'Admin@Admin.Admin'");
         if (!$StatementK1) {
             $idschool = bin2hex(random_bytes(20));
             $idschool2 = bin2hex(random_bytes(20));
@@ -77,9 +77,9 @@ class DBClass extends SQLite3
             $passwordAdmin = password_hash("Veryynice123!", PASSWORD_DEFAULT);
             $this->exec("INSERT INTO schools(id, name) VALUES('$idschool', 'NTI-Helsingborg')");
             $this->exec("INSERT INTO schools(id, name) VALUES('$idschool2', 'NTI-Vetenskap')");
-            $this->exec("INSERT INTO users(id, username, name, password_hash, school, admin) VALUES('$adminid', 'Admin', 'Admin', '$passwordAdmin', '$idschool', 1)");
+            $this->exec("INSERT INTO users(id, mail, name, password_hash, school, admin) VALUES('$adminid', 'Admin@Admin.Admin', 'Admin', '$passwordAdmin', '$idschool', 1)");
 
-            $adminName = "Admin";
+            $adminName = "Admin@Admin.Admin";
             echo "<br>";
             echo $idClass;
             echo "<br>";
@@ -104,18 +104,18 @@ class DBClass extends SQLite3
         }
         return $stmt->execute();
     }
-    //pending_users inte tillagd än email, kolumnen inte rikitgt nödvändig eftersom användaren måste använda mail som username
-    function add_pending_user($username, $email, $password, $school)
+    //pending_users inte tillagd än email, kolumnen inte rikitgt nödvändig eftersom användaren måste använda mail som mail
+    function add_pending_user($mail, $email, $password, $school)
     {
         $user_id = bin2hex(random_bytes(20));
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $temp_query = "INSERT INTO `pending_users`(id, username, email, password_hash, school) VALUES(:id, :username, :email, :password_hash, :school)";
+        $temp_query = "INSERT INTO `pending_users`(id, mail, email, password_hash, school) VALUES(:id, :mail, :email, :password_hash, :school)";
 
         return $this->run_query(
             $temp_query,
             new QueryArgsStruct(":id", $user_id, SQLITE3_TEXT),
-            new QueryArgsStruct(":username", $username, SQLITE3_TEXT),
+            new QueryArgsStruct(":mail", $mail, SQLITE3_TEXT),
             new QueryArgsStruct(":email", $email, SQLITE3_TEXT),
             new QueryArgsStruct(":password_hash", $hashed_password, SQLITE3_TEXT),
             new QueryArgsStruct(":school", $school, SQLITE3_TEXT)
@@ -125,16 +125,16 @@ class DBClass extends SQLite3
     /**
      * Adds user to the users table
      */
-    function add_user($username, $email, $hashed_password, $school, $is_admin = 0)
+    function add_user($mail, $email, $hashed_password, $school, $is_admin = 0)
     {
         $user_id = bin2hex(random_bytes(20));
 
-        $temp_query = "INSERT INTO `users`(id, username, email, password_hash, school, admin) VALUES(:id, :username, :email, :password_hash, :school, :admin)";
+        $temp_query = "INSERT INTO `users`(id, mail, email, password_hash, school, admin) VALUES(:id, :mail, :email, :password_hash, :school, :admin)";
 
         return $this->run_query(
             $temp_query,
             new QueryArgsStruct(":id", $user_id, SQLITE3_TEXT),
-            new QueryArgsStruct(":username", $username, SQLITE3_TEXT),
+            new QueryArgsStruct(":mail", $mail, SQLITE3_TEXT),
             new QueryArgsStruct(":email", $email, SQLITE3_TEXT),
             new QueryArgsStruct(":password_hash", $hashed_password, SQLITE3_TEXT),
             new QueryArgsStruct(":school", $school, SQLITE3_TEXT),
@@ -148,13 +148,13 @@ class DBClass extends SQLite3
     function get_pending_users()
     {
         return $this->run_query("
-                 SELECT id, username, email, password_hash, school FROM `pending_users`
+                 SELECT id, mail, email, password_hash, school FROM `pending_users`
              ");
     }
     function get_users()
     {
         return $this->run_query("
-            SELECT id, username, email, password_hash, school, admin FROM `users`
+            SELECT id, mail, email, password_hash, school, admin FROM `users`
         ");
     }
 }

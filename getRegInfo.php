@@ -41,7 +41,7 @@ $db->run_query($query, $args, $args2);
  */
 /*
     `id` TEXT PRIMARY KEY NOT NULL,
-    `username` TEXT NOT NULL,
+    `mail` TEXT NOT NULL,
     `password_hash` TEXT NOT NULL,
     `school` TEXT NOT NULL REFERENCES `schools`(`id`),
     `admin` TINYINT NOT NULL
@@ -82,8 +82,8 @@ $db->run_query($query, $args, $args2);
         $schoolId = $resSchoolId->fetchArray(SQLITE3_ASSOC);
 
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $query = "SELECT id FROM users WHERE username = :username";
-        $arg = new QueryArgsStruct(":username", $email, SQLITE3_TEXT);
+        $query = "SELECT id FROM users WHERE mail = :mail";
+        $arg = new QueryArgsStruct(":mail", $email, SQLITE3_TEXT);
         $res = $db->run_query($query, $arg);
         $result = $res->fetchArray(SQLITE3_ASSOC);
         if(!$result){
@@ -91,14 +91,14 @@ $db->run_query($query, $args, $args2);
             $identifier = bin2hex(random_bytes(20));
             setcookie("await", $identifier, time()+60*60*24*2);
             $_SESSION["await"] = $identifier;
-            $query = "INSERT INTO users(id, username, name, password_hash, school, admin) VALUES(:id, :username, :name, :password_hash, :school, :admin)";
+            $query = "INSERT INTO users(id, mail, name, password_hash, school, admin) VALUES(:id, :mail, :name, :password_hash, :school, :admin)";
             $argId = new QueryArgsStruct(":id", $identifier, SQLITE3_TEXT);
-            $argUsername = new QueryArgsStruct(":username", $email, SQLITE3_TEXT);
+            $argmail = new QueryArgsStruct(":mail", $email, SQLITE3_TEXT);
             $argName = new QueryArgsStruct(":name", $name, SQLITE3_TEXT);
             $argPassword = new QueryArgsStruct(":password_hash", $hash, SQLITE3_TEXT);
             $argSchool = new QueryArgsStruct(":school", $schoolId["id"], SQLITE3_TEXT);
             $argAdmin = new QueryArgsStruct(":admin", 0, SQLITE3_TEXT);
-            $resCreate = $db->run_query($query, $argId, $argUsername, $argName, $argPassword, $argSchool, $argAdmin);
+            $resCreate = $db->run_query($query, $argId, $argmail, $argName, $argPassword, $argSchool, $argAdmin);
         }
     }
     Cookiecontroll();

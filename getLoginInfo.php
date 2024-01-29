@@ -6,16 +6,16 @@
     }
     //INLOGGNING
     if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])){
-        $username = $_POST["emailL"];
+        $mail = $_POST["emailL"];
         $password = $_POST["passwordL"];
         $passwordStatement = "SELECT password_hash FROM users WHERE id = :id";
-        $adminCheck = $db->query("SELECT admin, id FROM users WHERE username = 'Admin'");
+        $adminCheck = $db->query("SELECT admin, id FROM users WHERE mail = 'Admin@Admin.Admin'");
         $adminCheckRes = $adminCheck->fetchArray(SQLITE3_ASSOC);
 
 
-        $findIdStatement = "SELECT * FROM users WHERE username = :username";
-        $argUsername = new QueryArgsStruct(":username", $username, SQLITE3_TEXT);
-        $resId = $db->run_query($findIdStatement, $argUsername);
+        $findIdStatement = "SELECT * FROM users WHERE mail = :mail";
+        $argmail = new QueryArgsStruct(":mail", $mail, SQLITE3_TEXT);
+        $resId = $db->run_query($findIdStatement, $argmail);
         $userId = $resId->fetchArray(SQLITE3_ASSOC);
         
         $passwordMatch;
@@ -33,13 +33,13 @@
             //OM user har samma admin status till admin
             if($userId["admin"] == $adminCheckRes["admin"] && $adminCheckRes["id"] == $userId["id"] ){
                 $_SESSION["loginStatus"] = "Admin";
-                $_SESSION["loginData"] = ["id" => $userId["id"], "username" =>$userId["username"]];
+                $_SESSION["loginData"] = ["id" => $userId["id"], "mail" =>$userId["mail"]];
                 header("Location: /AdminPage.php");
                 exit();
             }
             else{
                 $_SESSION["loginStatus"] = "Teacher";
-                $_SESSION["loginData"] = ["id" =>$userId["id"], "username" => $userId["username"]];
+                $_SESSION["loginData"] = ["id" =>$userId["id"], "mail" => $userId["mail"]];
                 header("Refresh: 0");
             }
         }
