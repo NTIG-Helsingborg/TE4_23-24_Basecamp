@@ -286,6 +286,10 @@ header {
 .text {
   line-height: 20px;
 }
+.footerProvidersText {
+  color: white;
+  font-size: 1.4rem;
+}
 
 @keyframes fadeIn {
   0% {

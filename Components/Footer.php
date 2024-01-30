@@ -7,7 +7,7 @@
 				<h6 class="text-uppercase font-weight-bold">The Providers</h6>
 				<hr class="bg-light mb-4 mt-0 d-inline-block mx-auto" style="width: 125px; height: 2px">
 				<div class="text">
-					<p class="mt-2">orem ipsum dolor sit amet, consectetur adipiscing elit orem ipsum dolor sit
+					<p class="footerProvidersText mt-2 ">orem ipsum dolor sit amet, consectetur adipiscing elit orem ipsum dolor sit
 						amet, consectetur adipiscing elit</p>
 				</div>
 			</div>
