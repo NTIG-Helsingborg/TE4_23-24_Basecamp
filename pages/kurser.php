@@ -1,6 +1,6 @@
 <?php
 // Include the "db.php" file for database connection
-require_once("../db.php");
+require_once("../backend/db.php");
 ?>
 
 <!DOCTYPE html>

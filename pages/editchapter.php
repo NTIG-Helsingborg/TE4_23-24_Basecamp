@@ -1,6 +1,6 @@
 <!--Sida för att redigera kapitlen, redirectas till denna sidan när man skapat ett kapitel och ska då lägga till innehållet på kapitlet-->
 <?php
-    include "../db.php";
+    include "../backend/db.php";
 ?>
 <!DOCTYPE html>
 <html>

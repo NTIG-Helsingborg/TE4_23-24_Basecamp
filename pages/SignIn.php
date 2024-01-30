@@ -36,7 +36,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <div class="container position-relative " style="height:100vh;">
         <div class="position-absolute start-0 backButton">
-            <a href="/index.php">
+            <a href="/pages/index.php">
                 <button class="goBackBtn">
                     < Tillbaka</button>
             </a>

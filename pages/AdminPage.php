@@ -2,7 +2,7 @@
 If the user becomes a teacher they can then add courses and chapters inside of those courses-->
 
 <?php
-include("../db.php");
+include("../backend/db.php");
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -141,7 +141,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
             <script>
                 function postStatus(id) {
                     var isCheckedId = document.getElementById(id);
-                    fetch("backend/AdminFunctions.php", {
+                    fetch("../functions/AdminFunctions.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -159,7 +159,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 
                 function deleteFetch() {
                     var deleteVar = "Delete";
-                    fetch("AdminFunctions.php", {
+                    fetch("../functions/AdminFunctions.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -176,7 +176,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                 function addSchool() {
                     var addschool = "addschool";
                     var school = document.getElementById("newSchool").value;
-                    fetch("AdminFunctions.php", {
+                    fetch("../functions/AdminFunctions.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
