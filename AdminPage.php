@@ -115,10 +115,6 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     <div class="wraper">
         <div class="row g-0">
             <div class="col">
-
-                <button> Alla ansökningar </button>
-
-                <button> Accepterade </button>
                 <div class="count-window">
                     <?php
                     $count = count($_SESSION["Userlist"]);

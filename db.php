@@ -75,17 +75,20 @@ class DBClass extends SQLite3
 
             $adminid = (string) uniqid();
             $passwordAdmin = password_hash("Veryynice123!", PASSWORD_DEFAULT);
+            $passwordJosef = password_hash("Josef123!", PASSWORD_DEFAULT);      //Extra account for testing
             $this->exec("INSERT INTO schools(id, name) VALUES('$idschool', 'NTI-Helsingborg')");
             $this->exec("INSERT INTO schools(id, name) VALUES('$idschool2', 'NTI-Vetenskap')");
             $this->exec("INSERT INTO users(id, mail, name, password_hash, school, admin) VALUES('$adminid', 'Admin@Admin.Admin', 'Admin', '$passwordAdmin', '$idschool', 1)");
+            $this->exec("INSERT INTO users(id, mail, name, password_hash, school, admin) VALUES('01', 'Josef@Nobach.Admin', 'Admin', ' $passwordJosef', '$idschool', 1)");      //Extra account for testing
+
 
             $adminName = "Admin@Admin.Admin";
-            echo "<br>";
-            echo $idClass;
-            echo "<br>";
-            echo $adminName;
-            echo "<br>";
-            echo $idschool;
+            // echo "<br>";
+            // echo $idClass;
+            // echo "<br>";
+            // echo $adminName;
+            // echo "<br>";
+            // echo $idschool;
 
             $this->exec("INSERT INTO classes(id, owner, name, data, school) VALUES('$idClass', '$adminName', 'Programmering 1', 'genomgångar för programmering 1', '$idschool')");
             //för att lägga in variablar använd '$var' 
