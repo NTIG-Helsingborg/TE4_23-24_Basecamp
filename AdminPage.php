@@ -163,7 +163,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 
                 function deleteFetch() {
                     var deleteVar = "Delete";
-                    fetch("backend/AdminFunctions.php", {
+                    fetch("AdminFunctions.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -180,7 +180,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                 function addSchool() {
                     var addschool = "addschool";
                     var school = document.getElementById("newSchool").value;
-                    fetch("backend/AdminFunctions.php", {
+                    fetch("AdminFunctions.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
