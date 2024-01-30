@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include('db.php'); //Create connection to databse.
+include('backend/db.php'); //Create connection to databse.
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }

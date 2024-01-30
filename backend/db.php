@@ -26,7 +26,7 @@ class DBClass extends SQLite3
     function __construct()
     {
         //unlink("database.db");
-        $this->open($_SERVER['DOCUMENT_ROOT'] . "/database.db");
+        $this->open($_SERVER['DOCUMENT_ROOT'] . "/backend/database.db");
 
         $this->exec("
                 CREATE TABLE IF NOT EXISTS `schools` (
