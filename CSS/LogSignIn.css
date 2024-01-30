@@ -3,29 +3,42 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--background-color);
+  background-image: url("../images/Skolverket.jpg");
+  background-position: center;
+  display: flex;
+  
 }
-.backButton {
-  top: 10%;
+
+.itemsContainer {
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+  background-color: #3d21bbde;
+  border-radius: 10px;
+
+  
 }
+
+/* .backButton {} */
+
 /*Css to the "<" button*/
 .goBackBtn {
-  margin-top: 1%;
-  margin-left: 1%;
+  padding: 10px 0px 10px 10px;
   border: none;
-  border-radius: 5px;
-  color: var(--btn-primary-bg);
-  font-size: 30px;
+  color: white;
+  font-size: 24px;
   text-wrap: nowrap;
   background: none;
   cursor: pointer;
 }
+
 .goBackBtn:hover {
   text-decoration: underline;
 }
 
 .loginHeader {
   font-weight: bolder;
-  color: #3d21bbde;
+  color: white;
   font-size: 4em;
 }
 
@@ -33,7 +46,7 @@
 form {
   padding-top: 5%;
   width: 500px;
-  background-color: #3d21bbde;
+  
   border-radius: 10px;
   padding-bottom: 5%;
 }
