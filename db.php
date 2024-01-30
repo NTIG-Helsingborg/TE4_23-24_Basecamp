@@ -148,13 +148,13 @@ class DBClass extends SQLite3
     function get_pending_users()
     {
         return $this->run_query("
-                 SELECT id, mail, email, password_hash, school FROM `pending_users`
+                 SELECT id, mail, name, password_hash, school FROM `pending_users`
              ");
     }
     function get_users()
     {
         return $this->run_query("
-            SELECT id, mail, email, password_hash, school, admin FROM `users`
+            SELECT id, mail, name, password_hash, school, admin FROM `users`
         ");
     }
 }
