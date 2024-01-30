@@ -138,8 +138,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                             echo $count;
                             ?>
                         </h2>
-                        <h2 class="options col-4">Accepterande</h2>
-                        <div class="col-2"></div>
+                        <h2 class="options col-6">Accepterande</h2>
                         <h2 class="col-1">Admin</h2>
                         <div class="col-1">
                         </div>
