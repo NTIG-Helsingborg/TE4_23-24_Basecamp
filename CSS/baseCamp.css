@@ -238,6 +238,15 @@ header {
   );
   padding-block: 20vh;
 }
+
+.WhatBaseCampForDivider {
+  width: 5px;
+  height: 100%;
+  font-size: 1px;
+  padding: 0;
+  
+}
+
 .vertical {
   border-left: 3px solid rgb(255, 255, 255);
   height: 40vh;

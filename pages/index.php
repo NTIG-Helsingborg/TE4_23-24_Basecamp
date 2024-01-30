@@ -68,15 +68,14 @@ session_Start();
 	<!-- ------------------General information about BaseCamp-------------- -->
 	<section class="mt-5 mb-5 aboutBaseCamp">
 		<div class="row justify-content-around">
-			<div class="col-sm-12 col-lg-4 ">
-				<img src="../Images/coding.jpg" class="img-thumbnail" alt="Code" width="700px" class="img-fluid animated fadeInLeft ">
-			<div class="col-sm-12 col-lg-5">
-				<div class="mx-auto w-75">
+			
+			<div class="col-sm-12 col-lg-5 d-flex justify-content-center align-items-center">
+				<div class="w-75 ">
 					<img src="../Images/coding.jpg" class="img-fluid animated fadeInLeft img-thumbnail" alt="Image of Code">
 				</div>
 			</div>
-			<div class="col-sm-12 col-lg-7 info">
-				<div class="mx-auto w-75 ">
+			<div class="col-sm-12 col-lg-7 info d-flex justify-content-center align-items-center">
+				<div class="w-75">
 					<h2 class="text-center mt-5">What is BaseCamp</h2>
 					<p class=" text-center mt-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 						sed do
@@ -94,30 +93,32 @@ session_Start();
 	<!-- -----------------Blue text that tells about what BaseCam is for from diferent perspektives----------------- -->
 	<section class="WhatBaseCampFor mt-4">
 
-		<div class="row">
-			<div class="col-sm-12 col-md-6">
-				<img src="" alt="">
-				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean for the <b>students</b></h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">
-					BaseCamp allows for ease of access to learning material and asignments. It also allows for students to
-					learn about new technics and languages, allowing students to learn and explore outside the confines of
-					class. Since the material is created by students they are able to explain the material in a way that is 
-					easier to understand for other students.  	
+		<div class="row justify-content-around">
+			<div class="col-sm-12 col-md-5 d-flex">
+				<div class="mt-3 w-100">
+					<h2 class="text-center">What does BaseCamp mean for the <b>students</b></h2>
+					<p class="text-center">
+						BaseCamp allows for ease of access to learning material and asignments. It also allows for students to
+						learn about new technics and languages, allowing students to learn and explore outside the confines of
+						class. Since the material is created by students they are able to explain the material in a way that is 
+						easier to understand for other students.  	
 					</p>
+				</div>
 			</div>
 
-			<div class="vertical d-none "></div>
+			<div class="col-md-1 col-sm-0 d-none d-md-block text-center bg-white WhatBaseCampForDivider">.</div>
 
-			<div class="col-sm-12 col-md-6">
-				<img src="" alt="">
-				<h2 class="mr-auto text-center mt-3 w-75 m-auto">What does BaseCamp mean for the <b>teachers</b></h2>
-				<p class="mr-auto text-center mt-3 w-75 m-auto">
-					BaseCamp allows teachers to share learning material and asignments with other teachers,
-					allowing for a more uniform teaching experience across the NTI schools. It also allows for teachers 
-					to find help in teaching out new concepts and languages. BaseCamp also allows teachers to refere to an
-					source of information that is created by students, allowing for a more student friendly explanation of
-					difficult concepts.	
-				</p>
+			<div class="col-sm-12 col-md-5 d-flex">
+				<div class="mt-3 w-100">
+					<h2 class="text-center">What does BaseCamp mean for the <b>teachers</b></h2>
+					<p class="text-center">
+						BaseCamp allows teachers to share learning material and asignments with other teachers,
+						allowing for a more uniform teaching experience across the NTI schools. It also allows for teachers 
+						to find help in teaching out new concepts and languages. BaseCamp also allows teachers to refere to an
+						source of information that is created by students, allowing for a more student friendly explanation of
+						difficult concepts.	
+					</p>
+				</div>
 			</div>
 		</div>
 
@@ -128,11 +129,10 @@ session_Start();
 	<section class="mt-5 pb-5  aboutBaseCamp">
 		<div class="row justify-content-around">
 
-			<div class=" text-center pb-5 col-sm-12 col-lg-5 info">
-				<h2 class=" mt-5">What is BaseCamp</h2>
-				<p class="  mt-5 w-75 m-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-					sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+			<div class=" text-center pb-5 col-sm-10 col-lg-7 info">
+				<h2 class="mt-5">What is BaseCamp</h2>
+				<p class="mt-5 w-100 m-auto pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
 					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
 					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
