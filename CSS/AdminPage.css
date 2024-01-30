@@ -1,53 +1,13 @@
-.users {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.users td,
-.users th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-.users tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.users tr:hover {
-  background-color: #ddd;
-}
-
-.users th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04aa6d;
-  color: white;
-}
-
 #rightbox {
-  user-select: none;
   background: #d4d9db;
   height: 100vh;
 }
 
 #informationbox {
-  padding-block: 100px;
-}
-#adminpfp {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-left: auto;
-  display: block;
-  margin-bottom: 10%;
+  padding-block: 4.5%;
 }
 
 .options {
-  opacity: 0.75;
 }
 
 .options:hover {
@@ -57,20 +17,24 @@
 }
 
 #selectall{
-    width: 25px;
-    opacity: 0.5;
+    width: 33px;
     background-color: #828AA6;
-
 }
 
 .select{
-    width: 25px;
+    width: 33px;
     background-color: #828AA6;
 }
+
+
 
 #leftbox {
   background: #4a48af;
   height: 100vh;
+  color: #dedede;
+}
+
+a{
   color: #dedede;
 }
 
@@ -86,13 +50,10 @@
 
 .schools:hover {
   background: #5351c6;
-  user-select: none;
   cursor: pointer;
 }
 .schools:active {
   background: #4a48af;
-  user-select: none;
-  cursor: pointer;
 }
 
 
@@ -104,7 +65,10 @@
 }
 .ansökningbox {
   background-color: #f2f2f2;
-  padding: 20px;
+  color: #2F4490;
+
+  padding: 10px;
+  padding-left: 20px;
   border-radius: 5px;
   border: 1px solid #ddd;
   height: fit-content;

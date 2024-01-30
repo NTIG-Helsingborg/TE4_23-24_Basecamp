@@ -25,6 +25,63 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 }
 
 ?>
+<!-- Script for adding new schools into the database -->
+<script>
+    function postStatus(id) {
+        var isCheckedId = document.getElementById(id);
+        fetch("../functions/AdminFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                isChecked: isCheckedId.checked,
+                mail: id
+            })
+        })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+    }
+
+    function deleteFetch() {
+        var deleteVar = "Delete";
+        fetch("../functions/AdminFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                deleteVar: deleteVar,
+            })
+        })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+    }
+    function addSchool() {
+        var addschool = "addschool";
+        var school = document.getElementById("newSchool").value;
+        fetch("../functions/AdminFunctions.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                addschool: "addschool",
+                school: school
+            })
+        })
+            .then(response => response.text())
+            .then(() => {
+                location.reload();
+            });
+
+    }
+</script>
+
 <html>
 
 <head>
@@ -43,42 +100,53 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 
 
 <body>
-    <div class="row g-0">
+    <div class="row g-0 user-select-none">
 
         <div id="leftbox" class="col-2">
             <div class="row g-0">
                 <div class="col-12">
-                    <h1 class="text-center p-4">BASECAMP</h1>
+                    <h1 class="text-center p-4">
+                        <a class="link-underline link-underline-opacity-0" href="/pages/index.php">BASECAMP
+                        </a>
+                    </h1>
                 </div>
                 <div class="pt-5 col-12">
-                <?php
-                foreach ($_SESSION["schoolDisplay"] as $key => $value) {
-                    echo '
+                    <?php
+                    foreach ($_SESSION["schoolDisplay"] as $key => $value) {
+                        echo '
                         
                     <h4 class="schools"> ' . $value["name"] . '</h4>
                         ';
-                }
-                ?>
+                    }
+                    ?>
+                </div>
+                <div class="col-12">
+                    <input type="text" id="newSchool"></input>
+                    <button type="button" onclick="addSchool()">Lägg tillskola</button>
                 </div>
             </div>
-
         </div>
         <div id="rightbox" class="col-10">
             <div class="row g-0">
                 <div class="col-1"></div>
                 <div id="informationbox" class="row g-0 col-10">
-                    <div class="col-12 d-flex mb-2">
-                        <h2 class="options col-4">Alla Ansökningar</h2>
-                        <h2 class="options col-4">Accepterande</h2>
-                        <div class="col-2"></div>
+                    <div class="col-12 opacity-75 d-flex mb-2">
+                        <h2 class="options col-2">Alla Ansökningar</h2>
+                        <h2 class="col-2 text-danger">
+                            <?php
+                            $count = count($_SESSION["Userlist"]);
+                            echo $count;
+                            ?>
+                        </h2>
+                        <h2 class="options col-6">Accepterande</h2>
                         <h2 class="col-1">Admin</h2>
                         <div class="col-1">
                         </div>
                     </div>
                     <hr>
 
-                    <div class=" d-flex p-5">
-                        <h3 class="pe-5 opacity-50">Select all</h3>
+                    <div class=" d-flex opacity-50 p-5">
+                        <h3 class="pe-5 ">Select all</h3>
                         <input type="checkbox" id="selectall" name="selectall" value="selectall">
                     </div>
                     <div class="row box-group" id="group1">
@@ -89,13 +157,13 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                         while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
                             // Now $user is an associative array representing a single user
                             echo '
-                    <div class="col-12 my-1 ansökningbox flex-column flex-md-row">
-                        <input type="checkbox" class="select" id="select" name="select" value="select">
-                        <div class = "info">
-                            <h2>' . htmlspecialchars($user['mail']) . '</h2>
-                            <a href = "mailto:"' . htmlspecialchars($user['mail']) . '>' . htmlspecialchars($user['mail']) . '</a>
+                    <div class="my-1 ansökningbox flex-md-row mb-5 shadow g-0">
+                            <input type="checkbox" class="select col-1" id="select" name="select" value="select">
+                        <div class = "info col-9">
+                            <h2 class="fs-2">' . htmlspecialchars($user['mail']) . '</h2>
+                            <a class="text-secondary link-underline-secondary fs-5" href = "mailto:"' . htmlspecialchars($user['mail']) . '>' . htmlspecialchars($user['mail']) . '</a>
                         </div>
-                        <div class = "action">
+                        <div class = "action col-2">
                             <button class = "btn btn-primary">Acceptera</button>
                             <button class = "btn btn-danger">Neka</button>
                         </div>
@@ -106,93 +174,6 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                 </div>
                 <div class="col-1"></div>
             </div>
-        </div>
-
-    </div>
-
-
-    <!-- This is used to have 2 buttons, first is to showcase all of the signed up users and the second is to showcase all of the accepted users-->
-    <div class="wraper">
-        <div class="row g-0">
-            <div class="col">
-                <div class="count-window">
-                    <?php
-                    $count = count($_SESSION["Userlist"]);
-                    echo $count;
-                    ?>
-                </div>
-
-            </div>
-
-
-
-
-        </div>
-    </div>
-    
-    <!-- Input used to add a new school to the platform-->
-
-    <div>
-        <input type="text" id="newSchool"></input>
-        <button type="button" onclick="addSchool()">Lägg tillskola</button>
-        <div>
-
-
-            <script>
-                function postStatus(id) {
-                    var isCheckedId = document.getElementById(id);
-                    fetch("../functions/AdminFunctions.php", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            isChecked: isCheckedId.checked,
-                            mail: id
-                        })
-                    })
-                        .then(response => response.text())
-                        .then(data => {
-                            console.log(data);
-                        })
-                }
-
-                function deleteFetch() {
-                    var deleteVar = "Delete";
-                    fetch("../functions/AdminFunctions.php", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            deleteVar: deleteVar,
-                        })
-                    })
-                        .then(response => response.text())
-                        .then(data => {
-                            console.log(data);
-                        })
-                }
-                function addSchool() {
-                    var addschool = "addschool";
-                    var school = document.getElementById("newSchool").value;
-                    fetch("../functions/AdminFunctions.php", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            addschool: "addschool",
-                            school: school
-                        })
-                    })
-                        .then(response => response.text())
-                        .then(() => {
-                            location.reload();
-                        });
-
-                }
-            </script>
         </div>
     </div>
 </body>
