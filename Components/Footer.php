@@ -3,7 +3,7 @@
 
 	<div class="container text-center  mt-5">
 		<div class="row">
-			<div class="col-md-3 col-xs-12 mx-auto mb-4">
+			<div class="col-md-3 col-sm-6 col-xs-12 mx-auto mb-4">
 				<h6 class="text-uppercase font-weight-bold">The Providers</h6>
 				<hr class="bg-light mb-4 mt-0 d-inline-block mx-auto" style="width: 125px; height: 2px">
 				<div class="text">
@@ -12,7 +12,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-2 col-xs-12 mx-auto mb-4">
+			<div class="col-md-2 col-sm-6 col-xs-12 mx-auto mb-4">
 				<h6 class="text-uppercase font-weight-bold">Products</h6>
 				<hr class="bg-light mb-4 mt-0 d-inline-block mx-auto" style="width: 85px; height: 2px">
 				<div class="footerCenteredText">
@@ -25,7 +25,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-2 col-xs-12 mx-auto mb-4">
+			<div class="col-md-2 col-sm-6 col-xs-12 mx-auto mb-4">
 				<h6 class="text-uppercase font-weight-bold">Useful Links</h6>
 				<hr class="bg-light mb-4 mt-0 d-inline-block mx-auto" style="width: 85px; height: 2px">
 				<div class="footerCenteredText">
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-3 col-xs-12 mx-auto mb-4">
+			<div class="col-md-3 col-sm-6 col-xs-12 mx-auto mb-4">
 				<h6 class="text-uppercase font-weight-bold">Contact</h6>
 				<hr class="bg-light mb-4 mt-0 d-inline-block mx-auto" style="width: 75px; height: 2px">
 				<div class="">
