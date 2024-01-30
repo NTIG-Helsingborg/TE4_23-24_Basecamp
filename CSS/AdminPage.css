@@ -26,9 +26,15 @@
     background-color: #828AA6;
 }
 
+
+
 #leftbox {
   background: #4a48af;
   height: 100vh;
+  color: #dedede;
+}
+
+a{
   color: #dedede;
 }
 

@@ -105,7 +105,10 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
         <div id="leftbox" class="col-2">
             <div class="row g-0">
                 <div class="col-12">
-                    <h1 class="text-center p-4">BASECAMP</h1>
+                    <h1 class="text-center p-4">
+                        <a class="link-underline link-underline-opacity-0" href="/pages/index.php">BASECAMP
+                        </a>
+                    </h1>
                 </div>
                 <div class="pt-5 col-12">
                     <?php
@@ -159,7 +162,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                             <input type="checkbox" class="select col-1" id="select" name="select" value="select">
                         <div class = "info col-9">
                             <h2 class="fs-2">' . htmlspecialchars($user['mail']) . '</h2>
-                            <a class="text-secondary fs-5" href = "mailto:"' . htmlspecialchars($user['mail']) . '>' . htmlspecialchars($user['mail']) . '</a>
+                            <a class="text-secondary link-underline-secondary fs-5" href = "mailto:"' . htmlspecialchars($user['mail']) . '>' . htmlspecialchars($user['mail']) . '</a>
                         </div>
                         <div class = "action col-2">
                             <button class = "btn btn-primary">Acceptera</button>
