@@ -59,6 +59,9 @@
                 if(isset($_SESSION["selectedChapter"]) && isset($_SESSION["selectedChapter"]["name"])) {
                     echo $_SESSION["selectedChapter"]["name"];
                 }
+            else {
+                echo "Logga in för att nå denna sida";
+            }
             ?>
         </div>
     </div>
