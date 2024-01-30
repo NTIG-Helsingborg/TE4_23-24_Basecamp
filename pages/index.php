@@ -106,8 +106,6 @@ session_Start();
 				</div>
 			</div>
 
-			<div class="col-md-1 col-sm-0 d-none d-md-block text-center bg-white WhatBaseCampForDivider">.</div>
-
 			<div class="col-sm-12 col-md-5 d-flex">
 				<div class="mt-3 w-100">
 					<h2 class="text-center">What does BaseCamp mean for the <b>teachers</b></h2>
