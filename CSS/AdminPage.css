@@ -58,10 +58,14 @@
 
 #selectall{
     width: 25px;
-    border-radius: 50%;
     opacity: 0.5;
     background-color: #828AA6;
 
+}
+
+.select{
+    width: 25px;
+    background-color: #828AA6;
 }
 
 #leftbox {

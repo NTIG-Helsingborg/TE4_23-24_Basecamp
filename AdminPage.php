@@ -51,11 +51,14 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                     <h1 class="text-center p-4">BASECAMP</h1>
                 </div>
                 <div class="pt-5 col-12">
-                    <h4 class="schools">NTI HELSINGBORG</h4>
-                    <h4 class="schools">NTI MALMÖ</h4>
-                    <h4 class="schools">NTI RÖNNE</h4>
-                    <h4 class="schools">NTI COOLSCHOOL</h4>
-                    <h4 class="schools">NTI SOMETHING</h4>
+                <?php
+                foreach ($_SESSION["schoolDisplay"] as $key => $value) {
+                    echo '
+                        
+                    <h4 class="schools"> ' . $value["name"] . '</h4>
+                        ';
+                }
+                ?>
                 </div>
             </div>
 
@@ -74,10 +77,32 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
                     </div>
                     <hr>
 
-                <div class=" d-flex p-5">
-                    <h3 class="pe-5 opacity-50">Select all</h3>
-                    <input type="checkbox" id="selectall" name="selectall" value="selectall">
-                </div>
+                    <div class=" d-flex p-5">
+                        <h3 class="pe-5 opacity-50">Select all</h3>
+                        <input type="checkbox" id="selectall" name="selectall" value="selectall">
+                    </div>
+                    <div class="row box-group" id="group1">
+                        <?php
+                        //Call the function to get all users from the database
+                        $usersResult = $db->get_users();
+                        // Loop through all users
+                        while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
+                            // Now $user is an associative array representing a single user
+                            echo '
+                    <div class="col-12 my-1 ansökningbox flex-column flex-md-row">
+                        <input type="checkbox" class="select" id="select" name="select" value="select">
+                        <div class = "info">
+                            <h2>' . htmlspecialchars($user['mail']) . '</h2>
+                            <a href = "mailto:"' . htmlspecialchars($user['mail']) . '>' . htmlspecialchars($user['mail']) . '</a>
+                        </div>
+                        <div class = "action">
+                            <button class = "btn btn-primary">Acceptera</button>
+                            <button class = "btn btn-danger">Neka</button>
+                        </div>
+                    </div>';
+                        }
+                        ?>
+                    </div>
                 </div>
                 <div class="col-1"></div>
             </div>
@@ -88,7 +113,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
 
     <!-- This is used to have 2 buttons, first is to showcase all of the signed up users and the second is to showcase all of the accepted users-->
     <div class="wraper">
-        <div class="row">
+        <div class="row g-0">
             <div class="col">
 
                 <button> Alla ansökningar </button>
@@ -104,59 +129,11 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
             </div>
 
 
-            <div class="col">
 
-                <h2>Admin</h2>
-                <img src="" alt="">
-
-            </div>
 
         </div>
     </div>
-    <!-- This container is used to showcase all of the users that have signed up and are awaiting for Josef to Accept/Remove as a teacher-->
-    <div class="container" id="box-container">
-
-        <div class="row box-group" id="group1">
-            <?php
-            //Call the function to get all users from the database
-            $usersResult = $db->get_users();
-            // Loop through all users
-            /* while ($user = $usersResult->fetchArray(SQLITE3_ASSOC)) {
-                // Now $user is an associative array representing a single user
-                echo '
-                    <div class="col-12 my-2 ansökningbox flex-column flex-md-row">
-                        <div class = "info">
-                            <h2>' . htmlspecialchars($user['mail']) . '</h2>
-                            <a href = "mailto:"' . htmlspecialchars($user['mail']) . '>' . htmlspecialchars($user['mail']) . '</a>
-                        </div>
-                        <div class = "action">
-                            <button class = "btn btn-primary">Acceptera</button>
-                            <button class = "btn btn-danger">Neka</button>
-                        </div>
-                    </div>';
-            } */
-            ?>
-        </div>
-    </div>
-    <!-- This container is used to showcase all of active schools on the platform-->
-    <div>
-        <table class="users">
-            <tr>
-                <th>
-                    Skolor
-                </th>
-            <tr>
-                <?php
-                foreach ($_SESSION["schoolDisplay"] as $key => $value) {
-                    echo '
-                        <tr>
-                            <td>' . $value["name"] . '</td>
-                        </tr>
-                        ';
-                }
-                ?>
-        </table>
-    </div>
+    
     <!-- Input used to add a new school to the platform-->
 
     <div>
