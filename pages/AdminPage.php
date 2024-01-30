@@ -2,7 +2,7 @@
 If the user becomes a teacher they can then add courses and chapters inside of those courses-->
 
 <?php
-include("db.php");
+include("../db.php");
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -38,7 +38,7 @@ while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/AdminPage.css">
+    <link rel="stylesheet" href="../CSS/AdminPage.css">
 </head>
 
 
